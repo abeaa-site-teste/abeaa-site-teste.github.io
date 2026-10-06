@@ -1,0 +1,1081 @@
+<title>ABEAA Santana de Parnaíba</title>
+<meta name="description" content="Associação Bandeirante de Engenheiros, Arquitetos e Agrônomos de Santana de Parnaíba/SP.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Estilo 5 · Portal premium + visual da proposta Manus (03/10/2026, ver DESIGN.md):
+   azul-petróleo, creme e amarelo; DM Sans com títulos grandes e apertados; foto do Monumento aos Bandeirantes na abertura;
+   faixa de atalhos, agenda, barra de atalhos no celular e modo escuro. */
+:root{
+  --paper:#f7f5f0;
+  --surface:#ffffff;
+  --ink:#132e3d;
+  --muted:#52616a;
+  --line:#dcd8cf;
+  --navy:#163b4c;
+  --navy-deep:#0e2531;
+  --blue:#1c5a80;
+  --blue-hover:#154763;
+  --gold:#f4c542;
+  --label:#7a6100;
+  --band:#ece8df;
+  --on-navy:#c9d6dc;
+  --pend-bg:#fff4c2;
+  --pend-fg:#5c4700;
+  --ok:#178a33;
+  --f-display:"DM Sans","Segoe UI",Roboto,Arial,sans-serif;
+  --f-body:"DM Sans","Segoe UI",Roboto,Arial,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  --wrap:1120px;
+  --contour:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%201200%20420%22%20preserveAspectRatio%3D%22xMidYMid%20slice%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%23f3c911%22%20stroke-width%3D%221%22%20opacity%3D%22.18%22%3E%3Cpath%20d%3D%22M883%2C180%20L883%2C184%20L881%2C188%20L879%2C192%20L876%2C195%20L873%2C198%20L870%2C201%20L867%2C204%20L864%2C207%20L861%2C210%20L857%2C213%20L853%2C215%20L848%2C216%20L843%2C217%20L838%2C217%20L833%2C216%20L828%2C215%20L824%2C213%20L820%2C212%20L816%2C211%20L813%2C211%20L809%2C212%20L804%2C213%20L799%2C214%20L793%2C214%20L787%2C215%20L782%2C214%20L777%2C212%20L773%2C209%20L770%2C206%20L768%2C202%20L768%2C198%20L768%2C194%20L768%2C190%20L769%2C187%20L769%2C183%20L769%2C180%20L768%2C177%20L767%2C173%20L767%2C169%20L767%2C166%20L768%2C162%20L770%2C159%20L773%2C156%20L777%2C153%20L781%2C151%20L786%2C150%20L790%2C148%20L794%2C147%20L798%2C145%20L802%2C143%20L806%2C141%20L810%2C139%20L815%2C137%20L820%2C137%20L825%2C137%20L830%2C138%20L834%2C140%20L838%2C143%20L841%2C146%20L844%2C150%20L846%2C153%20L847%2C156%20L850%2C158%20L853%2C160%20L857%2C161%20L861%2C162%20L866%2C164%20L871%2C166%20L876%2C169%20L880%2C172%20L882%2C176%20L883%2C180Z%22/%3E%3Cpath%20d%3D%22M937%2C180%20L936%2C188%20L932%2C195%20L928%2C201%20L922%2C208%20L917%2C213%20L911%2C219%20L906%2C225%20L901%2C230%20L895%2C235%20L888%2C240%20L880%2C244%20L871%2C246%20L862%2C247%20L853%2C246%20L843%2C245%20L835%2C242%20L827%2C240%20L820%2C238%20L813%2C238%20L806%2C238%20L798%2C240%20L789%2C242%20L780%2C244%20L769%2C246%20L758%2C246%20L748%2C244%20L739%2C240%20L732%2C235%20L727%2C228%20L725%2C221%20L724%2C213%20L725%2C206%20L726%2C199%20L726%2C192%20L726%2C186%20L725%2C180%20L723%2C174%20L721%2C167%20L721%2C160%20L721%2C153%20L724%2C147%20L728%2C141%20L734%2C135%20L741%2C131%20L749%2C127%20L757%2C124%20L764%2C121%20L772%2C118%20L779%2C115%20L786%2C111%20L794%2C107%20L802%2C104%20L811%2C101%20L820%2C100%20L829%2C101%20L838%2C103%20L846%2C107%20L853%2C113%20L858%2C119%20L863%2C125%20L867%2C131%20L871%2C135%20L876%2C139%20L882%2C142%20L890%2C144%20L899%2C146%20L908%2C149%20L918%2C154%20L926%2C159%20L933%2C165%20L936%2C172%20L937%2C180Z%22/%3E%3Cpath%20d%3D%22M992%2C180%20L989%2C191%20L983%2C201%20L976%2C211%20L968%2C220%20L960%2C228%20L952%2C237%20L945%2C245%20L937%2C253%20L928%2C260%20L918%2C266%20L906%2C271%20L893%2C274%20L880%2C275%20L866%2C274%20L853%2C272%20L841%2C269%20L830%2C266%20L820%2C265%20L810%2C265%20L799%2C267%20L787%2C270%20L774%2C274%20L759%2C277%20L743%2C279%20L727%2C278%20L713%2C275%20L701%2C268%20L692%2C260%20L686%2C250%20L683%2C239%20L682%2C228%20L683%2C217%20L684%2C207%20L684%2C198%20L683%2C189%20L680%2C180%20L677%2C171%20L675%2C161%20L674%2C151%20L675%2C141%20L679%2C131%20L686%2C123%20L695%2C115%20L706%2C109%20L717%2C104%20L728%2C99%20L739%2C95%20L750%2C90%20L760%2C85%20L770%2C79%20L781%2C73%20L793%2C68%20L806%2C65%20L820%2C64%20L834%2C65%20L846%2C70%20L858%2C76%20L867%2C84%20L875%2C93%20L881%2C102%20L887%2C109%20L894%2C115%20L902%2C119%20L912%2C123%20L925%2C126%20L939%2C129%20L954%2C134%20L967%2C140%20L979%2C148%20L987%2C158%20L992%2C169%20L992%2C180Z%22/%3E%3Cpath%20d%3D%22M1046%2C180%20L1041%2C194%20L1033%2C208%20L1023%2C220%20L1012%2C232%20L1002%2C243%20L992%2C254%20L982%2C264%20L972%2C274%20L960%2C284%20L947%2C292%20L931%2C298%20L915%2C301%20L897%2C302%20L879%2C301%20L863%2C298%20L847%2C295%20L833%2C293%20L820%2C292%20L807%2C293%20L792%2C297%20L776%2C302%20L757%2C307%20L737%2C311%20L716%2C313%20L696%2C311%20L677%2C306%20L662%2C297%20L651%2C285%20L645%2C271%20L642%2C256%20L642%2C242%20L642%2C228%20L643%2C215%20L642%2C203%20L639%2C192%20L635%2C180%20L631%2C168%20L628%2C155%20L627%2C142%20L629%2C129%20L635%2C116%20L644%2C105%20L657%2C95%20L671%2C87%20L686%2C81%20L700%2C74%20L714%2C68%20L728%2C62%20L741%2C54%20L754%2C46%20L769%2C39%20L785%2C33%20L802%2C29%20L820%2C28%20L838%2C31%20L854%2C37%20L868%2C46%20L880%2C57%20L890%2C68%20L899%2C79%20L908%2C87%20L918%2C94%20L930%2C99%20L945%2C102%20L963%2C106%20L982%2C111%20L1002%2C117%20L1019%2C126%20L1034%2C138%20L1043%2C151%20L1047%2C165%20L1046%2C180Z%22/%3E%3Cpath%20d%3D%22M1100%2C180%20L1092%2C198%20L1080%2C214%20L1068%2C229%20L1055%2C243%20L1043%2C257%20L1031%2C270%20L1019%2C283%20L1006%2C296%20L992%2C307%20L975%2C317%20L956%2C323%20L935%2C327%20L913%2C328%20L892%2C326%20L872%2C324%20L853%2C321%20L836%2C319%20L820%2C320%20L803%2C323%20L784%2C329%20L763%2C336%20L740%2C343%20L714%2C348%20L688%2C349%20L663%2C346%20L642%2C338%20L624%2C325%20L612%2C309%20L605%2C291%20L602%2C273%20L602%2C255%20L603%2C239%20L602%2C223%20L600%2C209%20L596%2C195%20L590%2C180%20L584%2C165%20L580%2C149%20L579%2C132%20L583%2C116%20L591%2C101%20L604%2C87%20L619%2C76%20L637%2C66%20L655%2C58%20L673%2C50%20L689%2C42%20L705%2C33%20L721%2C24%20L738%2C14%20L757%2C5%20L777%2C-3%20L798%2C-7%20L820%2C-6%20L841%2C-2%20L861%2C6%20L879%2C18%20L893%2C31%20L906%2C44%20L917%2C56%20L929%2C65%20L943%2C72%20L960%2C77%20L980%2C80%20L1003%2C85%20L1028%2C91%20L1052%2C100%20L1073%2C112%20L1090%2C126%20L1100%2C143%20L1103%2C162%20L1100%2C180Z%22/%3E%3Cpath%20d%3D%22M1152%2C180%20L1141%2C201%20L1126%2C220%20L1111%2C238%20L1096%2C254%20L1082%2C270%20L1068%2C286%20L1055%2C302%20L1039%2C316%20L1022%2C330%20L1002%2C340%20L979%2C348%20L954%2C352%20L929%2C353%20L904%2C351%20L881%2C349%20L860%2C347%20L840%2C346%20L820%2C349%20L799%2C355%20L776%2C364%20L750%2C373%20L721%2C381%20L690%2C386%20L659%2C386%20L631%2C380%20L606%2C369%20L587%2C353%20L574%2C333%20L567%2C311%20L564%2C289%20L564%2C268%20L564%2C249%20L562%2C231%20L558%2C214%20L551%2C197%20L544%2C180%20L537%2C162%20L532%2C142%20L532%2C123%20L537%2C104%20L548%2C86%20L564%2C70%20L583%2C57%20L604%2C45%20L625%2C35%20L645%2C26%20L664%2C15%20L683%2C4%20L702%2C-7%20L722%2C-19%20L744%2C-30%20L768%2C-38%20L794%2C-42%20L820%2C-40%20L845%2C-34%20L868%2C-23%20L889%2C-9%20L906%2C6%20L921%2C20%20L935%2C32%20L951%2C42%20L969%2C49%20L991%2C53%20L1018%2C57%20L1047%2C62%20L1077%2C70%20L1105%2C81%20L1129%2C97%20L1146%2C115%20L1156%2C136%20L1157%2C158%20L1152%2C180Z%22/%3E%3Cpath%20d%3D%22M1202%2C180%20L1187%2C204%20L1170%2C226%20L1153%2C246%20L1136%2C265%20L1120%2C284%20L1105%2C302%20L1089%2C320%20L1072%2C337%20L1051%2C351%20L1028%2C363%20L1001%2C372%20L973%2C376%20L944%2C377%20L916%2C376%20L890%2C374%20L866%2C373%20L843%2C375%20L820%2C381%20L795%2C389%20L768%2C400%20L736%2C412%20L702%2C421%20L666%2C425%20L630%2C424%20L597%2C415%20L570%2C400%20L550%2C380%20L537%2C356%20L530%2C330%20L528%2C305%20L527%2C281%20L526%2C259%20L522%2C239%20L516%2C220%20L507%2C200%20L497%2C180%20L488%2C158%20L483%2C136%20L484%2C113%20L491%2C91%20L505%2C71%20L524%2C54%20L547%2C38%20L571%2C25%20L595%2C13%20L618%2C1%20L639%2C-11%20L661%2C-25%20L682%2C-39%20L706%2C-53%20L732%2C-64%20L760%2C-73%20L790%2C-76%20L820%2C-73%20L849%2C-65%20L875%2C-52%20L898%2C-36%20L918%2C-19%20L936%2C-4%20L954%2C9%20L973%2C18%20L997%2C24%20L1025%2C28%20L1058%2C32%20L1093%2C39%20L1128%2C48%20L1160%2C63%20L1186%2C81%20L1203%2C104%20L1212%2C129%20L1210%2C155%20L1202%2C180Z%22/%3E%3Cpath%20d%3D%22M1249%2C180%20L1232%2C207%20L1212%2C231%20L1192%2C254%20L1174%2C275%20L1157%2C296%20L1140%2C317%20L1123%2C337%20L1103%2C356%20L1080%2C373%20L1053%2C386%20L1023%2C395%20L991%2C399%20L959%2C401%20L928%2C400%20L899%2C399%20L873%2C401%20L847%2C405%20L820%2C414%20L791%2C426%20L758%2C440%20L721%2C453%20L681%2C462%20L640%2C466%20L600%2C462%20L565%2C450%20L536%2C431%20L515%2C406%20L502%2C378%20L495%2C348%20L493%2C320%20L491%2C294%20L488%2C269%20L482%2C247%20L473%2C225%20L461%2C203%20L449%2C180%20L439%2C155%20L434%2C130%20L437%2C104%20L446%2C79%20L463%2C57%20L486%2C37%20L512%2C20%20L539%2C5%20L565%2C-9%20L590%2C-23%20L614%2C-38%20L638%2C-54%20L662%2C-70%20L689%2C-86%20L719%2C-99%20L752%2C-107%20L786%2C-110%20L820%2C-105%20L852%2C-95%20L882%2C-79%20L907%2C-62%20L930%2C-44%20L951%2C-28%20L973%2C-16%20L998%2C-8%20L1027%2C-3%20L1062%2C1%20L1100%2C6%20L1141%2C13%20L1181%2C26%20L1216%2C43%20L1243%2C66%20L1260%2C93%20L1266%2C122%20L1262%2C151%20L1249%2C180Z%22/%3E%3Cpath%20d%3D%22M1294%2C180%20L1273%2C209%20L1251%2C236%20L1230%2C261%20L1210%2C285%20L1193%2C309%20L1175%2C332%20L1156%2C354%20L1134%2C375%20L1108%2C393%20L1078%2C407%20L1044%2C417%20L1009%2C422%20L974%2C424%20L940%2C424%20L909%2C426%20L879%2C430%20L850%2C438%20L820%2C450%20L786%2C465%20L748%2C482%20L706%2C496%20L660%2C505%20L614%2C507%20L570%2C500%20L532%2C484%20L502%2C460%20L481%2C431%20L468%2C399%20L462%2C366%20L459%2C334%20L456%2C306%20L451%2C279%20L442%2C255%20L430%2C231%20L415%2C206%20L400%2C180%20L390%2C152%20L385%2C123%20L389%2C95%20L402%2C67%20L422%2C43%20L448%2C21%20L477%2C2%20L507%2C-14%20L536%2C-30%20L563%2C-47%20L589%2C-65%20L615%2C-83%20L642%2C-102%20L673%2C-120%20L707%2C-133%20L744%2C-141%20L782%2C-142%20L820%2C-136%20L856%2C-123%20L888%2C-106%20L917%2C-87%20L942%2C-69%20L967%2C-53%20L993%2C-42%20L1023%2C-35%20L1059%2C-31%20L1100%2C-28%20L1146%2C-22%20L1192%2C-13%20L1236%2C2%20L1273%2C24%20L1300%2C51%20L1315%2C82%20L1318%2C115%20L1310%2C148%20L1294%2C180Z%22/%3E%3Cpath%20d%3D%22M1336%2C180%20L1313%2C212%20L1288%2C241%20L1266%2C268%20L1246%2C295%20L1227%2C321%20L1209%2C346%20L1189%2C371%20L1164%2C394%20L1135%2C414%20L1102%2C429%20L1065%2C439%20L1026%2C445%20L988%2C448%20L953%2C450%20L919%2C453%20L887%2C461%20L855%2C472%20L820%2C488%20L781%2C507%20L738%2C526%20L689%2C541%20L639%2C549%20L588%2C549%20L541%2C538%20L501%2C518%20L470%2C489%20L449%2C455%20L437%2C418%20L431%2C382%20L427%2C348%20L422%2C317%20L414%2C289%20L402%2C263%20L386%2C237%20L368%2C209%20L351%2C180%20L340%2C149%20L337%2C117%20L343%2C85%20L359%2C56%20L382%2C29%20L412%2C5%20L444%2C-15%20L476%2C-34%20L507%2C-52%20L535%2C-71%20L563%2C-92%20L591%2C-113%20L622%2C-134%20L656%2C-153%20L694%2C-167%20L736%2C-175%20L778%2C-174%20L820%2C-166%20L859%2C-151%20L894%2C-132%20L926%2C-112%20L955%2C-94%20L983%2C-80%20L1015%2C-70%20L1051%2C-65%20L1094%2C-62%20L1142%2C-58%20L1193%2C-52%20L1245%2C-40%20L1292%2C-22%20L1330%2C4%20L1356%2C35%20L1368%2C71%20L1368%2C108%20L1356%2C145%20L1336%2C180Z%22/%3E%3Cpath%20d%3D%22M1375%2C180%20L1349%2C214%20L1323%2C246%20L1300%2C275%20L1280%2C304%20L1261%2C332%20L1242%2C361%20L1220%2C388%20L1194%2C412%20L1162%2C433%20L1125%2C449%20L1085%2C461%20L1044%2C467%20L1004%2C472%20L965%2C476%20L930%2C483%20L895%2C494%20L859%2C510%20L820%2C530%20L776%2C551%20L727%2C572%20L673%2C587%20L617%2C594%20L562%2C590%20L512%2C575%20L471%2C549%20L440%2C516%20L419%2C477%20L407%2C436%20L401%2C397%20L396%2C361%20L389%2C329%20L377%2C299%20L361%2C271%20L340%2C243%20L319%2C212%20L301%2C180%20L290%2C146%20L288%2C111%20L297%2C76%20L316%2C44%20L343%2C15%20L376%2C-10%20L411%2C-32%20L445%2C-53%20L477%2C-74%20L507%2C-96%20L537%2C-119%20L568%2C-144%20L602%2C-167%20L640%2C-187%20L682%2C-201%20L728%2C-208%20L774%2C-205%20L820%2C-195%20L862%2C-178%20L901%2C-158%20L935%2C-138%20L968%2C-120%20L1001%2C-107%20L1038%2C-100%20L1081%2C-96%20L1130%2C-94%20L1185%2C-91%20L1243%2C-83%20L1299%2C-68%20L1348%2C-46%20L1386%2C-16%20L1410%2C21%20L1419%2C61%20L1414%2C102%20L1398%2C143%20L1375%2C180Z%22/%3E%3Cpath%20d%3D%22M1411%2C180%20L1383%2C216%20L1356%2C250%20L1333%2C282%20L1313%2C313%20L1295%2C344%20L1275%2C375%20L1252%2C404%20L1223%2C431%20L1189%2C453%20L1149%2C470%20L1106%2C482%20L1062%2C491%20L1019%2C497%20L979%2C504%20L941%2C514%20L903%2C529%20L864%2C550%20L820%2C573%20L771%2C598%20L715%2C620%20L656%2C634%20L595%2C639%20L536%2C631%20L484%2C611%20L442%2C580%20L412%2C541%20L392%2C497%20L380%2C454%20L372%2C412%20L365%2C374%20L355%2C341%20L340%2C310%20L319%2C280%20L294%2C249%20L270%2C216%20L251%2C180%20L240%2C142%20L240%2C104%20L252%2C67%20L275%2C33%20L305%2C2%20L341%2C-25%20L378%2C-49%20L414%2C-72%20L447%2C-96%20L479%2C-121%20L510%2C-148%20L544%2C-174%20L581%2C-200%20L623%2C-221%20L670%2C-235%20L720%2C-240%20L771%2C-236%20L820%2C-223%20L865%2C-205%20L907%2C-184%20L945%2C-164%20L981%2C-148%20L1020%2C-137%20L1063%2C-131%20L1113%2C-130%20L1169%2C-128%20L1231%2C-124%20L1294%2C-115%20L1353%2C-97%20L1404%2C-70%20L1441%2C-34%20L1462%2C7%20L1467%2C52%20L1457%2C97%20L1437%2C140%20L1411%2C180Z%22/%3E%3Cpath%20d%3D%22M1443%2C180%20L1414%2C218%20L1387%2C254%20L1365%2C288%20L1346%2C322%20L1328%2C356%20L1308%2C389%20L1284%2C420%20L1253%2C449%20L1215%2C473%20L1172%2C491%20L1127%2C505%20L1081%2C514%20L1036%2C523%20L994%2C534%20L953%2C548%20L912%2C568%20L869%2C592%20L820%2C620%20L765%2C647%20L704%2C669%20L638%2C682%20L573%2C683%20L511%2C671%20L458%2C645%20L416%2C608%20L385%2C564%20L366%2C516%20L354%2C470%20L345%2C426%20L336%2C387%20L321%2C352%20L301%2C320%20L275%2C288%20L247%2C255%20L220%2C219%20L200%2C180%20L190%2C139%20L192%2C98%20L208%2C58%20L234%2C22%20L268%2C-10%20L307%2C-39%20L346%2C-66%20L383%2C-92%20L417%2C-118%20L450%2C-147%20L483%2C-176%20L519%2C-206%20L560%2C-233%20L607%2C-254%20L658%2C-267%20L713%2C-271%20L767%2C-265%20L820%2C-251%20L869%2C-232%20L913%2C-211%20L954%2C-191%20L995%2C-177%20L1040%2C-169%20L1089%2C-166%20L1146%2C-165%20L1210%2C-165%20L1279%2C-160%20L1346%2C-147%20L1408%2C-125%20L1459%2C-93%20L1494%2C-53%20L1511%2C-6%20L1511%2C43%20L1497%2C92%20L1472%2C138%20L1443%2C180Z%22/%3E%3Cpath%20d%3D%22M1473%2C180%20L1443%2C220%20L1417%2C258%20L1396%2C294%20L1379%2C331%20L1361%2C367%20L1341%2C403%20L1315%2C437%20L1282%2C467%20L1242%2C493%20L1197%2C512%20L1148%2C527%20L1100%2C539%20L1054%2C551%20L1009%2C565%20L966%2C584%20L922%2C609%20L874%2C638%20L820%2C669%20L759%2C697%20L692%2C719%20L621%2C730%20L551%2C727%20L487%2C708%20L433%2C677%20L391%2C634%20L361%2C585%20L342%2C534%20L330%2C485%20L319%2C440%20L306%2C400%20L287%2C364%20L262%2C331%20L231%2C297%20L199%2C261%20L170%2C222%20L149%2C180%20L140%2C136%20L146%2C92%20L165%2C50%20L195%2C11%20L232%2C-23%20L273%2C-54%20L313%2C-83%20L351%2C-111%20L387%2C-141%20L421%2C-173%20L456%2C-205%20L495%2C-237%20L540%2C-266%20L590%2C-287%20L646%2C-300%20L705%2C-302%20L764%2C-294%20L820%2C-278%20L872%2C-258%20L919%2C-238%20L965%2C-220%20L1011%2C-208%20L1061%2C-203%20L1118%2C-202%20L1182%2C-203%20L1253%2C-203%20L1327%2C-196%20L1399%2C-180%20L1462%2C-153%20L1512%2C-116%20L1544%2C-70%20L1556%2C-19%20L1551%2C35%20L1532%2C87%20L1504%2C136%20L1473%2C180Z%22/%3E%3C/g%3E%3C/svg%3E");
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#0d1b22;--surface:#13262f;--ink:#e8eef0;--muted:#a9b8be;--line:#24404c;
+  --navy:#0a1a21;--navy-deep:#061015;--blue:#8fc3e0;--blue-hover:#b3d7ea;--label:#f4c542;--band:#11232b;
+  --pend-bg:#3a3110;--pend-fg:#f6dc6b;--ok:#3fbf61;color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#0d1b22;--surface:#13262f;--ink:#e8eef0;--muted:#a9b8be;--line:#24404c;
+  --navy:#0a1a21;--navy-deep:#061015;--blue:#8fc3e0;--blue-hover:#b3d7ea;--label:#f4c542;--band:#11232b;
+  --pend-bg:#3a3110;--pend-fg:#f6dc6b;--ok:#3fbf61;color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font:400 16px/1.6 var(--f-body);margin:0}
+a{color:var(--blue)}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+h1,h2,h3{font-family:var(--f-display);font-weight:700;line-height:1.04;letter-spacing:-.035em;text-wrap:balance;margin:0}
+h1{font-size:clamp(2.3rem,6vw,4.4rem)}
+h2{font-size:clamp(1.8rem,3.8vw,2.8rem)}
+h3{font-size:1.25rem;letter-spacing:-.02em}
+p{margin:0}
+.wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:20px}
+.eyebrow{font:600 .95rem/1.2 var(--f-body);color:var(--label)}
+h2.eyebrow{font:600 .95rem/1.2 var(--f-body);letter-spacing:0;margin:0}
+.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+#v-privacidade h2{font-size:1.3rem;letter-spacing:-.02em}
+.lead{font-size:1.1rem;color:var(--muted);max-width:62ch}
+.stack{display:grid;gap:16px}
+.pend{display:inline-block;font:500 .68rem/1 var(--f-mono);letter-spacing:.06em;text-transform:uppercase;background:var(--pend-bg);color:var(--pend-fg);padding:4px 7px;border-radius:4px;vertical-align:middle;white-space:nowrap}
+
+/* faixa de prévia */
+.preview-band{background:var(--gold);color:#2a2100;font:500 .78rem/1.4 var(--f-mono);text-align:center;padding:8px 16px}
+
+/* cabeçalho */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--navy);color:#e9ecf6;border-bottom:1px solid rgba(255,255,255,.08)}
+.top .wrap{display:flex;align-items:center;gap:20px;min-height:76px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:#fff;flex-shrink:0}
+.brand img{width:50px;height:50px;object-fit:contain;background:#fff;border-radius:50%;padding:5px}
+.brand b{display:block;font:800 1.3rem/1 var(--f-display);letter-spacing:-.02em}
+.brand small{display:block;font-size:.75rem;color:var(--on-navy);line-height:1.2;margin-top:4px}
+.nav{display:flex;gap:2px;margin-left:auto;flex-wrap:nowrap;justify-content:flex-end;align-items:center}
+.nav a{font-weight:500;font-size:.93rem;text-decoration:none;color:#e9ecf6;padding:8px 9px;white-space:nowrap;position:relative}
+.nav a:not(.cta)::after{content:"";position:absolute;left:10px;right:calc(100% - 10px);bottom:2px;height:2px;background:var(--gold);transition:right .25s}
+.nav a:not(.cta):hover::after,.nav a[aria-current="page"]::after{right:10px}
+.nav a[aria-current="page"]{color:#fff}
+.nav .cta{background:var(--gold);color:#1c1600;font-weight:700;border-radius:999px;padding:10px 16px;margin-left:8px;transition:transform .15s}
+.nav .cta:active{transform:scale(.97)}
+.nav .cta[aria-current="page"]{color:#1c1600;box-shadow:inset 0 -3px 0 #1c1600}
+.menu-btn{display:none;margin-left:auto;background:none;border:1px solid rgba(255,255,255,.35);color:#fff;border-radius:6px;padding:8px 12px;font:600 .9rem var(--f-body);cursor:pointer}
+@media (max-width:1100px){
+  .menu-btn{display:block}
+  .nav{display:none;position:absolute;left:0;right:0;top:100%;background:var(--navy);border-bottom:1px solid rgba(255,255,255,.12);flex-direction:column;align-items:stretch;padding:8px 20px 16px;gap:2px}
+  .nav.open{display:flex}
+  .nav a{padding:12px 10px}
+  .nav .cta{margin:8px 0 0;text-align:center}
+}
+
+@media (max-width:520px){.brand small{display:none}.top .wrap{gap:12px}}
+
+/* régua antiga: substituída pelas curvas de nível */
+.ruler{display:none}
+
+/* blocos */
+main section{padding-block:60px}
+.view{display:none}
+.view.on{display:block}
+.band-blue{background:var(--navy) var(--contour) center/cover no-repeat;color:#fff}
+.band-blue h1{color:#fff}
+.band-blue .lead{color:var(--on-navy)}
+.band-blue .eyebrow{color:var(--gold)}
+.band-surface{background:var(--band);border-block:1px solid var(--line)}
+
+/* início: hero com curvas de nível e atalhos */
+.hero{background:var(--navy);color:#fff;position:relative;overflow:hidden;padding-block:72px 0}
+.hero > svg{position:absolute;inset:0;width:100%;height:100%;opacity:.2;pointer-events:none}
+.hero > svg path{fill:none;stroke:var(--gold);stroke-width:1}
+@media (prefers-reduced-motion:no-preference){.hero > svg g{animation:drift 40s ease-in-out infinite alternate;transform-origin:70% 40%}}
+@keyframes drift{from{transform:translate(0,0) scale(1)}to{transform:translate(-30px,10px) scale(1.04)}}
+.hero-grid{position:relative;display:grid;gap:36px}
+.hero.photo{background:linear-gradient(rgba(14,37,49,.74),rgba(14,37,49,.74)),var(--hero-img) center 40%/cover no-repeat;padding-block:84px 0}
+.hero.photo .tiles{margin-bottom:28px}
+@media (max-width:700px){.hero.photo{background-image:linear-gradient(rgba(14,37,49,.74),rgba(14,37,49,.74)),var(--hero-img-sm,var(--hero-img))}}
+figure.photo{margin:0;display:grid;gap:8px}
+figure.photo img{display:block;width:100%;height:auto;border-radius:8px;border:1px solid var(--line)}
+figure.photo figcaption{font-size:.84rem;color:var(--muted)}
+.hero.photo > svg{display:none}
+.hero h1{color:#fff;margin-top:14px;max-width:14ch}
+.hero .eyebrow{color:var(--gold)}
+.hero .lead{color:var(--on-navy);margin-top:20px;max-width:52ch}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.credit{position:absolute;right:16px;bottom:8px;font-size:.72rem;color:rgba(255,255,255,.7)}
+.credit a{color:inherit}
+.tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:rgba(255,255,255,.12);border-top:1px solid rgba(255,255,255,.16);margin-top:56px}
+.tile{background:rgba(14,37,49,.88);color:#fff;padding:22px 20px;display:grid;grid-template-columns:auto 1fr;gap:4px 14px;text-decoration:none;transition:background .2s;align-items:center}
+.tile:hover{background:rgba(22,59,76,.98)}
+.tile svg{width:38px;height:38px;padding:8px;border:1px solid rgba(244,197,66,.6);border-radius:50%;color:var(--gold);grid-row:span 2}
+.tile b{font:700 1.05rem/1.15 var(--f-display);letter-spacing:-.01em}
+.tile span{color:var(--on-navy);font-size:.88rem}
+.tile span .pend{margin-top:4px}
+.tile i{display:none}
+@media (max-width:760px){.tiles{grid-template-columns:1fr}}
+@media (max-width:480px){.tiles{grid-template-columns:1fr}}
+
+.rule{border-top:1px solid var(--ink);padding-top:18px;margin-top:12px}
+.two{display:grid;grid-template-columns:1.2fr .8fr;gap:44px}
+@media (max-width:820px){.two{grid-template-columns:1fr}}
+.event{display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:start}
+.when{font:700 3.2rem/.9 var(--f-display);letter-spacing:-.04em;color:var(--blue);font-variant-numeric:tabular-nums}
+.when small{display:block;font:600 .8rem var(--f-body);letter-spacing:0;color:var(--muted);margin-top:8px}
+.event p{color:var(--muted);margin-top:8px}
+.event .more{display:inline-block;margin-top:12px;font-weight:700;text-decoration:none}
+.event .more:hover{text-decoration:underline}
+@media (max-width:520px){.event{grid-template-columns:1fr;gap:8px}.when{font-size:2.6rem}}
+.ents{list-style:none;padding:0;margin:0}
+.ents li{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:14px 0;border-bottom:1px solid var(--line);font-weight:600}
+.ents a{font-weight:600}
+.join{background:var(--navy);color:#fff}
+.join .wrap{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.join h2{color:#fff}
+.join .price{color:#fff}
+
+.btn{display:inline-flex;align-items:center;gap:8px;font:700 .95rem/1 var(--f-body);padding:14px 22px;border-radius:999px;text-decoration:none;border:1px solid transparent;cursor:pointer;transition:transform .15s,background .2s}
+.btn:active{transform:scale(.97)}
+.btn-yellow{background:var(--gold);color:#1c1600}
+.btn-yellow:hover{filter:brightness(1.06)}
+.btn-ghost{border-color:rgba(255,255,255,.6);color:#fff;background:transparent}
+.btn-ghost:hover{background:rgba(255,255,255,.08)}
+.btn-blue{background:var(--blue);color:#fff}
+.btn-blue:hover{background:var(--blue-hover)}
+.btn-line{border-color:var(--ink);color:var(--ink);background:transparent}
+
+/* curso */
+.course{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:40px;align-items:start}
+.course-flyer{width:100%;border-radius:6px;border:1px solid var(--line);display:block}
+.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:8px;overflow:hidden;margin-top:24px}
+.facts div{background:var(--surface);padding:16px}
+.facts dt{font:600 .82rem/1.2 var(--f-body);color:var(--muted)}
+.facts dd{margin:6px 0 0;font-weight:700}
+.date-big{font:700 3rem/1 var(--f-display);letter-spacing:-.04em;color:var(--blue);font-variant-numeric:tabular-nums}
+@media (max-width:820px){.course{grid-template-columns:1fr}.course-flyer{max-width:360px}}
+@media (max-width:480px){.facts{grid-template-columns:1fr}}
+
+/* cartões */
+.grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+@media (max-width:880px){.grid-3{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.grid-3,.grid-2{grid-template-columns:1fr}}
+.item{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:22px;display:grid;gap:8px;align-content:start;transition:transform .2s,box-shadow .2s}
+.item:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(11,26,61,.08)}
+.item p{color:var(--muted);font-size:.96rem}
+.item .tag{font:600 .88rem/1.2 var(--f-body);color:var(--label)}
+
+.split{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:48px;align-items:start}
+@media (max-width:820px){.split{grid-template-columns:1fr;gap:28px}}
+
+/* preço */
+.price{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.price b{font:700 3.2rem/1 var(--f-display);letter-spacing:-.04em;font-variant-numeric:tabular-nums}
+.price span{color:inherit;opacity:.85}
+
+/* passos */
+.steps{counter-reset:s;display:grid;gap:14px;list-style:none;padding:0;margin:0}
+.steps li{counter-increment:s;display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start}
+.steps li::before{content:counter(s);display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--navy);color:var(--gold);font:700 1.1rem var(--f-display)}
+.steps strong{display:block}
+.steps p{color:var(--muted)}
+
+/* diretoria */
+.board{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 24px;border-top:1px solid var(--ink)}
+.board div{padding:18px 0;border-bottom:1px solid var(--line)}
+.board span{font:600 .88rem/1.2 var(--f-body);color:var(--label)}
+.board b{display:block;font:700 1.15rem/1.2 var(--f-display);letter-spacing:-.02em;margin-top:6px}
+.board small{color:var(--muted)}
+@media (max-width:880px){.board{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.board{grid-template-columns:1fr}}
+
+/* contato */
+.contact-list{display:grid;gap:0;border-top:1px solid var(--ink)}
+.contact-list div{display:grid;grid-template-columns:120px minmax(0,1fr);gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}
+.contact-list dt{font:600 .88rem/1.5 var(--f-body);color:var(--muted)}
+.contact-list dd{margin:0;font-weight:600;overflow-wrap:anywhere}
+.copy{margin-left:8px;font:500 .78rem var(--f-mono);border:1px solid var(--line);background:var(--surface);color:var(--muted);border-radius:6px;padding:6px 10px;min-height:32px;cursor:pointer}
+
+/* formulários */
+form{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:24px;display:grid;gap:16px;min-width:0}
+.row2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+@media (max-width:520px){.row2{grid-template-columns:1fr}}
+label{display:grid;gap:6px;font-weight:600;font-size:.9rem}
+input,select,textarea{font:400 1rem var(--f-body);color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:12px;width:100%;transition:border-color .2s}
+input:focus,select:focus,textarea:focus{border-color:var(--blue)}
+textarea{resize:vertical;min-height:110px}
+.check{display:block;position:relative;padding-left:28px;font-weight:400;font-size:.88rem;color:var(--muted)}
+.check input{position:absolute;left:0;top:3px;width:18px;height:18px;margin:0}
+.form-note{font-size:.84rem;color:var(--muted)}
+.sent{background:var(--paper);border:1px solid var(--ok);border-radius:6px;padding:14px;font-size:.92rem}
+
+/* vitrine */
+.vt-card{background:var(--surface);border:1px solid var(--line);border-radius:8px;overflow:hidden;display:grid;min-width:0}
+.vt-card img{display:block;width:100%;aspect-ratio:737/466;object-fit:cover;background:#fff;border-bottom:1px solid var(--line)}
+.vt-body{padding:20px;display:grid;gap:8px}
+.vt-body p{color:var(--muted);font-size:.96rem}
+.vt-body .vt-contact{color:var(--ink);font-weight:600;font-variant-numeric:tabular-nums}
+.vt-body .tag{font:600 .88rem/1.2 var(--f-body);color:var(--label)}
+.empty{border:2px dashed var(--line);border-radius:8px;padding:32px;text-align:center;color:var(--muted)}
+
+/* rodapé */
+footer{background:var(--navy-deep);color:var(--on-navy);padding-block:48px 32px;font-size:.92rem}
+footer .cols{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:32px}
+footer b{color:#fff}
+footer a{color:#fff}
+footer .legal{border-top:1px solid rgba(255,255,255,.15);margin-top:32px;padding-top:20px;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;font-size:.8rem}
+@media (max-width:760px){footer .cols{grid-template-columns:1fr}}
+
+
+/* A ABEAA */
+.prose{display:grid;gap:14px;max-width:68ch}
+.prose p{color:var(--ink)}
+.item.feature{border-left:4px solid var(--gold)}
+a.item{color:inherit;text-decoration:none}
+.prose ul{margin:0;padding-left:20px;display:grid;gap:6px;color:var(--muted)}
+.ents small{color:var(--muted);font-weight:400;font-size:.9rem}
+.logos{display:flex;flex-wrap:wrap;gap:24px 56px;align-items:center;justify-content:space-evenly;background:#ffffff;border:1px solid var(--line);border-radius:8px;padding:24px 28px}
+.logos a{display:block;line-height:0}
+.logos img{display:block;height:44px;width:auto;max-width:100%}
+@media (max-width:520px){.logos{gap:22px 36px;padding:20px}.logos img{height:34px}}
+.news-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--ink)}
+.news-list li{display:grid;grid-template-columns:110px minmax(0,1fr);gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}
+.news-list time{color:var(--muted);font-size:.9rem;font-variant-numeric:tabular-nums}
+.news-list small{display:block;color:var(--label);font-weight:600;font-size:.82rem}
+@media (max-width:520px){.news-list li{grid-template-columns:1fr;gap:2px}}
+.subnav{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.subnav a{color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:8px 14px;font-size:.9rem;font-weight:600;transition:background .2s}
+.subnav a:hover{background:rgba(255,255,255,.1)}
+.timeline{list-style:none;margin:0;padding:0;border-left:2px solid var(--gold);display:grid;gap:26px}
+.timeline li{display:grid;grid-template-columns:76px 1fr;gap:16px;padding-left:20px;position:relative}
+.timeline li::before{content:"";position:absolute;left:-7px;top:8px;width:12px;height:12px;border-radius:50%;background:var(--gold)}
+.timeline .yr{font:800 1.4rem/1.2 var(--f-display);letter-spacing:-.03em;color:var(--ink)}
+.timeline p{color:var(--muted);margin-top:6px}
+@media (max-width:520px){.timeline li{grid-template-columns:1fr;gap:2px}}
+.item.big ul{margin:6px 0 0;padding-left:20px;display:grid;gap:8px;color:var(--muted)}
+.grid-4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+@media (max-width:900px){.grid-4{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.grid-4{grid-template-columns:1fr}}
+[id]{scroll-margin-top:90px}
+
+/* barra de atalhos no celular */
+.appbar{display:none}
+@media (max-width:760px){
+  .appbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--navy);border-top:1px solid rgba(255,255,255,.15);padding:8px 10px calc(8px + env(safe-area-inset-bottom,0px));gap:6px}
+  .appbar a{flex:1;text-align:center;color:#e9ecf6;text-decoration:none;font-size:.82rem;font-weight:600;padding:10px 0;border-radius:6px}
+  .appbar a.go{background:var(--gold);color:#1c1600}
+  body{padding-bottom:64px}
+}
+@media (prefers-reduced-motion:no-preference){.view.on{animation:fade .25s ease}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+@keyframes fade{from{opacity:.4}to{opacity:1}}
+</style>
+
+<div class="preview-band">PRÉVIA PARA A DIRETORIA · itens marcados <span class="pend">a confirmar</span> ainda não são definitivos</div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#inicio" aria-label="ABEAA — início">
+      <img src="img/logo.png" alt="Selo da ABEAA">
+      <span><b>ABEAA</b><small>Engenheiros, Arquitetos e Agrônomos</small></span>
+    </a>
+    <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav" aria-label="Navegação principal">
+      <a href="#a-abeaa">A ABEAA</a>
+      <a href="#agenda">Agenda</a>
+      <a href="#atualizacoes">Atualizações</a>
+      <a href="#reservas">Reservas</a>
+      <a href="#vitrine">Vitrine</a>
+      <a href="#transparencia">Transparência</a>
+      <a href="#contato">Contato</a>
+      <a href="#associe-se" class="cta">Associe-se</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ INÍCIO ============ -->
+<div class="view" id="v-inicio">
+  <section class="hero photo" style="--hero-img:url('img/monumento-aereo.jpg');--hero-img-sm:url('img/monumento-aereo-900.jpg')">
+    <svg viewBox="0 0 1200 420" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g><path d="M883,180 L883,184 L881,188 L879,192 L876,195 L873,198 L870,201 L867,204 L864,207 L861,210 L857,213 L853,215 L848,216 L843,217 L838,217 L833,216 L828,215 L824,213 L820,212 L816,211 L813,211 L809,212 L804,213 L799,214 L793,214 L787,215 L782,214 L777,212 L773,209 L770,206 L768,202 L768,198 L768,194 L768,190 L769,187 L769,183 L769,180 L768,177 L767,173 L767,169 L767,166 L768,162 L770,159 L773,156 L777,153 L781,151 L786,150 L790,148 L794,147 L798,145 L802,143 L806,141 L810,139 L815,137 L820,137 L825,137 L830,138 L834,140 L838,143 L841,146 L844,150 L846,153 L847,156 L850,158 L853,160 L857,161 L861,162 L866,164 L871,166 L876,169 L880,172 L882,176 L883,180Z"/><path d="M937,180 L936,188 L932,195 L928,201 L922,208 L917,213 L911,219 L906,225 L901,230 L895,235 L888,240 L880,244 L871,246 L862,247 L853,246 L843,245 L835,242 L827,240 L820,238 L813,238 L806,238 L798,240 L789,242 L780,244 L769,246 L758,246 L748,244 L739,240 L732,235 L727,228 L725,221 L724,213 L725,206 L726,199 L726,192 L726,186 L725,180 L723,174 L721,167 L721,160 L721,153 L724,147 L728,141 L734,135 L741,131 L749,127 L757,124 L764,121 L772,118 L779,115 L786,111 L794,107 L802,104 L811,101 L820,100 L829,101 L838,103 L846,107 L853,113 L858,119 L863,125 L867,131 L871,135 L876,139 L882,142 L890,144 L899,146 L908,149 L918,154 L926,159 L933,165 L936,172 L937,180Z"/><path d="M992,180 L989,191 L983,201 L976,211 L968,220 L960,228 L952,237 L945,245 L937,253 L928,260 L918,266 L906,271 L893,274 L880,275 L866,274 L853,272 L841,269 L830,266 L820,265 L810,265 L799,267 L787,270 L774,274 L759,277 L743,279 L727,278 L713,275 L701,268 L692,260 L686,250 L683,239 L682,228 L683,217 L684,207 L684,198 L683,189 L680,180 L677,171 L675,161 L674,151 L675,141 L679,131 L686,123 L695,115 L706,109 L717,104 L728,99 L739,95 L750,90 L760,85 L770,79 L781,73 L793,68 L806,65 L820,64 L834,65 L846,70 L858,76 L867,84 L875,93 L881,102 L887,109 L894,115 L902,119 L912,123 L925,126 L939,129 L954,134 L967,140 L979,148 L987,158 L992,169 L992,180Z"/><path d="M1046,180 L1041,194 L1033,208 L1023,220 L1012,232 L1002,243 L992,254 L982,264 L972,274 L960,284 L947,292 L931,298 L915,301 L897,302 L879,301 L863,298 L847,295 L833,293 L820,292 L807,293 L792,297 L776,302 L757,307 L737,311 L716,313 L696,311 L677,306 L662,297 L651,285 L645,271 L642,256 L642,242 L642,228 L643,215 L642,203 L639,192 L635,180 L631,168 L628,155 L627,142 L629,129 L635,116 L644,105 L657,95 L671,87 L686,81 L700,74 L714,68 L728,62 L741,54 L754,46 L769,39 L785,33 L802,29 L820,28 L838,31 L854,37 L868,46 L880,57 L890,68 L899,79 L908,87 L918,94 L930,99 L945,102 L963,106 L982,111 L1002,117 L1019,126 L1034,138 L1043,151 L1047,165 L1046,180Z"/><path d="M1100,180 L1092,198 L1080,214 L1068,229 L1055,243 L1043,257 L1031,270 L1019,283 L1006,296 L992,307 L975,317 L956,323 L935,327 L913,328 L892,326 L872,324 L853,321 L836,319 L820,320 L803,323 L784,329 L763,336 L740,343 L714,348 L688,349 L663,346 L642,338 L624,325 L612,309 L605,291 L602,273 L602,255 L603,239 L602,223 L600,209 L596,195 L590,180 L584,165 L580,149 L579,132 L583,116 L591,101 L604,87 L619,76 L637,66 L655,58 L673,50 L689,42 L705,33 L721,24 L738,14 L757,5 L777,-3 L798,-7 L820,-6 L841,-2 L861,6 L879,18 L893,31 L906,44 L917,56 L929,65 L943,72 L960,77 L980,80 L1003,85 L1028,91 L1052,100 L1073,112 L1090,126 L1100,143 L1103,162 L1100,180Z"/><path d="M1152,180 L1141,201 L1126,220 L1111,238 L1096,254 L1082,270 L1068,286 L1055,302 L1039,316 L1022,330 L1002,340 L979,348 L954,352 L929,353 L904,351 L881,349 L860,347 L840,346 L820,349 L799,355 L776,364 L750,373 L721,381 L690,386 L659,386 L631,380 L606,369 L587,353 L574,333 L567,311 L564,289 L564,268 L564,249 L562,231 L558,214 L551,197 L544,180 L537,162 L532,142 L532,123 L537,104 L548,86 L564,70 L583,57 L604,45 L625,35 L645,26 L664,15 L683,4 L702,-7 L722,-19 L744,-30 L768,-38 L794,-42 L820,-40 L845,-34 L868,-23 L889,-9 L906,6 L921,20 L935,32 L951,42 L969,49 L991,53 L1018,57 L1047,62 L1077,70 L1105,81 L1129,97 L1146,115 L1156,136 L1157,158 L1152,180Z"/><path d="M1202,180 L1187,204 L1170,226 L1153,246 L1136,265 L1120,284 L1105,302 L1089,320 L1072,337 L1051,351 L1028,363 L1001,372 L973,376 L944,377 L916,376 L890,374 L866,373 L843,375 L820,381 L795,389 L768,400 L736,412 L702,421 L666,425 L630,424 L597,415 L570,400 L550,380 L537,356 L530,330 L528,305 L527,281 L526,259 L522,239 L516,220 L507,200 L497,180 L488,158 L483,136 L484,113 L491,91 L505,71 L524,54 L547,38 L571,25 L595,13 L618,1 L639,-11 L661,-25 L682,-39 L706,-53 L732,-64 L760,-73 L790,-76 L820,-73 L849,-65 L875,-52 L898,-36 L918,-19 L936,-4 L954,9 L973,18 L997,24 L1025,28 L1058,32 L1093,39 L1128,48 L1160,63 L1186,81 L1203,104 L1212,129 L1210,155 L1202,180Z"/><path d="M1249,180 L1232,207 L1212,231 L1192,254 L1174,275 L1157,296 L1140,317 L1123,337 L1103,356 L1080,373 L1053,386 L1023,395 L991,399 L959,401 L928,400 L899,399 L873,401 L847,405 L820,414 L791,426 L758,440 L721,453 L681,462 L640,466 L600,462 L565,450 L536,431 L515,406 L502,378 L495,348 L493,320 L491,294 L488,269 L482,247 L473,225 L461,203 L449,180 L439,155 L434,130 L437,104 L446,79 L463,57 L486,37 L512,20 L539,5 L565,-9 L590,-23 L614,-38 L638,-54 L662,-70 L689,-86 L719,-99 L752,-107 L786,-110 L820,-105 L852,-95 L882,-79 L907,-62 L930,-44 L951,-28 L973,-16 L998,-8 L1027,-3 L1062,1 L1100,6 L1141,13 L1181,26 L1216,43 L1243,66 L1260,93 L1266,122 L1262,151 L1249,180Z"/><path d="M1294,180 L1273,209 L1251,236 L1230,261 L1210,285 L1193,309 L1175,332 L1156,354 L1134,375 L1108,393 L1078,407 L1044,417 L1009,422 L974,424 L940,424 L909,426 L879,430 L850,438 L820,450 L786,465 L748,482 L706,496 L660,505 L614,507 L570,500 L532,484 L502,460 L481,431 L468,399 L462,366 L459,334 L456,306 L451,279 L442,255 L430,231 L415,206 L400,180 L390,152 L385,123 L389,95 L402,67 L422,43 L448,21 L477,2 L507,-14 L536,-30 L563,-47 L589,-65 L615,-83 L642,-102 L673,-120 L707,-133 L744,-141 L782,-142 L820,-136 L856,-123 L888,-106 L917,-87 L942,-69 L967,-53 L993,-42 L1023,-35 L1059,-31 L1100,-28 L1146,-22 L1192,-13 L1236,2 L1273,24 L1300,51 L1315,82 L1318,115 L1310,148 L1294,180Z"/><path d="M1336,180 L1313,212 L1288,241 L1266,268 L1246,295 L1227,321 L1209,346 L1189,371 L1164,394 L1135,414 L1102,429 L1065,439 L1026,445 L988,448 L953,450 L919,453 L887,461 L855,472 L820,488 L781,507 L738,526 L689,541 L639,549 L588,549 L541,538 L501,518 L470,489 L449,455 L437,418 L431,382 L427,348 L422,317 L414,289 L402,263 L386,237 L368,209 L351,180 L340,149 L337,117 L343,85 L359,56 L382,29 L412,5 L444,-15 L476,-34 L507,-52 L535,-71 L563,-92 L591,-113 L622,-134 L656,-153 L694,-167 L736,-175 L778,-174 L820,-166 L859,-151 L894,-132 L926,-112 L955,-94 L983,-80 L1015,-70 L1051,-65 L1094,-62 L1142,-58 L1193,-52 L1245,-40 L1292,-22 L1330,4 L1356,35 L1368,71 L1368,108 L1356,145 L1336,180Z"/><path d="M1375,180 L1349,214 L1323,246 L1300,275 L1280,304 L1261,332 L1242,361 L1220,388 L1194,412 L1162,433 L1125,449 L1085,461 L1044,467 L1004,472 L965,476 L930,483 L895,494 L859,510 L820,530 L776,551 L727,572 L673,587 L617,594 L562,590 L512,575 L471,549 L440,516 L419,477 L407,436 L401,397 L396,361 L389,329 L377,299 L361,271 L340,243 L319,212 L301,180 L290,146 L288,111 L297,76 L316,44 L343,15 L376,-10 L411,-32 L445,-53 L477,-74 L507,-96 L537,-119 L568,-144 L602,-167 L640,-187 L682,-201 L728,-208 L774,-205 L820,-195 L862,-178 L901,-158 L935,-138 L968,-120 L1001,-107 L1038,-100 L1081,-96 L1130,-94 L1185,-91 L1243,-83 L1299,-68 L1348,-46 L1386,-16 L1410,21 L1419,61 L1414,102 L1398,143 L1375,180Z"/><path d="M1411,180 L1383,216 L1356,250 L1333,282 L1313,313 L1295,344 L1275,375 L1252,404 L1223,431 L1189,453 L1149,470 L1106,482 L1062,491 L1019,497 L979,504 L941,514 L903,529 L864,550 L820,573 L771,598 L715,620 L656,634 L595,639 L536,631 L484,611 L442,580 L412,541 L392,497 L380,454 L372,412 L365,374 L355,341 L340,310 L319,280 L294,249 L270,216 L251,180 L240,142 L240,104 L252,67 L275,33 L305,2 L341,-25 L378,-49 L414,-72 L447,-96 L479,-121 L510,-148 L544,-174 L581,-200 L623,-221 L670,-235 L720,-240 L771,-236 L820,-223 L865,-205 L907,-184 L945,-164 L981,-148 L1020,-137 L1063,-131 L1113,-130 L1169,-128 L1231,-124 L1294,-115 L1353,-97 L1404,-70 L1441,-34 L1462,7 L1467,52 L1457,97 L1437,140 L1411,180Z"/><path d="M1443,180 L1414,218 L1387,254 L1365,288 L1346,322 L1328,356 L1308,389 L1284,420 L1253,449 L1215,473 L1172,491 L1127,505 L1081,514 L1036,523 L994,534 L953,548 L912,568 L869,592 L820,620 L765,647 L704,669 L638,682 L573,683 L511,671 L458,645 L416,608 L385,564 L366,516 L354,470 L345,426 L336,387 L321,352 L301,320 L275,288 L247,255 L220,219 L200,180 L190,139 L192,98 L208,58 L234,22 L268,-10 L307,-39 L346,-66 L383,-92 L417,-118 L450,-147 L483,-176 L519,-206 L560,-233 L607,-254 L658,-267 L713,-271 L767,-265 L820,-251 L869,-232 L913,-211 L954,-191 L995,-177 L1040,-169 L1089,-166 L1146,-165 L1210,-165 L1279,-160 L1346,-147 L1408,-125 L1459,-93 L1494,-53 L1511,-6 L1511,43 L1497,92 L1472,138 L1443,180Z"/><path d="M1473,180 L1443,220 L1417,258 L1396,294 L1379,331 L1361,367 L1341,403 L1315,437 L1282,467 L1242,493 L1197,512 L1148,527 L1100,539 L1054,551 L1009,565 L966,584 L922,609 L874,638 L820,669 L759,697 L692,719 L621,730 L551,727 L487,708 L433,677 L391,634 L361,585 L342,534 L330,485 L319,440 L306,400 L287,364 L262,331 L231,297 L199,261 L170,222 L149,180 L140,136 L146,92 L165,50 L195,11 L232,-23 L273,-54 L313,-83 L351,-111 L387,-141 L421,-173 L456,-205 L495,-237 L540,-266 L590,-287 L646,-300 L705,-302 L764,-294 L820,-278 L872,-258 L919,-238 L965,-220 L1011,-208 L1061,-203 L1118,-202 L1182,-203 L1253,-203 L1327,-196 L1399,-180 L1462,-153 L1512,-116 L1544,-70 L1556,-19 L1551,35 L1532,87 L1504,136 L1473,180Z"/></g></svg>
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">Engenharia · Arquitetura · Agronomia</p>
+        <h1>Fortalecendo os profissionais e o desenvolvimento da nossa região.</h1>
+        <p class="lead">A Associação Bandeirante reúne engenheiros, arquitetos, agrônomos, tecnólogos e técnicos de Santana de Parnaíba, com cursos, estrutura de apoio e representação.</p>
+        <div class="hero-actions">
+          <a class="btn btn-yellow" href="#associe-se">Seja associado</a>
+          <a class="btn btn-ghost" href="#a-abeaa">Conheça a ABEAA</a>
+        </div>
+      </div>
+      <div class="tiles">
+        <a class="tile" href="#agenda"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><b>Agenda e encontros</b><span>Cursos, palestras e eventos</span><i>Ver agenda →</i></a>
+        <a class="tile" href="#atualizacoes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h13v14H6a2 2 0 0 1-2-2z"/><path d="M17 9h3v8a2 2 0 0 1-2 2"/><path d="M8 9h5M8 13h5"/></svg><b>Atualizações profissionais</b><span>ABEAA, CREA-SP, Confea e Mútua</span><i>Ver atualizações →</i></a>
+        <a class="tile" href="#transparencia"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/><path d="M9 12h6M9 16h6"/></svg><b>Transparência pública</b><span>Estatuto, parcerias e prestação de contas</span><i>Ver documentos →</i></a>
+      </div>
+    </div>
+    <p class="credit">Monumento aos Bandeirantes, Santana de Parnaíba · Foto: autoria <span class="pend">a confirmar</span></p>
+  </section>
+
+  <section>
+    <div class="wrap two">
+      <div>
+        <h2 class="eyebrow">Agenda</h2>
+        <div class="rule event">
+          <span class="when">17–18<small>novembro de 2026</small></span>
+          <div>
+            <h3>Patologias e Impermeabilização na Construção Civil</h3>
+            <p>Curso online e gratuito, com certificado. Terça e quarta-feira, das 18h30 às 22h30. Instrutor: Eng. Civil Paulo Afonso dos Santos Júnior.</p>
+            <a class="more" href="https://santanadeparnaiba.portalsca.com.br" target="_blank" rel="noopener">Fazer inscrição →</a>
+            <a class="more" href="#agenda" style="margin-left:16px">Detalhes</a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h2 class="eyebrow">Atualizações profissionais</h2>
+        <div class="rule">
+          <p>Notícias da ABEAA e links para as notícias oficiais do CREA-SP, do Confea e da Mútua.</p>
+          <a class="more" href="#atualizacoes">Ver atualizações →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band-surface">
+    <div class="wrap split">
+      <div class="stack">
+        <p class="eyebrow">Desde 1993</p>
+        <h2>A voz dos profissionais da região junto às instituições.</h2>
+        <p class="lead">Desde 1993, a ABEAA participa da representação profissional na região, da Inspetoria do CREA-SP à fundação da UNARO.</p>
+        <a class="more" href="#historia">Conheça a história →</a>
+      </div>
+      <div class="stack" style="gap:20px">
+        <div class="stack" style="gap:8px">
+          <div class="logos">
+            <a href="https://www.creasp.org.br" target="_blank" rel="noopener"><img src="img/logo-crea-sp.png" alt="CREA-SP" width="583" height="140" loading="lazy"></a>
+            <a href="https://www.confea.org.br" target="_blank" rel="noopener"><img src="img/logo-confea.png" alt="Confea" width="599" height="140" loading="lazy"></a>
+            <a href="https://www.mutua.com.br" target="_blank" rel="noopener"><img src="img/logo-mutua.png" alt="Mútua" width="525" height="140" loading="lazy"></a>
+          </div>
+          <p class="form-note">Marcas do Sistema Confea/Crea e da Mútua, conforme o manual de identidade visual do Confea. <span class="pend">autorização de uso a confirmar</span></p>
+        </div>
+      <ul class="ents">
+        <li><a href="https://www.creasp.org.br" target="_blank" rel="noopener">CREA-SP</a><small>Inspetoria na região desde 1999</small></li>
+        <li><a href="https://www.confea.org.br" target="_blank" rel="noopener">Confea</a><small>Projeto patrocinado em 2025</small></li>
+        <li><a href="https://www.mutua.com.br" target="_blank" rel="noopener">Mútua</a><small>Apoio ao curso de novembro de 2026</small></li>
+      </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap stack" style="gap:28px">
+      <div class="stack">
+        <p class="eyebrow">Estrutura da sede</p>
+        <h2>Espaço e equipamentos à disposição do associado.</h2>
+        <a class="more" href="#sede">Conheça a sede →</a>
+      </div>
+      <div class="grid-3">
+        <article class="item"><span class="tag">Auditório</span><h3>80 lugares com data show</h3><p>Para cursos, palestras e reuniões, mediante reserva.</p></article>
+        <article class="item"><span class="tag">Sala do profissional</span><h3>Computador, AutoCAD, impressora e plotter</h3><p>5 plotagens P&amp;B gratuitas por mês para associados contribuintes.</p></article>
+        <article class="item"><span class="tag">Área de lazer</span><h3>Churrasqueira, forno de pizza e forno a lenha</h3><p>Com banheiro, mesas e cadeiras, para confraternizações dos associados.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="join">
+    <div class="wrap">
+      <h2>Faça parte da ABEAA.</h2>
+      <div style="display:flex;gap:20px;align-items:center;flex-wrap:wrap">
+        <div class="price"><b>R$ 250</b><span>por ano</span></div>
+        <a class="btn btn-yellow" href="#associe-se">Associar-se</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ A ABEAA ============ -->
+<div class="view" id="v-a-abeaa">
+  <section class="band-blue">
+    <div class="wrap stack">
+      <p class="eyebrow">A ABEAA</p>
+      <h1>Desde 1993 ao lado dos profissionais da região.</h1>
+      <p class="lead">A Associação Bandeirante de Engenheiros, Arquitetos e Agrônomos é uma instituição civil de direito privado, sem fins lucrativos, de caráter sociocultural e ambientalista, que reúne engenheiros, arquitetos, agrônomos, tecnólogos e técnicos, com sede em Santana de Parnaíba.</p>
+      <nav class="subnav" aria-label="Nesta página"><a href="#quem-somos">Quem somos</a><a href="#historia">História</a><a href="#atuacao">Atuação institucional</a><a href="#sede">Nossa sede</a><a href="#missao">Missão e visão</a><a href="#principios">Princípios</a><a href="#diretoria">Diretoria</a></nav>
+    </div>
+  </section>
+
+  <section id="quem-somos">
+    <div class="wrap split">
+      <div class="stack" style="gap:24px"><p class="eyebrow">Quem somos</p><h2>Integração, valorização e representação profissional.</h2><figure class="photo"><img src="img/caminhos-do-tiete.jpg" alt="Monumento Caminhos do Tietê: muro de pedra com placas em relevo, jardim e estátuas, no Centro Histórico de Santana de Parnaíba" loading="lazy" width="1160" height="652"><figcaption>Monumento Caminhos do Tietê, Centro Histórico de Santana de Parnaíba. Foto: Secom / Prefeitura de Santana de Parnaíba <span class="pend">autorização a confirmar</span></figcaption></figure></div>
+      <div class="prose">
+        <p>Fundada em 2 de março de 1993, a ABEAA – Associação Bandeirante de Engenheiros, Arquitetos e Agrônomos atua na integração, valorização e representação dos profissionais das áreas tecnológicas em Santana de Parnaíba e região.</p>
+        <p>Ao longo de sua história, a Associação participou de momentos da representação profissional regional, incluindo a implantação da Inspetoria Regional do CREA-SP em Santana de Parnaíba e a criação da UNARO, em 2001, em sua própria sede.</p>
+        <p>Desde 1993, a ABEAA mantém sua atuação voltada à integração profissional, capacitação, disseminação de conhecimento e participação nas discussões relacionadas ao desenvolvimento regional.</p>
+        <p>A Associação conta com estrutura destinada à realização de cursos, palestras, reuniões e eventos, além de espaços de apoio e convivência para os profissionais.</p>
+        <p>Sua atuação também se conecta a entidades e instituições do Sistema Confea/Crea e a organizações de representação profissional em âmbito regional e estadual.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="historia" class="band-surface">
+    <div class="wrap split">
+      <div class="stack"><p class="eyebrow">História</p><h2>Uma associação construída pelos profissionais da cidade.</h2></div>
+      <ol class="timeline">
+        <li><span class="yr">1993</span><div><h3>Fundação</h3><p>Em 2 de março, o Eng. Civil Amaury Antunes de Siqueira Júnior e outros profissionais da região fundam a ABEAA para integrar engenheiros, arquitetos e agrônomos do município e colaborar com o poder público.</p></div></li>
+        <li><span class="yr">1999</span><div><h3>Reativação e sede no Centro</h3><p>Depois de um período parada, desde 1996, a associação é reativada, com Amaury Antunes de Siqueira Júnior na presidência, ao lado dos engenheiros Hideraldo Rodrigues Gomes, Cesar Alvarenga Galdino, Antonio Carlos Antoniazzi e Ricardo de Souza Terassovich. A sede passa a funcionar na Rua Suzana Dias, 477, no Centro.</p></div></li>
+        <li><span class="yr">1999</span><div><h3>Inspetoria do CREA-SP</h3><p>Em 27 de julho, um convênio com o CREA-SP cria a Inspetoria de Santana de Parnaíba e Pirapora do Bom Jesus.</p></div></li>
+        <li><span class="yr">2000</span><div><h3>Representação no Conselho</h3><p>A Arq. Beatriz Spisso se torna a primeira conselheira do CREA pela Arquitetura, seguida pelo Eng. Civil Paulo Roberto Valeriani Ignatios.</p></div></li>
+        <li><span class="yr">2001</span><div><h3>Fundação da UNARO</h3><p>Em 9 de maio, a União das Associações das Regiões Oeste é fundada na sede da ABEAA, reunindo associações de Barueri, Carapicuíba, Itapecerica da Serra, Itapevi-Jandira, Osasco e Taboão da Serra.</p></div></li>
+        <li><span class="yr">2003</span><div><h3>Caderneta de Obras</h3><p>Em dezembro, uma lei municipal institui a Caderneta de Obras, marco na organização das atividades de engenharia no município.</p></div></li>
+        <li><span class="yr">2004</span><div><h3>Pedra fundamental</h3><p>Em novembro, a ABEAA lança a pedra fundamental da sede própria, em terreno concedido pela Prefeitura.</p></div></li>
+        <li><span class="yr">2008</span><div><h3>Sede própria</h3><p>Em agosto, é inaugurada a sede da ABEAA e Unidade Operacional do CREA-SP, com 300 m² de área construída.</p></div></li>
+        <li><span class="yr">2025</span><div><h3>Ciclo de palestras com o Confea</h3><p>Projeto de ciclo de palestras da ABEAA é selecionado no Edital de Patrocínio nº 1/2025 do Confea. <span class="pend">nome oficial a confirmar</span></p></div></li>
+        <li><span class="yr">2025</span><div><h3>Estatuto reformulado</h3><p>Em 2 de dezembro, a 319ª Assembleia Geral Extraordinária aprova por unanimidade o novo estatuto, registrado em cartório em maio de 2026.</p></div></li>
+        <li><span class="yr">2026</span><div><h3>Engenharia sem Fronteiras</h3><p>Estreia em 28 de maio a série Engenharia sem Fronteiras, com 6 episódios ao vivo no YouTube sobre mercado, empreendedorismo e tecnologia na engenharia. <span class="pend">papel da ABEAA a confirmar</span></p></div></li>
+        <li><span class="yr">2026</span><div><h3>Articulação regional</h3><p>A ABEAA segue presente na articulação regional da UNARO.</p></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="atuacao">
+    <div class="wrap stack" style="gap:28px">
+      <div class="stack"><p class="eyebrow">Atuação institucional</p><h2>O que a ABEAA faz além da sede.</h2></div>
+      <div class="grid-3">
+        <article class="item"><span class="tag">Sistema Confea/Crea</span><h3>Inspetoria e atendimento do CREA-SP</h3><p>Desde 1999, por convênio com o CREA-SP, a região tem Inspetoria em Santana de Parnaíba e Pirapora do Bom Jesus. Desde 2008, a sede da ABEAA abriga uma Unidade Operacional do CREA-SP.</p><p>Pelo estatuto, a ABEAA elege em assembleia um representante titular e um suplente para o plenário do CREA-SP.</p><p>Em 2025, um projeto de ciclo de palestras da ABEAA foi selecionado no Edital de Patrocínio do Confea.</p></article>
+        <article class="item feature"><span class="tag">ABEAA e UNARO</span><h3>Onde nasceu a união regional</h3><p>A UNARO, União das Associações das Regiões Oeste, foi fundada em 9 de maio de 2001, na sede da ABEAA. O CREA-SP registra a UNARO como iniciativa pioneira.</p><p>A ABEAA, que sediou a fundação da UNARO em 2001, segue presente na articulação regional: o atual presidente da associação integra a coordenação da UNARO (2026).</p></article>
+        <article class="item"><span class="tag">Representação regional e estadual</span><h3>Presença no IPEEA</h3><p>Por meio da UNARO, a região tem assento no <a href="https://www.ipeea.com.br" target="_blank" rel="noopener">IPEEA</a> (Instituto Paulista de Entidades de Engenharia e Agronomia), com representante ligado à ABEAA.</p></article>
+      </div>
+      <div class="split" style="gap:28px">
+        <p class="lead">O curso de Patologias e Impermeabilização de novembro de 2026 é realizado pela ABEAA em parceria com o CREA-SP, com apoio do Confea e da Mútua.</p>
+        <div class="stack" style="gap:20px">
+        <div class="stack" style="gap:8px">
+          <div class="logos">
+            <a href="https://www.creasp.org.br" target="_blank" rel="noopener"><img src="img/logo-crea-sp.png" alt="CREA-SP" width="583" height="140" loading="lazy"></a>
+            <a href="https://www.confea.org.br" target="_blank" rel="noopener"><img src="img/logo-confea.png" alt="Confea" width="599" height="140" loading="lazy"></a>
+            <a href="https://www.mutua.com.br" target="_blank" rel="noopener"><img src="img/logo-mutua.png" alt="Mútua" width="525" height="140" loading="lazy"></a>
+          </div>
+          <p class="form-note">Marcas do Sistema Confea/Crea e da Mútua, conforme o manual de identidade visual do Confea. <span class="pend">autorização de uso a confirmar</span></p>
+        </div>
+        <ul class="ents">
+          <li><a href="https://www.creasp.org.br" target="_blank" rel="noopener">CREA-SP</a><small>Conselho Regional</small></li>
+          <li><a href="https://www.confea.org.br" target="_blank" rel="noopener">Confea</a><small>Conselho Federal</small></li>
+          <li><a href="https://www.mutua.com.br" target="_blank" rel="noopener">Mútua</a><small>Caixa de assistência dos profissionais</small></li>
+          <li><a href="https://www.ipeea.com.br" target="_blank" rel="noopener">IPEEA</a><small>Entidades de engenharia e agronomia de SP</small></li>
+        </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="sede" class="band-surface">
+    <div class="wrap stack" style="gap:28px">
+      <div class="split">
+        <div class="stack"><p class="eyebrow">Nossa sede</p><h2>Rua Santa Edwiges, 118, Jardim Rubi.</h2></div>
+        <div class="prose">
+          <p>A pedra fundamental foi lançada em novembro de 2004, em terreno concedido pela Prefeitura de Santana de Parnaíba. Em agosto de 2008, foi inaugurada a sede da ABEAA e Unidade Operacional do CREA-SP, com 300 m² de área construída.</p>
+          <p>Hoje a sede recebe cursos, palestras, reuniões e eventos, e oferece espaços de apoio aos associados.</p>
+        </div>
+      </div>
+      <div class="grid-3">
+        <article class="item"><span class="tag">Auditório</span><h3>80 lugares com data show</h3><p>Para cursos, palestras e reuniões, mediante reserva.</p></article>
+        <article class="item"><span class="tag">Sala do profissional</span><h3>Computador, AutoCAD, impressora e plotter</h3><p>5 plotagens P&amp;B gratuitas por mês para associados contribuintes.</p></article>
+        <article class="item"><span class="tag">Área de lazer</span><h3>Churrasqueira, forno de pizza e forno a lenha</h3><p>Com banheiro, mesas e cadeiras, para confraternizações dos associados.</p></article>
+      </div>
+      <div><a class="btn btn-blue" href="#reservas">Reservar um espaço</a></div>
+    </div>
+  </section>
+
+  <section id="missao">
+    <h2 class="sr-only">Missão e visão</h2>
+    <div class="wrap grid-2">
+      <article class="item big">
+        <span class="tag">Missão</span>
+        <h3>As finalidades da ABEAA</h3>
+        <ul>
+          <li>Desenvolver as profissões da área tecnológica, com compromisso com a sociedade e o desenvolvimento sustentável.</li>
+          <li>Estudar questões técnicas de interesse público, como Plano Diretor, zoneamento, Código de Obras e uso do solo.</li>
+          <li>Zelar pela legislação profissional e pelo Código de Ética.</li>
+          <li>Promover cursos, congressos, seminários, publicações e intercâmbio entre profissionais.</li>
+          <li>Colaborar tecnicamente com a administração municipal e regional.</li>
+          <li>Defender o mercado de trabalho e a remuneração justa dos profissionais.</li>
+          <li>Representar os associados perante as autoridades, o CREA, o CAU e o CRT.</li>
+          <li>Defender o meio ambiente e o patrimônio histórico, artístico e cultural.</li>
+        </ul>
+        <p class="form-note">Resumo do art. 2º do estatuto.</p>
+      </article>
+      <article class="item big">
+        <span class="tag">Visão</span>
+        <h3>Onde a ABEAA quer chegar</h3>
+        <ul>
+          <li>Ser referência do setor, ampliando sua atuação, inclusive na melhoria da mobilidade urbana.</li>
+          <li>Ampliar o quadro de associados e a área de atuação, com parcerias com instituições de ensino e empresas do setor.</li>
+          <li>Manter independência e equilíbrio financeiro, com as contribuições dos associados e parcerias.</li>
+          <li>Aumentar a participação e a união entre os associados.</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section id="principios" class="band-surface">
+    <div class="wrap stack" style="gap:28px">
+      <div class="stack"><p class="eyebrow">Princípios</p><h2>O que orienta o trabalho da associação.</h2></div>
+      <div class="grid-4">
+        <article class="item"><h3>Ética profissional</h3><p>Respeito às normas, à legislação profissional e ao Código de Ética.</p></article>
+        <article class="item"><h3>Representação</h3><p>Defesa dos interesses dos associados perante instituições e órgãos profissionais.</p></article>
+        <article class="item"><h3>Conhecimento</h3><p>Cursos, eventos, estudos e divulgação de informação técnica e científica.</p></article>
+        <article class="item"><h3>Desenvolvimento</h3><p>Capacitação, integração e colaboração com o desenvolvimento da comunidade.</p></article>
+      </div>
+      <p class="lead">O estatuto também prevê a defesa do meio ambiente, do patrimônio cultural e dos consumidores, gestão transparente e práticas ambientais sustentáveis.</p>
+    </div>
+  </section>
+
+  <section id="diretoria">
+    <div class="wrap stack" style="gap:28px">
+      <div class="stack">
+        <p class="eyebrow">Diretoria · gestão 2024–2026</p>
+        <h2>Quem conduz a associação</h2>
+        <p class="lead">A nova gestão toma posse em 1º de janeiro de 2027, com a composição prevista no estatuto: Diretoria Executiva de 8 cargos e Conselho Consultivo e Deliberativo de 4 membros e 1 suplente. Esta lista será atualizada após a eleição. Os cargos não são remunerados.</p>
+      </div>
+      <div class="board">
+        <div><span>Presidente</span><b>Ricardo de Souza Terassovich</b><small>Engenheiro Eletricista</small></div>
+        <div><span>Vice-presidente</span><b>Dirceu Silva dos Santos</b><small>Engenheiro Civil e de Segurança do Trabalho</small></div>
+        <div><span>Diretor Financeiro</span><b>Marcelo Martinez Gitti</b><small>Engenheiro Civil</small></div>
+        <div><span>Diretor Secretário</span><b>Marcos D. Muro</b><small>Geólogo</small></div>
+        <div><span>Diretor de Eventos e Cursos</span><b>Claudio Luís Franco</b><small>Engenheiro Civil e Arquiteto</small></div>
+        <div><span>Suplente da Diretoria</span><b>Alex Soares Cruz Miyamoto</b><small>Engenheiro Mecânico</small></div>
+        <div><span>Conselheira</span><b>Andreia Cury Lang</b><small>Engenheira Agrônoma</small></div>
+        <div><span>Conselheiro</span><b>Guilherme da Silva Correia</b><small>Engenheiro Civil</small></div>
+        <div><span>Conselheiro</span><b>Martiniano da Silva Souza</b><small>Engenheiro Civil</small></div>
+        <div><span>Conselheiro</span><b>Fernando Furtado Nogueira</b><small>Engenheiro Civil</small></div>
+        <div><span>Conselheiro suplente</span><b>Daniel Bastos Rodrigues da Silva</b><small>Engenheiro Eletricista</small></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ AGENDA ============ -->
+<div class="view" id="v-agenda">
+  <section class="band-blue">
+    <div class="wrap stack">
+      <p class="eyebrow">Agenda e encontros</p>
+      <h1>Cursos, palestras e encontros</h1>
+      <p class="lead">Atividades promovidas pela ABEAA e por instituições parceiras.</p>
+    </div>
+  </section>
+  <div class="ruler" aria-hidden="true"></div>
+  <section>
+    <div class="wrap course">
+      <div class="stack" style="min-width:0">
+        <p class="eyebrow">Novembro de 2026 · online</p>
+        <h2>Patologias e Impermeabilização na Construção Civil</h2>
+        <p class="lead">Curso gratuito, com certificado. A abertura apresenta vídeos institucionais do CREA-SP.</p>
+        <dl class="facts">
+          <div><dt>Datas</dt><dd>17 e 18 de novembro de 2026</dd></div>
+          <div><dt>Horário</dt><dd>Terça e quarta-feira, das 18h30 às 22h30</dd></div>
+          <div><dt>Instrutor</dt><dd>Eng. Civil Paulo Afonso dos Santos Júnior</dd></div>
+          <div><dt>Investimento</dt><dd>Gratuito, com certificado</dd></div>
+          <div><dt>Realização</dt><dd>ABEAA</dd></div>
+          <div><dt>Parceria e apoio</dt><dd>CREA-SP (parceria) · CONFEA e Mútua (apoio)</dd></div>
+        </dl>
+        <div class="stack" style="gap:8px;margin-top:8px">
+          <div><a class="btn btn-blue" href="https://santanadeparnaiba.portalsca.com.br" target="_blank" rel="noopener">Fazer inscrição</a></div>
+          <p class="form-note">Inscrições em santanadeparnaiba.portalsca.com.br</p>
+        </div>
+      </div>
+      <img class="course-flyer" src="img/curso-patologias-2026.jpg" alt="Cartaz do curso Patologias e Impermeabilização na Construção Civil">
+    </div>
+  </section>
+  <section class="band-surface">
+    <h2 class="sr-only">Próximas atividades e encontros</h2>
+    <div class="wrap grid-2">
+      <article class="item"><span class="tag">Cursos e palestras</span><h3>Próximas atividades</h3><p>Novos cursos e eventos serão publicados aqui assim que confirmados pela diretoria.</p></article>
+      <article class="item"><span class="tag">Reuniões e encontros</span><h3>Reunião mensal da Diretoria</h3><p>Toda segunda terça-feira do mês, às 19h, na sede. Os associados podem participar.</p></article>
+    </div>
+  </section>
+  <section>
+    <div class="wrap split">
+      <div class="stack"><p class="eyebrow">Série no YouTube</p><h2>Engenharia sem Fronteiras</h2></div>
+      <div class="prose">
+        <p>Série com 6 episódios ao vivo sobre mercado da engenharia, empreendedorismo e tecnologia. Estreou em 28 de maio de 2026. <span class="pend">papel da ABEAA a confirmar</span></p>
+        <p><a class="more" href="https://www.youtube.com/live/oOu82Q4-2ik" target="_blank" rel="noopener">Assistir ao episódio 1 →</a></p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ ASSOCIE-SE ============ -->
+<div class="view" id="v-associe-se">
+  <section class="band-blue">
+    <div class="wrap split">
+      <div class="stack">
+        <p class="eyebrow">Associe-se</p>
+        <h1>Faça parte da associação dos profissionais da sua cidade.</h1>
+      </div>
+      <div class="stack">
+        <div class="price"><b>R$ 250</b><span>por ano</span></div>
+        <p class="lead">Contribuição anual. Forma de pagamento e documentos são informados no atendimento. <span class="pend">valor por categoria a confirmar</span></p>
+      </div>
+    </div>
+  </section>
+  <div class="ruler" aria-hidden="true"></div>
+
+  <section>
+    <div class="wrap stack" style="gap:32px">
+      <div class="stack"><p class="eyebrow">Benefícios</p><h2>O que o associado tem à disposição</h2></div>
+      <div class="grid-3">
+        <article class="item"><span class="tag">Auditório</span><h3>Capacidade para 80 pessoas</h3><p>Equipado com data show, para cursos, palestras e reuniões.</p></article>
+        <article class="item"><span class="tag">Área de lazer</span><h3>Para confraternizar</h3><p>Churrasqueira, forno de pizza, forno a lenha, banheiro, mesas e cadeiras.</p></article>
+        <article class="item"><span class="tag">Sala do profissional</span><h3>Apoio ao trabalho técnico</h3><p>Computador com AutoCAD, impressora e plotter.</p></article>
+        <article class="item"><span class="tag">Plotagens</span><h3>5 plotagens P&amp;B por mês</h3><p>Gratuitas para associados contribuintes.</p></article>
+        <article class="item"><span class="tag">Capacitação</span><h3>Cursos, palestras e congressos</h3><p>Realizados na sede, com desconto em algumas atividades.</p></article>
+        <article class="item"><span class="tag">Convênios</span><h3>Convênios das entidades</h3><p>Pelo estatuto, o associado pode usar os convênios da ABEAA, do CREA-SP, do CAU/SP, do CRT, da UNARO e da Mútua. <span class="pend">a confirmar lista</span></p></article>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap stack" style="gap:28px">
+      <div class="stack"><p class="eyebrow">Categorias</p><h2>Quem pode se associar</h2></div>
+      <div class="grid-3">
+        <article class="item"><span class="tag">Titular</span><h3>Profissional registrado</h3><p>Diplomado em curso superior, com registro no CREA, no CAU ou no CRT. Vota e pode ser votado.</p></article>
+        <article class="item"><span class="tag">Coletivo</span><h3>Empresa</h3><p>Pessoa jurídica cuja atividade tem relação direta com a engenharia, a arquitetura, a agronomia ou as áreas técnicas.</p></article>
+        <article class="item"><span class="tag">Universitário</span><h3>Estudante do último ano</h3><p>Aluno do último ano de Engenharia, Arquitetura ou Agronomia em curso reconhecido.</p></article>
+      </div>
+      <p class="form-note">O estatuto prevê ainda as categorias Fundador, Benemérito e Honorário, que não dependem de inscrição (art. 5º).</p>
+    </div>
+  </section>
+
+  <section class="band-surface">
+    <div class="wrap split">
+      <div class="stack">
+        <p class="eyebrow">Como funciona</p>
+        <h2>Três passos para se associar</h2>
+        <ol class="steps" style="margin-top:12px">
+          <li><div><strong>Envie seu interesse</strong><p>Preencha o formulário ao lado ou fale com a secretaria. Pelo estatuto, o pedido é apresentado por um associado titular: se você já conhece um, informe o nome.</p></div></li>
+          <li><div><strong>Aprovação da Diretoria</strong><p>A Diretoria analisa o pedido, e a secretaria confirma categoria, documentos e forma de pagamento.</p></div></li>
+          <li><div><strong>Bem-vindo à associação</strong><p>Com a contribuição em dia, os benefícios ficam disponíveis.</p></div></li>
+        </ol>
+      </div>
+      <form data-form="Interesse em associação" novalidate>
+        <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px">
+        <h3>Quero me associar</h3>
+        <label for="as-nome">Nome completo<input id="as-nome" name="Nome" required autocomplete="name"></label>
+        <div class="row2">
+          <label for="as-prof">Profissão<input id="as-prof" name="Profissão" required placeholder="Ex.: Engenheiro Civil"></label>
+          <label for="as-reg">Registro profissional<input id="as-reg" name="Registro" placeholder="CREA, CAU ou CRT (opcional)"></label>
+        </div>
+        <div class="row2">
+          <label for="as-cat">Categoria
+            <select id="as-cat" name="Categoria" required>
+              <option value="">Selecione</option>
+              <option>Titular (profissional)</option>
+              <option>Coletivo (empresa)</option>
+              <option>Universitário (último ano)</option>
+            </select>
+          </label>
+          <label for="as-ind">Associado que indica<input id="as-ind" name="Associado que indica" placeholder="Opcional"></label>
+        </div>
+        <div class="row2">
+          <label for="as-email">E-mail<input id="as-email" name="E-mail" type="email" required autocomplete="email"></label>
+          <label for="as-tel">Telefone / WhatsApp<input id="as-tel" name="Telefone" type="tel" required autocomplete="tel"></label>
+        </div>
+        <label class="check" for="as-lgpd"><input id="as-lgpd" type="checkbox" required>Autorizo a ABEAA a usar estes dados para responder ao meu pedido, conforme a <a href="#privacidade">Política de Privacidade</a>.</label>
+        <button class="btn btn-blue" type="submit">Enviar interesse</button>
+        <div class="sent" hidden></div>
+      </form>
+    </div>
+  </section>
+</div>
+
+<!-- ============ RESERVAS ============ -->
+<div class="view" id="v-reservas">
+  <section class="band-blue">
+    <div class="wrap stack">
+      <p class="eyebrow">Área do associado</p>
+      <h1>Reserva de espaços</h1>
+      <p class="lead">Associados podem solicitar o auditório, a área de lazer ou a sala do profissional. A secretaria confirma a disponibilidade por e-mail ou telefone.</p>
+    </div>
+  </section>
+  <div class="ruler" aria-hidden="true"></div>
+  <section>
+    <div class="wrap split">
+      <div class="stack">
+        <p class="eyebrow">Antes de reservar</p>
+        <h2>Como funciona</h2>
+        <ol class="steps" style="margin-top:12px">
+          <li><div><strong>Envie o pedido</strong><p>Escolha o espaço, a data e o horário.</p></div></li>
+          <li><div><strong>A secretaria confere</strong><p>Disponibilidade e situação do associado.</p></div></li>
+          <li><div><strong>Reserva confirmada</strong><p>Você recebe a confirmação pelo contato informado.</p></div></li>
+        </ol>
+        <p class="form-note">Regras de uso, antecedência mínima e eventuais taxas dos espaços. <span class="pend">a confirmar</span></p>
+      </div>
+      <form data-form="Pedido de reserva" novalidate>
+        <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px">
+        <h3>Solicitar reserva</h3>
+        <label for="rs-nome">Nome do associado<input id="rs-nome" name="Nome" required autocomplete="name"></label>
+        <label for="rs-espaco">Espaço
+          <select id="rs-espaco" name="Espaço" required>
+            <option value="">Selecione</option>
+            <option>Auditório (até 80 pessoas)</option>
+            <option>Área de lazer</option>
+            <option>Sala do profissional</option>
+          </select>
+        </label>
+        <div class="row2">
+          <label for="rs-data">Data<input id="rs-data" name="Data" type="date" required></label>
+          <label for="rs-hora">Horário<input id="rs-hora" name="Horário" placeholder="Ex.: 14h às 17h" required></label>
+        </div>
+        <div class="row2">
+          <label for="rs-pessoas">Número de pessoas<input id="rs-pessoas" name="Pessoas" type="number" min="1" inputmode="numeric"></label>
+          <label for="rs-tel">Telefone / WhatsApp<input id="rs-tel" name="Telefone" type="tel" required autocomplete="tel"></label>
+        </div>
+        <label for="rs-email">E-mail<input id="rs-email" name="E-mail" type="email" required autocomplete="email"></label>
+        <label for="rs-obs">Finalidade / observações<textarea id="rs-obs" name="Observações" placeholder="Ex.: palestra para 40 pessoas, precisa de data show"></textarea></label>
+        <button class="btn btn-blue" type="submit">Enviar pedido</button>
+        <div class="sent" hidden></div>
+      </form>
+    </div>
+  </section>
+</div>
+
+<!-- ============ VITRINE ============ -->
+<div class="view" id="v-vitrine">
+  <section class="band-blue">
+    <div class="wrap stack">
+      <p class="eyebrow">Para o profissional</p>
+      <h1>Vitrine Profissional</h1>
+      <p class="lead">Vagas, parcerias e serviços entre profissionais de engenharia, arquitetura e agronomia. Toda publicação é analisada pela diretoria antes de aparecer aqui.</p>
+    </div>
+  </section>
+  <div class="ruler" aria-hidden="true"></div>
+  <section>
+    <div class="wrap stack" style="gap:28px">
+      <div class="stack" style="gap:16px">
+        <h2 class="eyebrow">Publicações</h2>
+        <div class="grid-2">
+          <article class="vt-card">
+            <img src="img/vitrine-muro-geotecnia.jpg" alt="Anúncio da Muro Geotecnia: sondagens, mapeamento, caracterização de nascentes, avaliação ambiental e taludes" loading="lazy">
+            <div class="vt-body">
+              <span class="tag">Serviço oferecido</span>
+              <h3>Muro Geotecnia</h3>
+              <p>Sondagens, mapeamento, caracterização de nascentes, avaliação ambiental e taludes.</p>
+              <p class="vt-contact">(11) 4193-1826 · (11) 94926-1001</p>
+              <a href="https://www.murogeotecnia.com.br/" target="_blank" rel="noopener">murogeotecnia.com.br</a>
+            </div>
+          </article>
+        </div>
+      </div>
+      <div class="split">
+        <div class="stack">
+          <p class="eyebrow">Publicar</p>
+          <h2>Envie uma oportunidade</h2>
+          <p>A diretoria analisa cada pedido. Publicações fora do tema profissional não são aprovadas.</p>
+          <p class="form-note">Prazo de permanência e regras de publicação. <span class="pend">a confirmar</span></p>
+        </div>
+        <form data-form="Vitrine Profissional" novalidate>
+        <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px">
+          <label for="vt-tipo">Tipo
+            <select id="vt-tipo" name="Tipo" required>
+              <option value="">Selecione</option>
+              <option>Vaga de trabalho</option>
+              <option>Parceria profissional</option>
+              <option>Serviço oferecido</option>
+            </select>
+          </label>
+          <label for="vt-titulo">Título<input id="vt-titulo" name="Título" required placeholder="Ex.: Procuro arquiteto para parceria em projetos residenciais"></label>
+          <label for="vt-desc">Descrição<textarea id="vt-desc" name="Descrição" required></textarea></label>
+          <div class="row2">
+            <label for="vt-nome">Nome<input id="vt-nome" name="Nome" required autocomplete="name"></label>
+            <label for="vt-contato">Contato para publicação<input id="vt-contato" name="Contato" required placeholder="E-mail ou telefone"></label>
+          </div>
+          <label class="check" for="vt-lgpd"><input id="vt-lgpd" type="checkbox" required>Autorizo a publicação do meu nome e do contato informado na Vitrine Profissional.</label>
+          <button class="btn btn-blue" type="submit">Enviar para análise</button>
+          <div class="sent" hidden></div>
+        </form>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ ATUALIZAÇÕES ============ -->
+<div class="view" id="v-atualizacoes">
+  <section class="band-blue">
+    <div class="wrap stack">
+      <p class="eyebrow">Atualizações profissionais</p>
+      <h1>Notícias da ABEAA e do Sistema Confea/Crea</h1>
+      <p class="lead">Notícias da associação e links para as notícias oficiais do CREA-SP, do Confea e da Mútua.</p>
+    </div>
+  </section>
+  <div class="ruler" aria-hidden="true"></div>
+  <section>
+    <div class="wrap split">
+      <div class="stack"><p class="eyebrow">ABEAA</p><h2>Notícias da associação</h2></div>
+      <div class="stack">
+        <p class="lead">As notícias da ABEAA serão publicadas aqui pela diretoria. Quem publica e com que frequência: <span class="pend">a confirmar</span></p>
+      </div>
+    </div>
+  </section>
+  <section class="band-surface">
+    <div class="wrap stack" style="gap:28px">
+      <div class="stack"><p class="eyebrow">Fontes oficiais</p><h2>CREA-SP, Confea e Mútua</h2><p class="lead">Os títulos mais recentes de cada entidade, com data e link para ler no site oficial.</p></div>
+      <ul class="news-list" id="feed-list" hidden></ul>
+      <div class="grid-3">
+        <a class="item" href="https://www.creasp.org.br/noticias/" target="_blank" rel="noopener"><span class="tag">CREA-SP</span><h3>Notícias do CREA-SP</h3><p>Abrir no site oficial →</p></a>
+        <a class="item" href="https://www.confea.org.br/noticias" target="_blank" rel="noopener"><span class="tag">Confea</span><h3>Notícias do Confea</h3><p>Abrir no site oficial →</p></a>
+        <a class="item" href="https://www.mutua.com.br" target="_blank" rel="noopener"><span class="tag">Mútua</span><h3>Site da Mútua</h3><p>Abrir no site oficial →</p></a>
+      </div>
+      <p class="form-note">A lista automática (atualizada uma vez por dia) entra na versão publicada. <span class="pend">em construção</span></p>
+    </div>
+  </section>
+</div>
+
+<!-- ============ TRANSPARÊNCIA ============ -->
+<div class="view" id="v-transparencia">
+  <section class="band-blue">
+    <div class="wrap stack">
+      <p class="eyebrow">Transparência</p>
+      <h1>Documentos e parcerias da associação</h1>
+      <p class="lead">Estatuto, atas, relatórios, prestação de contas e parcerias com a administração pública, organizados por tipo e ano.</p>
+    </div>
+  </section>
+  <div class="ruler" aria-hidden="true"></div>
+  <section>
+    <div class="wrap stack" style="gap:24px">
+      <h2 class="sr-only">Documentos da associação</h2>
+      <p class="lead">Pelo art. 56 do estatuto, a ABEAA mantém disponíveis os documentos abaixo. Eles serão publicados após seleção e aprovação da diretoria. <span class="pend">a confirmar</span></p>
+      <div class="grid-3">
+        <article class="item"><span class="tag">Institucional</span><h3>Estatuto</h3><p>Versão reformulada, aprovada em 02/12/2025 e registrada em maio de 2026. <span class="pend">em preparação</span></p></article>
+        <article class="item"><span class="tag">Institucional</span><h3>Regulamentos internos</h3><p>Em preparação.</p></article>
+        <article class="item"><span class="tag">Assembleias</span><h3>Editais de convocação</h3><p>Em preparação.</p></article>
+        <article class="item"><span class="tag">Assembleias e reuniões</span><h3>Atas</h3><p>Em preparação.</p></article>
+        <article class="item"><span class="tag">Prestação de contas</span><h3>Relatórios anuais</h3><p>Em preparação.</p></article>
+        <article class="item"><span class="tag">Prestação de contas</span><h3>Demonstrações financeiras</h3><p>Em preparação.</p></article>
+      </div>
+      <p>Os cargos da Diretoria e do Conselho não são remunerados (art. 20). Gestão atual: <a href="#diretoria">ver a diretoria</a>.</p>
+    </div>
+  </section>
+  <section class="band-surface" id="parcerias">
+    <div class="wrap stack" style="gap:28px">
+      <div class="split">
+        <div class="stack"><p class="eyebrow">Parcerias com a administração pública</p><h2>O que a lei pede para publicar.</h2></div>
+        <div class="prose">
+          <p>A Lei nº 13.019/2014 (art. 11) determina que a entidade que mantém parceria com a administração pública divulgue essas parcerias na internet. Para cada uma, publicamos:</p>
+          <ul>
+            <li>data de assinatura e identificação do instrumento;</li>
+            <li>nome e CNPJ da entidade;</li>
+            <li>descrição do objeto;</li>
+            <li>valor total e valores liberados;</li>
+            <li>situação da prestação de contas;</li>
+            <li>remuneração da equipe paga com recursos da parceria, quando houver.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="grid-2">
+        <article class="item"><span class="tag">Confea · 2025</span><h3>Edital de Patrocínio nº 1/2025</h3><p>Ciclo de palestras. Processo SEI 00.001381/2025-19. Valores e prestação de contas: <span class="pend">a confirmar</span></p></article>
+        <article class="item"><span class="tag">CREA-SP · 2024</span><h3>Edital de Chamamento nº 001/2024</h3><p>Termo de Colaboração para Valorização Profissional. Assinatura, objeto e valores: <span class="pend">a confirmar</span></p></article>
+      </div>
+      <p class="form-note">CNPJ da ABEAA: 65.697.641/0001-92</p>
+    </div>
+  </section>
+</div>
+
+<!-- ============ CONTATO ============ -->
+<div class="view" id="v-contato">
+  <section class="band-blue">
+    <div class="wrap stack">
+      <p class="eyebrow">Contato</p>
+      <h1>Fale com a ABEAA</h1>
+    </div>
+  </section>
+  <div class="ruler" aria-hidden="true"></div>
+  <section>
+    <div class="wrap split">
+      <div class="stack" style="gap:24px">
+        <h2 class="sr-only">Canais de atendimento</h2>
+        <dl class="contact-list">
+          <div><dt>Endereço</dt><dd>Rua Santa Edwiges, 118 — Jardim Rubi<br>Santana de Parnaíba/SP · CEP 06502-135</dd></div>
+          <div><dt>Telefone</dt><dd><span id="c-tel">(11) 4154-3546</span><button class="copy" data-copy="c-tel" type="button">copiar</button></dd></div>
+          <div><dt>E-mail</dt><dd><span id="c-mail">abeaaaparnaiba@gmail.com</span><button class="copy" data-copy="c-mail" type="button">copiar</button></dd></div>
+          <div><dt>Atendimento</dt><dd>Segunda a sexta, das 8h30 às 16h30</dd></div>
+          <div><dt>Redes</dt><dd><a href="https://www.instagram.com/abeaasp" target="_blank" rel="noopener">Instagram @abeaasp</a> · <a href="https://www.facebook.com/abeaa.associacaobandeirante" target="_blank" rel="noopener">Facebook</a></dd></div>
+          <div><dt>WhatsApp</dt><dd><span class="pend">a confirmar</span></dd></div>
+        </dl>
+        <div><a class="btn btn-line" href="https://www.google.com/maps/search/?api=1&amp;query=Rua+Santa+Edwiges+118+Santana+de+Parna%C3%ADba+SP" target="_blank" rel="noopener">Abrir no Google Maps</a></div>
+      </div>
+      <form data-form="Contato pelo site" novalidate>
+        <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px">
+        <h3>Envie uma mensagem</h3>
+        <div class="row2">
+          <label for="ct-nome">Nome<input id="ct-nome" name="Nome" required autocomplete="name"></label>
+          <label for="ct-email">E-mail<input id="ct-email" name="E-mail" type="email" required autocomplete="email"></label>
+        </div>
+        <label for="ct-assunto">Assunto
+          <select id="ct-assunto" name="Assunto" required>
+            <option value="">Selecione</option>
+            <option>Quero me associar</option>
+            <option>Cursos e eventos</option>
+            <option>Reserva de espaço</option>
+            <option>Outro assunto</option>
+          </select>
+        </label>
+        <label for="ct-msg">Mensagem<textarea id="ct-msg" name="Mensagem" required></textarea></label>
+        <label class="check" for="ct-lgpd"><input id="ct-lgpd" type="checkbox" required>Autorizo a ABEAA a usar estes dados para responder à minha mensagem.</label>
+        <button class="btn btn-blue" type="submit">Enviar mensagem</button>
+        <div class="sent" hidden></div>
+      </form>
+    </div>
+  </section>
+</div>
+
+<!-- ============ PRIVACIDADE ============ -->
+<div class="view" id="v-privacidade">
+  <section class="band-blue">
+    <div class="wrap stack">
+      <p class="eyebrow">LGPD</p>
+      <h1>Política de Privacidade</h1>
+      <p class="lead">Rascunho para revisão da diretoria e de um profissional da área jurídica antes da publicação. <span class="pend">a confirmar</span></p>
+    </div>
+  </section>
+  <div class="ruler" aria-hidden="true"></div>
+  <section>
+    <div class="wrap stack" style="max-width:760px;margin-inline:auto">
+      <h2>Quais dados coletamos</h2>
+      <p>Nome, e-mail, telefone, profissão e as informações que você escreve nos formulários de associação, reserva, contato e Vitrine Profissional.</p>
+      <h2>Para que usamos</h2>
+      <p>Somente para responder ao seu pedido: analisar a associação, confirmar reservas, responder mensagens e publicar oportunidades que você autorizou.</p>
+      <h2>Quem tem acesso</h2>
+      <p>A secretaria e a diretoria da ABEAA. Os formulários são entregues por e-mail por meio do serviço FormSubmit. Os dados não são vendidos nem compartilhados para publicidade.</p>
+      <h2>Seus direitos</h2>
+      <p>Você pode pedir para consultar, corrigir ou excluir seus dados pelo e-mail abeaaaparnaiba@gmail.com.</p>
+      <h2>Compromisso do estatuto</h2>
+      <p>O art. 63 do estatuto da ABEAA determina o respeito à Lei Geral de Proteção de Dados (Lei nº 13.709/2018), com garantia de privacidade, segurança e direito de acesso, correção e eliminação dos dados.</p>
+      <h2>Cookies</h2>
+      <p>Este site não usa cookies de publicidade nem ferramentas de rastreamento.</p>
+    </div>
+  </section>
+</div>
+
+</main>
+
+<nav class="appbar" aria-label="Atalhos"><a href="#agenda">Agenda</a><a href="#reservas">Reservas</a><a href="#contato">Contato</a><a class="go" href="#associe-se">Associe-se</a></nav>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div class="stack" style="gap:10px">
+        <b style="font:850 1.4rem var(--f-display);font-stretch:118%">ABEAA</b>
+        <p>Associação Bandeirante de Engenheiros, Arquitetos e Agrônomos de Santana de Parnaíba.</p>
+      </div>
+      <div class="stack" style="gap:6px">
+        <b>Sede</b>
+        <p>Rua Santa Edwiges, 118 — Jardim Rubi<br>Santana de Parnaíba/SP · CEP 06502-135</p>
+        <p>Seg. a sex., 8h30 às 16h30</p>
+      </div>
+      <div class="stack" style="gap:6px">
+        <b>Contato</b>
+        <p>(11) 4154-3546</p>
+        <p>abeaaaparnaiba@gmail.com</p>
+        <p><a href="https://www.instagram.com/abeaasp" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.facebook.com/abeaa.associacaobandeirante" target="_blank" rel="noopener">Facebook</a></p>
+      </div>
+    </div>
+    <div class="legal">
+      <span>© 2026 ABEAA</span>
+      <span><a href="#atualizacoes">Atualizações</a> · <a href="#transparencia">Transparência</a> · <a href="#privacidade">Privacidade</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var ROUTES=["inicio","a-abeaa","agenda","atualizacoes","associe-se","reservas","vitrine","transparencia","contato","privacidade"];
+  var nav=document.getElementById("nav"), btn=document.getElementById("menu-btn");
+  function show(){
+    var id=(location.hash||"#inicio").slice(1), anchor=null;
+    if(ROUTES.indexOf(id)<0){
+      var el=id&&document.getElementById(id), v=el&&el.closest(".view");
+      if(v){anchor=el; id=v.id.slice(2);} else id="inicio";
+    }
+    ROUTES.forEach(function(r){var v=document.getElementById("v-"+r); if(v) v.classList.toggle("on",r===id);});
+    nav.querySelectorAll("a").forEach(function(a){
+      if(a.getAttribute("href")==="#"+id) a.setAttribute("aria-current","page"); else a.removeAttribute("aria-current");
+    });
+    nav.classList.remove("open"); btn.setAttribute("aria-expanded","false");
+    if(anchor) anchor.scrollIntoView(); else window.scrollTo(0,0);
+  }
+  /* Atualizações: lê atualizacoes.json gerado pelo robô diário (versão publicada). Sem o arquivo, nada muda. */
+  (function(){
+    var ul=document.getElementById("feed-list"); if(!ul||!window.fetch) return;
+    fetch("/atualizacoes.json",{cache:"no-store"}).then(function(r){return r.ok?r.json():null;}).then(function(d){
+      if(!d||!d.itens||!d.itens.length) return;
+      d.itens.slice(0,15).forEach(function(n){
+        var li=document.createElement("li"), t=document.createElement("time"), dv=document.createElement("div"), sm=document.createElement("small"), a=document.createElement("a");
+        t.textContent=n.data||""; sm.textContent=n.fonte||""; a.href=n.link; a.target="_blank"; a.rel="noopener"; a.textContent=n.titulo;
+        dv.appendChild(sm); dv.appendChild(a); li.appendChild(t); li.appendChild(dv); ul.appendChild(li);
+      });
+      ul.hidden=false;
+    }).catch(function(){});
+  })();
+  var ROUTER=true; /* prévia: uma página só, trocada pelo # ; o build de publicação gera páginas separadas */
+  if(ROUTER){window.addEventListener("hashchange",show); show();}
+  btn.addEventListener("click",function(){var o=nav.classList.toggle("open");btn.setAttribute("aria-expanded",o?"true":"false");});
+
+  /* ===== CONFIGURAÇÃO DOS FORMULÁRIOS =====
+     FORM_ENDPOINT: endereço que recebe os formulários (FormSubmit, gratuito).
+     Para trocar o e-mail que recebe, mude só o final do endereço.
+     PREVIEW: true na prévia (nada é enviado); o build de publicação troca para false. */
+  var FORM_ENDPOINT="https://formsubmit.co/ajax/r.brandaocaldeira@gmail.com";
+  var PREVIEW=true;
+
+  document.querySelectorAll("form[data-form]").forEach(function(f){
+    f.addEventListener("submit",function(e){
+      e.preventDefault();
+      var msg=f.querySelector(".sent"), btn=f.querySelector("button[type=submit]");
+      function say(text,warn){msg.hidden=false;msg.style.borderColor=warn?"var(--pend-fg)":"";msg.textContent=text;}
+      if(!f.checkValidity()){
+        var bad=f.querySelector(":invalid"); if(bad) bad.focus();
+        say("Preencha os campos obrigatórios e marque a autorização para continuar.",true);
+        return;
+      }
+      if(PREVIEW){
+        say("Prévia: nada foi enviado. No site publicado, este pedido (\u201C"+f.dataset.form+"\u201D) chega por e-mail à ABEAA.");
+        return;
+      }
+      var data={_subject:"Site ABEAA \u2014 "+f.dataset.form,_template:"table"};
+      f.querySelectorAll("input[name],select[name],textarea[name]").forEach(function(el){
+        if(el.type==="checkbox") return;
+        data[el.name]=el.value;
+        if(el.type==="email") data._replyto=el.value;
+      });
+      btn.disabled=true; say("Enviando...");
+      fetch(FORM_ENDPOINT,{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify(data)})
+        .then(function(r){return r.json().then(function(j){if(!r.ok||String(j.success)==="false")throw new Error(j.message||"erro");});})
+        .then(function(){f.reset();say("Recebemos seu pedido. A ABEAA vai responder pelo contato informado.");})
+        .catch(function(){say("Não foi possível enviar agora. Tente de novo em alguns minutos ou escreva para abeaaaparnaiba@gmail.com.",true);})
+        .finally(function(){btn.disabled=false;});
+    });
+  });
+
+  document.querySelectorAll("[data-copy]").forEach(function(b){
+    b.addEventListener("click",function(){
+      var el=document.getElementById(b.dataset.copy), t=el.textContent;
+      function sel(){var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r);}
+      try{navigator.clipboard.writeText(t).then(function(){b.textContent="copiado";},sel);}catch(e){sel();}
+    });
+  });
+})();
+</script>
