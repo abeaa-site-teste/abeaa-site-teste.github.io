@@ -23,21 +23,21 @@ AGENTE = "ABEAA-site-noticias/1.0 (+https://www.abeaa.com.br)"
 # (página de notícias) + "link" (padrão dos endereços das notícias).
 # "ativo": False pausa a fonte sem apagar a configuração.
 FONTES = [
-    {"fonte": "CREA-SP", "ativo": False,
-     # Pausado em 06/10/2026: o site do CREA-SP recusa o robô (erro 403).
-     # Reativar quando o CREA-SP liberar o acesso ou consertar o feed (hoje vazio).
-     "feeds": ["https://www.creasp.org.br/feed/"],
+    {"fonte": "CREA-SP",
+     # Feed RSS só das notícias, servido pelo próprio site do CREA-SP (recurso padrão
+     # do WordPress). Desde 06/10/2026. A página /noticias/ fica como segunda opção.
+     # Se voltar o erro 403, pausar com "ativo": False e pedir liberação ao CREA-SP.
+     "feeds": ["https://www.creasp.org.br/feed/?post_type=noticia"],
      "lista": "https://www.creasp.org.br/noticias/",
      "link": r"^https://www\.creasp\.org\.br/noticia/[a-z0-9-]+/?$"},
     {"fonte": "Confea",
      "lista": "https://www.confea.org.br/noticias",
      "link": r"^https://www\.confea\.org\.br/[a-z0-9-]{12,}/?$"},
     {"fonte": "Mútua",
-     # Em teste desde 06/10/2026. Primeiro tenta os feeds RSS oficiais do site.
-     "feeds": ["https://www.mutua.com.br/category/noticias-mutua/feed/",
-               "https://www.mutua.com.br/feed/"],
-     "lista": "https://www.mutua.com.br/todas-noticias/",
-     "link": r"^https://www\.mutua\.com\.br/(?!category/|tag/|wp-|todas-noticias)[a-z0-9-]{15,}/?$"},
+     # Feed RSS oficial da categoria "Notícias Mútua". Em teste desde 06/10/2026:
+     # o site da Mútua não respondeu ao GitHub (conexão expira). Se continuar,
+     # pausar com "ativo": False e pedir liberação à Mútua.
+     "feeds": ["https://www.mutua.com.br/category/noticias-mutua/feed/"]},
 ]
 
 def baixar(url):
