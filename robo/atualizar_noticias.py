@@ -10,7 +10,8 @@ notícias anteriores dessa fonte e avisa no registro (log) do GitHub.
 
 Uso: python3 robo/atualizar_noticias.py [caminho/do/atualizacoes.json]
 """
-import json, re, sys, html, datetime, urllib.request
+import json, re, sys, html, datetime, urllib.request, urllib.parse, email.utils
+import xml.etree.ElementTree as ET
 from html.parser import HTMLParser
 from pathlib import Path
 
@@ -18,15 +19,25 @@ POR_FONTE = 5          # quantas notícias de cada entidade
 TOTAL = 15             # máximo na lista
 AGENTE = "ABEAA-site-noticias/1.0 (+https://www.abeaa.com.br)"
 
+# Cada fonte: "feeds" (canais RSS oficiais, tentados primeiro) e/ou "lista"
+# (página de notícias) + "link" (padrão dos endereços das notícias).
+# "ativo": False pausa a fonte sem apagar a configuração.
 FONTES = [
-    {"fonte": "CREA-SP",
+    {"fonte": "CREA-SP", "ativo": False,
+     # Pausado em 06/10/2026: o site do CREA-SP recusa o robô (erro 403).
+     # Reativar quando o CREA-SP liberar o acesso ou consertar o feed (hoje vazio).
+     "feeds": ["https://www.creasp.org.br/feed/"],
      "lista": "https://www.creasp.org.br/noticias/",
      "link": r"^https://www\.creasp\.org\.br/noticia/[a-z0-9-]+/?$"},
     {"fonte": "Confea",
      "lista": "https://www.confea.org.br/noticias",
      "link": r"^https://www\.confea\.org\.br/[a-z0-9-]{12,}/?$"},
-    # Mútua: o site não permitiu leitura automática no teste de 05/10/2026.
-    # Para incluir, acrescente aqui a página de notícias e o padrão dos links.
+    {"fonte": "Mútua",
+     # Em teste desde 06/10/2026. Primeiro tenta os feeds RSS oficiais do site.
+     "feeds": ["https://www.mutua.com.br/category/noticias-mutua/feed/",
+               "https://www.mutua.com.br/feed/"],
+     "lista": "https://www.mutua.com.br/todas-noticias/",
+     "link": r"^https://www\.mutua\.com\.br/(?!category/|tag/|wp-|todas-noticias)[a-z0-9-]{15,}/?$"},
 ]
 
 def baixar(url):
@@ -52,8 +63,6 @@ class Titulos(HTMLParser):
     def handle_data(self, d):
         if self.href is not None: self.txt.append(d)
 
-import urllib.parse
-
 def data_da_noticia(pagina):
     """Procura a data de publicação: primeiro nas marcações padrão, depois dd/mm/aaaa."""
     for pad in (r'property="article:published_time"\s+content="(\d{4})-(\d{2})-(\d{2})',
@@ -65,7 +74,34 @@ def data_da_noticia(pagina):
     m = re.search(r"\b(\d{2})/(\d{2})/(20\d{2})\b", pagina)
     return f"{m.group(1)}/{m.group(2)}/{m.group(3)}" if m else ""
 
+def ler_feed(url, nome, baixar=baixar):
+    """Lê um feed RSS (o jeito oficial de um site oferecer suas notícias)."""
+    raiz = ET.fromstring(baixar(url).encode("utf-8"))
+    itens = []
+    for it in raiz.iter("item"):
+        titulo = re.sub(r"\s+", " ", (it.findtext("title") or "")).strip()
+        link = (it.findtext("link") or "").strip()
+        data = ""
+        try: data = email.utils.parsedate_to_datetime(it.findtext("pubDate")).strftime("%d/%m/%Y")
+        except Exception: pass
+        if titulo and link.startswith("https://"):
+            itens.append({"fonte": nome, "titulo": html.unescape(titulo), "link": link, "data": data})
+        if len(itens) >= POR_FONTE: break
+    if not itens: raise ValueError("feed sem notícias")
+    return itens
+
 def ler_fonte(f, baixar=baixar):
+    erros = []
+    for url in f.get("feeds", []):
+        try: return ler_feed(url, f["fonte"], baixar)
+        except Exception as e: erros.append(f"feed {url}: {e}")
+    if "lista" not in f: raise ValueError("; ".join(erros))
+    try:
+        return ler_pagina(f, baixar)
+    except Exception as e:
+        erros.append(f"página {f['lista']}: {e}"); raise ValueError(" | ".join(erros))
+
+def ler_pagina(f, baixar=baixar):
     p = Titulos(f["lista"]); p.feed(baixar(f["lista"]))
     vistos, itens = set(), []
     for href, titulo in p.itens:
@@ -87,8 +123,11 @@ def main(destino="atualizacoes.json", baixar=baixar):
     anterior = json.loads(arq.read_text(encoding="utf-8")) if arq.exists() else {"itens": []}
     todos, problemas = [], []
     for f in FONTES:
+        if f.get("ativo") is False:
+            print(f"PAUSADA {f['fonte']} (mantida fora da lista)"); continue
         try:
             novos = ler_fonte(f, baixar); print(f"OK  {f['fonte']}: {len(novos)} notícias")
+            for i in novos: print(f"     {i['data'] or 'sem data'} | {i['titulo'][:70]} | {i['link']}")
         except Exception as e:
             novos = [i for i in anterior.get("itens", []) if i.get("fonte") == f["fonte"]]
             problemas.append(f["fonte"]); print(f"ERRO {f['fonte']}: {e} (mantidas {len(novos)} anteriores)")
