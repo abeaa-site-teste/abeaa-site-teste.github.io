@@ -1,6 +1,3 @@
-# Publica o site no GitHub Pages sempre que algo muda no repositório
-# (inclusive quando o robô de notícias grava atualizacoes.json).
-# Enquanto a variável SITE_OFICIAL não for "sim", sai a VERSÃO DE TESTE (fora do Google).
 name: Publicar site
 on:
   push:
@@ -26,8 +23,6 @@ jobs:
           python-version: "3.12"
       - name: Gerar as páginas
         run: python3 build.py ${{ vars.SITE_OFICIAL == 'sim' && '--oficial' || '' }}
-      - name: Incluir as notícias do robô
-        run: if [ -f atualizacoes.json ]; then cp atualizacoes.json dist/; fi
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
