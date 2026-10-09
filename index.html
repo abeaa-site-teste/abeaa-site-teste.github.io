@@ -55,7 +55,8 @@ h2.eyebrow{font:600 .95rem/1.2 var(--f-body);letter-spacing:0;margin:0}
 #v-privacidade h2{font-size:1.3rem;letter-spacing:-.02em}
 .lead{font-size:1.1rem;color:var(--muted);max-width:62ch}
 .stack{display:grid;gap:16px}
-.pend{display:inline-block;font:500 .68rem/1 var(--f-mono);letter-spacing:.06em;text-transform:uppercase;background:var(--pend-bg);color:var(--pend-fg);padding:4px 7px;border-radius:4px;vertical-align:middle;white-space:nowrap}
+.pend{display:inline-block;font:500 .68rem/1 var(--f-mono);letter-spacing:.06em;text-transform:uppercase;background:var(--pend-bg);color:var(--pend-fg);padding:4px 7px;border-radius:4px;vertical-align:middle;white-space:nowrap;max-width:100%}
+@media (max-width:700px){.pend{white-space:normal;line-height:1.35}}
 
 /* faixa de prévia */
 .preview-band{background:var(--gold);color:#2a2100;font:500 .78rem/1.4 var(--f-mono);text-align:center;padding:8px 16px}
@@ -133,7 +134,8 @@ figure.photo figcaption{font-size:.84rem;color:var(--muted)}
 .rule{border-top:1px solid var(--ink);padding-top:18px;margin-top:12px}
 .two{display:grid;grid-template-columns:1.2fr .8fr;gap:44px}
 @media (max-width:820px){.two{grid-template-columns:1fr}}
-.event{display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:start}
+.event{display:grid;grid-template-columns:150px minmax(0,1fr);gap:22px;align-items:start}
+.event+.event{margin-top:20px}
 .when{font:700 3.2rem/.9 var(--f-display);letter-spacing:-.04em;color:var(--blue);font-variant-numeric:tabular-nums}
 .when small{display:block;font:600 .8rem var(--f-body);letter-spacing:0;color:var(--muted);margin-top:8px}
 .event p{color:var(--muted);margin-top:8px}
@@ -160,7 +162,10 @@ figure.photo figcaption{font-size:.84rem;color:var(--muted)}
 
 /* curso */
 .course{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:40px;align-items:start}
-.course-flyer{width:100%;border-radius:6px;border:1px solid var(--line);display:block}
+.partner details{margin-top:14px;border-top:1px solid var(--line);padding-top:12px}
+.partner summary{cursor:pointer;font-weight:600;color:var(--blue)}
+.partner details p{margin-top:8px;color:var(--muted)}
+.course-flyer{width:100%;height:auto;border-radius:6px;border:1px solid var(--line);display:block}
 .facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:8px;overflow:hidden;margin-top:24px}
 .facts div{background:var(--surface);padding:16px}
 .facts dt{font:600 .82rem/1.2 var(--f-body);color:var(--muted)}
@@ -218,8 +223,8 @@ label{display:grid;gap:6px;font-weight:600;font-size:.9rem}
 input,select,textarea{font:400 1rem var(--f-body);color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:12px;width:100%;transition:border-color .2s}
 input:focus,select:focus,textarea:focus{border-color:var(--blue)}
 textarea{resize:vertical;min-height:110px}
-.check{display:block;position:relative;padding-left:28px;font-weight:400;font-size:.88rem;color:var(--muted)}
-.check input{position:absolute;left:0;top:3px;width:18px;height:18px;margin:0}
+.check{display:block;position:relative;padding-left:34px;min-height:24px;font-weight:400;font-size:.88rem;color:var(--muted)}
+.check input{position:absolute;left:0;top:0;width:24px;height:24px;margin:0;accent-color:var(--blue)}
 .form-note{font-size:.84rem;color:var(--muted)}
 .sent{background:var(--paper);border:1px solid var(--ok);border-radius:6px;padding:14px;font-size:.92rem}
 
@@ -257,6 +262,43 @@ a.item{color:inherit;text-decoration:none}
 .news-list time{color:var(--muted);font-size:.9rem;font-variant-numeric:tabular-nums}
 .news-list small{display:block;color:var(--label);font-weight:600;font-size:.82rem}
 @media (max-width:520px){.news-list li{grid-template-columns:1fr;gap:2px}}
+.sum{display:flex;gap:40px;flex-wrap:wrap}
+.sum b{display:block;font-size:2rem;color:var(--blue);line-height:1}
+.sum span{color:var(--muted);font-size:.9rem}
+.done-group h3{font-size:1.25rem;margin:0 0 10px}
+.done{list-style:none;margin:0;padding:0;border-top:1px solid var(--ink)}
+.done li{display:grid;grid-template-columns:96px minmax(0,1fr);gap:20px;padding:16px 0;border-bottom:1px solid var(--line);align-items:start}
+.done li>img,.done .noimg{width:96px;height:120px;object-fit:cover;object-position:center top;border-radius:6px;border:1px solid var(--line);display:block}
+.done .noimg{background:var(--band)}
+.done .meta{color:var(--label);font-weight:600;font-size:.85rem}
+.done h4{font-size:1.08rem;line-height:1.35;margin:4px 0}
+.done p{margin:0;color:var(--muted);font-size:.95rem}
+.done .credit-small{margin-top:2px;font-size:.78rem;color:var(--muted)}
+.done p.partners{margin-top:4px;color:var(--ink);font-size:.88rem}
+@media (max-width:520px){.done li{grid-template-columns:72px minmax(0,1fr);gap:14px}.done li>img,.done .noimg{width:72px;height:90px}}
+.hl-groups{display:flex;flex-direction:column;gap:40px}
+.hl-head{display:flex;align-items:center;justify-content:space-between;gap:8px 20px;flex-wrap:wrap;margin:0 0 10px}
+.hl-head .more{font-size:.95rem}
+.hl-focus{background:#fff;border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:10px;padding:18px 24px 6px}
+.hl-focus .highlights{border-top:0}
+.hl-focus .highlights li{border-bottom:0}
+.rule.focus h3{margin:4px 0 8px;font-size:1.15rem;line-height:1.3}
+.meta-focus{display:inline-block;background:var(--gold);color:#1c1600;font-weight:700;font-size:.78rem;letter-spacing:.04em;text-transform:uppercase;padding:2px 8px;border-radius:4px}
+.hl-group h3{font-size:1.25rem;margin:0;display:flex;align-items:center;gap:12px;min-height:44px}
+.hl-logo{display:inline-flex;align-items:center;background:#fff;border:1px solid var(--line);border-radius:8px;padding:6px 12px}
+.hl-logo img{height:28px;width:auto;display:block}
+.hl-logo.seal{padding:3px;border-radius:50%}
+.hl-logo.seal img{height:38px}
+.highlights{list-style:none;margin:0;padding:0;border-top:1px solid var(--ink)}
+.highlights li{padding:18px 0;border-bottom:1px solid var(--line);display:grid;gap:6px}
+.highlights li.has-photo{grid-template-columns:240px minmax(0,1fr);gap:24px;align-items:start}
+.highlights li>img{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:center 30%;border-radius:6px;display:block}
+.highlights li>div{display:flex;flex-direction:column;gap:6px;min-width:0}
+.highlights .meta{color:var(--label);font-weight:600;font-size:.85rem}
+.highlights .meta time{color:var(--muted);font-weight:400;font-variant-numeric:tabular-nums}
+.highlights h4{font-size:1.1rem;line-height:1.35;margin:0}
+.highlights p{margin:0;color:var(--muted)}
+@media (max-width:640px){.highlights li.has-photo{grid-template-columns:1fr;gap:12px}}
 .subnav{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
 .subnav a{color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:8px 14px;font-size:.9rem;font-weight:600;transition:background .2s}
 .subnav a:hover{background:rgba(255,255,255,.1)}
@@ -283,6 +325,31 @@ a.item{color:inherit;text-decoration:none}
 @media (prefers-reduced-motion:no-preference){.view.on{animation:fade .25s ease}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 @keyframes fade{from{opacity:.4}to{opacity:1}}
+.steps-5{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px;counter-reset:s}
+.steps-5 li{background:#fff;border:1px solid var(--line);border-radius:10px;padding:18px;counter-increment:s}
+.steps-5 li::before{content:counter(s);display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--navy,#163b4c);color:#fff;font-weight:700;margin-bottom:10px}
+.steps-5 h3{font-size:1rem;margin:0 0 6px}.steps-5 p{font-size:.9rem;color:var(--muted);margin:0 0 8px}
+@media(max-width:900px){.steps-5{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.steps-5{grid-template-columns:1fr}}
+.cal{list-style:none;margin:0;padding:0;border-top:1px solid var(--ink)}
+.cal li{display:grid;grid-template-columns:200px minmax(0,1fr);gap:20px;padding:14px 0;border-bottom:1px solid var(--line)}
+.cal b{color:var(--blue)}.cal p{margin:0;color:var(--muted)}
+@media(max-width:600px){.cal li{grid-template-columns:1fr;gap:4px}}
+.rd{display:grid;grid-template-columns:1fr 1fr;gap:28px}.rd ul{margin:0;padding-left:18px;color:var(--muted)}.rd li{margin:6px 0}
+@media(max-width:700px){.rd{grid-template-columns:1fr}}
+.zoomable{cursor:zoom-in;position:relative}
+.highlights li>.zoom-wrap img{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:center 30%;display:block}
+.done li>.zoom-wrap{width:96px!important}.done li>.zoom-wrap img{width:96px;height:120px;object-fit:cover;object-position:center top;display:block}
+.done li>.zoom-wrap::after{width:24px;height:24px;right:5px;bottom:5px;background-size:13px}
+@media (max-width:520px){.done li>.zoom-wrap{width:72px!important}.done li>.zoom-wrap img{width:72px;height:90px}.done li>.zoom-wrap::after{width:20px;height:20px;right:4px;bottom:4px;background-size:11px}}
+.zoom-wrap{position:relative;display:block;border-radius:6px;overflow:hidden}
+.zoom-wrap::after{content:"";position:absolute;right:8px;bottom:8px;width:30px;height:30px;border-radius:50%;background:rgba(22,59,76,.85) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7'/%3E%3C/svg%3E") center/16px no-repeat;pointer-events:none}
+.lightbox{border:0;padding:0;background:transparent;max-width:100vw;max-height:100vh;width:100vw;height:100vh;margin:0}
+.lightbox::backdrop{background:rgba(8,20,28,.92)}
+.lightbox figure{margin:0;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:56px 16px 24px;box-sizing:border-box}
+.lightbox img{max-width:100%;max-height:calc(100vh - 140px);object-fit:contain;border-radius:4px;cursor:zoom-out}
+.lightbox figcaption{color:#e8eef1;font-size:.95rem;max-width:760px;text-align:center;line-height:1.45}
+.lightbox .lb-close{position:fixed;top:12px;right:12px;width:44px;height:44px;border-radius:50%;border:0;background:#f4c542;color:#1c1600;font-size:1.6rem;line-height:1;cursor:pointer}
 </style>
 
 <div class="preview-band">PRÉVIA PARA A DIRETORIA · itens marcados <span class="pend">a confirmar</span> ainda não são definitivos</div>
@@ -337,6 +404,14 @@ a.item{color:inherit;text-decoration:none}
       <div>
         <h2 class="eyebrow">Agenda</h2>
         <div class="rule event">
+          <span class="when">26<small>outubro de 2026</small></span>
+          <div>
+            <h3>Reunião da UNARO na ABEAA</h3>
+            <p>A sede da ABEAA recebe a reunião da UNARO, segunda-feira, às 19h.</p>
+            <a class="more" href="#agenda">Detalhes</a>
+          </div>
+        </div>
+        <div class="rule event">
           <span class="when">17–18<small>novembro de 2026</small></span>
           <div>
             <h3>Patologias e Impermeabilização na Construção Civil</h3>
@@ -348,13 +423,31 @@ a.item{color:inherit;text-decoration:none}
       </div>
       <div>
         <h2 class="eyebrow">Atualizações profissionais</h2>
-        <div class="rule">
-          <p>Notícias da ABEAA e links para as notícias oficiais do CREA-SP, do Confea e da Mútua.</p>
-          <a class="more" href="#atualizacoes">Ver atualizações →</a>
+        <div class="rule focus">
+<!--EMFOCO-->
+          <span class="meta-focus">Em foco</span>
+          <h3>Piso salarial: PL 5.346/2026 está em consulta pública no Senado</h3>
+          <p>Projeto propõe piso de R$ 13.736 para jornada de 8 horas a partir de 2027. Participe da consulta pública do Senado.</p>
+          <a class="more" href="https://www12.senado.leg.br/ecidadania/visualizacaomateria?id=175780" target="_blank" rel="noopener">Votar na consulta pública →</a>
+          <a class="more" href="#atualizacoes" style="margin-left:16px">Todas as atualizações</a>
+<!--/EMFOCO-->
         </div>
       </div>
     </div>
   </section>
+
+  <section id="obra-segura"><div class="wrap stack" style="gap:24px">
+    <div class="stack"><p class="eyebrow">Para a população</p><h2>Vai construir ou reformar? Contrate com segurança.</h2>
+    <p class="lead">Cinco cuidados que protegem você e a sua obra, com os links oficiais.</p></div>
+    <ol class="steps-5">
+      <li><h3>Confira o registro</h3><p>Veja se o profissional ou a empresa tem registro ativo no CREA-SP, no CAU ou no CRT.</p><a class="more" href="https://www.creasp.org.br/servico/consulta-publica-de-registrados/" target="_blank" rel="noopener">Consultar no CREA-SP →</a></li>
+      <li><h3>Exija a ART</h3><p>A Anotação de Responsabilidade Técnica registra no CREA quem responde pela obra ou serviço.</p><a class="more" href="https://www.creasp.org.br/faq/o-que-e-art-2/" target="_blank" rel="noopener">O que é a ART →</a></li>
+      <li><h3>Orçamento por escrito</h3><p>Peça orçamento prévio detalhado, com prazos e materiais.</p></li>
+      <li><h3>Contrato assinado</h3><p>Formalize o serviço em contrato, como orienta o Código de Defesa do Consumidor.</p></li>
+      <li><h3>Denuncie irregularidades</h3><p>Exercício ilegal da profissão, atuação sem registro ou obra sem ART podem ser denunciados ao CREA-SP.</p><a class="more" href="https://www.creasp.org.br/servico/denuncia/" target="_blank" rel="noopener">Canal de denúncia →</a></li>
+    </ol>
+    <p class="form-note">Profissionais registrados seguem o Código de Ética Profissional do Confea. <a href="https://www.confea.org.br/atuacao/etica-profissional" target="_blank" rel="noopener">Ler o Código de Ética →</a></p>
+  </div></section>
 
   <section class="band-surface">
     <div class="wrap split">
@@ -371,7 +464,7 @@ a.item{color:inherit;text-decoration:none}
             <a href="https://www.confea.org.br" target="_blank" rel="noopener"><img src="img/logo-confea.png" alt="Confea" width="599" height="140" loading="lazy"></a>
             <a href="https://www.mutua.com.br" target="_blank" rel="noopener"><img src="img/logo-mutua.png" alt="Mútua" width="525" height="140" loading="lazy"></a>
           </div>
-          <p class="form-note">Marcas do Sistema Confea/Crea e da Mútua, conforme o manual de identidade visual do Confea. <span class="pend">autorização de uso a confirmar</span></p>
+          <p class="form-note">Marcas do Sistema Confea/Crea e da Mútua, conforme o manual de identidade visual do Confea.</p>
         </div>
       <ul class="ents">
         <li><a href="https://www.creasp.org.br" target="_blank" rel="noopener">CREA-SP</a><small>Inspetoria na região desde 1999</small></li>
@@ -421,7 +514,7 @@ a.item{color:inherit;text-decoration:none}
 
   <section id="quem-somos">
     <div class="wrap split">
-      <div class="stack" style="gap:24px"><p class="eyebrow">Quem somos</p><h2>Integração, valorização e representação profissional.</h2><figure class="photo"><img src="img/caminhos-do-tiete.jpg" alt="Monumento Caminhos do Tietê: muro de pedra com placas em relevo, jardim e estátuas, no Centro Histórico de Santana de Parnaíba" loading="lazy" width="1160" height="652"><figcaption>Monumento Caminhos do Tietê, Centro Histórico de Santana de Parnaíba. Foto: Secom / Prefeitura de Santana de Parnaíba <span class="pend">autorização a confirmar</span></figcaption></figure></div>
+      <div class="stack" style="gap:24px"><p class="eyebrow">Quem somos</p><h2>Integração, valorização e representação profissional.</h2><figure class="photo"><img src="img/sede-abeaa-fachada.jpg" alt="Fachada amarela da sede da ABEAA, na Rua Santa Edwiges, 118, Jardim Rubi, Santana de Parnaíba" loading="lazy" width="750" height="483"><figcaption>Sede da ABEAA, Rua Santa Edwiges, 118, Jardim Rubi, Santana de Parnaíba. <span class="pend">foto provisória, versão em alta resolução a enviar</span></figcaption></figure></div>
       <div class="prose">
         <p>Fundada em 2 de março de 1993, a ABEAA – Associação Bandeirante de Engenheiros, Arquitetos e Agrônomos atua na integração, valorização e representação dos profissionais das áreas tecnológicas em Santana de Parnaíba e região.</p>
         <p>Ao longo de sua história, a Associação participou de momentos da representação profissional regional, incluindo a implantação da Inspetoria Regional do CREA-SP em Santana de Parnaíba e a criação da UNARO, em 2001, em sua própria sede.</p>
@@ -441,12 +534,11 @@ a.item{color:inherit;text-decoration:none}
         <li><span class="yr">1999</span><div><h3>Inspetoria do CREA-SP</h3><p>Em 27 de julho, um convênio com o CREA-SP cria a Inspetoria de Santana de Parnaíba e Pirapora do Bom Jesus.</p></div></li>
         <li><span class="yr">2000</span><div><h3>Representação no Conselho</h3><p>A Arq. Beatriz Spisso se torna a primeira conselheira do CREA pela Arquitetura, seguida pelo Eng. Civil Paulo Roberto Valeriani Ignatios.</p></div></li>
         <li><span class="yr">2001</span><div><h3>Fundação da UNARO</h3><p>Em 9 de maio, a União das Associações das Regiões Oeste é fundada na sede da ABEAA, reunindo associações de Barueri, Carapicuíba, Itapecerica da Serra, Itapevi-Jandira, Osasco e Taboão da Serra.</p></div></li>
-        <li><span class="yr">2003</span><div><h3>Caderneta de Obras</h3><p>Em dezembro, uma lei municipal institui a Caderneta de Obras, marco na organização das atividades de engenharia no município.</p></div></li>
+        <li><span class="yr">2003</span><div><h3>Caderneta de Obras</h3><p>Em 5 de dezembro, a Lei Municipal nº 2.494/2003 institui a Caderneta de Obras, marco na organização das atividades de engenharia no município.</p></div></li>
         <li><span class="yr">2004</span><div><h3>Pedra fundamental</h3><p>Em novembro, a ABEAA lança a pedra fundamental da sede própria, em terreno concedido pela Prefeitura.</p></div></li>
         <li><span class="yr">2008</span><div><h3>Sede própria</h3><p>Em agosto, é inaugurada a sede da ABEAA e Unidade Operacional do CREA-SP, com 300 m² de área construída.</p></div></li>
-        <li><span class="yr">2025</span><div><h3>Ciclo de palestras com o Confea</h3><p>Projeto de ciclo de palestras da ABEAA é selecionado no Edital de Patrocínio nº 1/2025 do Confea. <span class="pend">nome oficial a confirmar</span></p></div></li>
+        <li><span class="yr">2025</span><div><h3>Seminário técnico com o Confea</h3><p>O Seminário Técnico “Inovação, Tecnologia, Inteligência Artificial, Empreendedorismo e Desenvolvimento Sustentável nas Engenharias”, da ABEAA, é selecionado no Edital de Patrocínio nº 1/2025 do Confea.</p></div></li>
         <li><span class="yr">2025</span><div><h3>Estatuto reformulado</h3><p>Em 2 de dezembro, a 319ª Assembleia Geral Extraordinária aprova por unanimidade o novo estatuto, registrado em cartório em maio de 2026.</p></div></li>
-        <li><span class="yr">2026</span><div><h3>Engenharia sem Fronteiras</h3><p>Estreia em 28 de maio a série Engenharia sem Fronteiras, com 6 episódios ao vivo no YouTube sobre mercado, empreendedorismo e tecnologia na engenharia. <span class="pend">papel da ABEAA a confirmar</span></p></div></li>
         <li><span class="yr">2026</span><div><h3>Articulação regional</h3><p>A ABEAA segue presente na articulação regional da UNARO.</p></div></li>
       </ol>
     </div>
@@ -460,6 +552,7 @@ a.item{color:inherit;text-decoration:none}
         <article class="item feature"><span class="tag">ABEAA e UNARO</span><h3>Onde nasceu a união regional</h3><p>A UNARO, União das Associações das Regiões Oeste, foi fundada em 9 de maio de 2001, na sede da ABEAA. O CREA-SP registra a UNARO como iniciativa pioneira.</p><p>A ABEAA, que sediou a fundação da UNARO em 2001, segue presente na articulação regional: o atual presidente da associação integra a coordenação da UNARO (2026).</p></article>
         <article class="item"><span class="tag">Representação regional e estadual</span><h3>Presença no IPEEA</h3><p>Por meio da UNARO, a região tem assento no <a href="https://www.ipeea.com.br" target="_blank" rel="noopener">IPEEA</a> (Instituto Paulista de Entidades de Engenharia e Agronomia), com representante ligado à ABEAA.</p></article>
       </div>
+      <article class="item feature"><span class="tag">Novo no estatuto de 2025</span><h3>Diretoria da Mulher</h3><p>A partir da gestão 2027–2029, a Diretoria Executiva passa a ter a Diretoria da Mulher. Pelo art. 32 do estatuto, cabe a ela promover e garantir os direitos da mulher, combater a violência contra a mulher, reduzir a desigualdade de gênero e promover a participação ativa das mulheres em espaços de poder e decisão.</p></article>
       <div class="split" style="gap:28px">
         <p class="lead">O curso de Patologias e Impermeabilização de novembro de 2026 é realizado pela ABEAA em parceria com o CREA-SP, com apoio do Confea e da Mútua.</p>
         <div class="stack" style="gap:20px">
@@ -469,7 +562,7 @@ a.item{color:inherit;text-decoration:none}
             <a href="https://www.confea.org.br" target="_blank" rel="noopener"><img src="img/logo-confea.png" alt="Confea" width="599" height="140" loading="lazy"></a>
             <a href="https://www.mutua.com.br" target="_blank" rel="noopener"><img src="img/logo-mutua.png" alt="Mútua" width="525" height="140" loading="lazy"></a>
           </div>
-          <p class="form-note">Marcas do Sistema Confea/Crea e da Mútua, conforme o manual de identidade visual do Confea. <span class="pend">autorização de uso a confirmar</span></p>
+          <p class="form-note">Marcas do Sistema Confea/Crea e da Mútua, conforme o manual de identidade visual do Confea.</p>
         </div>
         <ul class="ents">
           <li><a href="https://www.creasp.org.br" target="_blank" rel="noopener">CREA-SP</a><small>Conselho Regional</small></li>
@@ -549,7 +642,7 @@ a.item{color:inherit;text-decoration:none}
       <div class="stack">
         <p class="eyebrow">Diretoria · gestão 2024–2026</p>
         <h2>Quem conduz a associação</h2>
-        <p class="lead">A nova gestão toma posse em 1º de janeiro de 2027, com a composição prevista no estatuto: Diretoria Executiva de 8 cargos e Conselho Consultivo e Deliberativo de 4 membros e 1 suplente. Esta lista será atualizada após a eleição. Os cargos não são remunerados.</p>
+        <p class="lead">A nova gestão toma posse em 1º de janeiro de 2027, com a composição prevista no estatuto: Diretoria Executiva de 8 cargos (Presidente, Vice-Presidente, Diretor Secretário, Diretor Financeiro, Diretor de Eventos, Diretor de Patrimônio, Diretoria da Mulher e Suplente de Diretoria) e Conselho Consultivo e Deliberativo de 4 membros e 1 suplente. Esta lista será atualizada após a eleição. Os cargos não são remunerados.</p>
       </div>
       <div class="board">
         <div><span>Presidente</span><b>Ricardo de Souza Terassovich</b><small>Engenheiro Eletricista</small></div>
@@ -581,6 +674,22 @@ a.item{color:inherit;text-decoration:none}
   <section>
     <div class="wrap course">
       <div class="stack" style="min-width:0">
+        <p class="eyebrow">Outubro de 2026 · na sede da ABEAA</p>
+        <h2>Reunião da UNARO na ABEAA</h2>
+        <p class="lead">A ABEAA recebe a reunião da UNARO, União das Associações das Regiões Oeste, fundada em 2001 na própria sede da associação.</p>
+        <dl class="facts">
+          <div><dt>Data</dt><dd>26 de outubro de 2026, segunda-feira</dd></div>
+          <div><dt>Horário</dt><dd>19h</dd></div>
+          <div><dt>Local</dt><dd>Sede da ABEAA · Rua Santa Edwiges, 118, Jardim Rubi, Santana de Parnaíba/SP</dd></div>
+          <div><dt>Participação</dt><dd>Associações da UNARO <span class="pend">aberta a associados? a confirmar</span></dd></div>
+        </dl>
+      </div>
+      <img class="course-flyer" src="img/convite-unaro-2026-10.jpg" alt="Convite para a reunião da UNARO na sede da ABEAA, em 26 de outubro de 2026, às 19h" width="960" height="1200" loading="lazy">
+    </div>
+  </section>
+  <section>
+    <div class="wrap course">
+      <div class="stack" style="min-width:0">
         <p class="eyebrow">Novembro de 2026 · online</p>
         <h2>Patologias e Impermeabilização na Construção Civil</h2>
         <p class="lead">Curso gratuito, com certificado. A abertura apresenta vídeos institucionais do CREA-SP.</p>
@@ -602,16 +711,92 @@ a.item{color:inherit;text-decoration:none}
   </section>
   <section class="band-surface">
     <h2 class="sr-only">Próximas atividades e encontros</h2>
-    <div class="wrap grid-2">
+    <div class="wrap">
       <article class="item"><span class="tag">Cursos e palestras</span><h3>Próximas atividades</h3><p>Novos cursos e eventos serão publicados aqui assim que confirmados pela diretoria.</p></article>
-      <article class="item"><span class="tag">Reuniões e encontros</span><h3>Reunião mensal da Diretoria</h3><p>Toda segunda terça-feira do mês, às 19h, na sede. Os associados podem participar.</p></article>
+    </div>
+  </section>
+  <section id="calendario"><div class="wrap stack" style="gap:24px">
+    <div class="stack"><p class="eyebrow">Calendário do estatuto</p><h2>Assembleias, eleições e reuniões</h2></div>
+    <ul class="cal">
+      <li><b>Toda 2ª terça-feira, 19h</b><div><p><strong>Reunião mensal da Diretoria</strong>, na sede. Os associados podem participar.</p></div></li>
+      <li><b>Novembro de 2026</b><div><p><strong>Assembleia Geral Ordinária de eleição</strong> da Diretoria Executiva e do Conselho, a cada 3 anos (art. 46). Data e edital: <span class="pend">a confirmar</span></p></div></li>
+      <li><b>1º de janeiro de 2027</b><div><p><strong>Posse da nova gestão</strong> 2027–2029 (art. 48).</p></div></li>
+      <li><b>Fevereiro de 2027</b><div><p><strong>Assembleia Geral Ordinária de contas</strong>: aprovação das contas de 2026, do orçamento e do valor da anuidade, em até 30 dias úteis após o fim do ano social (art. 42). Data: <span class="pend">a confirmar</span></p></div></li>
+    </ul>
+    <p class="form-note">As assembleias são convocadas com pelo menos 7 dias de antecedência, por edital afixado na sede ou publicado em jornal (art. 44). O edital também fica disponível em <a href="#transparencia">Transparência</a>.</p>
+  </div></section>
+  <section id="realizadas">
+    <div class="wrap stack" style="gap:28px">
+      <div class="stack"><p class="eyebrow">Atividades realizadas</p><h2>O que a ABEAA promoveu</h2>
+      <p class="lead">Cursos, palestras e visitas técnicas já realizados, com as parcerias de cada um.</p></div>
+      <div class="sum"><div><b>5</b><span>cursos e palestras em 2026</span></div><div><b>1</b><span>visita técnica</span></div><div><b>1</b><span>divulgação institucional</span></div><div><b>—</b><span>participantes <span class="pend">a confirmar</span></span></div></div>
+      <div class="done-group">
+        <h3>2026</h3>
+        <ul class="done">
+          <li><img src="img/atividades/2026-08-nr12.jpg" alt="Cartaz do curso NR-12, Segurança do Trabalho em Máquinas e Equipamentos" loading="lazy" width="480" height="600"><div>
+            <span class="meta"><time datetime="2026-08-22">22/08/2026</time> · Curso presencial gratuito</span>
+            <h4>NR-12 – Segurança do Trabalho em Máquinas e Equipamentos</h4>
+            <p>Sede da ABEAA, das 8h às 17h, carga horária <span class="pend">a confirmar</span>. Instrutor: Eng. Leandro Ricardo Zanelato. Abertura com palestra institucional da Mútua-SP.</p>
+            <p class="partners">Patrocínio: Confea, CREA-SP e Mútua</p>
+          </div></li>
+          <li><img src="img/atividades/2026-07-eleicoes-sistema.jpg" alt="Arte da campanha Eleições 2026 do Sistema Confea/Crea e Mútua: Hoje é o dia" loading="lazy" width="480" height="480"><div>
+            <span class="meta"><time datetime="2026-07-03">03/07/2026</time> · Divulgação institucional</span>
+            <h4>Eleições 2026 do Sistema Confea/Crea e Mútua</h4>
+            <p>A ABEAA divulgou aos profissionais a eleição online, das 8h às 19h, em vote.confea.org.br, para presidente do Confea, presidentes dos Creas, conselheiros federais e diretores das Mútuas, com mandato de 2027 a 2029.</p>
+            <p class="partners">Realização: Confea, CREA-SP e Mútua</p>
+          </div></li>
+          <li><img src="img/atividades/2026-05-jardim-sensorial.jpg" alt="Jardim Sensorial – Trilha dos Sentidos, com caminhos de pedras, grama e cascalho no Parque Santana" loading="lazy" width="800" height="450"><div>
+            <span class="meta"><time datetime="2026-05-08">08/05/2026</time> · Visita técnica</span>
+            <h4>Visita técnica ao Jardim Sensorial – Trilha dos Sentidos</h4>
+            <p>Parque Municipal do Parque Santana, em Santana de Parnaíba, a convite do Comitê de Diversidade do CREA-SP, para conhecer soluções de acessibilidade e uso inclusivo.</p>
+            <p class="partners">Participação da ABEAA · Realização: Comitê de Diversidade do CREA-SP</p>
+            <p class="credit-small">Foto: Secom / Santana de Parnaíba</p>
+          </div></li>
+          <li><img src="img/atividades/2026-04-esgoto-pluviais.jpg" alt="Cartaz da palestra Patologias em Sistemas de Esgoto e Águas Pluviais" loading="lazy" width="480" height="600"><div>
+            <span class="meta"><time datetime="2026-04-16">16/04/2026</time> · Palestra online gratuita</span>
+            <h4>Patologias em Sistemas de Esgoto e Águas Pluviais</h4>
+            <p>Das 19h às 21h, 2 horas. Instrutor: Eng. Renato Luiz Moreira.</p>
+            <p class="partners">Apoio: CREA-SP</p>
+          </div></li>
+          <li><img src="img/atividades/2026-03-ia-engenharias.jpg" alt="Cartaz do curso Inteligência Artificial Aplicada às Engenharias" loading="lazy" width="480" height="600"><div>
+            <span class="meta"><time datetime="2026-03-30">30 e 31/03/2026</time> · Curso online gratuito</span>
+            <h4>Inteligência Artificial Aplicada às Engenharias</h4>
+            <p>Das 18h30 às 22h30, carga horária <span class="pend">a confirmar</span>. Instrutor: Eng. Carlos Alberto Torrichelle. Abertura com vídeos institucionais do CREA-SP.</p>
+            <p class="partners">Parceria: CREA-SP</p>
+          </div></li>
+          <li><img src="img/atividades/2026-03-agua-quente-fria.jpg" alt="Cartaz da palestra Patologias em Sistemas de Água Quente e Água Fria" loading="lazy" width="480" height="600"><div>
+            <span class="meta"><time datetime="2026-03-25">25/03/2026</time> · Palestra online gratuita</span>
+            <h4>Patologias em Sistemas de Água Quente e Água Fria</h4>
+            <p>Das 19h às 21h, 2 horas. Instrutor: Eng. Renato Luiz Moreira.</p>
+            <p class="partners">Apoio: CREA-SP</p>
+          </div></li>
+          <li><img src="img/atividades/2026-02-drones.jpg" alt="Cartaz do curso Utilização de Drones nas Engenharias" loading="lazy" width="480" height="600"><div>
+            <span class="meta"><time datetime="2026-02-28">28/02/2026</time> · Curso presencial gratuito</span>
+            <h4>Utilização de Drones nas Engenharias</h4>
+            <p>Auditório da ABEAA, das 8h às 17h, 8 horas. Instrutor: Eng. Kesley Luís Moraes. Abertura com palestra institucional da Mútua-SP.</p>
+            <p class="partners">Patrocínio: Confea, CREA-SP e Mútua</p>
+          </div></li>
+        </ul>
+      </div>
+      <div class="done-group">
+        <h3>2025</h3>
+        <ul class="done">
+          <li><img src="img/atividades/2025-10-tecnologias-construtivas.jpg" alt="Cartaz do curso Tecnologias Construtivas Sustentáveis" loading="lazy" width="480" height="600"><div>
+            <span class="meta"><time datetime="2025-10-27">27 e 28/10/2025</time> · Curso online</span>
+            <h4>Tecnologias Construtivas Sustentáveis</h4>
+            <p>Das 18h30 às 22h30, 8 horas. Palestrante: Eng. Civil Paulo Afonso dos Santos Júnior. Abertura com vídeos institucionais do CREA-SP.</p>
+            <p class="partners">Parceria: CREA-SP</p>
+          </div></li>
+        </ul>
+      </div>
+      <p class="form-note">Lista em construção a partir dos cartazes de divulgação. <span class="pend">demais atividades de 2025 e número de participantes a enviar pela secretaria</span></p>
     </div>
   </section>
   <section>
     <div class="wrap split">
       <div class="stack"><p class="eyebrow">Série no YouTube</p><h2>Engenharia sem Fronteiras</h2></div>
       <div class="prose">
-        <p>Série com 6 episódios ao vivo sobre mercado da engenharia, empreendedorismo e tecnologia. Estreou em 28 de maio de 2026. <span class="pend">papel da ABEAA a confirmar</span></p>
+        <p>A ABEAA recomenda a série, com 6 episódios ao vivo sobre mercado da engenharia, empreendedorismo e tecnologia. Estreou em 28 de maio de 2026.</p>
         <p><a class="more" href="https://www.youtube.com/live/oOu82Q4-2ik" target="_blank" rel="noopener">Assistir ao episódio 1 →</a></p>
       </div>
     </div>
@@ -628,7 +813,7 @@ a.item{color:inherit;text-decoration:none}
       </div>
       <div class="stack">
         <div class="price"><b>R$ 250</b><span>por ano</span></div>
-        <p class="lead">Contribuição anual. Forma de pagamento e documentos são informados no atendimento. <span class="pend">valor por categoria a confirmar</span></p>
+        <p class="lead">Contribuição anual do associado titular, paga via Pix. Os benefícios valem a partir da filiação, sem carência. <span class="pend">valor para empresas e isenção do universitário a confirmar</span></p>
       </div>
     </div>
   </section>
@@ -642,8 +827,8 @@ a.item{color:inherit;text-decoration:none}
         <article class="item"><span class="tag">Área de lazer</span><h3>Para confraternizar</h3><p>Churrasqueira, forno de pizza, forno a lenha, banheiro, mesas e cadeiras.</p></article>
         <article class="item"><span class="tag">Sala do profissional</span><h3>Apoio ao trabalho técnico</h3><p>Computador com AutoCAD, impressora e plotter.</p></article>
         <article class="item"><span class="tag">Plotagens</span><h3>5 plotagens P&amp;B por mês</h3><p>Gratuitas para associados contribuintes.</p></article>
-        <article class="item"><span class="tag">Capacitação</span><h3>Cursos, palestras e congressos</h3><p>Realizados na sede, com desconto em algumas atividades.</p></article>
-        <article class="item"><span class="tag">Convênios</span><h3>Convênios das entidades</h3><p>Pelo estatuto, o associado pode usar os convênios da ABEAA, do CREA-SP, do CAU/SP, do CRT, da UNARO e da Mútua. <span class="pend">a confirmar lista</span></p></article>
+        <article class="item"><span class="tag">Capacitação</span><h3>Cursos, palestras e congressos</h3><p>Presenciais, na sede, e online. Em 2026, todos foram gratuitos.</p></article>
+        <article class="item"><span class="tag">Convênios</span><h3>Descontos em educação</h3><p>Mackenzie: 25% na Educação Infantil, 20% no Ensino Fundamental (1º ao 9º ano) e 15% no Ensino Médio. UNIP: 10%. Colégio Chácara, em Santana de Parnaíba: 10%. <span class="pend">cursos da UNIP e dependentes a confirmar</span></p></article>
       </div>
     </div>
   </section>
@@ -659,6 +844,27 @@ a.item{color:inherit;text-decoration:none}
       <p class="form-note">O estatuto prevê ainda as categorias Fundador, Benemérito e Honorário, que não dependem de inscrição (art. 5º).</p>
     </div>
   </section>
+
+  <section id="direitos-deveres"><div class="wrap stack" style="gap:24px">
+    <div class="stack"><p class="eyebrow">Estatuto, arts. 11 a 13</p><h2>Direitos e deveres do associado</h2></div>
+    <div class="rd">
+      <div><h3>Direitos</h3><ul>
+        <li>Frequentar a sede e usar os espaços.</li>
+        <li>Participar de reuniões, excursões e congressos.</li>
+        <li>Usar os convênios da ABEAA, do CREA-SP, do CAU/SP, do CRT, da UNARO e da Mútua.</li>
+        <li><b>Associado titular:</b> participar das Assembleias Gerais, votar e ser votado, apresentar novos sócios e integrar comissões técnicas.</li>
+        <li><b>Associado titular:</b> pedir, por escrito ao Conselho Consultivo e Deliberativo, o apoio da ABEAA na defesa de seus direitos profissionais.</li>
+      </ul></div>
+      <div><h3>Deveres</h3><ul>
+        <li>Cumprir o estatuto, o regimento interno e as decisões da Diretoria, do Conselho e da Assembleia.</li>
+        <li>Contribuir para o desenvolvimento da ABEAA.</li>
+        <li>Manter a anuidade em dia.</li>
+        <li>Exercer com dedicação os cargos e comissões que assumir.</li>
+        <li>Zelar pelo bom nome e pelo patrimônio da ABEAA.</li>
+      </ul>
+      <p class="form-note" style="margin-top:12px">Para se desligar, basta protocolar o pedido na secretaria (art. 11, parágrafo único).</p></div>
+    </div>
+  </div></section>
 
   <section class="band-surface">
     <div class="wrap split">
@@ -722,7 +928,7 @@ a.item{color:inherit;text-decoration:none}
           <li><div><strong>A secretaria confere</strong><p>Disponibilidade e situação do associado.</p></div></li>
           <li><div><strong>Reserva confirmada</strong><p>Você recebe a confirmação pelo contato informado.</p></div></li>
         </ol>
-        <p class="form-note">Regras de uso, antecedência mínima e eventuais taxas dos espaços. <span class="pend">a confirmar</span></p>
+        <p class="form-note">Peça com pelo menos 15 dias de antecedência. Não há taxa: o espaço deve ser devolvido como foi recebido. <span class="pend">horários permitidos a confirmar</span></p>
       </div>
       <form data-form="Pedido de reserva" novalidate>
         <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px">
@@ -746,6 +952,7 @@ a.item{color:inherit;text-decoration:none}
         </div>
         <label for="rs-email">E-mail<input id="rs-email" name="E-mail" type="email" required autocomplete="email"></label>
         <label for="rs-obs">Finalidade / observações<textarea id="rs-obs" name="Observações" placeholder="Ex.: palestra para 40 pessoas, precisa de data show"></textarea></label>
+        <label class="check" for="rs-lgpd"><input id="rs-lgpd" type="checkbox" required>Autorizo a ABEAA a usar estes dados para responder ao meu pedido de reserva, conforme a <a href="#privacidade">Política de Privacidade</a>.</label>
         <button class="btn btn-blue" type="submit">Enviar pedido</button>
         <div class="sent" hidden></div>
       </form>
@@ -803,7 +1010,7 @@ a.item{color:inherit;text-decoration:none}
             <label for="vt-nome">Nome<input id="vt-nome" name="Nome" required autocomplete="name"></label>
             <label for="vt-contato">Contato para publicação<input id="vt-contato" name="Contato" required placeholder="E-mail ou telefone"></label>
           </div>
-          <label class="check" for="vt-lgpd"><input id="vt-lgpd" type="checkbox" required>Autorizo a publicação do meu nome e do contato informado na Vitrine Profissional.</label>
+          <label class="check" for="vt-lgpd"><input id="vt-lgpd" type="checkbox" required>Autorizo a publicação do meu nome e do contato informado na Vitrine Profissional, conforme a <a href="#privacidade">Política de Privacidade</a>.</label>
           <button class="btn btn-blue" type="submit">Enviar para análise</button>
           <div class="sent" hidden></div>
         </form>
@@ -823,23 +1030,107 @@ a.item{color:inherit;text-decoration:none}
   </section>
   <div class="ruler" aria-hidden="true"></div>
   <section>
-    <div class="wrap split">
-      <div class="stack"><p class="eyebrow">ABEAA</p><h2>Notícias da associação</h2></div>
-      <div class="stack">
-        <p class="lead">As notícias da ABEAA serão publicadas aqui pela diretoria. Quem publica e com que frequência: <span class="pend">a confirmar</span></p>
+    <div class="wrap stack" style="gap:32px">
+      <div class="stack"><p class="eyebrow">Destaques do mês</p><h2>Notícias selecionadas pela ABEAA</h2><p class="lead">Notícias da associação e assuntos de interesse dos profissionais, com resumo e link para a fonte original.</p></div>
+      <div class="hl-groups" id="destaques">
+<!--DESTAQUES-->
+      <div class="hl-group hl-focus">
+        <div class="hl-head"><h3>Em foco</h3></div>
+        <ul class="highlights">
+          <li><div>
+            <span class="meta">Senado Federal · <time datetime="2026-10-06">06/10/2026</time></span>
+            <h4><a href="https://www12.senado.leg.br/ecidadania/visualizacaomateria?id=175780" target="_blank" rel="noopener">Piso salarial: PL 5.346/2026 está em consulta pública no Senado</a></h4>
+            <p>O Projeto de Lei 5.346/2026 atualiza a Lei 4.950-A/1966 e propõe um piso nacional de R$ 13.736 para jornada de 8 horas, a partir de 2027, com correção anual pelo INPC, para profissionais de Engenharia, Agronomia, Arquitetura, Química e Veterinária. O texto está em consulta pública no portal e-Cidadania do Senado, onde qualquer cidadão pode votar e registrar sua opinião.</p>
+          </div></li>
+        </ul>
+      </div>
+      <div class="hl-group">
+        <div class="hl-head"><h3><span class="hl-logo seal"><img src="img/logo.png" alt=""></span>ABEAA</h3></div>
+        <ul class="highlights">
+          <li class="has-photo"><img src="img/destaques/sefisc-2026-grupo.jpg" alt="Inspetores da ABEAA e representantes de associações da região em frente ao painel do 23º Seminário Estadual de Fiscalização, em Itupeva" loading="lazy"><div>
+            <span class="meta">ABEAA · <time datetime="2026-09-28">28/09/2026</time></span>
+            <h4><a href="https://www.creasp.org.br/noticia/sefisc-apresenta-novas-perspectivas-para-fiscalizacao/" target="_blank" rel="noopener">ABEAA participa do 23º Seminário Estadual de Fiscalização do CREA-SP</a></h4>
+            <p>Inspetores da ABEAA participaram em 28 de setembro do 23º Seminário Estadual de Fiscalização (SEFISC), realizado pelo CREA-SP no White Pavilion, em Itupeva, representando a região ao lado de outras associações. O encontro apresentou a Plataforma Nacional de Fiscalização, integrada à ART e com monitoramento por satélite, e a CreaIA, ferramenta de inteligência artificial para os processos administrativos. Também foram debatidos a valorização profissional e o salário mínimo profissional.</p>
+          </div></li>
+          <li class="has-photo"><img src="img/destaques/ccegem-2026-marcos-muro.jpg" alt="Geólogo Marcos Domingues Muro no plenário do Confea, em Brasília" loading="lazy"><div>
+            <span class="meta">ABEAA · <time datetime="2026-09-28">28/09/2026</time></span>
+            <h4><a href="https://creapa.org.br/crea-pa-participa-da-3a-reuniao-ordinaria-da-coordenadoria-de-camaras-especializadas-de-geologia-e-engenharia-de-minas-em-brasilia/" target="_blank" rel="noopener">Diretor da ABEAA participa de reunião nacional de Geologia e Minas no Confea</a></h4>
+            <p>O geólogo Marcos Domingues Muro, diretor secretário da ABEAA e coordenador adjunto da Coordenadoria de Câmaras Especializadas de Geologia e Engenharia de Minas (CCEGEM) em 2026, participou da 3ª reunião ordinária da coordenadoria, de 28 a 30 de setembro, na sede do Confea, em Brasília. Na pauta, o diagnóstico da fiscalização do setor mineral e os manuais padronizados para mineração, barragens e águas subterrâneas.</p>
+          </div></li>
+        </ul>
+      </div>
+      <div class="hl-group">
+        <div class="hl-head"><h3><span class="hl-logo"><img src="img/logo-crea-sp.png" alt="CREA-SP"></span></h3><a class="more" href="https://www.creasp.org.br/noticias/" target="_blank" rel="noopener">Todas as notícias do CREA-SP →</a></div>
+        <ul class="highlights">
+          <li><div>
+            <span class="meta">CREA-SP · <time datetime="2026-10-06">06/10/2026</time></span>
+            <h4><a href="https://www.creasp.org.br/noticia/soea-o-que-esperar-da-edicao-de-2026/" target="_blank" rel="noopener">SOEA 2026 acontece de 13 a 16 de outubro em Aracaju</a></h4>
+            <p>A 81ª Semana Oficial da Engenharia e da Agronomia reúne profissionais de todo o país em Aracaju (SE), com o tema &quot;Inovação e Engenharia para Desenvolver o Brasil&quot;. O CREA-SP preparou um guia sobre o que esperar desta edição.</p>
+          </div></li>
+          <li><div>
+            <span class="meta">CREA-SP · <time datetime="2026-10-02">02/10/2026</time></span>
+            <h4><a href="https://www.creasp.org.br/noticia/engenharia-e-sustentabilidade-garantem-eficiencia-ao-maior-complexo-portuario-do-hemisferio-sul/" target="_blank" rel="noopener">Engenharia e sustentabilidade no Porto de Santos</a></h4>
+            <p>Reportagem do CREA-SP mostra o trabalho de engenharia por trás do maior complexo portuário do Hemisfério Sul, com dragagem contínua e manejo sustentável de sedimentos para receber navios cada vez maiores.</p>
+          </div></li>
+          <li><div>
+            <span class="meta">CREA-SP · <time datetime="2026-10-01">01/10/2026</time></span>
+            <h4><a href="https://www.creasp.org.br/noticia/projeto-estrutural-e-desenvolvimento-de-carreira-sao-destaques-no-crea-sp-capacita-de-outubro/" target="_blank" rel="noopener">Workshop gratuito de projeto estrutural e carreira no Crea-SP Capacita</a></h4>
+            <p>Em 22 de outubro, das 19h às 21h30, o Crea-SP Capacita promove um workshop sobre projeto estrutural, da teoria à prática, com orientações de carreira. O evento é gratuito e híbrido: presencial na sede Angélica, em São Paulo, e com transmissão pela internet. Inscrições pelo Sympla ou pela plataforma do Crea-SP Capacita.</p>
+          </div></li>
+        </ul>
+      </div>
+      <div class="hl-group">
+        <div class="hl-head"><h3><span class="hl-logo"><img src="img/logo-confea.png" alt="Confea"></span></h3><a class="more" href="https://www.confea.org.br/noticias" target="_blank" rel="noopener">Todas as notícias do Confea →</a></div>
+        <ul class="highlights">
+          <li><div>
+            <span class="meta">Confea · <time datetime="2026-10-05">05/10/2026</time></span>
+            <h4><a href="https://www.confea.org.br/confea-define-medidas-de-protecao-para-mulheres-em-situacao-de-violencia" target="_blank" rel="noopener">Confea define medidas de proteção para mulheres em situação de violência</a></h4>
+            <p>Portaria do Confea estabelece atendimento reservado, proteção de dados, medidas imediatas de segurança e apoio à campanha Sinal Vermelho para mulheres em situação de violência no âmbito do Conselho.</p>
+          </div></li>
+          <li><div>
+            <span class="meta">Confea · <time datetime="2026-10-01">01/10/2026</time></span>
+            <h4><a href="https://www.confea.org.br/da-renovacao-natural-ao-h2o2-profissionais-indicam-cuidados-com-o-ar" target="_blank" rel="noopener">Qualidade do ar em ambientes climatizados: o papel dos profissionais</a></h4>
+            <p>O Confea reúne orientações de profissionais sobre a qualidade do ar interior, da renovação natural do ar às tecnologias de purificação, e destaca o Plano de Manutenção, Operação e Controle (PMOC) dos sistemas de climatização, exigido pela Lei 13.589/2018.</p>
+          </div></li>
+          <li><div>
+            <span class="meta">Confea · <time datetime="2026-09-29">29/09/2026</time></span>
+            <h4><a href="https://www.confea.org.br/adaptabrasil-lanca-painel-cidades-para-consulta-de-risco-climatico" target="_blank" rel="noopener">Painel Cidades, do AdaptaBrasil, permite consultar o risco climático de cada município</a></h4>
+            <p>Ferramenta gratuita do Ministério da Ciência, Tecnologia e Inovação reúne indicadores de ameaças climáticas, exposição e vulnerabilidade dos 5.570 municípios brasileiros. Útil para planejamento urbano e projetos de infraestrutura.</p>
+          </div></li>
+        </ul>
+      </div>
+      <div class="hl-group">
+        <div class="hl-head"><h3><span class="hl-logo"><img src="img/logo-mutua.png" alt="Mútua"></span></h3><a class="more" href="https://www.mutua.com.br/category/noticias-mutua/" target="_blank" rel="noopener">Todas as notícias da Mútua →</a></div>
+        <ul class="highlights">
+          <li><div>
+            <span class="meta">Mútua · <time datetime="2026-10-05">05/10/2026</time></span>
+            <h4><a href="https://www.mutua.com.br/mutua-oferece-seguro-e-assistencia-viagem-para-associados-e-participantes-da-81a-soea/" target="_blank" rel="noopener">Mútua oferece seguros aos participantes da 81ª SOEA</a></h4>
+            <p>De 12 a 17 de outubro, a Mútua disponibiliza dois seguros na 81ª SOEA: o Seguro Evento, em parceria com o Confea, para todos os inscritos, com cobertura para morte e invalidez acidentais e despesas médicas e odontológicas de até R$ 3 mil; e o Seguro Assistência Viagem, para os associados adimplentes da Mútua. Os inscritos recebem as orientações por e-mail.</p>
+          </div></li>
+          <li><div>
+            <span class="meta">Mútua · <time datetime="2026-09-23">23/09/2026</time></span>
+            <h4><a href="https://www.mutua.com.br/diretoria-executiva-apresenta-novidades-no-site-da-mutua-durante-plenaria-do-confea/" target="_blank" rel="noopener">Site da Mútua terá páginas próprias para as regionais</a></h4>
+            <p>Na Plenária do Confea, a diretoria executiva da Mútua apresentou o relatório de atividades e novidades do site, como o MWS Regionais: cada regional passa a ter sua própria página dentro do site da Mútua, com notícias e eventos.</p>
+          </div></li>
+          <li><div>
+            <span class="meta">Mútua · <time datetime="2026-09-18">18/09/2026</time></span>
+            <h4><a href="https://www.mutua.com.br/palestra-da-mutua-destaca-a-importancia-da-identificacao-dos-riscos-psicossociais-no-ambiente-de-trabalho/" target="_blank" rel="noopener">Palestra da Mútua destaca a identificação dos riscos psicossociais no trabalho</a></h4>
+            <p>Em palestra na sede, com participação online das regionais e de associados, a Mútua tratou da campanha Setembro Amarelo e da avaliação dos riscos psicossociais no ambiente de trabalho, prevista na NR-1.</p>
+          </div></li>
+        </ul>
+      </div>
+<!--/DESTAQUES-->
       </div>
     </div>
   </section>
-  <section class="band-surface">
-    <div class="wrap stack" style="gap:28px">
-      <div class="stack"><p class="eyebrow">Fontes oficiais</p><h2>CREA-SP, Confea e Mútua</h2><p class="lead">Os títulos mais recentes de cada entidade, com data e link para ler no site oficial.</p></div>
-      <ul class="news-list" id="feed-list" hidden></ul>
+  <section class="band-surface" id="indicadores">
+    <div class="wrap stack" style="gap:24px">
+      <div class="stack"><p class="eyebrow">Indicadores</p><h2>Custos da construção</h2><p class="lead">Índices usados em orçamentos e reajustes de contratos, sempre atualizados nas fontes oficiais.</p></div>
       <div class="grid-3">
-        <a class="item" href="https://www.creasp.org.br/noticias/" target="_blank" rel="noopener"><span class="tag">CREA-SP</span><h3>Notícias do CREA-SP</h3><p>Abrir no site oficial →</p></a>
-        <a class="item" href="https://www.confea.org.br/noticias" target="_blank" rel="noopener"><span class="tag">Confea</span><h3>Notícias do Confea</h3><p>Abrir no site oficial →</p></a>
-        <a class="item" href="https://www.mutua.com.br" target="_blank" rel="noopener"><span class="tag">Mútua</span><h3>Site da Mútua</h3><p>Abrir no site oficial →</p></a>
+        <a class="item" href="https://sindusconsp.com.br/cub/" target="_blank" rel="noopener"><span class="tag">Sinduscon-SP</span><h3>CUB/SP</h3><p>Custo Unitário Básico da construção no Estado de São Paulo, por m², publicado todo mês.</p><p class="more">Consultar →</p></a>
+        <a class="item" href="https://portalibre.fgv.br/" target="_blank" rel="noopener"><span class="tag">FGV IBRE</span><h3>INCC</h3><p>Índice Nacional de Custo da Construção, usado para reajustar contratos de obras e imóveis na planta.</p><p class="more">Consultar →</p></a>
+        <a class="item" href="https://www.ibge.gov.br/estatisticas/economicas/precos-e-custos/9270-sistema-nacional-de-pesquisa-de-custos-e-indices-da-construcao-civil.html" target="_blank" rel="noopener"><span class="tag">IBGE e Caixa</span><h3>SINAPI</h3><p>Custos e índices da construção civil por estado, referência para orçamentos de obras públicas.</p><p class="more">Consultar →</p></a>
       </div>
-      <p class="form-note">A lista automática (atualizada uma vez por dia) entra na versão publicada. <span class="pend">em construção</span></p>
     </div>
   </section>
 </div>
@@ -850,21 +1141,21 @@ a.item{color:inherit;text-decoration:none}
     <div class="wrap stack">
       <p class="eyebrow">Transparência</p>
       <h1>Documentos e parcerias da associação</h1>
-      <p class="lead">Estatuto, atas, relatórios, prestação de contas e parcerias com a administração pública, organizados por tipo e ano.</p>
+      <p class="lead">Estatuto, documentos para os associados e as parcerias da ABEAA com a administração pública.</p>
     </div>
   </section>
   <div class="ruler" aria-hidden="true"></div>
   <section>
     <div class="wrap stack" style="gap:24px">
       <h2 class="sr-only">Documentos da associação</h2>
-      <p class="lead">Pelo art. 56 do estatuto, a ABEAA mantém disponíveis os documentos abaixo. Eles serão publicados após seleção e aprovação da diretoria. <span class="pend">a confirmar</span></p>
-      <div class="grid-3">
-        <article class="item"><span class="tag">Institucional</span><h3>Estatuto</h3><p>Versão reformulada, aprovada em 02/12/2025 e registrada em maio de 2026. <span class="pend">em preparação</span></p></article>
-        <article class="item"><span class="tag">Institucional</span><h3>Regulamentos internos</h3><p>Em preparação.</p></article>
-        <article class="item"><span class="tag">Assembleias</span><h3>Editais de convocação</h3><p>Em preparação.</p></article>
-        <article class="item"><span class="tag">Assembleias e reuniões</span><h3>Atas</h3><p>Em preparação.</p></article>
-        <article class="item"><span class="tag">Prestação de contas</span><h3>Relatórios anuais</h3><p>Em preparação.</p></article>
-        <article class="item"><span class="tag">Prestação de contas</span><h3>Demonstrações financeiras</h3><p>Em preparação.</p></article>
+      <p class="lead">O estatuto (art. 56) prevê que a ABEAA mantenha estes documentos no site ou em meio acessível aos associados.</p>
+      <div class="grid-2">
+        <article class="item"><span class="tag">Institucional</span><h3>Estatuto</h3><p>Versão reformulada, aprovada em 02/12/2025 e registrada em maio de 2026. <span class="pend">arquivo para download em preparação</span></p></article>
+        <article class="item"><span class="tag">Para associados</span><h3>Atas, relatórios e demonstrações financeiras</h3><p>Atas de assembleias e reuniões, relatórios anuais, demonstrações financeiras, editais de convocação e regulamentos internos serão disponibilizados aos associados. <span class="pend">forma de acesso: decisão da diretoria</span></p></article>
+      </div>
+      <div class="grid-2" style="margin-top:4px">
+        <article class="item"><span class="tag">Prestação de contas · art. 59</span><h3>Relatório de atividades 2026</h3><p>Cursos, palestras, visitas técnicas e divulgações do ano, com datas, parcerias e participantes. Publicado em janeiro de 2027, junto com a assembleia de contas.</p><a class="more" href="#realizadas">Ver atividades realizadas →</a></article>
+        <article class="item"><span class="tag">Assembleias · art. 44</span><h3>Editais de convocação</h3><p>Edital da Assembleia Geral Ordinária de eleição, novembro de 2026. <span class="pend">a publicar</span></p></article>
       </div>
       <p>Os cargos da Diretoria e do Conselho não são remunerados (art. 20). Gestão atual: <a href="#diretoria">ver a diretoria</a>.</p>
     </div>
@@ -885,9 +1176,26 @@ a.item{color:inherit;text-decoration:none}
           </ul>
         </div>
       </div>
-      <div class="grid-2">
-        <article class="item"><span class="tag">Confea · 2025</span><h3>Edital de Patrocínio nº 1/2025</h3><p>Ciclo de palestras. Processo SEI 00.001381/2025-19. Valores e prestação de contas: <span class="pend">a confirmar</span></p></article>
-        <article class="item"><span class="tag">CREA-SP · 2024</span><h3>Edital de Chamamento nº 001/2024</h3><p>Termo de Colaboração para Valorização Profissional. Assinatura, objeto e valores: <span class="pend">a confirmar</span></p></article>
+      <div class="stack" style="gap:20px">
+        <article class="item partner">
+          <span class="tag">CREA-SP · em execução</span>
+          <h3>Termo de Colaboração CREASP nº 98/2026 (TCV 2026/2027)</h3>
+          <dl class="facts">
+            <div><dt>Órgão parceiro</dt><dd>Conselho Regional de Engenharia e Agronomia do Estado de São Paulo (CREA-SP) <span class="pend">CNPJ a confirmar</span></dd></div>
+            <div><dt>Assinatura</dt><dd>18/04/2026</dd></div>
+            <div><dt>Vigência</dt><dd>01/05/2026 a 30/04/2027</dd></div>
+            <div><dt>Valores</dt><dd><span class="pend">valor total e valores liberados a confirmar</span></dd></div>
+            <div><dt>Prestação de contas</dt><dd>Parceria em execução. <span class="pend">datas de apresentação e análise a confirmar</span></dd></div>
+            <div><dt>Equipe paga com recursos da parceria</dt><dd>Assistente Administrativo: R$ 4.114,37 por mês</dd></div>
+          </dl>
+          <details><summary>Objeto da parceria</summary>
+            <p>Atender e orientar profissionais e empresas do Sistema Confea/Crea, estudantes da área tecnológica e a sociedade, com Ponto de Acesso à Informação; divulgar a legislação profissional e matérias técnicas, inclusive conteúdo produzido pelo CREA-SP no site e nas redes sociais da ABEAA; realizar cursos, palestras e outras ações de aperfeiçoamento e valorização profissional; e instalar e manter a Unidade de Atendimento do CREA-SP. Inclui ainda, no mínimo, duas palestras em escolas sobre o Sistema Confea/Crea/Mútua e as profissões da área tecnológica, e uma ação sobre segurança no trânsito.</p>
+          </details>
+        </article>
+        <div class="grid-2">
+          <article class="item"><span class="tag">CREA-SP · em prestação de contas</span><h3>Termo de Colaboração TCV 2025/2026</h3><p>Vigência de maio de 2025 a abril de 2026. <span class="pend">quadro de transparência a enviar pela secretaria</span></p></article>
+          <article class="item"><span class="tag">Confea · 2025</span><h3>Edital de Patrocínio nº 1/2025</h3><p>Seminário Técnico “Inovação, Tecnologia, Inteligência Artificial, Empreendedorismo e Desenvolvimento Sustentável nas Engenharias”. Processo SEI 00.001381/2025-19. <span class="pend">valores e prestação de contas a confirmar</span></p></article>
+        </div>
       </div>
       <p class="form-note">CNPJ da ABEAA: 65.697.641/0001-92</p>
     </div>
@@ -913,7 +1221,6 @@ a.item{color:inherit;text-decoration:none}
           <div><dt>E-mail</dt><dd><span id="c-mail">abeaaaparnaiba@gmail.com</span><button class="copy" data-copy="c-mail" type="button">copiar</button></dd></div>
           <div><dt>Atendimento</dt><dd>Segunda a sexta, das 8h30 às 16h30</dd></div>
           <div><dt>Redes</dt><dd><a href="https://www.instagram.com/abeaasp" target="_blank" rel="noopener">Instagram @abeaasp</a> · <a href="https://www.facebook.com/abeaa.associacaobandeirante" target="_blank" rel="noopener">Facebook</a></dd></div>
-          <div><dt>WhatsApp</dt><dd><span class="pend">a confirmar</span></dd></div>
         </dl>
         <div><a class="btn btn-line" href="https://www.google.com/maps/search/?api=1&amp;query=Rua+Santa+Edwiges+118+Santana+de+Parna%C3%ADba+SP" target="_blank" rel="noopener">Abrir no Google Maps</a></div>
       </div>
@@ -934,7 +1241,7 @@ a.item{color:inherit;text-decoration:none}
           </select>
         </label>
         <label for="ct-msg">Mensagem<textarea id="ct-msg" name="Mensagem" required></textarea></label>
-        <label class="check" for="ct-lgpd"><input id="ct-lgpd" type="checkbox" required>Autorizo a ABEAA a usar estes dados para responder à minha mensagem.</label>
+        <label class="check" for="ct-lgpd"><input id="ct-lgpd" type="checkbox" required>Autorizo a ABEAA a usar estes dados para responder à minha mensagem, conforme a <a href="#privacidade">Política de Privacidade</a>.</label>
         <button class="btn btn-blue" type="submit">Enviar mensagem</button>
         <div class="sent" hidden></div>
       </form>
@@ -1017,19 +1324,6 @@ a.item{color:inherit;text-decoration:none}
     nav.classList.remove("open"); btn.setAttribute("aria-expanded","false");
     if(anchor) anchor.scrollIntoView(); else window.scrollTo(0,0);
   }
-  /* Atualizações: lê atualizacoes.json gerado pelo robô diário (versão publicada). Sem o arquivo, nada muda. */
-  (function(){
-    var ul=document.getElementById("feed-list"); if(!ul||!window.fetch) return;
-    fetch("/atualizacoes.json",{cache:"no-store"}).then(function(r){return r.ok?r.json():null;}).then(function(d){
-      if(!d||!d.itens||!d.itens.length) return;
-      d.itens.slice(0,15).forEach(function(n){
-        var li=document.createElement("li"), t=document.createElement("time"), dv=document.createElement("div"), sm=document.createElement("small"), a=document.createElement("a");
-        t.textContent=n.data||""; sm.textContent=n.fonte||""; a.href=n.link; a.target="_blank"; a.rel="noopener"; a.textContent=n.titulo;
-        dv.appendChild(sm); dv.appendChild(a); li.appendChild(t); li.appendChild(dv); ul.appendChild(li);
-      });
-      ul.hidden=false;
-    }).catch(function(){});
-  })();
   var ROUTER=true; /* prévia: uma página só, trocada pelo # ; o build de publicação gera páginas separadas */
   if(ROUTER){window.addEventListener("hashchange",show); show();}
   btn.addEventListener("click",function(){var o=nav.classList.toggle("open");btn.setAttribute("aria-expanded",o?"true":"false");});
@@ -1079,3 +1373,18 @@ a.item{color:inherit;text-decoration:none}
   });
 })();
 </script>
+<dialog class="lightbox" id="lightbox" aria-label="Foto ampliada"><button class="lb-close" type="button" aria-label="Fechar">×</button><figure><img alt=""><figcaption></figcaption></figure></dialog>
+<script>
+(function(){
+  var dlg=document.getElementById("lightbox"); if(!dlg||!dlg.showModal) return;
+  var big=dlg.querySelector("img"), cap=dlg.querySelector("figcaption");
+  document.querySelectorAll(".highlights li>img, .done li>img").forEach(function(im){
+    var w=document.createElement("button"); w.type="button"; w.className="zoom-wrap zoomable";
+    w.setAttribute("aria-label","Ampliar foto: "+(im.alt||"")); w.style.cssText="padding:0;border:0;background:none;width:100%";
+    im.parentNode.insertBefore(w,im); w.appendChild(im);
+    w.addEventListener("click",function(){big.src=im.currentSrc||im.src; big.alt=im.alt; var cr=w.closest("li"); cr=cr&&cr.querySelector(".credit-small"); cap.textContent=(im.alt||"")+(cr?" · "+cr.textContent.trim():""); dlg.showModal();});
+  });
+  dlg.addEventListener("click",function(){dlg.close();});
+})();
+</script>
+
