@@ -1,0 +1,84 @@
+# Painel de conteúdo (Pages CMS - https://app.pagescms.org)
+# Mostra um formulário para editar os "Destaques do mês" da página Atualizações.
+# Ao salvar, o GitHub publica o site sozinho em 1 a 2 minutos.
+media:
+  input: img/destaques
+  output: /img/destaques
+content:
+  - name: destaques
+    label: Destaques do mês
+    type: file
+    path: conteudo/destaques.json
+    format: json
+    list: true
+    fields:
+      - name: titulo
+        label: Título
+        type: string
+        required: true
+      - name: data
+        label: Data
+        type: date
+        required: true
+        options:
+          format: yyyy-MM-dd
+      - name: fonte
+        label: Fonte
+        type: select
+        required: true
+        options:
+          values: [ABEAA, CREA-SP, Confea, Mútua, Senado Federal, Câmara dos Deputados, Outra]
+        description: "Define em qual bloco a notícia aparece: ABEAA, CREA-SP, Confea, Mútua, Legislação (Senado e Câmara) ou Outras fontes."
+      - name: veiculo
+        label: Nome do jornal ou site (quando a fonte for "Outra")
+        type: string
+        required: false
+      - name: regiao
+        label: Notícia da região (Santana de Parnaíba e Pirapora do Bom Jesus)
+        description: "Marque para a notícia aparecer no bloco Profissão e região. Máximo de 1 ou 2 por mês."
+        type: boolean
+        required: false
+      - name: resumo
+        label: Resumo
+        description: "2 a 4 linhas, escritas pela ABEAA. Não copie o texto da notícia original."
+        type: text
+        required: true
+        options:
+          maxlength: 500
+      - name: vence_em
+        label: Vence em (opcional)
+        description: "Preencha só se a notícia tiver prazo (evento, inscrição, consulta). Três dias antes chega um aviso por e-mail e a data aparece no calendário de avisos."
+        type: date
+        options:
+          format: yyyy-MM-dd
+      - name: link
+        label: Link da notícia original
+        description: "Endereço completo, começando com https://"
+        type: string
+        required: true
+        pattern: "^https://"
+      - name: foto
+        label: Foto (opcional)
+        description: "Só publique fotos de pessoas com autorização delas."
+        type: image
+      - name: foto_descricao
+        label: Descrição da foto
+        description: "Uma frase dizendo o que aparece na foto (para quem usa leitor de tela)."
+        type: string
+      - name: foto_protegida
+        label: Foto da ABEAA (proteger)
+        description: "Marque só se a foto for da ABEAA ou de associados que autorizaram. O site coloca a marca d'água ABEAA e bloqueia o download."
+        type: boolean
+        required: false
+      - name: fixar
+        label: Em foco (fixar no topo)
+        description: "Marque para mostrar este destaque no topo da página Atualizações e na página inicial. Use para um ou dois assuntos de cada vez."
+        type: boolean
+      - name: chamada
+        label: Chamada curta para a página inicial (opcional)
+        description: "Uma frase. Só aparece quando o destaque está em foco."
+        type: string
+      - name: acao
+        label: Texto do botão (opcional)
+        description: "Ex.: Votar na consulta pública. Se ficar em branco, aparece Ler mais."
+        type: string
