@@ -1,0 +1,15 @@
+SITE DA ABEAA - arquivos para o GitHub (versão de teste para a diretoria, 14/10/2026)
+
+O que vai para o repositório (tudo o que está nesta pasta):
+  index.html ............ o site inteiro (textos, visual e formulários)
+  build.py .............. separa o site em páginas, aplica segurança e a marca d'água das fotos
+  baixar_fontes.py ...... baixa as letras do site na hora de publicar
+  avisos.py ............. avisa por e-mail quando um destaque está para vencer
+  conteudo/destaques.json  notícias do mês (editadas depois pelo painel)
+  img/ .................. imagens, logos, cartazes e bonecos ilustrativos
+  .github/workflows/ .... publicar.yml (publica o site) e avisos.yml (avisos diários)
+  .pages.yml ............ configuração do painel de notícias (ativar depois)
+  .gitignore ............ diz ao GitHub o que não guardar
+
+Enquanto a variável SITE_OFICIAL não for "sim", o site sai como VERSÃO DE TESTE
+(fora do Google). Os formulários ainda enviam para o e-mail de teste do Raphael.

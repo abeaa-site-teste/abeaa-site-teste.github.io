@@ -7,7 +7,7 @@ seção em uma página própria, com título, descrição e endereço amigável:
 Uso:  python3 build.py            -> versão de TESTE (não aparece no Google)
       python3 build.py --oficial  -> versão OFICIAL (só depois da aprovação)
 """
-import html, json, re, shutil, sys
+import base64, hashlib, html, json, re, shutil, sys
 from pathlib import Path
 
 SITE_URL = "https://www.abeaa.com.br"   # endereço definitivo
@@ -77,7 +77,17 @@ GRUPOS = [("ABEAA", ("ABEAA",), "img/logo.png", ""),
           ("CREA-SP", ("CREA-SP",), "img/logo-crea-sp.png", "https://www.creasp.org.br/noticias/"),
           ("Confea", ("Confea",), "img/logo-confea.png", "https://www.confea.org.br/noticias"),
           ("Mútua", ("Mútua",), "img/logo-mutua.png", "https://www.mutua.com.br/category/noticias-mutua/"),
+          ("Profissão e região", "regiao", "", ""),
           ("Legislação", ("Senado Federal", "Câmara dos Deputados"), "", ""), ("Outras fontes", (), "", "")]
+
+REDES = {
+    "CREA-SP": [("Instagram", "https://www.instagram.com/creasaopaulo/"), ("Facebook", "https://www.facebook.com/creasaopaulo"),
+                ("LinkedIn", "https://www.linkedin.com/company/creasaopaulo/"), ("YouTube", "https://www.youtube.com/tvcreasp"),
+                ("X", "https://x.com/creasp")],
+    "Confea": [("Instagram", "https://www.instagram.com/confea_"), ("Facebook", "https://www.facebook.com/Confea/"),
+               ("YouTube", "https://www.youtube.com/user/Confea10"), ("X", "https://twitter.com/confeacrea")],
+    "Mútua": [("Instagram", "https://www.instagram.com/mutua_sp/")],
+}
 
 EM_FOCO = []
 
@@ -109,11 +119,12 @@ def destaques_html():
         foto, cls = "", ""
         f = str(i.get("foto") or "").strip().lstrip("/")
         if f.startswith("img/") and (Path(__file__).parent / f).exists():
-            foto = f'<img src="{esc(f)}" alt="{esc(i.get("foto_descricao"))}" loading="lazy">'
+            prot = " data-protegida" if i.get("foto_protegida") is True else ""
+            foto = f'<img src="{esc(f)}" alt="{esc(i.get("foto_descricao"))}" loading="lazy"{prot}>'
             cls = ' class="has-photo"'
         elif f:
             print(f"AVISO: foto não encontrada: {f}")
-        fonte = esc(i.get("fonte")) or "ABEAA"
+        fonte = esc(i.get("veiculo")) or esc(i.get("fonte")) or "ABEAA"
         return (f'          <li{cls}>{foto}<div>\n'
                 f'            <span class="meta">{fonte}{" · " if quando else ""}{quando}</span>\n'
                 f'            <h4><a href="{esc(i.get("link"))}" target="_blank" rel="noopener">{esc(i.get("titulo"))}</a></h4>\n'
@@ -130,13 +141,19 @@ def destaques_html():
     EM_FOCO = fixos
     usados = set()
     for nome, fontes, logo, mais in GRUPOS:
-        if fontes:
-            grupo = [i for i in bons if str(i.get("fonte", "")).strip() in fontes]
+        if fontes == "regiao":
+            grupo = [i for i in bons if i.get("regiao") is True]
+        elif fontes:
+            grupo = [i for i in bons if str(i.get("fonte", "")).strip() in fontes and i.get("regiao") is not True]
         else:
             grupo = [i for i in bons if id(i) not in usados]
         usados.update(id(i) for i in grupo)
         if grupo:
-            if logo == "img/logo.png":
+            if fontes == "regiao":
+                titulo = ('<span class="hl-pin" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" '
+                          'stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">'
+                          '<path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span>' + nome)
+            elif logo == "img/logo.png":
                 titulo = f'<span class="hl-logo seal"><img src="{logo}" alt=""></span>{nome}'
             elif logo:
                 titulo = f'<span class="hl-logo"><img src="{logo}" alt="{nome}"></span>'
@@ -144,6 +161,13 @@ def destaques_html():
                 titulo = nome
             ver = (f'<a class="more" href="{mais}" target="_blank" rel="noopener">Todas as notícias {"da" if nome=="Mútua" else "do"} {nome} →</a>'
                    if mais else "")
+            if nome in REDES:
+                ver += ('<span class="hl-social" aria-label="Redes sociais do ' + nome + '">' + "".join(
+                    f'<a href="{u}" target="_blank" rel="noopener">{rede}</a>' for rede, u in REDES[nome]) + '</span>')
+            if fontes == "regiao":
+                ver = '<span class="hl-sub">Santana de Parnaíba e Pirapora do Bom Jesus</span>'
+                if any(i.get("exemplo") is True for i in grupo):
+                    ver += ' <span class="pend">exemplo para aprovação da diretoria</span>'
             blocos.append(f'      <div class="hl-group">\n        <div class="hl-head"><h3>{titulo}</h3>{ver}</div>\n        <ul class="highlights">\n'
                           + "\n".join(item(i) for i in grupo[:6]) + "\n        </ul>\n      </div>")
     return "\n".join(blocos)
@@ -203,6 +227,30 @@ def links(html, here=None):
     return html
 
 robots = "index, follow" if OFICIAL else "noindex, nofollow"
+
+# Fontes: se o baixar_fontes.py rodou (no GitHub), o site usa as fontes hospedadas nele mesmo
+# e o visitante não se conecta ao Google. Senão, continua com o Google Fonts.
+FONTES_LOCAIS = (root / "fonts" / "fontes.css").exists()
+_google = re.compile(r'<link rel="preconnect" href="https://fonts\.googleapis\.com">\s*'
+                     r'<link rel="preconnect" href="https://fonts\.gstatic\.com" crossorigin>\s*'
+                     r'<link rel="stylesheet" href="https://fonts\.googleapis\.com/css2[^"]*">')
+if FONTES_LOCAIS:
+    before, _n = _google.subn('<link rel="stylesheet" href="/fonts/fontes.css">', before)
+    if _n != 1:
+        print("AVISO: links do Google Fonts não encontrados; fontes locais não aplicadas")
+        FONTES_LOCAIS = False
+print("Fontes:", "hospedadas no site" if FONTES_LOCAIS else "Google Fonts")
+
+# Regras de segurança da página (Content-Security-Policy): só roda o código do próprio site
+# e os formulários só podem ser enviados ao FormSubmit.
+def politica(page):
+    hashes = " ".join("'sha256-" + base64.b64encode(hashlib.sha256(m.encode("utf-8")).digest()).decode() + "'"
+                      for m in re.findall(r"<script>(.*?)</script>", page, re.S))
+    fontes = "'self'" if FONTES_LOCAIS else "'self' https://fonts.gstatic.com"
+    estilos = "'self' 'unsafe-inline'" + ("" if FONTES_LOCAIS else " https://fonts.googleapis.com")
+    return (f"default-src 'self'; script-src 'self' {hashes}; style-src {estilos}; font-src {fontes}; "
+            "img-src 'self' data:; connect-src 'self' https://formsubmit.co; "
+            "form-action 'self' https://formsubmit.co; base-uri 'self'; object-src 'none'; upgrade-insecure-requests")
 dist = root / "dist"
 if dist.exists():
     shutil.rmtree(dist)
@@ -212,10 +260,15 @@ for r in routes:
     title, desc = PAGES[r]
     url = SITE_URL + path_of(r)
     ld = [ORG] + ([EVENT] if r in ("inicio", "agenda") else [])
+    view = views[r].replace('class="view"', 'class="view on"', 1)
+    page = links(before, r) + links(view, r) + links(after, r)
+    page = page.replace(f'<a href="{path_of(r)}"', f'<a aria-current="page" href="{path_of(r)}"')
     head = f"""<!doctype html>
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="{politica(page)}">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>{title}</title>
 <meta name="description" content="{desc}">
@@ -239,15 +292,94 @@ for r in routes:
 </head>
 <body>
 """
-    view = views[r].replace('class="view"', 'class="view on"', 1)
-    page = links(before, r) + links(view, r) + links(after, r)
-    page = page.replace(f'<a href="{path_of(r)}"', f'<a aria-current="page" href="{path_of(r)}"')
     out = dist / ("index.html" if r == "inicio" else f"{r}/index.html")
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(head + page + "\n</body>\n</html>\n", encoding="utf-8")
 
 (dist / "404.html").write_text((dist / "index.html").read_text(encoding="utf-8"), encoding="utf-8")
 shutil.copytree(root / "img", dist / "img", dirs_exist_ok=True)
+
+# Proteção das fotos da ABEAA: as imagens marcadas com data-protegida no index.html
+# saem no site com no máximo 1600 px e uma marca d'água discreta "ABEAA".
+# Os arquivos originais na pasta img/ não são alterados.
+def _proteger_fotos():
+    alvos = sorted(set(re.findall(r'<img[^>]*src="img/([^"]+)"[^>]*data-protegida', _idx.read_text(encoding="utf-8"))))
+    if not alvos:
+        return
+    try:
+        from PIL import Image, ImageDraw, ImageFont
+    except ImportError:
+        print("AVISO: Pillow não instalado; fotos publicadas sem marca d'água")
+        return
+    for rel in alvos:
+        orig, dest = root / "img" / rel, dist / "img" / rel
+        if not orig.exists():
+            print(f"AVISO: foto protegida não encontrada: img/{rel}")
+            continue
+        im = Image.open(orig).convert("RGB")
+        im.thumbnail((1600, 1600))
+        camada = Image.new("RGBA", im.size, (0, 0, 0, 0))
+        d = ImageDraw.Draw(camada)
+        tam = max(14, im.width // 28)
+        try:
+            fonte = ImageFont.load_default(size=tam)
+        except TypeError:
+            fonte = ImageFont.load_default()
+        texto = "ABEAA"
+        x0, y0, x1, y1 = d.textbbox((0, 0), texto, font=fonte)
+        m = max(8, im.width // 60)
+        x, y = im.width - (x1 - x0) - m, im.height - (y1 - y0) - m - y0
+        d.text((x + 1, y + 1), texto, font=fonte, fill=(0, 0, 0, 90))
+        d.text((x, y), texto, font=fonte, fill=(255, 255, 255, 150))
+        Image.alpha_composite(im.convert("RGBA"), camada).convert("RGB").save(dest, "JPEG", quality=85, optimize=True)
+    print(f"Fotos protegidas: {len(alvos)}")
+
+_proteger_fotos()
+
+# Calendário de avisos (avisos.ics): datas de vencimento dos destaques.
+# Assine o endereço /avisos.ics no Google Agenda para ver os vencimentos.
+def _avisos_ics():
+    import datetime as _dt
+    arq = root / "conteudo" / "destaques.json"
+    try:
+        itens = json.loads(arq.read_text(encoding="utf-8"))
+    except Exception:
+        itens = []
+    def esc(t):
+        return str(t).replace("\\", "\\\\").replace(",", "\\,").replace(";", "\\;").replace("\n", " ")
+    agora = _dt.datetime.now(_dt.timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+    linhas = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//ABEAA//Avisos do site//PT-BR",
+              "CALSCALE:GREGORIAN", "METHOD:PUBLISH", "X-WR-CALNAME:Avisos do site da ABEAA",
+              "X-WR-TIMEZONE:America/Sao_Paulo"]
+    for n, i in enumerate(itens if isinstance(itens, list) else []):
+        v = str(i.get("vence_em") or "").strip()[:10]
+        try:
+            dia = _dt.date.fromisoformat(v)
+        except ValueError:
+            if v:
+                print(f"AVISO: data de vencimento inválida: {v}")
+            continue
+        for antes, rotulo in ((3, "Vence em 3 dias"), (0, "Vence hoje")):
+            d0 = dia - _dt.timedelta(days=antes)
+            linhas += ["BEGIN:VEVENT", f"UID:abeaa-{hashlib.sha1(str(i.get('link', n)).encode()).hexdigest()[:12]}-{antes}@abeaa.com.br", f"DTSTAMP:{agora}",
+                       f"DTSTART;VALUE=DATE:{d0:%Y%m%d}", f"DTEND;VALUE=DATE:{d0 + _dt.timedelta(days=1):%Y%m%d}",
+                       f"SUMMARY:{esc(rotulo + ': ' + str(i.get('titulo', '')))}",
+                       f"DESCRIPTION:{esc('Destaque do site com vencimento em ' + dia.strftime('%d/%m/%Y') + '. Trocar ou manter conforme a regra da quinzena. ' + str(i.get('link', '')))}",
+                       "TRANSP:TRANSPARENT", "END:VEVENT"]
+    linhas.append("END:VCALENDAR")
+    def dobra(l):  # linhas longas quebradas a cada 74 bytes, como pede o padrão do calendário
+        b, partes = l.encode("utf-8"), []
+        while len(b) > 74:
+            corte = 74
+            while (b[corte] & 0xC0) == 0x80:
+                corte -= 1
+            partes.append(b[:corte].decode("utf-8")); b = b[corte:]
+        partes.append(b.decode("utf-8"))
+        return "\r\n ".join(partes)
+    (dist / "avisos.ics").write_text("\r\n".join(dobra(l) for l in linhas) + "\r\n", encoding="utf-8")
+_avisos_ics()
+if FONTES_LOCAIS:
+    shutil.copytree(root / "fonts", dist / "fonts", dirs_exist_ok=True)
 (dist / "robots.txt").write_text(
     f"User-agent: *\nAllow: /\nSitemap: {SITE_URL}/sitemap.xml\n" if OFICIAL else "User-agent: *\nDisallow: /\n",
     encoding="utf-8")

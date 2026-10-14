@@ -1,93 +1,152 @@
 [
- {
-  "titulo": "ABEAA participa do 23º Seminário Estadual de Fiscalização do CREA-SP",
-  "data": "2026-09-28",
-  "fonte": "ABEAA",
-  "resumo": "Inspetores da ABEAA participaram em 28 de setembro do 23º Seminário Estadual de Fiscalização (SEFISC), realizado pelo CREA-SP no White Pavilion, em Itupeva, representando a região ao lado de outras associações. O encontro apresentou a Plataforma Nacional de Fiscalização, integrada à ART e com monitoramento por satélite, e a CreaIA, ferramenta de inteligência artificial para os processos administrativos. Também foram debatidos a valorização profissional e o salário mínimo profissional.",
-  "link": "https://www.creasp.org.br/noticia/sefisc-apresenta-novas-perspectivas-para-fiscalizacao/",
-  "foto": "/img/destaques/sefisc-2026-grupo.jpg",
-  "foto_descricao": "Inspetores da ABEAA e representantes de associações da região em frente ao painel do 23º Seminário Estadual de Fiscalização, em Itupeva"
- },
- {
-  "titulo": "Diretor da ABEAA participa de reunião nacional de Geologia e Minas no Confea",
-  "data": "2026-09-28",
-  "fonte": "ABEAA",
-  "resumo": "O geólogo Marcos Domingues Muro, diretor secretário da ABEAA e coordenador adjunto da Coordenadoria de Câmaras Especializadas de Geologia e Engenharia de Minas (CCEGEM) em 2026, participou da 3ª reunião ordinária da coordenadoria, de 28 a 30 de setembro, na sede do Confea, em Brasília. Na pauta, o diagnóstico da fiscalização do setor mineral e os manuais padronizados para mineração, barragens e águas subterrâneas.",
-  "link": "https://creapa.org.br/crea-pa-participa-da-3a-reuniao-ordinaria-da-coordenadoria-de-camaras-especializadas-de-geologia-e-engenharia-de-minas-em-brasilia/",
-  "foto": "/img/destaques/ccegem-2026-marcos-muro.jpg",
-  "foto_descricao": "Geólogo Marcos Domingues Muro no plenário do Confea, em Brasília"
- },
- {
-  "titulo": "SOEA 2026 acontece de 13 a 16 de outubro em Aracaju",
-  "data": "2026-10-06",
-  "fonte": "CREA-SP",
-  "resumo": "A 81ª Semana Oficial da Engenharia e da Agronomia reúne profissionais de todo o país em Aracaju (SE), com o tema \"Inovação e Engenharia para Desenvolver o Brasil\". O CREA-SP preparou um guia sobre o que esperar desta edição.",
-  "link": "https://www.creasp.org.br/noticia/soea-o-que-esperar-da-edicao-de-2026/"
- },
- {
-  "titulo": "Workshop gratuito de projeto estrutural e carreira no Crea-SP Capacita",
-  "data": "2026-10-01",
-  "fonte": "CREA-SP",
-  "resumo": "Em 22 de outubro, das 19h às 21h30, o Crea-SP Capacita promove um workshop sobre projeto estrutural, da teoria à prática, com orientações de carreira. O evento é gratuito e híbrido: presencial na sede Angélica, em São Paulo, e com transmissão pela internet. Inscrições pelo Sympla ou pela plataforma do Crea-SP Capacita.",
-  "link": "https://www.creasp.org.br/noticia/projeto-estrutural-e-desenvolvimento-de-carreira-sao-destaques-no-crea-sp-capacita-de-outubro/"
- },
- {
-  "titulo": "Engenharia e sustentabilidade no Porto de Santos",
-  "data": "2026-10-02",
-  "fonte": "CREA-SP",
-  "resumo": "Reportagem do CREA-SP mostra o trabalho de engenharia por trás do maior complexo portuário do Hemisfério Sul, com dragagem contínua e manejo sustentável de sedimentos para receber navios cada vez maiores.",
-  "link": "https://www.creasp.org.br/noticia/engenharia-e-sustentabilidade-garantem-eficiencia-ao-maior-complexo-portuario-do-hemisferio-sul/"
- },
- {
-  "titulo": "Qualidade do ar em ambientes climatizados: o papel dos profissionais",
-  "data": "2026-10-01",
-  "fonte": "Confea",
-  "resumo": "O Confea reúne orientações de profissionais sobre a qualidade do ar interior, da renovação natural do ar às tecnologias de purificação, e destaca o Plano de Manutenção, Operação e Controle (PMOC) dos sistemas de climatização, exigido pela Lei 13.589/2018.",
-  "link": "https://www.confea.org.br/da-renovacao-natural-ao-h2o2-profissionais-indicam-cuidados-com-o-ar"
- },
- {
-  "titulo": "Painel Cidades, do AdaptaBrasil, permite consultar o risco climático de cada município",
-  "data": "2026-09-29",
-  "fonte": "Confea",
-  "resumo": "Ferramenta gratuita do Ministério da Ciência, Tecnologia e Inovação reúne indicadores de ameaças climáticas, exposição e vulnerabilidade dos 5.570 municípios brasileiros. Útil para planejamento urbano e projetos de infraestrutura.",
-  "link": "https://www.confea.org.br/adaptabrasil-lanca-painel-cidades-para-consulta-de-risco-climatico"
- },
- {
-  "titulo": "Confea define medidas de proteção para mulheres em situação de violência",
-  "data": "2026-10-05",
-  "fonte": "Confea",
-  "resumo": "Portaria do Confea estabelece atendimento reservado, proteção de dados, medidas imediatas de segurança e apoio à campanha Sinal Vermelho para mulheres em situação de violência no âmbito do Conselho.",
-  "link": "https://www.confea.org.br/confea-define-medidas-de-protecao-para-mulheres-em-situacao-de-violencia"
- },
- {
-  "titulo": "Piso salarial: PL 5.346/2026 está em consulta pública no Senado",
-  "data": "2026-10-06",
-  "fonte": "Senado Federal",
-  "resumo": "O Projeto de Lei 5.346/2026 atualiza a Lei 4.950-A/1966 e propõe um piso nacional de R$ 13.736 para jornada de 8 horas, a partir de 2027, com correção anual pelo INPC, para profissionais de Engenharia, Agronomia, Arquitetura, Química e Veterinária. O texto está em consulta pública no portal e-Cidadania do Senado, onde qualquer cidadão pode votar e registrar sua opinião.",
-  "link": "https://www12.senado.leg.br/ecidadania/visualizacaomateria?id=175780",
-  "chamada": "Projeto propõe piso de R$ 13.736 para jornada de 8 horas a partir de 2027. Participe da consulta pública do Senado.",
-  "acao": "Votar na consulta pública",
-  "fixar": true
- },
- {
-  "titulo": "Mútua oferece seguros aos participantes da 81ª SOEA",
-  "data": "2026-10-05",
-  "fonte": "Mútua",
-  "resumo": "De 12 a 17 de outubro, a Mútua disponibiliza dois seguros na 81ª SOEA: o Seguro Evento, em parceria com o Confea, para todos os inscritos, com cobertura para morte e invalidez acidentais e despesas médicas e odontológicas de até R$ 3 mil; e o Seguro Assistência Viagem, para os associados adimplentes da Mútua. Os inscritos recebem as orientações por e-mail.",
-  "link": "https://www.mutua.com.br/mutua-oferece-seguro-e-assistencia-viagem-para-associados-e-participantes-da-81a-soea/"
- },
- {
-  "titulo": "Site da Mútua terá páginas próprias para as regionais",
-  "data": "2026-09-23",
-  "fonte": "Mútua",
-  "resumo": "Na Plenária do Confea, a diretoria executiva da Mútua apresentou o relatório de atividades e novidades do site, como o MWS Regionais: cada regional passa a ter sua própria página dentro do site da Mútua, com notícias e eventos.",
-  "link": "https://www.mutua.com.br/diretoria-executiva-apresenta-novidades-no-site-da-mutua-durante-plenaria-do-confea/"
- },
- {
-  "titulo": "Palestra da Mútua destaca a identificação dos riscos psicossociais no trabalho",
-  "data": "2026-09-18",
-  "fonte": "Mútua",
-  "resumo": "Em palestra na sede, com participação online das regionais e de associados, a Mútua tratou da campanha Setembro Amarelo e da avaliação dos riscos psicossociais no ambiente de trabalho, prevista na NR-1.",
-  "link": "https://www.mutua.com.br/palestra-da-mutua-destaca-a-importancia-da-identificacao-dos-riscos-psicossociais-no-ambiente-de-trabalho/"
- }
+  {
+    "titulo": "ABEAA participa do 23º Seminário Estadual de Fiscalização do CREA-SP",
+    "data": "2026-09-28",
+    "fonte": "ABEAA",
+    "resumo": "Inspetores da ABEAA participaram, em 28 de setembro, do 23º Seminário Estadual de Fiscalização (SEFISC), realizado pelo CREA-SP no White Pavilion, em Itupeva, representando a região ao lado de outras associações. O encontro apresentou a Plataforma Nacional de Fiscalização, integrada à ART e com monitoramento por satélite, e a CreaIA, ferramenta de inteligência artificial para os processos administrativos. Também foram debatidos a valorização profissional e o salário mínimo profissional.",
+    "link": "https://www.creasp.org.br/noticia/sefisc-apresenta-novas-perspectivas-para-fiscalizacao/",
+    "foto": "/img/destaques/sefisc-2026-grupo.jpg",
+    "foto_descricao": "Inspetores da ABEAA e representantes de associações da região em frente ao painel do 23º Seminário Estadual de Fiscalização, em Itupeva",
+    "foto_protegida": true
+  },
+  {
+    "titulo": "Diretor da ABEAA participa de reunião nacional de Geologia e Minas no Confea",
+    "data": "2026-09-28",
+    "fonte": "ABEAA",
+    "resumo": "O geólogo Marcos Domingues Muro, diretor secretário da ABEAA e coordenador adjunto da Coordenadoria de Câmaras Especializadas de Geologia e Engenharia de Minas (CCEGEM) em 2026, participou da 3ª reunião ordinária da coordenadoria, de 28 a 30 de setembro, na sede do Confea, em Brasília. Na pauta, o diagnóstico da fiscalização do setor mineral e os manuais padronizados para mineração, barragens e águas subterrâneas.",
+    "link": "https://creapa.org.br/crea-pa-participa-da-3a-reuniao-ordinaria-da-coordenadoria-de-camaras-especializadas-de-geologia-e-engenharia-de-minas-em-brasilia/",
+    "foto": "/img/destaques/ccegem-2026-marcos-muro.jpg",
+    "foto_descricao": "Geólogo Marcos Domingues Muro no plenário do Confea, em Brasília",
+    "foto_protegida": true
+  },
+  {
+    "titulo": "Infraestrutura, inovação e sustentabilidade são destaques da 81ª SOEA",
+    "data": "2026-10-09",
+    "fonte": "CREA-SP",
+    "resumo": "A 81ª Semana Oficial da Engenharia e da Agronomia acontece de 13 a 16 de outubro, em Aracaju (SE), com transmissão ao vivo pelo YouTube. A programação reúne painéis, minicursos e palestras sobre infraestrutura, inovação, inteligência artificial e sustentabilidade, como o debate sobre um Índice Nacional de Infraestrutura e o painel sobre o túnel imerso Santos–Guarujá. O CREA-SP participa com estande no evento.",
+    "link": "https://www.creasp.org.br/noticia/infraestrutura-inovacao-e-sustentabilidade-sao-destaques-da-81a-soea/",
+    "vence_em": "2026-10-16"
+  },
+  {
+    "titulo": "Workshop gratuito de projeto estrutural e carreira no Crea-SP Capacita",
+    "data": "2026-10-01",
+    "fonte": "CREA-SP",
+    "resumo": "Em 22 de outubro, das 19h às 21h30, o Crea-SP Capacita promove um workshop sobre projeto estrutural, da teoria à prática, com orientações de carreira. O evento é gratuito e híbrido: presencial na sede Angélica, em São Paulo, e com transmissão pela internet. Inscrições pelo Sympla ou pela plataforma do Crea-SP Capacita.",
+    "link": "https://www.creasp.org.br/noticia/projeto-estrutural-e-desenvolvimento-de-carreira-sao-destaques-no-crea-sp-capacita-de-outubro/",
+    "vence_em": "2026-10-22"
+  },
+  {
+    "titulo": "Engenharia e sustentabilidade no Porto de Santos",
+    "data": "2026-10-02",
+    "fonte": "CREA-SP",
+    "resumo": "Reportagem do CREA-SP mostra o trabalho de engenharia por trás do maior complexo portuário do Hemisfério Sul, com dragagem contínua e manejo sustentável de sedimentos para receber navios cada vez maiores.",
+    "link": "https://www.creasp.org.br/noticia/engenharia-e-sustentabilidade-garantem-eficiencia-ao-maior-complexo-portuario-do-hemisferio-sul/"
+  },
+  {
+    "titulo": "Qualidade do ar em ambientes climatizados: o papel dos profissionais",
+    "data": "2026-10-01",
+    "fonte": "Confea",
+    "resumo": "O Confea reúne orientações de profissionais sobre a qualidade do ar interior, da renovação natural do ar às tecnologias de purificação, e destaca o Plano de Manutenção, Operação e Controle (PMOC) dos sistemas de climatização, exigido pela Lei 13.589/2018.",
+    "link": "https://www.confea.org.br/da-renovacao-natural-ao-h2o2-profissionais-indicam-cuidados-com-o-ar"
+  },
+  {
+    "titulo": "Confea apresenta o Observatório Nacional de Infraestrutura",
+    "data": "2026-10-07",
+    "fonte": "Confea",
+    "resumo": "Apresentado ao TCU, o projeto propõe o monitoramento preventivo de infraestrutura crítica, começando por pontes e viadutos. As inspeções partem de denúncias de cidadãos, triadas pelos Creas, e de levantamentos feitos pelos próprios Conselhos. Quando há risco, o relatório segue para órgãos como DNIT, Defesa Civil e Ministério Público, e o caso é acompanhado em um painel público.",
+    "link": "https://www.confea.org.br/conheca-o-observatorio-nacional-de-infraestrutura-projeto-do-confea"
+  },
+  {
+    "titulo": "Confea define medidas de proteção para mulheres em situação de violência",
+    "data": "2026-10-05",
+    "fonte": "Confea",
+    "resumo": "Portaria do Confea estabelece atendimento reservado, proteção de dados, medidas imediatas de segurança e apoio à campanha Sinal Vermelho para mulheres em situação de violência no âmbito do Conselho.",
+    "link": "https://www.confea.org.br/confea-define-medidas-de-protecao-para-mulheres-em-situacao-de-violencia"
+  },
+  {
+    "titulo": "Piso salarial: PL 5.346/2026 está em consulta pública no Senado",
+    "data": "2026-10-06",
+    "fonte": "Senado Federal",
+    "resumo": "O Projeto de Lei 5.346/2026 atualiza a Lei 4.950-A/1966 e propõe um piso nacional de R$ 13.736 para jornada de 8 horas, a partir de 2027, com correção anual pelo INPC, para profissionais de Engenharia, Agronomia, Arquitetura, Química e Veterinária. O texto está em consulta pública no portal e-Cidadania do Senado, onde qualquer cidadão pode votar e registrar sua opinião.",
+    "link": "https://www12.senado.leg.br/ecidadania/visualizacaomateria?id=175780",
+    "chamada": "Projeto propõe piso de R$ 13.736 para jornada de 8 horas a partir de 2027. Participe da consulta pública do Senado.",
+    "acao": "Votar na consulta pública",
+    "fixar": true
+  },
+  {
+    "titulo": "Mútua oferece seguros aos participantes da 81ª SOEA",
+    "data": "2026-10-05",
+    "fonte": "Mútua",
+    "resumo": "De 12 a 17 de outubro, a Mútua disponibiliza dois seguros na 81ª SOEA: o Seguro Evento, em parceria com o Confea, para todos os inscritos, com cobertura para morte e invalidez acidentais e despesas médicas e odontológicas de até R$ 3 mil; e o Seguro Assistência Viagem, para os associados adimplentes da Mútua. Os inscritos recebem as orientações por e-mail.",
+    "link": "https://www.mutua.com.br/mutua-oferece-seguro-e-assistencia-viagem-para-associados-e-participantes-da-81a-soea/",
+    "vence_em": "2026-10-17"
+  },
+  {
+    "titulo": "Site da Mútua terá páginas próprias para as regionais",
+    "data": "2026-09-23",
+    "fonte": "Mútua",
+    "resumo": "Na Plenária do Confea, a diretoria executiva da Mútua apresentou o relatório de atividades e novidades do site, como o MWS Regionais: cada regional passa a ter sua própria página dentro do site da Mútua, com notícias e eventos.",
+    "link": "https://www.mutua.com.br/diretoria-executiva-apresenta-novidades-no-site-da-mutua-durante-plenaria-do-confea/"
+  },
+  {
+    "titulo": "Palestra da Mútua destaca a identificação dos riscos psicossociais no trabalho",
+    "data": "2026-09-18",
+    "fonte": "Mútua",
+    "resumo": "Em palestra na sede, com participação online das regionais e de associados, a Mútua tratou da campanha Setembro Amarelo e da avaliação dos riscos psicossociais no ambiente de trabalho, prevista na NR-1.",
+    "link": "https://www.mutua.com.br/palestra-da-mutua-destaca-a-importancia-da-identificacao-dos-riscos-psicossociais-no-ambiente-de-trabalho/"
+  },
+  {
+    "titulo": "Sabesp amplia redes de água em bairros de Pirapora do Bom Jesus",
+    "data": "2026-07-30",
+    "fonte": "Outra",
+    "veiculo": "ABC do ABC",
+    "regiao": true,
+    "exemplo": true,
+    "resumo": "As obras somam a adutora Ubaldo Lolli, com 3,4 km de tubulação de 400 mm, quase 14 km de novas redes no bairro Laranjeiras e a interligação da Super Avenida aos bairros vizinhos. Green Hills e Pindaré já foram concluídos, e o Igavetá deve receber mais de 13 km de redes. Cerca de 4,5 mil moradores serão beneficiados.",
+    "link": "https://www.abcdoabc.com.br/obras-de-saneamento-avancam-pirapora-bom-jesus/"
+  },
+  {
+    "titulo": "Pirapora do Bom Jesus vai sediar projeto-piloto federal de despoluição do Tietê",
+    "data": "2026-07-02",
+    "fonte": "Outra",
+    "veiculo": "Folha de Alphaville",
+    "regiao": true,
+    "exemplo": true,
+    "resumo": "O termo de cooperação, assinado com a Agência Nacional de Águas e Saneamento Básico (ANA) dentro do Novo PAC, prevê R$ 7 milhões para identificar fontes de poluição, analisar a qualidade da água e testar soluções baseadas na natureza. Segundo o município, as obras podem começar a partir de 2027.",
+    "link": "https://folhadealphaville.com.br/cidades/2026/07/02/pirapora-do-bom-jesus-sediara-projeto-federal-piloto-para-despoluicao-do-rio-tiete.html"
+  },
+  {
+    "titulo": "Santana de Parnaíba começa a requalificar o acesso ao Centro Histórico",
+    "data": "2026-07-22",
+    "fonte": "Outra",
+    "veiculo": "Folha de Alphaville",
+    "regiao": true,
+    "exemplo": true,
+    "resumo": "O projeto prevê ampliação do viário, nova praça, calçadões e enterramento da rede elétrica na Rua Padre Luiz Alves de Siqueira Castro, junto ao conjunto tombado pelo Condephaat e pelo Iphan. A Câmara aprovou crédito de R$ 5,895 milhões para desapropriações e equipamentos públicos. O projeto executivo ainda não foi divulgado.",
+    "link": "https://folhadealphaville.com.br/imoveis/2026/07/22/prefeitura-inicia-obras-de-revitalizacao-no-centro-historico-de-santana-de-parnaiba.html"
+  },
+  {
+    "titulo": "Revista CREA São Paulo chega à 21ª edição",
+    "data": "2026-09-17",
+    "fonte": "CREA-SP",
+    "resumo": "A nova edição trata do papel da engenharia na gestão pública, com engenheiros em cargos da administração municipal. Traz ainda o Índice Confea de Infraestrutura (Infra-BR), a engenharia aeroespacial no Vale do Paraíba, áreas verdes contra ilhas de calor e enchentes e a fiscalização preventiva em estabelecimentos de saúde. Leitura gratuita no site do CREA-SP.",
+    "link": "https://www.creasp.org.br/revista-crea-sao-paulo/"
+  },
+  {
+    "titulo": "CREA-SP lança a série “Marcas da Engenharia”",
+    "data": "2026-08-14",
+    "fonte": "CREA-SP",
+    "resumo": "A série em vídeo mostra como profissionais da área tecnológica influenciam a vida nos municípios paulistas. O primeiro episódio apresenta o engenheiro civil Guilherme Nicolau, vice-prefeito de Vargem Grande do Sul, e projetos como a regularização fundiária e a troca da rede de água. Os episódios estão no canal TV CREA-SP, no YouTube.",
+    "link": "https://www.creasp.org.br/noticia/engenharia-contribui-para-gestao-publica-em-vargem-grande-do-sul/"
+  },
+  {
+    "titulo": "ABEAA na 81ª SOEA, em Aracaju",
+    "data": "2026-10-13",
+    "fonte": "ABEAA",
+    "resumo": "O presidente da ABEAA, Eng. Ricardo de Souza Terassovich, e o suplente da diretoria, Eng. Alex Soares Cruz Miyamoto, participaram em 13 de outubro da abertura da 81ª Semana Oficial da Engenharia e da Agronomia (SOEA), no Centro de Convenções AM Malls, em Aracaju (SE). Com o tema “Inovação e Engenharia para Desenvolver o Brasil”, o primeiro dia teve o painel “Liderando o futuro com a IA”, com a futurista Martha Gabriel.",
+    "link": "https://www.confea.org.br/81a-soea-reune-inovacao-conhecimento-e-grandes-nomes-da-engenharia",
+    "foto": "/img/destaques/soea-2026-ricardo-alex.jpg",
+    "foto_descricao": "Selfie do presidente Ricardo de Souza Terassovich e do Eng. Alex Soares Cruz Miyamoto na plateia da 81ª SOEA, com os rostos do público ao fundo desfocados",
+    "foto_protegida": true
+  }
 ]

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" role="img" aria-label="Foto ilustrativa: desenho de profissional com capacete da ABEAA">
+  <rect width="400" height="400" fill="#c9d8dd"/>
+  <!-- cabelo atrás (rabo de cavalo) -->
+  <path d="M262 170c40 20 52 70 34 120-8 22-28 30-40 26 18-30 22-80 6-120z" fill="#4a2f22"/>
+  <!-- camisa -->
+  <path d="M70 400c4-70 58-112 130-112s126 42 130 112z" fill="#7fa7c9"/>
+  <path d="M164 288l36 34 36-34z" fill="#eaf1f6"/>
+  <circle cx="200" cy="346" r="5" fill="#163b4c"/>
+  <circle cx="200" cy="374" r="5" fill="#163b4c"/>
+  <!-- pescoço -->
+  <rect x="178" y="250" width="44" height="44" rx="14" fill="#e8b996"/>
+  <!-- orelhas -->
+  <ellipse cx="130" cy="202" rx="14" ry="20" fill="#e8b996"/>
+  <ellipse cx="270" cy="202" rx="14" ry="20" fill="#e8b996"/>
+  <circle cx="130" cy="222" r="5" fill="#f4c542"/>
+  <circle cx="270" cy="222" r="5" fill="#f4c542"/>
+  <!-- rosto -->
+  <ellipse cx="200" cy="198" rx="70" ry="78" fill="#f2c9a8"/>
+  <!-- franja e cabelo lateral -->
+  <path d="M130 168c4-14 16-24 30-26l-6 54c-14-6-22-14-24-28zM270 168c-4-14-16-24-30-26l6 54c14-6 22-14 24-28z" fill="#4a2f22"/>
+  <!-- sobrancelhas -->
+  <path d="M154 172q16-10 30-2" stroke="#4a2f22" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <path d="M216 170q14-8 30 2" stroke="#4a2f22" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <!-- olhos com cílios -->
+  <ellipse cx="170" cy="198" rx="9" ry="12" fill="#1f2a30"/>
+  <ellipse cx="230" cy="198" rx="9" ry="12" fill="#1f2a30"/>
+  <circle cx="173" cy="193" r="3" fill="#fff"/>
+  <circle cx="233" cy="193" r="3" fill="#fff"/>
+  <path d="M158 188l-6-5M242 188l6-5" stroke="#1f2a30" stroke-width="4" stroke-linecap="round"/>
+  <!-- bochechas, nariz e boca -->
+  <circle cx="152" cy="226" r="11" fill="#f0a99a" opacity=".6"/>
+  <circle cx="248" cy="226" r="11" fill="#f0a99a" opacity=".6"/>
+  <ellipse cx="200" cy="222" rx="8" ry="7" fill="#e3ad8a"/>
+  <path d="M178 244q22 18 44 0" stroke="#b5485a" stroke-width="7" fill="none" stroke-linecap="round"/>
+  <!-- capacete -->
+  <path d="M120 160c0-62 36-104 80-104s80 42 80 104z" fill="#f4c542"/>
+  <path d="M184 58h32l4 98h-40z" fill="#e3b22c"/>
+  <rect x="106" y="150" width="188" height="22" rx="11" fill="#e3b22c"/>
+  <rect x="146" y="106" width="108" height="30" rx="8" fill="#163b4c"/>
+  <text x="200" y="129" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="22" fill="#ffffff" letter-spacing="2">ABEAA</text>
+</svg>

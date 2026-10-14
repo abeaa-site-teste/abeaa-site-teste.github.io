@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" role="img" aria-label="Foto ilustrativa: desenho de profissional com capacete da ABEAA">
+  <rect width="400" height="400" fill="#c9d8dd"/>
+  <!-- camisa -->
+  <path d="M70 400c4-70 58-112 130-112s126 42 130 112z" fill="#7fa7c9"/>
+  <path d="M168 288l32 40 32-40z" fill="#eaf1f6"/>
+  <path d="M192 318h16l8 82h-32z" fill="#163b4c"/>
+  <path d="M190 304h20l-4 16h-12z" fill="#163b4c"/>
+  <!-- pescoço -->
+  <rect x="176" y="250" width="48" height="44" rx="14" fill="#e8b996"/>
+  <!-- orelhas -->
+  <ellipse cx="128" cy="200" rx="16" ry="22" fill="#e8b996"/>
+  <ellipse cx="272" cy="200" rx="16" ry="22" fill="#e8b996"/>
+  <!-- rosto -->
+  <ellipse cx="200" cy="196" rx="74" ry="80" fill="#f2c9a8"/>
+  <!-- cabelo lateral -->
+  <path d="M128 170c2-14 10-22 18-24v40c-10-2-16-6-18-16zM272 170c-2-14-10-22-18-24v40c10-2 16-6 18-16z" fill="#5a3b28"/>
+  <!-- sobrancelhas -->
+  <path d="M152 170q18-12 34 0" stroke="#5a3b28" stroke-width="8" fill="none" stroke-linecap="round"/>
+  <path d="M214 170q18-12 34 0" stroke="#5a3b28" stroke-width="8" fill="none" stroke-linecap="round"/>
+  <!-- olhos -->
+  <ellipse cx="170" cy="196" rx="9" ry="12" fill="#1f2a30"/>
+  <ellipse cx="230" cy="196" rx="9" ry="12" fill="#1f2a30"/>
+  <circle cx="173" cy="191" r="3" fill="#fff"/>
+  <circle cx="233" cy="191" r="3" fill="#fff"/>
+  <!-- nariz e boca -->
+  <ellipse cx="200" cy="222" rx="10" ry="8" fill="#e3ad8a"/>
+  <path d="M176 244q24 20 48 0" stroke="#9b4f3c" stroke-width="7" fill="none" stroke-linecap="round"/>
+  <!-- capacete -->
+  <path d="M118 158c0-62 36-104 82-104s82 42 82 104z" fill="#f4c542"/>
+  <path d="M184 56h32l4 98h-40z" fill="#e3b22c"/>
+  <rect x="104" y="148" width="192" height="22" rx="11" fill="#e3b22c"/>
+  <rect x="146" y="104" width="108" height="30" rx="8" fill="#163b4c"/>
+  <text x="200" y="127" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="22" fill="#ffffff" letter-spacing="2">ABEAA</text>
+</svg>
