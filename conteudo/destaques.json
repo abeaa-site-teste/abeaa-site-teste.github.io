@@ -143,10 +143,20 @@
     "titulo": "ABEAA na 81ª SOEA, em Aracaju",
     "data": "2026-10-13",
     "fonte": "ABEAA",
-    "resumo": "O presidente da ABEAA, Eng. Ricardo de Souza Terassovich, e o suplente da diretoria, Eng. Alex Soares Cruz Miyamoto, participaram em 13 de outubro da abertura da 81ª Semana Oficial da Engenharia e da Agronomia (SOEA), no Centro de Convenções AM Malls, em Aracaju (SE). Com o tema “Inovação e Engenharia para Desenvolver o Brasil”, o primeiro dia teve o painel “Liderando o futuro com a IA”, com a futurista Martha Gabriel.",
+    "resumo": "O presidente da ABEAA, Eng. Ricardo de Souza Terassovich, o diretor secretário, Marcos Domingues Muro, e o suplente da diretoria, Eng. Alex Soares Cruz Miyamoto, participaram da 81ª Semana Oficial da Engenharia e da Agronomia (SOEA), no Centro de Convenções AM Malls, em Aracaju (SE), ao lado da delegação da UNARO. A abertura, em 13 de outubro, teve o tema “Inovação e Engenharia para Desenvolver o Brasil” e o painel “Liderando o futuro com a IA”, com a futurista Martha Gabriel.",
     "link": "https://www.confea.org.br/81a-soea-reune-inovacao-conhecimento-e-grandes-nomes-da-engenharia",
-    "foto": "/img/destaques/soea-2026-ricardo-alex.jpg",
-    "foto_descricao": "Selfie do presidente Ricardo de Souza Terassovich e do Eng. Alex Soares Cruz Miyamoto na plateia da 81ª SOEA, com os rostos do público ao fundo desfocados",
-    "foto_protegida": true
+    "foto": "/img/destaques/soea-2026-ricardo.jpg",
+    "foto_descricao": "O presidente da ABEAA, Eng. Ricardo de Souza Terassovich, diante do painel da 81ª Semana Oficial da Engenharia e da Agronomia, em Aracaju",
+    "foto_protegida": true,
+    "fotos_extras": [
+      {
+        "foto": "/img/destaques/soea-2026-ricardo-alex.jpg",
+        "descricao": "Selfie do presidente Ricardo de Souza Terassovich e do Eng. Alex Soares Cruz Miyamoto na plateia da 81ª SOEA"
+      },
+      {
+        "foto": "/img/destaques/soea-2026-unaro.jpg",
+        "descricao": "Delegação da UNARO na 81ª SOEA, em Aracaju. À esquerda, o presidente da ABEAA, Eng. Ricardo de Souza Terassovich, e, ao lado dele, o diretor secretário, Marcos Domingues Muro"
+      }
+    ]
   }
 ]

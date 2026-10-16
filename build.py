@@ -69,7 +69,7 @@ src = re.sub(r"<title>.*?</title>\n", "", src, count=1)
 src = re.sub(r'<meta name="description"[^>]*>\n', "", src, count=1)
 if not OFICIAL:
     src = src.replace("PRÉVIA PARA A DIRETORIA", "VERSÃO DE TESTE")
-src = src.replace('src="img/', 'src="/img/').replace("url('img/", "url('/img/")
+src = src.replace('src="img/', 'src="/img/').replace("url('img/", "url('/img/").replace('data-full="img/', 'data-full="/img/')
 
 # Destaques do mês: preenchidos pelo painel (Pages CMS) em conteudo/destaques.json
 # Aparecem agrupados por entidade. Também são gravados no index.html (prévia).
@@ -120,7 +120,13 @@ def destaques_html():
         f = str(i.get("foto") or "").strip().lstrip("/")
         if f.startswith("img/") and (Path(__file__).parent / f).exists():
             prot = " data-protegida" if i.get("foto_protegida") is True else ""
+            extras = [x for x in (i.get("fotos_extras") or []) if isinstance(x, dict)
+                      and str(x.get("foto") or "").strip().lstrip("/").startswith("img/")
+                      and (Path(__file__).parent / str(x.get("foto")).strip().lstrip("/")).exists()]
             foto = f'<img src="{esc(f)}" alt="{esc(i.get("foto_descricao"))}" loading="lazy"{prot}>'
+            for x in extras:
+                foto += (f'<img class="foto-extra" src="{esc(str(x["foto"]).strip().lstrip("/"))}" '
+                         f'alt="{esc(x.get("descricao"))}" loading="lazy" hidden{prot}>')
             cls = ' class="has-photo"'
         elif f:
             print(f"AVISO: foto não encontrada: {f}")
@@ -296,14 +302,50 @@ for r in routes:
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(head + page + "\n</body>\n</html>\n", encoding="utf-8")
 
-(dist / "404.html").write_text((dist / "index.html").read_text(encoding="utf-8"), encoding="utf-8")
+# Página 404: mesma moldura do site, com aviso de página não encontrada
+_home = (dist / "index.html").read_text(encoding="utf-8")
+_i = _home.find('<div class="view on" id="v-inicio">')
+_j = _home.find('</main>', _i)
+_nao_encontrada = """<div class="view on" id="v-404">
+  <section class="band-blue">
+    <div class="wrap stack">
+      <p class="eyebrow">Erro 404</p>
+      <h1>Página não encontrada</h1>
+      <p class="lead">O endereço pode ter mudado ou ter sido digitado errado. Escolha uma das seções abaixo.</p>
+    </div>
+  </section>
+  <section>
+    <div class="wrap">
+      <ul class="ents">
+        <li><a href="/">Início</a><small>Página principal da ABEAA</small></li>
+        <li><a href="/agenda/">Agenda</a><small>Cursos, palestras e encontros</small></li>
+        <li><a href="/atualizacoes/">Atualizações</a><small>Notícias do mês</small></li>
+        <li><a href="/associe-se/">Associe-se</a><small>Como fazer parte</small></li>
+        <li><a href="/contato/">Contato</a><small>Fale com a secretaria</small></li>
+      </ul>
+    </div>
+  </section>
+</div>
+
+"""
+if _i > 0 and _j > _i:
+    _p404 = _home[:_i] + _nao_encontrada + _home[_j:]
+    _p404 = re.sub(r"<title>.*?</title>", "<title>Página não encontrada · ABEAA</title>", _p404, count=1)
+    _p404 = re.sub(r'<meta name="robots" content="[^"]*">', '<meta name="robots" content="noindex, nofollow">', _p404, count=1)
+    _p404 = _p404.replace(' aria-current="page" href="/"', ' href="/"')
+    (dist / "404.html").write_text(_p404, encoding="utf-8")
+else:
+    print("AVISO: 404 gerada como cópia da página inicial")
+    (dist / "404.html").write_text(_home, encoding="utf-8")
 shutil.copytree(root / "img", dist / "img", dirs_exist_ok=True)
 
 # Proteção das fotos da ABEAA: as imagens marcadas com data-protegida no index.html
 # saem no site com no máximo 1600 px e uma marca d'água discreta "ABEAA".
 # Os arquivos originais na pasta img/ não são alterados.
 def _proteger_fotos():
-    alvos = sorted(set(re.findall(r'<img[^>]*src="img/([^"]+)"[^>]*data-protegida', _idx.read_text(encoding="utf-8"))))
+    _txt = _idx.read_text(encoding="utf-8")
+    alvos = sorted(set(re.findall(r'<img[^>]*src="img/([^"]+)"[^>]*data-protegida', _txt)
+                       + re.findall(r'<img[^>]*data-full="img/([^"]+)"[^>]*data-protegida', _txt)))
     if not alvos:
         return
     try:
@@ -317,7 +359,7 @@ def _proteger_fotos():
             print(f"AVISO: foto protegida não encontrada: img/{rel}")
             continue
         im = Image.open(orig).convert("RGB")
-        im.thumbnail((1600, 1600))
+        im.thumbnail((1200, 1200))
         camada = Image.new("RGBA", im.size, (0, 0, 0, 0))
         d = ImageDraw.Draw(camada)
         tam = max(14, im.width // 28)
@@ -335,6 +377,32 @@ def _proteger_fotos():
     print(f"Fotos protegidas: {len(alvos)}")
 
 _proteger_fotos()
+
+# Otimização das imagens publicadas: no máximo 1600 px e JPEG compactado.
+# Os originais da pasta img/ não mudam; só a cópia que vai para o site.
+def _otimizar_imagens():
+    try:
+        from PIL import Image
+    except ImportError:
+        return
+    antes = depois = 0
+    for f in (dist / "img").rglob("*.jpg"):
+        tam = f.stat().st_size
+        antes += tam
+        im = Image.open(f)
+        if im.width > 1600 or im.height > 1600 or tam > 150_000:
+            im = im.convert("RGB")
+            im.thumbnail((1600, 1600))
+            tmp = f.with_suffix(".tmp.jpg")
+            im.save(tmp, "JPEG", quality=72 if tam > 300_000 else 80, optimize=True, progressive=True)
+            if tmp.stat().st_size < tam:
+                tmp.replace(f)
+            else:
+                tmp.unlink()
+        depois += f.stat().st_size
+    print(f"Imagens: {antes // 1024} KB -> {depois // 1024} KB")
+
+_otimizar_imagens()
 
 # Calendário de avisos (avisos.ics): datas de vencimento dos destaques.
 # Assine o endereço /avisos.ics no Google Agenda para ver os vencimentos.

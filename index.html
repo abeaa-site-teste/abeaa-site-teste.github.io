@@ -10,6 +10,7 @@
 :root{
   --paper:#f7f5f0;
   --surface:#ffffff;
+  --on-blue:#ffffff;
   --ink:#132e3d;
   --muted:#52616a;
   --line:#dcd8cf;
@@ -34,11 +35,11 @@
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
   --paper:#0d1b22;--surface:#13262f;--ink:#e8eef0;--muted:#a9b8be;--line:#24404c;
   --navy:#0a1a21;--navy-deep:#061015;--blue:#8fc3e0;--blue-hover:#b3d7ea;--label:#f4c542;--band:#11232b;
-  --pend-bg:#3a3110;--pend-fg:#f6dc6b;--ok:#3fbf61;--err:#ff8a80;color-scheme:dark}}
+  --pend-bg:#3a3110;--pend-fg:#f6dc6b;--ok:#3fbf61;--err:#ff8a80;--on-blue:#0b1d26;color-scheme:dark}}
 :root[data-theme="dark"]{
   --paper:#0d1b22;--surface:#13262f;--ink:#e8eef0;--muted:#a9b8be;--line:#24404c;
   --navy:#0a1a21;--navy-deep:#061015;--blue:#8fc3e0;--blue-hover:#b3d7ea;--label:#f4c542;--band:#11232b;
-  --pend-bg:#3a3110;--pend-fg:#f6dc6b;--ok:#3fbf61;--err:#ff8a80;color-scheme:dark}
+  --pend-bg:#3a3110;--pend-fg:#f6dc6b;--ok:#3fbf61;--err:#ff8a80;--on-blue:#0b1d26;color-scheme:dark}
 
 *{box-sizing:border-box}
 body{background:var(--paper);color:var(--ink);font:400 16px/1.6 var(--f-body);margin:0}
@@ -157,7 +158,7 @@ figure.photo figcaption{font-size:.84rem;color:var(--muted)}
 .btn-yellow:hover{filter:brightness(1.06)}
 .btn-ghost{border-color:rgba(255,255,255,.6);color:#fff;background:transparent}
 .btn-ghost:hover{background:rgba(255,255,255,.08)}
-.btn-blue{background:var(--blue);color:#fff}
+.btn-blue{background:var(--blue);color:var(--on-blue)}
 .btn-blue:hover{background:var(--blue-hover)}
 .btn-line{border-color:var(--ink);color:var(--ink);background:transparent}
 
@@ -264,6 +265,7 @@ footer{background:var(--navy-deep);color:var(--on-navy);padding-block:48px 32px;
 footer .cols{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:32px}
 footer b{color:#fff}
 footer a{color:#fff}
+footer .legal a{display:inline-block;padding:6px 0}
 footer .legal{border-top:1px solid rgba(255,255,255,.15);margin-top:32px;padding-top:20px;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;font-size:.8rem}
 @media (max-width:760px){footer .cols{grid-template-columns:1fr}}
 
@@ -306,7 +308,7 @@ a.item{color:inherit;text-decoration:none}
 .hl-social a:hover{border-color:var(--blue)}
 .hl-pin{display:inline-flex;vertical-align:-4px;margin-right:8px;color:var(--blue)}
 .hl-head .hl-sub{font-size:.95rem;color:var(--muted,inherit);flex:1 1 auto}
-.hl-focus{background:#fff;border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:10px;padding:18px 24px 6px}
+.hl-focus{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:10px;padding:18px 24px 6px}
 .hl-focus .highlights{border-top:0}
 .hl-focus .highlights li{border-bottom:0}
 .rule.focus h3{margin:4px 0 8px;font-size:1.15rem;line-height:1.3}
@@ -353,7 +355,7 @@ a.item{color:inherit;text-decoration:none}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 @keyframes fade{from{opacity:.4}to{opacity:1}}
 .steps-5{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px;counter-reset:s}
-.steps-5 li{background:#fff;border:1px solid var(--line);border-radius:10px;padding:18px;counter-increment:s}
+.steps-5 li{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px;counter-increment:s}
 .steps-5 li::before{content:counter(s);display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--navy,#163b4c);color:#fff;font-weight:700;margin-bottom:10px}
 .steps-5 h3{font-size:1rem;margin:0 0 6px}.steps-5 p{font-size:.9rem;color:var(--muted);margin:0 0 8px}
 @media(max-width:900px){.steps-5{grid-template-columns:1fr 1fr}}
@@ -377,6 +379,9 @@ img[data-protegida]{-webkit-user-drag:none;user-select:none;-webkit-touch-callou
 .lightbox figure{margin:0;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:56px 16px 24px;box-sizing:border-box}
 .lightbox img{max-width:100%;max-height:calc(100vh - 140px);object-fit:contain;border-radius:4px;cursor:zoom-out}
 .lightbox figcaption{color:#e8eef1;font-size:.95rem;max-width:760px;text-align:center;line-height:1.45}
+.lightbox .lb-nav{position:fixed;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;border:0;background:rgba(244,197,66,.95);color:#1c1600;font-size:2rem;line-height:1;cursor:pointer}
+.lightbox .lb-prev{left:12px}.lightbox .lb-next{right:12px}.lightbox .lb-nav[hidden]{display:none}
+.zoom-count{position:absolute;left:8px;bottom:8px;background:rgba(22,59,76,.88);color:#fff;font:600 .75rem var(--f-body);padding:3px 8px;border-radius:999px;pointer-events:none}
 .lightbox .lb-close{position:fixed;top:12px;right:12px;width:44px;height:44px;border-radius:50%;border:0;background:#f4c542;color:#1c1600;font-size:1.6rem;line-height:1;cursor:pointer}
 </style>
 
@@ -677,7 +682,7 @@ img[data-protegida]{-webkit-user-drag:none;user-select:none;-webkit-touch-callou
         <div><img src="img/pessoas/ricardo-terassovich.jpg" alt="Foto de Ricardo de Souza Terassovich, Presidente" width="400" height="400" loading="lazy" data-protegida><p><span>Presidente</span><b>Ricardo de Souza Terassovich</b><small>Engenheiro Eletricista</small></p></div>
         <div><img src="img/pessoas/dirceu-santos.jpg" alt="Foto de Dirceu Silva dos Santos, Vice-Presidente" width="400" height="400" loading="lazy" data-protegida><p><span>Vice-Presidente</span><b>Dirceu Silva dos Santos <span class="memoriam">(in memoriam)</span></b><small>Engenheiro Civil e de Segurança do Trabalho</small></p></div>
         <div><img src="img/pessoas/marcelo-gitti.jpg" alt="Foto de Marcelo Martinez Gitti, Diretor Financeiro" width="400" height="400" loading="lazy" data-protegida><p><span>Diretor Financeiro</span><b>Marcelo Martinez Gitti</b><small>Engenheiro Civil</small></p></div>
-        <div><img src="img/pessoas/marcos-muro.jpg" alt="Foto de Marcos D. Muro, Diretor Secretário" width="400" height="400" loading="lazy" data-protegida><p><span>Diretor Secretário</span><b>Marcos D. Muro</b><small>Geólogo</small></p></div>
+        <div><img src="img/pessoas/marcos-muro.jpg" alt="Foto de Marcos Domingues Muro, Diretor Secretário" width="400" height="400" loading="lazy" data-protegida><p><span>Diretor Secretário</span><b>Marcos Domingues Muro</b><small>Geólogo</small></p></div>
         <div><img src="img/pessoas/claudio-franco.jpg" alt="Foto de Claudio Luís Franco, Diretor de Eventos e Cursos" width="400" height="400" loading="lazy" data-protegida><p><span>Diretor de Eventos e Cursos</span><b>Claudio Luís Franco</b><small>Engenheiro Civil e Arquiteto</small></p></div>
         <div><img src="img/pessoas/alex-miyamoto.jpg" alt="Foto de Alex Soares Cruz Miyamoto, Suplente da Diretoria" width="400" height="400" loading="lazy" data-protegida><p><span>Suplente da Diretoria</span><b>Alex Soares Cruz Miyamoto</b><small>Engenheiro Mecânico</small></p></div>
       </div>
@@ -707,18 +712,18 @@ img[data-protegida]{-webkit-user-drag:none;user-select:none;-webkit-touch-callou
       </div>
       <h3 class="board-title">Inspetoria de Santana de Parnaíba</h3>
       <div class="board">
-        <div><img src="img/pessoas/marcelo-gitti.jpg" alt="Foto de Marcelo Martinez Gitti, Inspetor-Chefe" width="400" height="400" loading="lazy" data-protegida><p><span>Inspetor-Chefe</span><b>Marcelo Martinez Gitti</b><small>Preside a CAF · Engenharia Civil</small></p></div>
-        <div><img src="img/pessoas/andrea-cury-lang.jpg" alt="Foto de Andrea Cury Lang, Inspetora" width="400" height="400" loading="lazy" data-protegida><p><span>Inspetora</span><b>Andrea Cury Lang</b><small>Agronomia</small></p></div>
-        <div><img src="img/pessoas/joao-brito.jpg" alt="Foto de João Bueno Brito, Inspetor" width="400" height="400" loading="lazy" data-protegida><p><span>Inspetor</span><b>João Bueno Brito</b><small>Agrimensura</small></p></div>
-        <div><img src="img/pessoas/camila-de-paula.jpg" alt="Foto de Camila de Paula, Inspetora" width="400" height="400" loading="lazy" data-protegida><p><span>Inspetora</span><b>Camila de Paula</b><small>Engenharia Ambiental</small></p></div>
-        <div><img src="img/pessoas/raphael-caldeira.jpg" alt="Foto de Raphael Brandão Caldeira, Inspetor" width="400" height="400" loading="lazy" data-protegida><p><span>Inspetor</span><b>Raphael Brandão Caldeira</b><small>Engenharia Elétrica</small></p></div>
-        <div><img src="img/pessoas/marcelo-bueno.jpg" alt="Foto de Marcelo Siqueira Bueno, Inspetor" width="400" height="400" loading="lazy" data-protegida><p><span>Inspetor</span><b>Marcelo Siqueira Bueno</b><small>Engenharia Mecânica</small></p></div>
-        <div><img src="img/pessoas/mateus.jpg" alt="Foto de Mateus Bitencurt, Inspetor" width="400" height="400" loading="lazy" data-protegida class="nozoom"><p><span>Inspetor</span><b>Mateus Bitencurt <span class="pend">nome completo a confirmar</span></b><small>Geologia</small></p></div>
+        <div><img src="img/pessoas/marcelo-gitti.jpg" alt="Foto de Marcelo Martinez Gitti, Inspetor-Chefe" width="400" height="400" loading="lazy" data-protegida><p><span>Inspetor-Chefe</span><b>Marcelo Martinez Gitti</b><small>Câmara de Engenharia Civil (CEEC) · preside a CAF</small></p></div>
+        <div><img src="img/pessoas/raphael-caldeira.jpg" alt="Foto de Raphael Brandão Caldeira, Inspetor" width="400" height="400" loading="lazy" data-protegida><p><span>Inspetor</span><b>Raphael Brandão Caldeira</b><small>Câmara de Engenharia Elétrica (CEEE)</small></p></div>
+        <div><img src="img/pessoas/andrea-cury-lang.jpg" alt="Foto de Andrea Cury Lang, Inspetora" width="400" height="400" loading="lazy" data-protegida><p><span>Inspetora</span><b>Andrea Cury Lang</b><small>Câmara de Agronomia (CEA)</small></p></div>
+        <div><img src="img/pessoas/joao-brito.jpg" alt="Foto de João Bueno Brito, Inspetor" width="400" height="400" loading="lazy" data-protegida><p><span>Inspetor</span><b>João Bueno Brito</b><small>Câmara de Engenharia de Agrimensura (CEEA)</small></p></div>
+        <div><img src="img/pessoas/marcelo-bueno.jpg" data-full="img/pessoas/marcelo-bueno-completa.jpg" alt="Foto de Marcelo Siqueira Bueno, Inspetor" width="400" height="400" loading="lazy" data-protegida><p><span>Inspetor</span><b>Marcelo Siqueira Bueno</b><small>Câmara de Engenharia Mecânica e Metalúrgica (CEEMM)</small></p></div>
+        <div><img src="img/pessoas/mateus.jpg" alt="Foto de Matheus Monteiro Bitencourt, Inspetor" width="400" height="400" loading="lazy" data-protegida class="nozoom"><p><span>Inspetor</span><b>Matheus Monteiro Bitencourt</b><small>Câmara de Geologia e Engenharia de Minas (CAGE)</small></p></div>
+        <div><img src="img/pessoas/camila-de-paula.jpg" alt="Foto de Camila de Paula, Inspetora" width="400" height="400" loading="lazy" data-protegida><p><span>Inspetora</span><b>Camila de Paula</b><small>Engenharia Ambiental e Sanitária (CEEAS)</small></p></div>
       </div>
       <h3 class="board-title">Representação de Pirapora do Bom Jesus</h3>
       <div class="board">
-        <div><img src="img/pessoas/daniel-bastos.jpg" alt="Foto de Daniel Bastos Rodrigues da Silva, Inspetor Especial" width="400" height="400" loading="lazy" data-protegida><p><span>Inspetor Especial</span><b>Daniel Bastos Rodrigues da Silva</b><small>Pirapora do Bom Jesus</small></p></div>
-        <div><img src="img/pessoas/regis.jpg" alt="Foto de Regis, Inspetor Especial" width="400" height="400" loading="lazy" data-protegida><p><span>Inspetor Especial</span><b>Regis <span class="pend">nome completo a confirmar</span></b><small>Pirapora do Bom Jesus</small></p></div>
+        <div><img src="img/pessoas/daniel-bastos.jpg" alt="Foto de Daniel Bastos Rodrigues da Silva, Inspetor Especial" width="400" height="400" loading="lazy" data-protegida><p><span>Inspetor Especial</span><b>Daniel Bastos Rodrigues da Silva</b><small>Engenheiro Eletricista</small></p></div>
+        <div><img src="img/pessoas/regis.jpg" alt="Foto de Regis Boquino, Inspetor Especial" width="400" height="400" loading="lazy" data-protegida><p><span>Inspetor Especial</span><b>Regis Boquino</b><small>Engenheiro Civil</small></p></div>
       </div>
       <dl class="facts" style="grid-template-columns:1fr;max-width:520px"><div><dt>Fiscal da região</dt><dd><span class="pend">nome a confirmar, com autorização</span></dd></div></dl>
       <div class="stack" style="gap:6px">
@@ -1131,10 +1136,10 @@ img[data-protegida]{-webkit-user-drag:none;user-select:none;-webkit-touch-callou
       <div class="hl-group">
         <div class="hl-head"><h3><span class="hl-logo seal"><img src="img/logo.png" alt=""></span>ABEAA</h3></div>
         <ul class="highlights">
-          <li class="has-photo"><img src="img/destaques/soea-2026-ricardo-alex.jpg" alt="Selfie do presidente Ricardo de Souza Terassovich e do Eng. Alex Soares Cruz Miyamoto na plateia da 81ª SOEA, com os rostos do público ao fundo desfocados" loading="lazy" data-protegida><div>
+          <li class="has-photo"><img src="img/destaques/soea-2026-ricardo.jpg" alt="O presidente da ABEAA, Eng. Ricardo de Souza Terassovich, diante do painel da 81ª Semana Oficial da Engenharia e da Agronomia, em Aracaju" loading="lazy" data-protegida><img class="foto-extra" src="img/destaques/soea-2026-ricardo-alex.jpg" alt="Selfie do presidente Ricardo de Souza Terassovich e do Eng. Alex Soares Cruz Miyamoto na plateia da 81ª SOEA" loading="lazy" hidden data-protegida><img class="foto-extra" src="img/destaques/soea-2026-unaro.jpg" alt="Delegação da UNARO na 81ª SOEA, em Aracaju. À esquerda, o presidente da ABEAA, Eng. Ricardo de Souza Terassovich, e, ao lado dele, o diretor secretário, Marcos Domingues Muro" loading="lazy" hidden data-protegida><div>
             <span class="meta">ABEAA · <time datetime="2026-10-13">13/10/2026</time></span>
             <h4><a href="https://www.confea.org.br/81a-soea-reune-inovacao-conhecimento-e-grandes-nomes-da-engenharia" target="_blank" rel="noopener">ABEAA na 81ª SOEA, em Aracaju</a></h4>
-            <p>O presidente da ABEAA, Eng. Ricardo de Souza Terassovich, e o suplente da diretoria, Eng. Alex Soares Cruz Miyamoto, participaram em 13 de outubro da abertura da 81ª Semana Oficial da Engenharia e da Agronomia (SOEA), no Centro de Convenções AM Malls, em Aracaju (SE). Com o tema “Inovação e Engenharia para Desenvolver o Brasil”, o primeiro dia teve o painel “Liderando o futuro com a IA”, com a futurista Martha Gabriel.</p>
+            <p>O presidente da ABEAA, Eng. Ricardo de Souza Terassovich, o diretor secretário, Marcos Domingues Muro, e o suplente da diretoria, Eng. Alex Soares Cruz Miyamoto, participaram da 81ª Semana Oficial da Engenharia e da Agronomia (SOEA), no Centro de Convenções AM Malls, em Aracaju (SE), ao lado da delegação da UNARO. A abertura, em 13 de outubro, teve o tema “Inovação e Engenharia para Desenvolver o Brasil” e o painel “Liderando o futuro com a IA”, com a futurista Martha Gabriel.</p>
           </div></li>
           <li class="has-photo"><img src="img/destaques/sefisc-2026-grupo.jpg" alt="Inspetores da ABEAA e representantes de associações da região em frente ao painel do 23º Seminário Estadual de Fiscalização, em Itupeva" loading="lazy" data-protegida><div>
             <span class="meta">ABEAA · <time datetime="2026-09-28">28/09/2026</time></span>
@@ -1612,16 +1617,28 @@ img[data-protegida]{-webkit-user-drag:none;user-select:none;-webkit-touch-callou
   });
 })();
 </script>
-<dialog class="lightbox" id="lightbox" aria-label="Foto ampliada"><button class="lb-close" type="button" aria-label="Fechar">×</button><figure><img alt=""><figcaption></figcaption></figure></dialog>
+<dialog class="lightbox" id="lightbox" aria-label="Foto ampliada"><button class="lb-close" type="button" aria-label="Fechar">×</button><button class="lb-nav lb-prev" type="button" aria-label="Foto anterior" hidden>‹</button><button class="lb-nav lb-next" type="button" aria-label="Próxima foto" hidden>›</button><figure><img alt=""><figcaption></figcaption></figure></dialog>
 <script>
 (function(){
   var dlg=document.getElementById("lightbox"); if(!dlg||!dlg.showModal) return;
   var big=dlg.querySelector("img"), cap=dlg.querySelector("figcaption");
-  document.querySelectorAll(".highlights li>img, .done li>img, .board>div>img:not(.nozoom)").forEach(function(im){
+  var lista=[], pos=0, prot=false, prev=dlg.querySelector(".lb-prev"), next=dlg.querySelector(".lb-next");
+  function mostra(n){pos=(n+lista.length)%lista.length; big.src=lista[pos].src; big.alt=lista[pos].alt;
+    if(prot)big.setAttribute("data-protegida",""); else big.removeAttribute("data-protegida");
+    cap.textContent=lista[pos].alt+(lista.length>1?" ("+(pos+1)+" de "+lista.length+")":""); prev.hidden=next.hidden=lista.length<2;}
+  prev.addEventListener("click",function(e){e.stopPropagation(); mostra(pos-1);});
+  next.addEventListener("click",function(e){e.stopPropagation(); mostra(pos+1);});
+  dlg.addEventListener("keydown",function(e){if(lista.length>1&&e.key==="ArrowLeft")mostra(pos-1); if(lista.length>1&&e.key==="ArrowRight")mostra(pos+1);});
+  document.querySelectorAll(".highlights li>img:not(.foto-extra), .done li>img, .board>div>img:not(.nozoom)").forEach(function(im){
     var w=document.createElement("button"); w.type="button"; w.className="zoom-wrap zoomable";
     w.setAttribute("aria-label","Ampliar foto: "+(im.alt||"")); w.style.cssText="padding:0;border:0;background:none;width:100%";
     im.parentNode.insertBefore(w,im); w.appendChild(im);
-    w.addEventListener("click",function(){big.src=im.currentSrc||im.src; big.alt=im.alt; if(im.hasAttribute("data-protegida"))big.setAttribute("data-protegida",""); else big.removeAttribute("data-protegida"); var cr=w.closest("li,div"); cr=cr&&cr.querySelector(".credit-small"); cap.textContent=(im.alt||"")+(cr?" · "+cr.textContent.trim():""); dlg.showModal();});
+    var li=im.closest("li"), extra=li?Array.prototype.slice.call(li.querySelectorAll("img.foto-extra")):[];
+    if(extra.length){var bd=document.createElement("span"); bd.className="zoom-count"; bd.textContent="+"+extra.length+(extra.length>1?" fotos":" foto"); w.appendChild(bd);}
+    w.addEventListener("click",function(){
+      var cr=w.closest("li,div"); cr=cr&&cr.querySelector(".credit-small");
+      lista=[{src:im.getAttribute("data-full")||im.currentSrc||im.src,alt:(im.alt||"")+(cr?" · "+cr.textContent.trim():"")}].concat(extra.map(function(x){return {src:x.src,alt:x.alt||""};}));
+      prot=im.hasAttribute("data-protegida"); mostra(0); dlg.showModal();});
   });
   document.addEventListener("contextmenu",function(e){if(e.target.closest&&e.target.closest("img[data-protegida]"))e.preventDefault();});
   document.addEventListener("dragstart",function(e){if(e.target.closest&&e.target.closest("img[data-protegida]"))e.preventDefault();});
