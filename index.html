@@ -375,6 +375,8 @@ a.item{color:inherit;text-decoration:none}
 .zoom-wrap::after{content:"";position:absolute;right:8px;bottom:8px;width:30px;height:30px;border-radius:50%;background:rgba(22,59,76,.85) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7'/%3E%3C/svg%3E") center/16px no-repeat;pointer-events:none}
 .lightbox{border:0;padding:0;background:transparent;max-width:100vw;max-height:100vh;width:100vw;height:100vh;margin:0}
 img[data-protegida]{-webkit-user-drag:none;user-select:none;-webkit-touch-callout:none}
+.ev-selo{display:inline-block;justify-self:start;width:max-content;background:var(--gold);color:#1c1600;font-weight:700;font-size:.78rem;letter-spacing:.04em;text-transform:uppercase;padding:3px 9px;border-radius:4px;margin-bottom:6px}
+.ev-selo.agora{background:var(--navy);color:#fff;box-shadow:inset 0 0 0 2px var(--gold)}
 .esc-logos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
 .esc{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px;display:grid;gap:10px;text-align:center;align-content:start}
 .esc-fundo{display:grid;place-items:center;height:110px;border-radius:8px;padding:16px 20px}
@@ -456,17 +458,20 @@ img[data-protegida]{-webkit-user-drag:none;user-select:none;-webkit-touch-callou
     <div class="wrap two">
       <div>
         <h2 class="eyebrow">Agenda</h2>
-        <div class="rule event">
+        <div class="rule ev-vazio" hidden><h3>Próximas atividades</h3><p style="color:var(--muted);margin-top:8px">Novos cursos e encontros serão publicados na Agenda assim que confirmados.</p><a class="more" href="#agenda">Ver a agenda</a></div>
+        <div class="rule event" data-inicio="2026-10-26T19:00:00-03:00" data-fim="2026-10-26T21:00:00-03:00">
           <span class="when">26<small><span class="sr-only">de </span>outubro de 2026</small></span>
           <div>
+            <span class="ev-selo" hidden></span>
             <h3>Reunião da UNARO na ABEAA</h3>
             <p>A sede da ABEAA recebe a reunião da UNARO na segunda-feira, às 19h.</p>
             <a class="more" href="#agenda">Detalhes</a>
           </div>
         </div>
-        <div class="rule event">
+        <div class="rule event" data-inicio="2026-11-17T18:30:00-03:00" data-fim="2026-11-18T22:30:00-03:00" data-horario="18:30-22:30">
           <span class="when">17–18<small><span class="sr-only">de </span>novembro de 2026</small></span>
           <div>
+            <span class="ev-selo" hidden></span>
             <h3>Patologias e Impermeabilização na Construção Civil</h3>
             <p>Curso online e gratuito, com certificado. Terça e quarta-feira, das 18h30 às 22h30. Instrutor: Eng. Civil Paulo Afonso dos Santos Júnior.</p>
             <a class="more" href="https://santanadeparnaiba.portalsca.com.br" target="_blank" rel="noopener">Fazer inscrição →</a>
@@ -786,10 +791,11 @@ img[data-protegida]{-webkit-user-drag:none;user-select:none;-webkit-touch-callou
     </div>
   </section>
   <div class="ruler" aria-hidden="true"></div>
-  <section>
+  <section data-inicio="2026-10-26T19:00:00-03:00" data-fim="2026-10-26T21:00:00-03:00">
     <div class="wrap course">
       <div class="stack" style="min-width:0">
         <p class="eyebrow">Outubro de 2026 · na sede da ABEAA</p>
+        <span class="ev-selo" hidden></span>
         <h2>Reunião da UNARO na ABEAA</h2>
         <p class="lead">A ABEAA recebe a reunião da UNARO, União das Associações das Regiões Oeste, fundada em 2001 na própria sede da associação.</p>
         <dl class="facts">
@@ -802,10 +808,11 @@ img[data-protegida]{-webkit-user-drag:none;user-select:none;-webkit-touch-callou
       <img class="course-flyer" src="img/convite-unaro-2026-10.jpg" alt="Convite para a reunião da UNARO na sede da ABEAA, em 26 de outubro de 2026, às 19h" width="960" height="1200" loading="lazy">
     </div>
   </section>
-  <section>
+  <section data-inicio="2026-11-17T18:30:00-03:00" data-fim="2026-11-18T22:30:00-03:00" data-horario="18:30-22:30">
     <div class="wrap course">
       <div class="stack" style="min-width:0">
         <p class="eyebrow">Novembro de 2026 · online</p>
+        <span class="ev-selo" hidden></span>
         <h2>Patologias e Impermeabilização na Construção Civil</h2>
         <p class="lead">Curso gratuito, com certificado. A abertura apresenta vídeos institucionais do CREA-SP.</p>
         <dl class="facts">
@@ -863,6 +870,18 @@ img[data-protegida]{-webkit-user-drag:none;user-select:none;-webkit-touch-callou
       <div class="done-group">
         <h3>2026</h3>
         <ul class="done">
+          <li data-mostrar-apos="2026-11-18T22:30:00-03:00" hidden><img src="img/curso-patologias-2026.jpg" alt="Cartaz do curso Patologias e Impermeabilização na Construção Civil" loading="lazy" width="480" height="600"><div>
+            <span class="meta"><time datetime="2026-11-17">17 e 18/11/2026</time> · Curso online gratuito</span>
+            <h4>Patologias e Impermeabilização na Construção Civil</h4>
+            <p>Das 18h30 às 22h30, 8 horas, com certificado. Instrutor: Eng. Civil Paulo Afonso dos Santos Júnior. Abertura com vídeos institucionais do CREA-SP.</p>
+            <p class="partners">Realização: ABEAA · Parceria: CREA-SP · Apoio: Confea e Mútua</p>
+          </div></li>
+          <li data-mostrar-apos="2026-10-26T21:00:00-03:00" hidden><img src="img/convite-unaro-2026-10.jpg" alt="Convite da reunião da UNARO na sede da ABEAA, em 26 de outubro de 2026" loading="lazy" width="960" height="1200"><div>
+            <span class="meta"><time datetime="2026-10-26">26/10/2026</time> · Reunião regional</span>
+            <h4>Reunião da UNARO na ABEAA</h4>
+            <p>A sede da ABEAA recebeu a reunião da UNARO, União das Associações das Regiões Oeste, fundada em 2001 na própria sede da associação.</p>
+            <p class="partners">Anfitriã: ABEAA</p>
+          </div></li>
           <li><img src="img/atividades/2026-08-nr12.jpg" alt="Cartaz do curso NR-12, Segurança do Trabalho em Máquinas e Equipamentos" loading="lazy" width="480" height="600"><div>
             <span class="meta"><time datetime="2026-08-22">22/08/2026</time> · Curso presencial gratuito</span>
             <h4>NR-12 – Segurança do Trabalho em Máquinas e Equipamentos</h4>
@@ -1746,5 +1765,38 @@ img[data-protegida]{-webkit-user-drag:none;user-select:none;-webkit-touch-callou
         dlg.querySelectorAll(".lb-nav").forEach(function(x){x.hidden=true;}); dlg.showModal();});});
     mostra(0);
   });
+})();
+</script>
+<script>
+(function(){
+  function dia(d){return d.toLocaleDateString("en-CA",{timeZone:"America/Sao_Paulo"});}
+  function maisUm(iso){var d=new Date(iso+"T12:00:00-03:00");d.setUTCDate(d.getUTCDate()+1);return dia(d);}
+  function quando(iso,hm){return new Date(iso+"T"+hm+":00-03:00");}
+  function atualiza(){
+    var agora=new Date(), hoje=dia(agora);
+    document.querySelectorAll("[data-inicio][data-fim]").forEach(function(el){
+      var ini=new Date(el.dataset.inicio), fim=new Date(el.dataset.fim), txt="", agoraMesmo=false;
+      if(agora>=fim){el.hidden=true;return;}
+      el.hidden=false;
+      if(agora>=ini){
+        var h=(el.dataset.horario||"").split("-");
+        if(h.length===2){var a=quando(hoje,h[0]),b=quando(hoje,h[1]);
+          if(agora>=a&&agora<b){txt="Acontecendo agora";agoraMesmo=true;}
+          else if(agora<a){txt="É hoje";}
+          else if(hoje<dia(fim)){txt="Continua amanhã";}
+        } else {txt="Acontecendo agora";agoraMesmo=true;}
+      } else if(hoje===dia(ini)){txt="É hoje";}
+      else if(maisUm(hoje)===dia(ini)){txt="É amanhã";}
+      var selo=el.querySelector(".ev-selo");
+      if(selo){selo.textContent=txt;selo.hidden=!txt;selo.classList.toggle("agora",agoraMesmo);}
+    });
+    document.querySelectorAll("[data-mostrar-apos]").forEach(function(el){el.hidden=agora<new Date(el.dataset.mostrarApos);});
+    document.querySelectorAll(".ev-vazio").forEach(function(v){
+      var lista=v.parentNode.querySelectorAll(".rule.event[data-inicio]"), algum=false;
+      lista.forEach(function(e){if(!e.hidden)algum=true;});
+      v.hidden=algum;
+    });
+  }
+  atualiza(); setInterval(atualiza,60000);
 })();
 </script>
