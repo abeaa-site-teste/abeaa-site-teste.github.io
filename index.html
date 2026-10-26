@@ -375,6 +375,26 @@ a.item{color:inherit;text-decoration:none}
 .zoom-wrap::after{content:"";position:absolute;right:8px;bottom:8px;width:30px;height:30px;border-radius:50%;background:rgba(22,59,76,.85) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7'/%3E%3C/svg%3E") center/16px no-repeat;pointer-events:none}
 .lightbox{border:0;padding:0;background:transparent;max-width:100vw;max-height:100vh;width:100vw;height:100vh;margin:0}
 img[data-protegida]{-webkit-user-drag:none;user-select:none;-webkit-touch-callout:none}
+.esc-logos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.esc{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px;display:grid;gap:10px;text-align:center;align-content:start}
+.esc-fundo{display:grid;place-items:center;height:110px;border-radius:8px;padding:16px 20px}
+.esc-fundo img{display:block;max-width:100%;max-height:78px;width:auto;height:auto}
+.esc small{color:var(--muted);font-size:.82rem}
+@media (max-width:600px){.esc-logos{grid-template-columns:1fr}}
+.galeria{margin:0;display:grid;gap:10px;min-width:0}
+.gal-trilho{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;border-radius:8px;border:1px solid var(--line);background:var(--surface)}
+.gal-trilho::-webkit-scrollbar{display:none}
+.gal-item{flex:0 0 100%;scroll-snap-align:center;aspect-ratio:750/483;max-width:100%}
+.gal-abrir{display:block;width:100%;height:100%;padding:0;border:0;background:none;cursor:zoom-in}
+.gal-abrir img{display:block;width:100%;height:100%;object-fit:cover}
+.gal-abrir.selo-fundo{background:#fff}
+.gal-abrir.selo-fundo img{object-fit:contain;padding:14px;box-sizing:border-box}
+.gal-barra{display:flex;align-items:center;justify-content:center;gap:14px}
+.gal-seta{width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:var(--surface);color:var(--ink);font-size:1.3rem;line-height:1;cursor:pointer}
+.gal-pontos{display:flex;gap:8px}
+.gal-pontos i{width:8px;height:8px;border-radius:50%;background:var(--line);display:block}
+.gal-pontos i.on{background:var(--blue)}
+.gal-legenda{font-size:.84rem;color:var(--muted);min-height:2.6em}
 .lightbox::backdrop{background:rgba(8,20,28,.92)}
 .lightbox figure{margin:0;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:56px 16px 24px;box-sizing:border-box}
 .lightbox img{max-width:100%;max-height:calc(100vh - 140px);object-fit:contain;border-radius:4px;cursor:zoom-out}
@@ -459,9 +479,9 @@ img[data-protegida]{-webkit-user-drag:none;user-select:none;-webkit-touch-callou
         <div class="rule focus">
 <!--EMFOCO-->
           <span class="meta-focus">Em foco</span>
-          <h3>Piso salarial: PL 5.346/2026 está em consulta pública no Senado</h3>
-          <p>Projeto propõe piso de R$ 13.736 para jornada de 8 horas a partir de 2027. Participe da consulta pública do Senado.</p>
-          <a class="more" href="https://www12.senado.leg.br/ecidadania/visualizacaomateria?id=175780" target="_blank" rel="noopener">Votar na consulta pública →</a>
+          <h3>Renovação do Terço: profissionais já podem indicar sua entidade de classe para 2028</h3>
+          <p>Associado a mais de uma entidade de classe? Indique no CreaOne qual delas representa você no Plenário do CREA-SP em 2028.</p>
+          <a class="more" href="https://www.creasp.org.br/noticia/renovacao-do-terco-e-representacao-no-plenario-do-crea-sp-para-2028/" target="_blank" rel="noopener">Ler a notícia →</a>
           <a class="more" href="#atualizacoes" style="margin-left:16px">Todas as atualizações</a>
 <!--/EMFOCO-->
         </div>
@@ -482,6 +502,13 @@ img[data-protegida]{-webkit-user-drag:none;user-select:none;-webkit-touch-callou
     <p class="form-note">Profissionais registrados seguem o Código de Ética Profissional do Confea. <a href="https://www.confea.org.br/atuacao/etica-profissional" target="_blank" rel="noopener">Ler o Código de Ética →</a></p>
   </div></section>
 
+  <section id="calcada-chamada" style="border-top:1px solid var(--line)"><div class="wrap split" style="align-items:center">
+    <div class="stack"><p class="eyebrow">Acessibilidade</p><h2>Calçada é caminho para todos.</h2></div>
+    <div class="stack" style="gap:12px">
+      <p class="lead">Vai construir ou reformar a calçada? Veja os 5 cuidados da norma de acessibilidade e as regras de Santana de Parnaíba. <span class="pend">proposta para aprovação da diretoria</span></p>
+      <div><a class="btn btn-blue" href="#calcada">Ver os 5 cuidados</a></div>
+    </div>
+  </div></section>
   <section class="band-surface">
     <div class="wrap split">
       <div class="stack">
@@ -529,6 +556,7 @@ img[data-protegida]{-webkit-user-drag:none;user-select:none;-webkit-touch-callou
       <div style="display:flex;gap:20px;align-items:center;flex-wrap:wrap">
         <div class="price"><b>R$ 250</b><span>por ano</span></div>
         <a class="btn btn-yellow" href="#associe-se">Associar-se</a>
+        <p style="flex-basis:100%;color:var(--on-navy)">Inclui convênios de desconto com Mackenzie, UNIP e Escola Chácara. <a href="#educacao" style="color:#fff">Ver convênios em educação →</a></p>
       </div>
     </div>
   </section>
@@ -547,7 +575,18 @@ img[data-protegida]{-webkit-user-drag:none;user-select:none;-webkit-touch-callou
 
   <section id="quem-somos">
     <div class="wrap split">
-      <div class="stack" style="gap:24px"><p class="eyebrow">Quem somos</p><h2>Integração, valorização e representação profissional.</h2><figure class="photo"><img src="img/sede-abeaa-fachada.jpg" data-protegida alt="Fachada amarela da sede da ABEAA, na Rua Santa Edwiges, 118, Jardim Rubi, Santana de Parnaíba" loading="lazy" width="750" height="483"><figcaption>Sede da ABEAA, Rua Santa Edwiges, 118, Jardim Rubi, Santana de Parnaíba. <span class="pend">foto provisória, versão em alta resolução a enviar</span></figcaption></figure></div>
+      <div class="stack" style="gap:24px"><p class="eyebrow">Quem somos</p><h2>Integração, valorização e representação profissional.</h2><figure class="galeria" aria-roledescription="galeria" aria-label="Imagens da ABEAA">
+          <div class="gal-trilho" tabindex="0">
+            <div class="gal-item" data-legenda="Selo da ABEAA, o logotipo previsto no art. 1º do estatuto."><button type="button" class="gal-abrir selo-fundo" aria-label="Ampliar: selo da ABEAA"><img src="img/logo.png" alt="Selo da ABEAA: Associação Bandeirante de Engenheiros, Arquitetos e Agrônomos, Santana de Parnaíba" width="427" height="480"></button></div>
+            <div class="gal-item" data-legenda="Sede da ABEAA, Rua Santa Edwiges, 118, Jardim Rubi, Santana de Parnaíba." data-pend="foto provisória, versão em alta resolução a enviar"><button type="button" class="gal-abrir" aria-label="Ampliar: fachada da sede da ABEAA"><img src="img/sede-abeaa-fachada.jpg" data-protegida alt="Fachada amarela da sede da ABEAA, na Rua Santa Edwiges, 118, Jardim Rubi, Santana de Parnaíba" loading="lazy" width="750" height="483"></button></div>
+          </div>
+          <div class="gal-barra">
+            <button type="button" class="gal-seta" data-dir="-1" aria-label="Imagem anterior">‹</button>
+            <span class="gal-pontos" aria-hidden="true"></span>
+            <button type="button" class="gal-seta" data-dir="1" aria-label="Próxima imagem">›</button>
+          </div>
+          <figcaption class="gal-legenda" aria-live="polite"></figcaption>
+        </figure></div>
       <div class="prose">
         <p>Fundada em 2 de março de 1993, a ABEAA – Associação Bandeirante de Engenheiros, Arquitetos e Agrônomos – atua na integração, valorização e representação dos profissionais das áreas tecnológicas em Santana de Parnaíba e região.</p>
         <p>Ao longo de sua história, a Associação participou de momentos da representação profissional regional, incluindo a implantação da Inspetoria Regional do CREA-SP em Santana de Parnaíba e a criação da UNARO, em 2001, em sua própria sede.</p>
@@ -725,10 +764,13 @@ img[data-protegida]{-webkit-user-drag:none;user-select:none;-webkit-touch-callou
         <div><img src="img/pessoas/daniel-bastos.jpg" alt="Foto de Daniel Bastos Rodrigues da Silva, Inspetor Especial" width="400" height="400" loading="lazy" data-protegida><p><span>Inspetor Especial</span><b>Daniel Bastos Rodrigues da Silva</b><small>Engenheiro Eletricista</small></p></div>
         <div><img src="img/pessoas/regis.jpg" alt="Foto de Regis Boquino, Inspetor Especial" width="400" height="400" loading="lazy" data-protegida><p><span>Inspetor Especial</span><b>Regis Boquino</b><small>Engenheiro Civil</small></p></div>
       </div>
-      <dl class="facts" style="grid-template-columns:1fr;max-width:520px"><div><dt>Fiscal da região</dt><dd><span class="pend">nome a confirmar, com autorização</span></dd></div></dl>
+      <h3 class="board-title">Fiscalização do CREA-SP na região</h3>
+      <div class="board">
+        <div><img src="img/pessoas/heber-pegas.jpg" alt="Foto de Heber Pegas, Chefe de Equipe de Fiscalização da UGI Osasco e região do CREA-SP" width="400" height="400" loading="lazy" data-protegida><p><span>Chefe de Equipe de Fiscalização</span><b>Heber Pegas</b><small>Engenheiro Civil · UGI Osasco e região (CREA-SP)</small></p></div>
+      </div>
       <div class="stack" style="gap:6px">
         <p class="form-note">Também integram a CAF o presidente da ABEAA, ou representante indicado por ele, e até três conselheiros do CREA-SP da região (Regulamento das Inspetorias do CREA-SP, art. 22).</p>
-        <p class="form-note">Inspetores e fiscal são designados pelo CREA-SP. Para serviços e dúvidas, veja <a href="#atendimento-crea">Atendimento do CREA-SP</a>.</p>
+        <p class="form-note">Inspetores e equipe de fiscalização são designados pelo CREA-SP. Para serviços e dúvidas, veja <a href="#atendimento-crea">Atendimento do CREA-SP</a>.</p>
       </div>
     </div>
   </section>
@@ -909,6 +951,19 @@ img[data-protegida]{-webkit-user-drag:none;user-select:none;-webkit-touch-callou
   </section>
   <div class="ruler" aria-hidden="true"></div>
 
+  <section id="educacao" class="band-surface"><div class="wrap stack" style="gap:24px">
+    <div class="split" style="align-items:end">
+      <div class="stack"><p class="eyebrow">Principal benefício</p><h2>Descontos em educação para o associado.</h2></div>
+      <p class="lead">A ABEAA tem convênios com instituições de ensino. Associado com a contribuição em dia tem desconto. Consulte a secretaria para saber os percentuais e as condições. <span class="pend">percentuais e quem pode usar a confirmar</span></p>
+    </div>
+    <div class="esc-logos">
+      <div class="esc"><span class="esc-fundo" style="background:#fff"><img src="img/convenios/mackenzie.png" alt="Mackenzie" width="640" height="185" loading="lazy"></span><small>Universidade Presbiteriana Mackenzie</small></div>
+      <div class="esc"><span class="esc-fundo" style="background:#163b4c"><img src="img/convenios/unip.png" alt="UNIP" width="560" height="173" loading="lazy"></span><small>Universidade Paulista</small></div>
+      <div class="esc"><span class="esc-fundo" style="background:#164884"><img src="img/convenios/escola-chacara.png" alt="Escola Chácara, Sistema de Ensino Anglo" width="700" height="190" loading="lazy"></span><small>Escola Chácara · Santana de Parnaíba</small></div>
+    </div>
+    <p class="form-note">Marcas das instituições conveniadas, usadas com autorização. <span class="pend">autorizações a arquivar</span></p>
+    <div><a class="btn btn-blue" href="#associe-form">Quero me associar</a></div>
+  </div></section>
   <section id="beneficios">
     <div class="wrap stack" style="gap:32px">
       <div class="stack"><p class="eyebrow">Benefícios</p><h2>O que o associado tem à disposição</h2></div>
@@ -917,7 +972,7 @@ img[data-protegida]{-webkit-user-drag:none;user-select:none;-webkit-touch-callou
         <article class="item"><span class="tag">Área de lazer</span><h3>Para confraternizar</h3><p>Churrasqueira, forno de pizza, forno a lenha, banheiro, mesas e cadeiras.</p></article>
         <article class="item"><span class="tag">Sala do profissional</span><h3>Apoio ao trabalho técnico</h3><p>Computador com AutoCAD e impressora.</p></article>
         <article class="item"><span class="tag">Capacitação</span><h3>Cursos e palestras</h3><p>Presenciais, na sede, ou online. Os cursos e palestras de 2026 foram gratuitos para os participantes.</p></article>
-        <article class="item"><span class="tag">Convênios</span><h3>Descontos em educação</h3><ul class="conv"><li>Mackenzie</li><li>UNIP</li><li>Colégio Chácara, em Santana de Parnaíba</li></ul><p class="form-note">Consulte a secretaria para saber os percentuais e as condições.</p></article>
+        <article class="item"><span class="tag">Convênios</span><h3>Descontos em educação</h3><ul class="conv"><li>Mackenzie</li><li>UNIP</li><li>Escola Chácara, em Santana de Parnaíba</li></ul><p class="form-note">Consulte a secretaria para saber os percentuais e as condições.</p></article>
       </div>
     </div>
   </section>
@@ -966,7 +1021,7 @@ img[data-protegida]{-webkit-user-drag:none;user-select:none;-webkit-touch-callou
           <li><div><strong>Bem-vindo à associação</strong><p>Com a contribuição em dia, os benefícios ficam disponíveis.</p></div></li>
         </ol>
       </div>
-      <form data-form="Interesse em associação" novalidate>
+      <form data-form="Interesse em associação" id="associe-form" novalidate>
         <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px">
         <h3>Quero me associar</h3>
         <label for="as-nome">Nome completo<input id="as-nome" name="Nome" required autocomplete="name"></label>
@@ -1137,6 +1192,11 @@ img[data-protegida]{-webkit-user-drag:none;user-select:none;-webkit-touch-callou
         <div class="hl-head"><h3>Em foco</h3></div>
         <ul class="highlights">
           <li><div>
+            <span class="meta">CREA-SP · <time datetime="2026-10-21">21/10/2026</time></span>
+            <h4><a href="https://www.creasp.org.br/noticia/renovacao-do-terco-e-representacao-no-plenario-do-crea-sp-para-2028/" target="_blank" rel="noopener">Renovação do Terço: profissionais já podem indicar sua entidade de classe para 2028</a></h4>
+            <p>O CREA-SP abriu as opções que definem a composição do Plenário e das Câmaras Especializadas em 2028. Profissionais associados a mais de uma entidade de classe já podem escolher por qual delas querem ser representados, e engenheiros de segurança do trabalho podem optar por essa modalidade. A escolha é feita a qualquer momento no CreaOne.</p>
+          </div></li>
+          <li><div>
             <span class="meta">Senado Federal · <time datetime="2026-10-06">06/10/2026</time></span>
             <h4><a href="https://www12.senado.leg.br/ecidadania/visualizacaomateria?id=175780" target="_blank" rel="noopener">Piso salarial: PL 5.346/2026 está em consulta pública no Senado</a></h4>
             <p>O Projeto de Lei 5.346/2026 atualiza a Lei 4.950-A/1966 e propõe um piso nacional de R$ 13.736 para jornada de 8 horas, a partir de 2027, com correção anual pelo INPC, para profissionais de Engenharia, Agronomia, Arquitetura, Química e Veterinária. O texto está em consulta pública no portal e-Cidadania do Senado, onde qualquer cidadão pode votar e registrar sua opinião.</p>
@@ -1167,29 +1227,14 @@ img[data-protegida]{-webkit-user-drag:none;user-select:none;-webkit-touch-callou
         <div class="hl-head"><h3><span class="hl-logo"><img src="img/logo-crea-sp.png" alt="CREA-SP"></span></h3><a class="more" href="https://www.creasp.org.br/noticias/" target="_blank" rel="noopener">Todas as notícias do CREA-SP →</a><span class="hl-social" aria-label="Redes sociais do CREA-SP"><a href="https://www.instagram.com/creasaopaulo/" target="_blank" rel="noopener">Instagram</a><a href="https://www.facebook.com/creasaopaulo" target="_blank" rel="noopener">Facebook</a><a href="https://www.linkedin.com/company/creasaopaulo/" target="_blank" rel="noopener">LinkedIn</a><a href="https://www.youtube.com/tvcreasp" target="_blank" rel="noopener">YouTube</a><a href="https://x.com/creasp" target="_blank" rel="noopener">X</a></span></div>
         <ul class="highlights">
           <li><div>
-            <span class="meta">CREA-SP · <time datetime="2026-10-09">09/10/2026</time></span>
-            <h4><a href="https://www.creasp.org.br/noticia/infraestrutura-inovacao-e-sustentabilidade-sao-destaques-da-81a-soea/" target="_blank" rel="noopener">Infraestrutura, inovação e sustentabilidade são destaques da 81ª SOEA</a></h4>
-            <p>A 81ª Semana Oficial da Engenharia e da Agronomia acontece de 13 a 16 de outubro, em Aracaju (SE), com transmissão ao vivo pelo YouTube. A programação reúne painéis, minicursos e palestras sobre infraestrutura, inovação, inteligência artificial e sustentabilidade, como o debate sobre um Índice Nacional de Infraestrutura e o painel sobre o túnel imerso Santos–Guarujá. O CREA-SP participa com estande no evento.</p>
+            <span class="meta">CREA-SP · <time datetime="2026-10-23">23/10/2026</time></span>
+            <h4><a href="https://www.creasp.org.br/noticia/manual-do-crea-sp-alia-resiliencia-e-sustentabilidade-no-planejamento-das-cidades/" target="_blank" rel="noopener">CREA-SP lança manual de boas práticas de planejamento urbano</a></h4>
+            <p>Lançado na Sessão Plenária de 22 de outubro, o Manual de Boas Práticas de Planejamento Urbano orienta prefeituras e profissionais da concepção do projeto à entrega da obra, alinhado aos Objetivos de Desenvolvimento Sustentável. Traz roteiros, checklists, estudos de caso de Jundiaí, Santos e Sorocaba e indica linhas de financiamento do BNDES, do Novo PAC e do Desenvolve SP. O PDF é gratuito no portal do CREA-SP.</p>
           </div></li>
           <li><div>
-            <span class="meta">CREA-SP · <time datetime="2026-10-02">02/10/2026</time></span>
-            <h4><a href="https://www.creasp.org.br/noticia/engenharia-e-sustentabilidade-garantem-eficiencia-ao-maior-complexo-portuario-do-hemisferio-sul/" target="_blank" rel="noopener">Engenharia e sustentabilidade no Porto de Santos</a></h4>
-            <p>Reportagem do CREA-SP mostra o trabalho de engenharia por trás do maior complexo portuário do Hemisfério Sul, com dragagem contínua e manejo sustentável de sedimentos para receber navios cada vez maiores.</p>
-          </div></li>
-          <li><div>
-            <span class="meta">CREA-SP · <time datetime="2026-10-01">01/10/2026</time></span>
-            <h4><a href="https://www.creasp.org.br/noticia/projeto-estrutural-e-desenvolvimento-de-carreira-sao-destaques-no-crea-sp-capacita-de-outubro/" target="_blank" rel="noopener">Workshop gratuito de projeto estrutural e carreira no Crea-SP Capacita</a></h4>
-            <p>Em 22 de outubro, das 19h às 21h30, o Crea-SP Capacita promove um workshop sobre projeto estrutural, da teoria à prática, com orientações de carreira. O evento é gratuito e híbrido: presencial na sede Angélica, em São Paulo, e com transmissão pela internet. Inscrições pelo Sympla ou pela plataforma do Crea-SP Capacita.</p>
-          </div></li>
-          <li><div>
-            <span class="meta">CREA-SP · <time datetime="2026-09-17">17/09/2026</time></span>
-            <h4><a href="https://www.creasp.org.br/revista-crea-sao-paulo/" target="_blank" rel="noopener">Revista CREA São Paulo chega à 21ª edição</a></h4>
-            <p>A nova edição trata do papel da engenharia na gestão pública, com engenheiros em cargos da administração municipal. Traz ainda o Índice Confea de Infraestrutura (Infra-BR), a engenharia aeroespacial no Vale do Paraíba, áreas verdes contra ilhas de calor e enchentes e a fiscalização preventiva em estabelecimentos de saúde. Leitura gratuita no site do CREA-SP.</p>
-          </div></li>
-          <li><div>
-            <span class="meta">CREA-SP · <time datetime="2026-08-14">14/08/2026</time></span>
-            <h4><a href="https://www.creasp.org.br/noticia/engenharia-contribui-para-gestao-publica-em-vargem-grande-do-sul/" target="_blank" rel="noopener">CREA-SP lança a série “Marcas da Engenharia”</a></h4>
-            <p>A série em vídeo mostra como profissionais da área tecnológica influenciam a vida nos municípios paulistas. O primeiro episódio apresenta o engenheiro civil Guilherme Nicolau, vice-prefeito de Vargem Grande do Sul, e projetos como a regularização fundiária e a troca da rede de água. Os episódios estão no canal TV CREA-SP, no YouTube.</p>
+            <span class="meta">CREA-SP · <time datetime="2026-10-23">23/10/2026</time></span>
+            <h4><a href="https://www.creasp.org.br/noticia/inteligencia-artificial-e-integracao-academica-pautam-cies/" target="_blank" rel="noopener">Inteligência artificial e formação profissional em pauta no colégio de instituições de ensino do CREA-SP</a></h4>
+            <p>Em 21 de outubro, o CIES-SP reuniu instituições de ensino superior na sede do CREA-SP para discutir a aproximação entre academia, Conselho e mercado. A palestra sobre IA nas instituições de ensino reforçou a necessidade de supervisão humana, e foram apresentadas as iniciativas Registro Profissional sem custo e Carteira na colação de grau. O CREA-SP Capacita oferece um minicurso gratuito de IA aplicada à engenharia.</p>
           </div></li>
         </ul>
       </div>
@@ -1197,14 +1242,14 @@ img[data-protegida]{-webkit-user-drag:none;user-select:none;-webkit-touch-callou
         <div class="hl-head"><h3><span class="hl-logo"><img src="img/logo-confea.png" alt="Confea"></span></h3><a class="more" href="https://www.confea.org.br/noticias" target="_blank" rel="noopener">Todas as notícias do Confea →</a><span class="hl-social" aria-label="Redes sociais do Confea"><a href="https://www.instagram.com/confea_" target="_blank" rel="noopener">Instagram</a><a href="https://www.facebook.com/Confea/" target="_blank" rel="noopener">Facebook</a><a href="https://www.youtube.com/user/Confea10" target="_blank" rel="noopener">YouTube</a><a href="https://twitter.com/confeacrea" target="_blank" rel="noopener">X</a></span></div>
         <ul class="highlights">
           <li><div>
-            <span class="meta">Confea · <time datetime="2026-10-07">07/10/2026</time></span>
-            <h4><a href="https://www.confea.org.br/conheca-o-observatorio-nacional-de-infraestrutura-projeto-do-confea" target="_blank" rel="noopener">Confea apresenta o Observatório Nacional de Infraestrutura</a></h4>
-            <p>Apresentado ao TCU, o projeto propõe o monitoramento preventivo de infraestrutura crítica, começando por pontes e viadutos. As inspeções partem de denúncias de cidadãos, triadas pelos Creas, e de levantamentos feitos pelos próprios Conselhos. Quando há risco, o relatório segue para órgãos como DNIT, Defesa Civil e Ministério Público, e o caso é acompanhado em um painel público.</p>
+            <span class="meta">Confea · <time datetime="2026-10-23">23/10/2026</time></span>
+            <h4><a href="https://www.confea.org.br/confea-aprova-nota-tecnica-sobre-carreiras-tipicas-de-estado" target="_blank" rel="noopener">Confea defende engenharia, agronomia e geociências como carreiras típicas de Estado</a></h4>
+            <p>Em 23 de outubro, o Plenário do Confea aprovou nota técnica que defende a inclusão da Engenharia, da Agronomia e das Geociências entre as carreiras típicas de Estado. O estudo analisou editais de concursos de 2005 a 2026 e apontou cargos com atribuições dessas áreas sob nomes genéricos, como analista e gestor. A nota vai orientar a atuação do Confea junto à administração pública, inclusive sobre a formação exigida em concursos.</p>
           </div></li>
           <li><div>
-            <span class="meta">Confea · <time datetime="2026-10-05">05/10/2026</time></span>
-            <h4><a href="https://www.confea.org.br/confea-define-medidas-de-protecao-para-mulheres-em-situacao-de-violencia" target="_blank" rel="noopener">Confea define medidas de proteção para mulheres em situação de violência</a></h4>
-            <p>Portaria do Confea estabelece atendimento reservado, proteção de dados, medidas imediatas de segurança e apoio à campanha Sinal Vermelho para mulheres em situação de violência no âmbito do Conselho.</p>
+            <span class="meta">Confea · <time datetime="2026-10-21">21/10/2026</time></span>
+            <h4><a href="https://www.confea.org.br/confea-adere-ao-programa-destrava-para-apoiar-retomada-de-obras-publicas" target="_blank" rel="noopener">Confea adere ao Programa Destrava para retomar obras públicas paralisadas</a></h4>
+            <p>O Plenário do Confea aprovou a adesão ao Programa Destrava, coordenado pelo CNJ com TCU, CNMP, ministérios da Saúde e da Educação, FNDE, OAB e Atricon, para identificar obras públicas paralisadas, sobretudo de saúde e educação, e buscar a sua retomada. Na mesma sessão, ficou aberto de 1º/12/2026 a 31/03/2027 o prazo para entidades de classe indicarem profissionais às honrarias do Mérito do Sistema Confea/Crea.</p>
           </div></li>
           <li><div>
             <span class="meta">Confea · <time datetime="2026-10-01">01/10/2026</time></span>
@@ -1217,19 +1262,9 @@ img[data-protegida]{-webkit-user-drag:none;user-select:none;-webkit-touch-callou
         <div class="hl-head"><h3><span class="hl-logo"><img src="img/logo-mutua.png" alt="Mútua"></span></h3><a class="more" href="https://www.mutua.com.br/category/noticias-mutua/" target="_blank" rel="noopener">Todas as notícias da Mútua →</a><span class="hl-social" aria-label="Redes sociais do Mútua"><a href="https://www.instagram.com/mutua_sp/" target="_blank" rel="noopener">Instagram</a></span></div>
         <ul class="highlights">
           <li><div>
-            <span class="meta">Mútua · <time datetime="2026-10-05">05/10/2026</time></span>
-            <h4><a href="https://www.mutua.com.br/mutua-oferece-seguro-e-assistencia-viagem-para-associados-e-participantes-da-81a-soea/" target="_blank" rel="noopener">Mútua oferece seguros aos participantes da 81ª SOEA</a></h4>
-            <p>De 12 a 17 de outubro, a Mútua disponibiliza dois seguros na 81ª SOEA: o Seguro Evento, em parceria com o Confea, para todos os inscritos, com cobertura para morte e invalidez acidentais e despesas médicas e odontológicas de até R$ 3 mil; e o Seguro Assistência Viagem, para os associados adimplentes da Mútua. Os inscritos recebem as orientações por e-mail.</p>
-          </div></li>
-          <li><div>
-            <span class="meta">Mútua · <time datetime="2026-09-23">23/09/2026</time></span>
-            <h4><a href="https://www.mutua.com.br/diretoria-executiva-apresenta-novidades-no-site-da-mutua-durante-plenaria-do-confea/" target="_blank" rel="noopener">Site da Mútua terá páginas próprias para as regionais</a></h4>
-            <p>Na Plenária do Confea, a diretoria executiva da Mútua apresentou o relatório de atividades e novidades do site, como o MWS Regionais: cada regional passa a ter sua própria página dentro do site da Mútua, com notícias e eventos.</p>
-          </div></li>
-          <li><div>
-            <span class="meta">Mútua · <time datetime="2026-09-18">18/09/2026</time></span>
-            <h4><a href="https://www.mutua.com.br/palestra-da-mutua-destaca-a-importancia-da-identificacao-dos-riscos-psicossociais-no-ambiente-de-trabalho/" target="_blank" rel="noopener">Palestra da Mútua destaca a identificação dos riscos psicossociais no trabalho</a></h4>
-            <p>Em palestra na sede, com participação online das regionais e de associados, a Mútua tratou da campanha Setembro Amarelo e da avaliação dos riscos psicossociais no ambiente de trabalho, prevista na NR-1.</p>
+            <span class="meta">Mútua · <time datetime="2026-10-15">15/10/2026</time></span>
+            <h4><a href="https://www.mutua.com.br/mutua-anuncia-lancamento-do-wellhub-para-mais-14-estados-e-distrito-federal-na-81a-soea/" target="_blank" rel="noopener">Mútua amplia o Wellhub para mais 14 estados e o Distrito Federal</a></h4>
+            <p>Anunciado na 81ª SOEA, o Mútua Wellhub dá acesso a academias, estúdios, nutricionistas, terapias e aulas on-line, com mensalidades a partir de R$ 39,99 e sem taxa de adesão, para associados adimplentes e até três dependentes. O benefício, que já existia em São Paulo, Rio de Janeiro, Minas Gerais e Rio Grande do Sul, chega a mais 14 estados e ao DF. Para assinar, procure a sua Regional e faça a pré-inscrição.</p>
           </div></li>
         </ul>
       </div>
@@ -1237,19 +1272,34 @@ img[data-protegida]{-webkit-user-drag:none;user-select:none;-webkit-touch-callou
         <div class="hl-head"><h3><span class="hl-pin" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span>Profissão e região</h3><span class="hl-sub">Santana de Parnaíba e Pirapora do Bom Jesus</span> <span class="pend">exemplo para aprovação da diretoria</span></div>
         <ul class="highlights">
           <li><div>
+            <span class="meta">Enel · <time datetime="2026-09-22">22/09/2026</time></span>
+            <h4><a href="https://www.enel.com.br/pt-saopaulo/midia/press/d202609-enel-arvore-mais-segura-em-pirapora-do-bom-jesus.html" target="_blank" rel="noopener">Enel troca árvores em conflito com a rede elétrica em Pirapora do Bom Jesus</a></h4>
+            <p>Com a Prefeitura, a Enel começou em Pirapora do Bom Jesus o projeto Árvore Mais Segura, que substitui árvores com risco para a população ou para a rede por espécies nativas de até 9 metros, abaixo dos 11 metros dos postes. A meta é trocar 100 árvores até o fim de 2026, com replantio em até 30 dias após a retirada. Neste ano, a distribuidora já fez 11.270 podas na cidade, acima da meta de 8.918.</p>
+          </div></li>
+          <li><div>
+            <span class="meta">Visão Oeste · <time datetime="2026-09-04">04/09/2026</time></span>
+            <h4><a href="https://visaooeste.com.br/santana-de-parnaiba-vai-iniciar-obras-de-esgoto-e-visa-atingir-90-de-saneamento-basico/" target="_blank" rel="noopener">Santana de Parnaíba contrata novos trechos de esgoto para passar de 90% de coleta e tratamento</a></h4>
+            <p>A Prefeitura assinou o contrato para implantar os canteiros de dois novos trechos de esgoto. O trecho 26 vai coletar o esgoto de toda a região de Alphaville e levá-lo à ETE Barueri; o trecho 27 atenderá o Centro e bairros até o Jardim Isaura, como Sítio do Morro, Germano, Parque Santana e Rancho Alegre. A meta é superar 90% de esgoto coletado e tratado. Valores e prazos de conclusão não foram divulgados.</p>
+          </div></li>
+          <li><div>
             <span class="meta">ABC do ABC · <time datetime="2026-07-30">30/07/2026</time></span>
             <h4><a href="https://www.abcdoabc.com.br/obras-de-saneamento-avancam-pirapora-bom-jesus/" target="_blank" rel="noopener">Sabesp amplia redes de água em bairros de Pirapora do Bom Jesus</a></h4>
             <p>As obras somam a adutora Ubaldo Lolli, com 3,4 km de tubulação de 400 mm, quase 14 km de novas redes no bairro Laranjeiras e a interligação da Super Avenida aos bairros vizinhos. Green Hills e Pindaré já foram concluídos, e o Igavetá deve receber mais de 13 km de redes. Cerca de 4,5 mil moradores serão beneficiados.</p>
           </div></li>
           <li><div>
-            <span class="meta">Folha de Alphaville · <time datetime="2026-07-22">22/07/2026</time></span>
-            <h4><a href="https://folhadealphaville.com.br/imoveis/2026/07/22/prefeitura-inicia-obras-de-revitalizacao-no-centro-historico-de-santana-de-parnaiba.html" target="_blank" rel="noopener">Santana de Parnaíba começa a requalificar o acesso ao Centro Histórico</a></h4>
-            <p>O projeto prevê ampliação do viário, nova praça, calçadões e enterramento da rede elétrica na Rua Padre Luiz Alves de Siqueira Castro, junto ao conjunto tombado pelo Condephaat e pelo Iphan. A Câmara aprovou crédito de R$ 5,895 milhões para desapropriações e equipamentos públicos. O projeto executivo ainda não foi divulgado.</p>
+            <span class="meta">Prefeitura de Santana de Parnaíba · <time datetime="2026-06-12">12/06/2026</time></span>
+            <h4><a href="https://prefeitura.santanadeparnaiba.sp.gov.br/Plataforma/noticia/detalhe-noticia/placas-solares-em-santana-de-parnaiba-trarao-economia-de-r-20-milhoes-ao-ano/9lkhZiz5AG-j6u5rbz7h0avYfV1cMQjIw3YGNbUp603b7msnjRSc8dRtEujXKGsWoEWeNA2" target="_blank" rel="noopener">Santana de Parnaíba instala energia solar em escolas e prédios públicos</a></h4>
+            <p>Na primeira fase, a Prefeitura instalou 48 sistemas fotovoltaicos em escolas municipais e outros equipamentos públicos; 23 já tinham recebido os novos medidores da concessionária e estavam gerando energia. O prédio principal do Centro Administrativo Bandeirantes receberá cerca de 1,2 mil placas, somadas às 100 do refeitório. Terminais rodoviários, Poupatempo e outros prédios devem receber sistemas até o fim de 2026. A estimativa divulgada é de economia de R$ 20 milhões por ano.</p>
           </div></li>
+        </ul>
+      </div>
+      <div class="hl-group">
+        <div class="hl-head"><h3>Outras fontes</h3></div>
+        <ul class="highlights">
           <li><div>
-            <span class="meta">Folha de Alphaville · <time datetime="2026-07-02">02/07/2026</time></span>
-            <h4><a href="https://folhadealphaville.com.br/cidades/2026/07/02/pirapora-do-bom-jesus-sediara-projeto-federal-piloto-para-despoluicao-do-rio-tiete.html" target="_blank" rel="noopener">Pirapora do Bom Jesus vai sediar projeto-piloto federal de despoluição do Tietê</a></h4>
-            <p>O termo de cooperação, assinado com a Agência Nacional de Águas e Saneamento Básico (ANA) dentro do Novo PAC, prevê R$ 7 milhões para identificar fontes de poluição, analisar a qualidade da água e testar soluções baseadas na natureza. Segundo o município, as obras podem começar a partir de 2027.</p>
+            <span class="meta">Canal Solar · <time datetime="2026-09-09">09/09/2026</time></span>
+            <h4><a href="https://canalsolar.com.br/aneel-controle-distribuidoras-geracao-distribuida/" target="_blank" rel="noopener">ANEEL abre consulta pública sobre novas regras de conexão para geração solar, baterias e veículos elétricos</a></h4>
+            <p>A Consulta Pública nº 033/2026 da ANEEL revisa o Módulo 3 do PRODIST, que trata da conexão à rede de geração distribuída, armazenamento, veículos elétricos e cargas controláveis. O foco são as instalações de maior porte, cerca de 70 mil, que somam mais de 33 GW e poderiam receber comandos das distribuidoras, inclusive para limitar a potência injetada. A microgeração residencial não é o foco inicial. As contribuições vão até 9 de novembro.</p>
           </div></li>
         </ul>
       </div>
@@ -1267,6 +1317,22 @@ img[data-protegida]{-webkit-user-drag:none;user-select:none;-webkit-touch-callou
       </div>
     </div>
   </section>
+  <section class="band-surface" id="calcada"><div class="wrap stack" style="gap:24px">
+    <div class="stack"><p class="eyebrow">Acessibilidade · para a população</p><h2>Calçada é caminho para todos.</h2>
+    <p class="lead">A calçada é o primeiro trecho do trajeto de quem anda a pé, usa cadeira de rodas, empurra um carrinho de bebê ou tem dificuldade para caminhar. Cinco cuidados ao construir ou reformar a sua. <span class="pend">proposta para aprovação da diretoria</span></p></div>
+    <ol class="steps-5">
+      <li><h3>Faixa livre desimpedida</h3><p>Faixa contínua entre os lotes, só para pedestres, com no mínimo 1,20 m de largura e 2,10 m de altura livre, sem degraus, vasos, lixeiras, galhos baixos ou veículos.</p><p class="form-note">NBR 9050, item 6.12.3</p></li>
+      <li><h3>Piso regular e pouco inclinado</h3><p>Inclinação para os lados de no máximo 3%; ao longo da calçada, acompanha a da rua. Piso firme, regular e antiderrapante.</p><p class="form-note">NBR 9050, itens 6.12.1 e 6.12.2</p></li>
+      <li><h3>Desníveis dentro do lote</h3><p>Ajustes de soleira e rampas de acesso ficam dentro do lote; a rampa da garagem não pode invadir a calçada. Só em calçadas com mais de 2,00 m a faixa junto ao lote pode receber a rampa, com autorização da Prefeitura.</p><p class="form-note">NBR 9050, itens 6.12.1 e 6.12.3; guia da Prefeitura</p></li>
+      <li><h3>Travessia rebaixada</h3><p>Rampa na direção da travessia, de preferência abaixo de 5% (máximo de 8,33%), com 1,50 m de largura (mínimo de 1,20 m), sem degrau para a rua e alinhada com a do outro lado. Piso tátil de alerta e direcional.</p><p class="form-note">NBR 9050, item 6.12.7.3; NBR 16537</p></li>
+      <li><h3>Árvores e postes junto ao meio-fio</h3><p>Árvores, postes e placas ficam na faixa de serviço, com pelo menos 0,70 m nas calçadas novas. Sob fiação, árvore de pequeno porte, sem cimentar a base.</p><p class="form-note">NBR 9050, item 6.12.3; guia da Prefeitura</p></li>
+    </ol>
+    <div class="item feature"><span class="tag">Em Santana de Parnaíba</span>
+      <p>Conforme o guia da Prefeitura, a construção e a manutenção da calçada em frente ao imóvel são responsabilidade do proprietário, e a largura mínima indicada para a calçada é de 3,00 m nas vias arteriais e de 2,50 m nas vias coletoras e locais.</p>
+      <p>O passo a passo, com desenhos, está no <a href="https://prefeitura.santanadeparnaiba.sp.gov.br/Plataforma/Content/pdf/SMMAP/PmSPCartilhaCalcadasEArborizacao.pdf" target="_blank" rel="noopener">Guia para Calçadas Arborizadas 2025</a>, da Prefeitura. Dúvidas: smmap.dplan@santanadeparnaiba.sp.gov.br</p>
+    </div>
+    <p class="form-note">Antes da obra, contrate profissional habilitado, com ART (CREA) ou RRT (CAU). Base: ABNT NBR 9050:2020 (versão corrigida 2021) e Lei nº 13.146/2015, a Lei Brasileira de Inclusão.</p>
+  </div></section>
   <section id="legislacao">
     <div class="wrap stack" style="gap:24px">
       <div class="stack"><p class="eyebrow">Consulta</p><h2>Legislação útil</h2><p class="lead">As principais leis das profissões e da construção no município, com link para o texto oficial.</p></div>
@@ -1275,6 +1341,7 @@ img[data-protegida]{-webkit-user-drag:none;user-select:none;-webkit-touch-callou
         <li><a href="https://www.planalto.gov.br/ccivil_03/leis/l4950a.htm" target="_blank" rel="noopener">Lei nº 4.950-A/1966</a><small>Salário mínimo profissional de engenheiros, arquitetos, agrônomos, químicos e veterinários.</small></li>
         <li><a href="https://www.planalto.gov.br/ccivil_03/leis/l6496.htm" target="_blank" rel="noopener">Lei nº 6.496/1977</a><small>Cria a Anotação de Responsabilidade Técnica (ART).</small></li>
         <li><a href="https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2010/lei/l12378.htm" target="_blank" rel="noopener">Lei nº 12.378/2010</a><small>Regulamenta a arquitetura e o urbanismo e cria o CAU.</small></li>
+        <li><a href="https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/inspecao-do-trabalho/seguranca-e-saude-no-trabalho/sst-portarias/2026-1/portaria-mte-no-737-nova-nr-10.pdf" target="_blank" rel="noopener">NR-10, nova redação (Portaria MTE nº 737/2026)</a><small>Segurança em instalações elétricas e serviços em eletricidade. Publicada em 01/06/2026; entra em vigor um ano após a publicação, em junho de 2027.</small></li>
         <li><a href="https://www.confea.org.br/atuacao/etica-profissional" target="_blank" rel="noopener">Código de Ética Profissional</a><small>Do Sistema Confea/Crea, para engenharia, agronomia e geociências.</small></li>
         <li><a href="https://www.santanadeparnaiba.sp.gov.br/obras.html" target="_blank" rel="noopener">Legislação de obras de Santana de Parnaíba</a><small>Zoneamento, Código de Edificações, normas para aprovação de projetos e regularização, na página da Prefeitura.</small></li>
       </ul>
@@ -1461,6 +1528,8 @@ img[data-protegida]{-webkit-user-drag:none;user-select:none;-webkit-touch-callou
       <p>O art. 63 do estatuto da ABEAA determina o respeito à Lei Geral de Proteção de Dados (Lei nº 13.709/2018), com garantia de privacidade, segurança e direito de acesso, correção e eliminação dos dados.</p>
       <h2>Cookies</h2>
       <p>Este site não usa cookies de publicidade nem ferramentas de rastreamento.</p>
+      <h2 id="acessibilidade-site">Acessibilidade do site</h2>
+      <p>Este site foi feito seguindo boas práticas de acessibilidade na internet: textos alternativos nas imagens, contraste de cores adequado, navegação pelo teclado, respeito à preferência por menos animação e leitura confortável no celular. Se tiver dificuldade para usar alguma parte do site, escreva para abeaaaparnaiba@gmail.com.</p>
     </div>
   </section>
 </div>
@@ -1490,7 +1559,7 @@ img[data-protegida]{-webkit-user-drag:none;user-select:none;-webkit-touch-callou
     </div>
     <div class="legal">
       <span>© 2026 ABEAA · Fotos da ABEAA: uso somente com autorização.</span>
-      <span><a href="#atualizacoes">Atualizações</a> · <a href="#transparencia">Transparência</a> · <a href="#privacidade">Privacidade</a></span>
+      <span><a href="#atualizacoes">Atualizações</a> · <a href="#transparencia">Transparência</a> · <a href="#privacidade">Privacidade</a> · <a href="#acessibilidade-site">Acessibilidade</a></span>
     </div>
   </div>
 </footer>
@@ -1655,5 +1724,27 @@ img[data-protegida]{-webkit-user-drag:none;user-select:none;-webkit-touch-callou
   dlg.addEventListener("click",function(){dlg.close();});
 })();
 </script>
-
-
+<script>
+(function(){
+  document.querySelectorAll(".galeria").forEach(function(g){
+    var tr=g.querySelector(".gal-trilho"), itens=[].slice.call(g.querySelectorAll(".gal-item")),
+        pts=g.querySelector(".gal-pontos"), leg=g.querySelector(".gal-legenda"), atual=0;
+    itens.forEach(function(){pts.appendChild(document.createElement("i"));});
+    function mostra(n){atual=n; [].forEach.call(pts.children,function(p,i){p.classList.toggle("on",i===n);});
+      var it=itens[n]; leg.textContent=it.dataset.legenda+" ("+(n+1)+" de "+itens.length+") ";
+      if(it.dataset.pend){var sp=document.createElement("span");sp.className="pend";sp.textContent=it.dataset.pend;leg.appendChild(sp);}}
+    function vai(n){n=(n+itens.length)%itens.length; tr.scrollTo({left:itens[n].offsetLeft-tr.offsetLeft,behavior:"smooth"}); mostra(n);}
+    g.querySelectorAll(".gal-seta").forEach(function(b){b.addEventListener("click",function(){vai(atual+Number(b.dataset.dir));});});
+    tr.addEventListener("keydown",function(e){if(e.key==="ArrowRight"){e.preventDefault();vai(atual+1);} if(e.key==="ArrowLeft"){e.preventDefault();vai(atual-1);}});
+    var t; tr.addEventListener("scroll",function(){clearTimeout(t);t=setTimeout(function(){var n=Math.round(tr.scrollLeft/tr.clientWidth); if(n!==atual) mostra(n);},80);});
+    var dlg=document.getElementById("lightbox");
+    itens.forEach(function(it){var b=it.querySelector(".gal-abrir"), im=b.querySelector("img");
+      b.addEventListener("click",function(){ if(!dlg||!dlg.showModal) return;
+        var big=dlg.querySelector("img"); big.src=im.currentSrc||im.src; big.alt=im.alt;
+        if(im.hasAttribute("data-protegida")) big.setAttribute("data-protegida",""); else big.removeAttribute("data-protegida");
+        dlg.querySelector("figcaption").textContent=it.dataset.legenda;
+        dlg.querySelectorAll(".lb-nav").forEach(function(x){x.hidden=true;}); dlg.showModal();});});
+    mostra(0);
+  });
+})();
+</script>
