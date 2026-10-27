@@ -375,6 +375,8 @@ a.item{color:inherit;text-decoration:none}
 .zoom-wrap::after{content:"";position:absolute;right:8px;bottom:8px;width:30px;height:30px;border-radius:50%;background:rgba(22,59,76,.85) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7'/%3E%3C/svg%3E") center/16px no-repeat;pointer-events:none}
 .lightbox{border:0;padding:0;background:transparent;max-width:100vw;max-height:100vh;width:100vw;height:100vh;margin:0}
 img[data-protegida]{-webkit-user-drag:none;user-select:none;-webkit-touch-callout:none}
+.item>.zoom-wrap{width:calc(100% + 44px)!important;margin:-22px -22px 8px;position:relative;display:block}
+.item>.zoom-wrap img,.item>img.esp-foto{display:block;width:100%;height:auto!important;max-height:none;aspect-ratio:4/3;object-fit:cover;border-radius:8px 8px 0 0}
 .ah{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:36px;align-items:center}
 .ah-sem-foto{grid-template-columns:1fr}
 .ah-foto{display:block}
@@ -573,9 +575,9 @@ img[data-protegida]{-webkit-user-drag:none;user-select:none;-webkit-touch-callou
         <a class="more" href="#sede">Conheça a sede →</a>
       </div>
       <div class="grid-3">
-        <article class="item"><span class="tag">Auditório</span><h3>50 lugares com data show</h3><p>Para cursos, palestras e reuniões, mediante reserva.</p></article>
-        <article class="item"><span class="tag">Sala do profissional</span><h3>Computador, AutoCAD e impressora</h3><p>Apoio ao trabalho técnico dos associados.</p></article>
-        <article class="item"><span class="tag">Área de lazer</span><h3>Churrasqueira, forno de pizza e forno a lenha</h3><p>Com banheiro, mesas e cadeiras, para confraternizações dos associados.</p></article>
+        <article class="item"><img class="esp-foto" src="img/sede/auditorio-1.jpg" alt="Auditório da ABEAA visto do fundo, com as cadeiras, o palco com a mesa e o telão" width="860" height="645" loading="lazy" data-protegida><img class="foto-extra" src="img/sede/auditorio-3.jpg" alt="Palco do auditório, com a mesa, o telão e os banners" width="900" height="675" loading="lazy" hidden data-protegida><img class="foto-extra" src="img/sede/auditorio-2.jpg" alt="Auditório visto do palco" width="840" height="630" loading="lazy" hidden data-protegida><img class="foto-extra" src="img/sede/auditorio-4.jpg" alt="Mesa de reuniões ao fundo do auditório" width="840" height="630" loading="lazy" hidden data-protegida><span class="tag">Auditório</span><h3>50 lugares com data show</h3><p>Para cursos, palestras e reuniões, mediante reserva.</p></article>
+        <article class="item"><img class="esp-foto" src="img/sede/sala-1.jpg" alt="Sala do profissional, com computador, mesa e impressora de grande formato (plotter)" width="1200" height="676" loading="lazy" data-protegida><img class="foto-extra" src="img/sede/sala-2.jpg" alt="Sala do profissional vista da porta" width="1200" height="676" loading="lazy" hidden data-protegida><span class="tag">Sala do profissional</span><h3>Computador, AutoCAD e impressora</h3><p>Apoio ao trabalho técnico dos associados.</p></article>
+        <article class="item"><img class="esp-foto" src="img/sede/lazer-1.jpg" alt="Área de lazer coberta, com balcão e churrasqueira ao fundo" width="840" height="630" loading="lazy" data-protegida><img class="foto-extra" src="img/sede/lazer-2.jpg" alt="Área de lazer coberta, com forno de pizza ao fundo" width="840" height="630" loading="lazy" hidden data-protegida><img class="foto-extra" src="img/sede/lazer-3.jpg" alt="Área de lazer, com acesso ao banheiro" width="860" height="645" loading="lazy" hidden data-protegida><span class="tag">Área de lazer</span><h3>Churrasqueira, forno de pizza e forno a lenha</h3><p>Com banheiro, mesas e cadeiras, para confraternizações dos associados.</p></article>
       </div>
     </div>
   </section>
@@ -616,7 +618,8 @@ img[data-protegida]{-webkit-user-drag:none;user-select:none;-webkit-touch-callou
       <div class="stack" style="gap:24px"><p class="eyebrow">Quem somos</p><h2>Integração, valorização e representação profissional.</h2><figure class="galeria" aria-roledescription="galeria" aria-label="Imagens da ABEAA">
           <div class="gal-trilho" tabindex="0">
             <div class="gal-item" data-legenda="Selo da ABEAA, o logotipo previsto no art. 1º do estatuto."><button type="button" class="gal-abrir selo-fundo" aria-label="Ampliar: selo da ABEAA"><img src="img/logo.png" alt="Selo da ABEAA: Associação Bandeirante de Engenheiros, Arquitetos e Agrônomos, Santana de Parnaíba" width="427" height="480"></button></div>
-            <div class="gal-item" data-legenda="Sede da ABEAA, Rua Santa Edwiges, 118, Jardim Rubi, Santana de Parnaíba." data-pend="foto provisória, versão em alta resolução a enviar"><button type="button" class="gal-abrir" aria-label="Ampliar: fachada da sede da ABEAA"><img src="img/sede-abeaa-fachada.jpg" data-protegida alt="Fachada amarela da sede da ABEAA, na Rua Santa Edwiges, 118, Jardim Rubi, Santana de Parnaíba" loading="lazy" width="750" height="483"></button></div>
+            <div class="gal-item" data-legenda="Sede da ABEAA, Rua Santa Edwiges, 118, Jardim Rubi, Santana de Parnaíba."><button type="button" class="gal-abrir" aria-label="Ampliar: fachada da sede da ABEAA"><img src="img/sede/fachada-1.jpg" data-protegida alt="Fachada amarela da sede da ABEAA, na Rua Santa Edwiges, 118, Jardim Rubi, Santana de Parnaíba, com a vaga para pessoa com deficiência em frente" loading="lazy" width="1200" height="774"></button></div>
+            <div class="gal-item" data-legenda="A sede vista da Rua Santa Edwiges, inaugurada em agosto de 2008."><button type="button" class="gal-abrir" aria-label="Ampliar: sede da ABEAA vista da rua"><img src="img/sede/fachada-2.jpg" data-protegida alt="Sede da ABEAA vista da Rua Santa Edwiges, com o gramado, as palmeiras e a placa da rua" loading="lazy" width="1200" height="774"></button></div>
           </div>
           <div class="gal-barra">
             <button type="button" class="gal-seta" data-dir="-1" aria-label="Imagem anterior">‹</button>
@@ -695,9 +698,9 @@ img[data-protegida]{-webkit-user-drag:none;user-select:none;-webkit-touch-callou
         </div>
       </div>
       <div class="grid-3">
-        <article class="item"><span class="tag">Auditório</span><h3>50 lugares com data show</h3><p>Para cursos, palestras e reuniões, mediante reserva.</p></article>
-        <article class="item"><span class="tag">Sala do profissional</span><h3>Computador, AutoCAD e impressora</h3><p>Apoio ao trabalho técnico dos associados.</p></article>
-        <article class="item"><span class="tag">Área de lazer</span><h3>Churrasqueira, forno de pizza e forno a lenha</h3><p>Com banheiro, mesas e cadeiras, para confraternizações dos associados.</p></article>
+        <article class="item"><img class="esp-foto" src="img/sede/auditorio-1.jpg" alt="Auditório da ABEAA visto do fundo, com as cadeiras, o palco com a mesa e o telão" width="860" height="645" loading="lazy" data-protegida><img class="foto-extra" src="img/sede/auditorio-3.jpg" alt="Palco do auditório, com a mesa, o telão e os banners" width="900" height="675" loading="lazy" hidden data-protegida><img class="foto-extra" src="img/sede/auditorio-2.jpg" alt="Auditório visto do palco" width="840" height="630" loading="lazy" hidden data-protegida><img class="foto-extra" src="img/sede/auditorio-4.jpg" alt="Mesa de reuniões ao fundo do auditório" width="840" height="630" loading="lazy" hidden data-protegida><span class="tag">Auditório</span><h3>50 lugares com data show</h3><p>Para cursos, palestras e reuniões, mediante reserva.</p></article>
+        <article class="item"><img class="esp-foto" src="img/sede/sala-1.jpg" alt="Sala do profissional, com computador, mesa e impressora de grande formato (plotter)" width="1200" height="676" loading="lazy" data-protegida><img class="foto-extra" src="img/sede/sala-2.jpg" alt="Sala do profissional vista da porta" width="1200" height="676" loading="lazy" hidden data-protegida><span class="tag">Sala do profissional</span><h3>Computador, AutoCAD e impressora</h3><p>Apoio ao trabalho técnico dos associados.</p></article>
+        <article class="item"><img class="esp-foto" src="img/sede/lazer-1.jpg" alt="Área de lazer coberta, com balcão e churrasqueira ao fundo" width="840" height="630" loading="lazy" data-protegida><img class="foto-extra" src="img/sede/lazer-2.jpg" alt="Área de lazer coberta, com forno de pizza ao fundo" width="840" height="630" loading="lazy" hidden data-protegida><img class="foto-extra" src="img/sede/lazer-3.jpg" alt="Área de lazer, com acesso ao banheiro" width="860" height="645" loading="lazy" hidden data-protegida><span class="tag">Área de lazer</span><h3>Churrasqueira, forno de pizza e forno a lenha</h3><p>Com banheiro, mesas e cadeiras, para confraternizações dos associados.</p></article>
       </div>
       <div><a class="btn btn-blue" href="#reservas">Reservar um espaço</a></div>
     </div>
@@ -1811,11 +1814,11 @@ img[data-protegida]{-webkit-user-drag:none;user-select:none;-webkit-touch-callou
   prev.addEventListener("click",function(e){e.stopPropagation(); mostra(pos-1);});
   next.addEventListener("click",function(e){e.stopPropagation(); mostra(pos+1);});
   dlg.addEventListener("keydown",function(e){if(lista.length>1&&e.key==="ArrowLeft")mostra(pos-1); if(lista.length>1&&e.key==="ArrowRight")mostra(pos+1);});
-  document.querySelectorAll(".highlights li>img:not(.foto-extra), .done li>img, .board>div>img:not(.nozoom)").forEach(function(im){
+  document.querySelectorAll(".highlights li>img:not(.foto-extra), .done li>img, .board>div>img:not(.nozoom), .item>img.esp-foto").forEach(function(im){
     var w=document.createElement("button"); w.type="button"; w.className="zoom-wrap zoomable";
     w.setAttribute("aria-label","Ampliar foto: "+(im.alt||"")); w.style.cssText="padding:0;border:0;background:none;width:100%";
     im.parentNode.insertBefore(w,im); w.appendChild(im);
-    var li=im.closest("li"), extra=li?Array.prototype.slice.call(li.querySelectorAll("img.foto-extra")):[];
+    var li=im.closest("li,.item"), extra=li?Array.prototype.slice.call(li.querySelectorAll("img.foto-extra")):[];
     if(extra.length){var bd=document.createElement("span"); bd.className="zoom-count"; bd.textContent="+"+extra.length+(extra.length>1?" fotos":" foto"); w.appendChild(bd);}
     w.addEventListener("click",function(){
       var cr=w.closest("li,div"); cr=cr&&cr.querySelector(".credit-small");
