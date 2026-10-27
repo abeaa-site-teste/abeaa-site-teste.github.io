@@ -375,6 +375,7 @@ a.item{color:inherit;text-decoration:none}
 .zoom-wrap::after{content:"";position:absolute;right:8px;bottom:8px;width:30px;height:30px;border-radius:50%;background:rgba(22,59,76,.85) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7'/%3E%3C/svg%3E") center/16px no-repeat;pointer-events:none}
 .lightbox{border:0;padding:0;background:transparent;max-width:100vw;max-height:100vh;width:100vw;height:100vh;margin:0}
 img[data-protegida]{-webkit-user-drag:none;user-select:none;-webkit-touch-callout:none}
+.insc-fechada{display:inline-block;color:var(--muted);font-weight:600;font-size:.9rem;border:1px dashed currentColor;padding:4px 10px;border-radius:4px}
 .join-conv{flex-basis:100%;display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;color:var(--on-navy)}
 .join-logos{display:flex;flex-wrap:wrap;gap:10px;align-items:center;text-decoration:none}
 .jl{display:flex;align-items:center;box-sizing:border-box;height:36px;padding:0 10px;border-radius:6px;border:1px solid rgba(255,255,255,.18)}
@@ -479,7 +480,7 @@ img[data-protegida]{-webkit-user-drag:none;user-select:none;-webkit-touch-callou
             <span class="ev-selo" hidden></span>
             <h3>Patologias e Impermeabilização na Construção Civil</h3>
             <p>Curso online e gratuito, com certificado. Terça e quarta-feira, das 18h30 às 22h30. Instrutor: Eng. Civil Paulo Afonso dos Santos Júnior.</p>
-            <a class="more" href="https://santanadeparnaiba.portalsca.com.br" target="_blank" rel="noopener">Fazer inscrição →</a>
+            <a class="more" href="https://santanadeparnaiba.portalsca.com.br" target="_blank" rel="noopener" data-inscricao>Fazer inscrição →</a>
             <a class="more" href="#agenda" style="margin-left:16px">Detalhes</a>
           </div>
         </div>
@@ -837,8 +838,8 @@ img[data-protegida]{-webkit-user-drag:none;user-select:none;-webkit-touch-callou
           <div><dt>Parceria e apoio</dt><dd>CREA-SP (parceria) · Confea e Mútua (apoio)</dd></div>
         </dl>
         <div class="stack" style="gap:8px;margin-top:8px">
-          <div><a class="btn btn-blue" href="https://santanadeparnaiba.portalsca.com.br" target="_blank" rel="noopener">Fazer inscrição</a></div>
-          <p class="form-note">Inscrições em santanadeparnaiba.portalsca.com.br</p>
+          <div><a class="btn btn-blue" href="https://santanadeparnaiba.portalsca.com.br" target="_blank" rel="noopener" data-inscricao>Fazer inscrição</a></div>
+          <p class="form-note" data-inscricao-nota>Inscrições em santanadeparnaiba.portalsca.com.br</p>
         </div>
       </div>
       <img class="course-flyer" src="img/curso-patologias-2026.jpg" alt="Cartaz do curso Patologias e Impermeabilização na Construção Civil">
@@ -1595,7 +1596,7 @@ img[data-protegida]{-webkit-user-drag:none;user-select:none;-webkit-touch-callou
       </div>
     </div>
     <div class="legal">
-      <span>© 2026 ABEAA · Fotos da ABEAA: uso somente com autorização.</span>
+      <span>© <span data-ano>2026</span> ABEAA · Fotos da ABEAA: uso somente com autorização.</span>
       <span><a href="#atualizacoes">Atualizações</a> · <a href="#transparencia">Transparência</a> · <a href="#privacidade">Privacidade</a> · <a href="#acessibilidade-site">Acessibilidade</a></span>
     </div>
   </div>
@@ -1814,6 +1815,24 @@ img[data-protegida]{-webkit-user-drag:none;user-select:none;-webkit-touch-callou
       lista.forEach(function(e){if(!e.hidden)algum=true;});
       v.hidden=algum;
     });
+  }
+  atualiza(); setInterval(atualiza,60000);
+})();
+</script>
+<script>
+(function(){
+  function atualiza(){
+    var agora=new Date();
+    document.querySelectorAll("a[data-inscricao]").forEach(function(a){
+      var ev=a.closest("[data-inicio]"); if(!ev)return;
+      if(agora>=new Date(ev.dataset.inscricaoAte||ev.dataset.inicio)){
+        var s=document.createElement("span"); s.className="insc-fechada"; s.textContent="Inscrições encerradas";
+        a.replaceWith(s);
+        var nota=ev.querySelector("[data-inscricao-nota]"); if(nota)nota.hidden=true;
+      }
+    });
+    var ano=agora.toLocaleDateString("en-CA",{timeZone:"America/Sao_Paulo"}).slice(0,4);
+    document.querySelectorAll("[data-ano]").forEach(function(e){e.textContent=ano;});
   }
   atualiza(); setInterval(atualiza,60000);
 })();
