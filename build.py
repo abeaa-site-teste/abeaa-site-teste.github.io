@@ -92,6 +92,8 @@ REDES = {
 }
 
 EM_FOCO = []
+ULTIMA_ABEAA = None  # notícia da ABEAA em destaque na página inicial
+DIAS_ABEAA_HOME = 30  # dias que ela fica na página inicial
 ARQUIVO_ABEAA = ""   # página Notícias da ABEAA (todas, por ano)
 LIMITE_ABEAA = 4      # notícias da ABEAA na página Atualizações
 
@@ -151,6 +153,8 @@ def destaques_html():
         f'      <div class="hl-group">\n        <div class="hl-head"><h3>{ano}</h3></div>\n        <ul class="highlights">\n'
         + "\n".join(item(i) for i in lista) + "\n        </ul>\n      </div>"
         for ano, lista in sorted(_anos.items(), reverse=True))
+    global ULTIMA_ABEAA
+    ULTIMA_ABEAA = next((i for i in bons if str(i.get("fonte", "")).strip() == "ABEAA"), None)
     fixos = [i for i in bons if i.get("fixar") is True]
     bons = [i for i in bons if i.get("fixar") is not True]
     blocos = []
@@ -235,6 +239,50 @@ src = re.sub(_rarq, lambda m: m.group(1) + "\n" + _arq + "\n" + m.group(3), src,
 src = src.replace('src="img/', 'src="/img/')
 _o = _idx.read_text(encoding="utf-8")
 _n = re.sub(_rarq, lambda m: m.group(1) + "\n" + _arq + "\n" + m.group(3), _o, count=1, flags=re.S)
+if _n != _o:
+    _idx.write_text(_n, encoding="utf-8")
+
+# Página inicial: a notícia mais recente da ABEAA fica em destaque por 30 dias e sai sozinha
+def _abeaa_home():
+    import datetime as _dt
+    i = ULTIMA_ABEAA
+    if not i:
+        return ""
+    try:
+        dia = _dt.date.fromisoformat(str(i.get("data") or "")[:10])
+    except ValueError:
+        return ""
+    ate = dia + _dt.timedelta(days=DIAS_ABEAA_HOME + 1)
+    hoje = (_dt.datetime.now(_dt.timezone.utc) - _dt.timedelta(hours=3)).date()
+    if hoje >= ate:
+        return ""
+    e = lambda x: html.escape(str(x or "").strip())
+    texto = str(i.get("chamada") or "").strip()
+    if not texto:
+        r = str(i.get("resumo") or "").strip()
+        p = r.find(". ")
+        texto = r[:p + 1] if 0 < p < 320 else r[:300]
+    f = str(i.get("foto") or "").strip().lstrip("/")
+    foto = ""
+    if f.startswith("img/") and (root / f).exists():
+        prot = " data-protegida" if i.get("foto_protegida") is True else ""
+        foto = (f'      <a class="ah-foto" href="#noticias-abeaa" tabindex="-1" aria-hidden="true">'
+                f'<img src="{e(f)}" alt="" loading="lazy"{prot}></a>\n')
+    return (f'  <section class="band-surface ah-sec" data-mostrar-ate="{ate.isoformat()}T00:00:00-03:00">\n'
+            f'    <div class="wrap ah{"" if foto else " ah-sem-foto"}">\n{foto}'
+            f'      <div class="stack" style="gap:10px;min-width:0">\n'
+            f'        <p class="eyebrow">Notícia da ABEAA · <time datetime="{dia.isoformat()}">{dia:%d/%m/%Y}</time></p>\n'
+            f'        <h2>{e(i.get("titulo"))}</h2>\n'
+            f'        <p class="lead">{e(texto)}</p>\n'
+            f'        <div><a class="btn btn-blue" href="#noticias-abeaa">Ler a notícia e ver as fotos</a></div>\n'
+            f'      </div>\n    </div>\n  </section>')
+
+_rah = r"(<!--ABEAA-HOME-->)(.*?)(<!--/ABEAA-HOME-->)"
+_ah = _abeaa_home()
+src = re.sub(_rah, lambda m: m.group(1) + "\n" + _ah + "\n" + m.group(3), src, count=1, flags=re.S)
+src = src.replace('src="img/', 'src="/img/')
+_o = _idx.read_text(encoding="utf-8")
+_n = re.sub(_rah, lambda m: m.group(1) + "\n" + _ah + "\n" + m.group(3), _o, count=1, flags=re.S)
 if _n != _o:
     _idx.write_text(_n, encoding="utf-8")
 

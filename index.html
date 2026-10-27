@@ -375,6 +375,12 @@ a.item{color:inherit;text-decoration:none}
 .zoom-wrap::after{content:"";position:absolute;right:8px;bottom:8px;width:30px;height:30px;border-radius:50%;background:rgba(22,59,76,.85) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7'/%3E%3C/svg%3E") center/16px no-repeat;pointer-events:none}
 .lightbox{border:0;padding:0;background:transparent;max-width:100vw;max-height:100vh;width:100vw;height:100vh;margin:0}
 img[data-protegida]{-webkit-user-drag:none;user-select:none;-webkit-touch-callout:none}
+.ah{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:36px;align-items:center}
+.ah-sem-foto{grid-template-columns:1fr}
+.ah-foto{display:block}
+.ah-foto img{display:block;width:100%;height:auto;border-radius:8px;border:1px solid var(--line)}
+.ah h2{font-size:clamp(1.4rem,2.6vw,1.9rem);line-height:1.2;margin:0}
+@media (max-width:760px){.ah{grid-template-columns:1fr;gap:18px}}
 .insc-fechada{display:inline-block;color:var(--muted);font-weight:600;font-size:.9rem;border:1px dashed currentColor;padding:4px 10px;border-radius:4px}
 .join-conv{flex-basis:100%;display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;color:var(--on-navy)}
 .join-logos{display:flex;flex-wrap:wrap;gap:10px;align-items:center;text-decoration:none}
@@ -459,6 +465,19 @@ img[data-protegida]{-webkit-user-drag:none;user-select:none;-webkit-touch-callou
     </div>
     <p class="credit">Monumento aos Bandeirantes, Santana de Parnaíba · Foto: autoria <span class="pend">a confirmar</span></p>
   </section>
+<!--ABEAA-HOME-->
+  <section class="band-surface ah-sec" data-mostrar-ate="2026-11-26T00:00:00-03:00">
+    <div class="wrap ah">
+      <a class="ah-foto" href="#noticias-abeaa" tabindex="-1" aria-hidden="true"><img src="img/destaques/unaro-2026-10-grupo.jpg" alt="" loading="lazy" data-protegida></a>
+      <div class="stack" style="gap:10px;min-width:0">
+        <p class="eyebrow">Notícia da ABEAA · <time datetime="2026-10-26">26/10/2026</time></p>
+        <h2>ABEAA recebe a 10ª reunião de 2026 da UNARO</h2>
+        <p class="lead">A sede da ABEAA recebeu a 10ª reunião de 2026 da UNARO, com representantes do CREA-SP e do IPEEA na mesa e palestra sobre o uso ambiental da capina elétrica.</p>
+        <div><a class="btn btn-blue" href="#noticias-abeaa">Ler a notícia e ver as fotos</a></div>
+      </div>
+    </div>
+  </section>
+<!--/ABEAA-HOME-->
 
   <section>
     <div class="wrap two">
@@ -1879,6 +1898,15 @@ img[data-protegida]{-webkit-user-drag:none;user-select:none;-webkit-touch-callou
     });
     var ano=agora.toLocaleDateString("en-CA",{timeZone:"America/Sao_Paulo"}).slice(0,4);
     document.querySelectorAll("[data-ano]").forEach(function(e){e.textContent=ano;});
+  }
+  atualiza(); setInterval(atualiza,60000);
+})();
+</script>
+<script>
+(function(){
+  function atualiza(){
+    var agora=new Date();
+    document.querySelectorAll("[data-mostrar-ate]").forEach(function(el){el.hidden=agora>=new Date(el.dataset.mostrarAte);});
   }
   atualiza(); setInterval(atualiza,60000);
 })();
