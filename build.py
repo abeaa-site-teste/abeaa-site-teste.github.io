@@ -23,6 +23,8 @@ PAGES = {
                "Cursos, palestras e encontros da ABEAA em Santana de Parnaíba e online, com datas, horários e link de inscrição."),
     "atualizacoes": ("Atualizações profissionais · ABEAA",
                      "Notícias da ABEAA e links para as notícias oficiais do CREA-SP, do Confea e da Mútua."),
+    "noticias-abeaa": ("Notícias da ABEAA · todas as notícias por ano",
+                       "Todas as notícias da ABEAA, associação de engenheiros, arquitetos e agrônomos de Santana de Parnaíba, organizadas por ano."),
     "associe-se": ("Associe-se à ABEAA · R$ 250 por ano",
                    "Benefícios para associados da ABEAA: auditório, sala do profissional com plotter, área de lazer, cursos e convênios. Saiba como se associar."),
     "reservas": ("Reserva de espaços para associados · ABEAA",
@@ -90,6 +92,8 @@ REDES = {
 }
 
 EM_FOCO = []
+ARQUIVO_ABEAA = ""   # página Notícias da ABEAA (todas, por ano)
+LIMITE_ABEAA = 4      # notícias da ABEAA na página Atualizações
 
 def destaques_html():
     arq = Path(__file__).parent / "conteudo" / "destaques.json"
@@ -137,6 +141,16 @@ def destaques_html():
                 f'            {resumo}\n'
                 f'          </div></li>')
 
+    # Notícias da ABEAA: todas, por ano, para a página /noticias-abeaa/
+    global ARQUIVO_ABEAA
+    _anos = {}
+    for i in bons:
+        if str(i.get("fonte", "")).strip() == "ABEAA":
+            _anos.setdefault(str(i.get("data") or "")[:4] or "Sem data", []).append(i)
+    ARQUIVO_ABEAA = "\n".join(
+        f'      <div class="hl-group">\n        <div class="hl-head"><h3>{ano}</h3></div>\n        <ul class="highlights">\n'
+        + "\n".join(item(i) for i in lista) + "\n        </ul>\n      </div>"
+        for ano, lista in sorted(_anos.items(), reverse=True))
     fixos = [i for i in bons if i.get("fixar") is True]
     bons = [i for i in bons if i.get("fixar") is not True]
     blocos = []
@@ -170,12 +184,14 @@ def destaques_html():
             if nome in REDES:
                 ver += ('<span class="hl-social" aria-label="Redes sociais do ' + nome + '">' + "".join(
                     f'<a href="{u}" target="_blank" rel="noopener">{rede}</a>' for rede, u in REDES[nome]) + '</span>')
+            if nome == "ABEAA":
+                ver = '<a class="more" href="#noticias-abeaa">Todas as notícias da ABEAA →</a>'
             if fontes == "regiao":
                 ver = '<span class="hl-sub">Santana de Parnaíba e Pirapora do Bom Jesus</span>'
                 if any(i.get("exemplo") is True for i in grupo):
                     ver += ' <span class="pend">exemplo para aprovação da diretoria</span>'
             blocos.append(f'      <div class="hl-group">\n        <div class="hl-head"><h3>{titulo}</h3>{ver}</div>\n        <ul class="highlights">\n'
-                          + "\n".join(item(i) for i in grupo[:6]) + "\n        </ul>\n      </div>")
+                          + "\n".join(item(i) for i in grupo[:(LIMITE_ABEAA if nome == "ABEAA" else 6)]) + "\n        </ul>\n      </div>")
     return "\n".join(blocos)
 
 _dest = destaques_html()
@@ -211,6 +227,16 @@ if True:
     _novo = re.sub(_regiao, lambda m: m.group(1) + "\n" + _dest + "\n" + m.group(3), _orig, count=1, flags=re.S)
     if _novo != _orig:
         _idx.write_text(_novo, encoding="utf-8")
+
+# Página Notícias da ABEAA: preenchida com todas as notícias da associação (também na prévia)
+_rarq = r"(<!--ARQUIVO-ABEAA-->)(.*?)(<!--/ARQUIVO-ABEAA-->)"
+_arq = ARQUIVO_ABEAA or '        <p class="lead">As notícias da ABEAA aparecem aqui.</p>'
+src = re.sub(_rarq, lambda m: m.group(1) + "\n" + _arq + "\n" + m.group(3), src, count=1, flags=re.S)
+src = src.replace('src="img/', 'src="/img/')
+_o = _idx.read_text(encoding="utf-8")
+_n = re.sub(_rarq, lambda m: m.group(1) + "\n" + _arq + "\n" + m.group(3), _o, count=1, flags=re.S)
+if _n != _o:
+    _idx.write_text(_n, encoding="utf-8")
 
 routes = list(PAGES)
 views = {r: re.search(rf'(<div class="view" id="v-{r}">.*?)(?=\n<!-- =+ |\n</main>)', src, re.S).group(1) for r in routes}
