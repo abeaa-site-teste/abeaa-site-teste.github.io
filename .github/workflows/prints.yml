@@ -1,0 +1,31 @@
+# Depois de cada publicação do site e no dia 1º de cada mês, gera PDFs das páginas Atualizações
+# (todas as notícias) e Espaço CREA-SP e salva no Google Drive (pasta "Prestação de contas").
+# Precisa dos segredos PRINTS_URL e PRINTS_TOKEN (ver COMO_LIGAR_PRINTS.md). Sem eles, não faz nada.
+name: Prints para prestação de contas
+on:
+  workflow_run:
+    workflows: ["Publicar site"]
+    types: [completed]
+  schedule:
+    - cron: "17 12 1 * *"   # dia 1º de cada mês, 9h17 (horário de Brasília)
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  prints:
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Instalar o navegador que tira os prints
+        run: pip install "playwright==1.48.0" && python -m playwright install --with-deps chromium
+      - name: Esperar o site publicado atualizar
+        run: sleep 60
+      - name: Gerar os PDFs e salvar no Drive
+        env:
+          PRINTS_URL: ${{ secrets.PRINTS_URL }}
+          PRINTS_TOKEN: ${{ secrets.PRINTS_TOKEN }}
+        run: python3 prints.py
