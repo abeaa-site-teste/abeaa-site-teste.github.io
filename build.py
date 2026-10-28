@@ -23,6 +23,8 @@ PAGES = {
                "Cursos, palestras e encontros da ABEAA em Santana de Parnaíba e online, com datas, horários e link de inscrição."),
     "atualizacoes": ("Atualizações profissionais · ABEAA",
                      "Notícias da ABEAA e links para as notícias oficiais do CREA-SP, do Confea e da Mútua."),
+    "espaco-crea-sp": ("Espaço CREA-SP · ABEAA Santana de Parnaíba",
+                       "Notícias e serviços do CREA-SP, atendimento na sede da ABEAA e a Inspetoria do CREA-SP em Santana de Parnaíba e Pirapora do Bom Jesus."),
     "noticias-abeaa": ("Notícias da ABEAA · todas as notícias por ano",
                        "Todas as notícias da ABEAA, associação de engenheiros, arquitetos e agrônomos de Santana de Parnaíba, organizadas por ano."),
     "associe-se": ("Associe-se à ABEAA · R$ 250 por ano",
@@ -94,6 +96,7 @@ REDES = {
 EM_FOCO = []
 ULTIMA_ABEAA = None  # notícia da ABEAA em destaque na página inicial
 DIAS_ABEAA_HOME = 30  # dias que ela fica na página inicial
+ESPACO_CREA = ""  # notícias do CREA-SP para a página Espaço CREA-SP
 ARQUIVO_ABEAA = ""   # página Notícias da ABEAA (todas, por ano)
 LIMITE_ABEAA = 4      # notícias da ABEAA na página Atualizações
 
@@ -153,6 +156,10 @@ def destaques_html():
         f'      <div class="hl-group">\n        <div class="hl-head"><h3>{ano}</h3></div>\n        <ul class="highlights">\n'
         + "\n".join(item(i) for i in lista) + "\n        </ul>\n      </div>"
         for ano, lista in sorted(_anos.items(), reverse=True))
+    # Espaço CREA-SP: todas as notícias do CREA-SP
+    global ESPACO_CREA
+    _crea = [i for i in bons if str(i.get("fonte", "")).strip() == "CREA-SP" and i.get("regiao") is not True]
+    ESPACO_CREA = ('        <ul class="highlights">\n' + "\n".join(item(i) for i in _crea) + "\n        </ul>") if _crea else ""
     global ULTIMA_ABEAA
     ULTIMA_ABEAA = next((i for i in bons if str(i.get("fonte", "")).strip() == "ABEAA"), None)
     fixos = [i for i in bons if i.get("fixar") is True]
@@ -190,6 +197,8 @@ def destaques_html():
                     f'<a href="{u}" target="_blank" rel="noopener">{rede}</a>' for rede, u in REDES[nome]) + '</span>')
             if nome == "ABEAA":
                 ver = '<a class="more" href="#noticias-abeaa">Todas as notícias da ABEAA →</a>'
+            if nome == "CREA-SP":
+                ver = '<a class="more" href="#espaco-crea-sp">Espaço CREA-SP →</a>' + ver
             if fontes == "regiao":
                 ver = '<span class="hl-sub">Santana de Parnaíba e Pirapora do Bom Jesus</span>'
                 if any(i.get("exemplo") is True for i in grupo):
@@ -283,6 +292,16 @@ src = re.sub(_rah, lambda m: m.group(1) + "\n" + _ah + "\n" + m.group(3), src, c
 src = src.replace('src="img/', 'src="/img/')
 _o = _idx.read_text(encoding="utf-8")
 _n = re.sub(_rah, lambda m: m.group(1) + "\n" + _ah + "\n" + m.group(3), _o, count=1, flags=re.S)
+if _n != _o:
+    _idx.write_text(_n, encoding="utf-8")
+
+# Página Espaço CREA-SP: preenchida com as notícias do CREA-SP (também na prévia)
+_rcrea = r"(<!--ESPACO-CREA-->)(.*?)(<!--/ESPACO-CREA-->)"
+_crea_html = ESPACO_CREA or '        <p class="lead">As notícias do CREA-SP aparecem aqui.</p>'
+src = re.sub(_rcrea, lambda m: m.group(1) + "\n" + _crea_html + "\n" + m.group(3), src, count=1, flags=re.S)
+src = src.replace('src="img/', 'src="/img/')
+_o = _idx.read_text(encoding="utf-8")
+_n = re.sub(_rcrea, lambda m: m.group(1) + "\n" + _crea_html + "\n" + m.group(3), _o, count=1, flags=re.S)
 if _n != _o:
     _idx.write_text(_n, encoding="utf-8")
 
