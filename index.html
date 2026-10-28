@@ -1117,6 +1117,31 @@ img[data-protegida]{-webkit-user-drag:none;user-select:none;-webkit-touch-callou
       </form>
     </div>
   </section>
+  <section id="atualize-cadastro">
+    <div class="wrap split">
+      <div class="stack">
+        <p class="eyebrow">Já é associado?</p>
+        <h2>Atualize seu cadastro</h2>
+        <p class="lead">Mudou de telefone, e-mail ou endereço? Avise a secretaria por aqui para continuar recebendo os avisos de cursos, eventos e assembleias.</p>
+        <p class="form-note">A secretaria confere os dados e atualiza o cadastro. Se precisar, ela entra em contato.</p>
+      </div>
+      <form data-form="Atualização de cadastro de associado" novalidate>
+        <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px">
+        <h3>Atualizar dados</h3>
+        <label for="ac-nome">Nome completo<input id="ac-nome" name="Nome" required autocomplete="name"></label>
+        <label for="ac-reg">Registro profissional<input id="ac-reg" name="Registro" placeholder="CREA, CAU ou CRT (opcional)"></label>
+        <div class="row2">
+          <label for="ac-email">E-mail atual<input id="ac-email" name="E-mail" type="email" required autocomplete="email"></label>
+          <label for="ac-tel">Telefone / WhatsApp atual<input id="ac-tel" name="Telefone" type="tel" required autocomplete="tel"></label>
+        </div>
+        <label for="ac-end">Endereço (se mudou)<input id="ac-end" name="Endereço" autocomplete="street-address" placeholder="Rua, número, bairro e cidade"></label>
+        <label for="ac-obs">O que mudou? (opcional)<textarea id="ac-obs" name="Observações" placeholder="Ex.: troquei de e-mail; mudei de empresa"></textarea></label>
+        <label class="check" for="ac-lgpd"><input id="ac-lgpd" type="checkbox" required>Autorizo a ABEAA a usar estes dados para atualizar meu cadastro de associado, conforme a <a href="#privacidade">Política de Privacidade</a>.</label>
+        <button class="btn btn-blue" type="submit">Enviar atualização</button>
+        <div class="sent" hidden></div>
+      </form>
+    </div>
+  </section>
 </div>
 
 <!-- ============ RESERVAS ============ -->
@@ -1610,12 +1635,14 @@ img[data-protegida]{-webkit-user-drag:none;user-select:none;-webkit-touch-callou
           <select id="ct-assunto" name="Assunto" required>
             <option value="">Selecione</option>
             <option>Quero me associar</option>
+            <option>Atualizar meu cadastro</option>
             <option>Cursos e eventos</option>
             <option>Reserva de espaço</option>
             <option>Palestra em escola</option>
             <option>Outro assunto</option>
           </select>
         </label>
+        <p class="form-note">Associado que quer atualizar telefone, e-mail ou endereço: use o <a href="#atualize-cadastro">formulário de atualização de cadastro</a>.</p>
         <label for="ct-msg">Mensagem<textarea id="ct-msg" name="Mensagem" required></textarea></label>
         <label class="check" for="ct-lgpd"><input id="ct-lgpd" type="checkbox" required>Autorizo a ABEAA a usar estes dados para responder à minha mensagem, conforme a <a href="#privacidade">Política de Privacidade</a>.</label>
         <button class="btn btn-blue" type="submit">Enviar mensagem</button>
@@ -1666,7 +1693,7 @@ img[data-protegida]{-webkit-user-drag:none;user-select:none;-webkit-touch-callou
   <section>
     <div class="wrap stack" style="max-width:760px;margin-inline:auto">
       <h2>Quais dados coletamos</h2>
-      <p>Nome, e-mail, telefone, profissão e as informações que você escreve nos formulários de associação, reserva ou locação de espaços, contato e Vitrine Profissional.</p>
+      <p>Nome, e-mail, telefone, profissão e as informações que você escreve nos formulários de associação, reserva ou locação de espaços, contato, atualização de cadastro e Vitrine Profissional.</p>
       <h2>Para que usamos</h2>
       <p>Somente para responder ao seu pedido: analisar a associação, confirmar reservas, responder mensagens e publicar oportunidades que você autorizou.</p>
       <h2>Quem tem acesso</h2>
@@ -1975,5 +2002,11 @@ img[data-protegida]{-webkit-user-drag:none;user-select:none;-webkit-touch-callou
   f.querySelectorAll('input[name="Associado"]').forEach(function(r){r.addEventListener("change",aplica);});
   f.addEventListener("reset",function(){setTimeout(aplica,0);});
   aplica();
+})();
+</script>
+<script>
+(function(){
+  var a=document.getElementById("ct-assunto"); if(!a) return;
+  a.addEventListener("change",function(){ if(a.value==="Atualizar meu cadastro"){ a.value=""; location.href=document.querySelector('a[href$="#atualize-cadastro"]')?document.querySelector('a[href$="#atualize-cadastro"]').href:"#atualize-cadastro"; } });
 })();
 </script>
