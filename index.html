@@ -375,6 +375,11 @@ a.item{color:inherit;text-decoration:none}
 .zoom-wrap::after{content:"";position:absolute;right:8px;bottom:8px;width:30px;height:30px;border-radius:50%;background:rgba(22,59,76,.85) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7'/%3E%3C/svg%3E") center/16px no-repeat;pointer-events:none}
 .lightbox{border:0;padding:0;background:transparent;max-width:100vw;max-height:100vh;width:100vw;height:100vh;margin:0}
 img[data-protegida]{-webkit-user-drag:none;user-select:none;-webkit-touch-callout:none}
+.escolha{border:0;padding:0;margin:0 0 4px;display:flex;flex-wrap:wrap;gap:10px}
+.escolha legend{font-weight:600;margin-bottom:8px;padding:0;width:100%}
+.escolha label{display:flex;align-items:center;gap:8px;padding:10px 18px;border:1px solid var(--line);border-radius:999px;cursor:pointer;font-weight:600;background:var(--surface)}
+.escolha label:has(input:checked){border-color:var(--blue);box-shadow:inset 0 0 0 1px var(--blue)}
+.escolha input{width:18px;height:18px;margin:0;accent-color:var(--blue)}
 .ev-lado{display:grid;gap:14px;align-content:start}
 .ev-lado>.zoom-wrap{width:110px!important;display:block;position:relative}
 .ev-lado img.ev-cartaz{display:block;width:110px;height:auto;border-radius:6px;border:1px solid var(--line);box-shadow:0 4px 12px rgba(11,26,61,.12)}
@@ -709,7 +714,7 @@ img[data-protegida]{-webkit-user-drag:none;user-select:none;-webkit-touch-callou
         <article class="item"><img class="esp-foto" src="img/sede/sala-1.jpg" alt="Sala do profissional, com computador, mesa e impressora de grande formato (plotter)" width="1200" height="676" loading="lazy" data-protegida><img class="foto-extra" src="img/sede/sala-2.jpg" alt="Sala do profissional vista da porta" width="1200" height="676" loading="lazy" hidden data-protegida><span class="tag">Sala do profissional</span><h3>Computador, AutoCAD e impressora</h3><p>Apoio ao trabalho técnico dos associados.</p></article>
         <article class="item"><img class="esp-foto" src="img/sede/lazer-1.jpg" alt="Área de lazer coberta, com balcão e churrasqueira ao fundo" width="840" height="630" loading="lazy" data-protegida><img class="foto-extra" src="img/sede/lazer-2.jpg" alt="Área de lazer coberta, com forno de pizza ao fundo" width="840" height="630" loading="lazy" hidden data-protegida><img class="foto-extra" src="img/sede/lazer-3.jpg" alt="Área de lazer, com acesso ao banheiro" width="860" height="645" loading="lazy" hidden data-protegida><span class="tag">Área de lazer</span><h3>Churrasqueira, forno de pizza e forno a lenha</h3><p>Com banheiro, mesas e cadeiras, para confraternizações dos associados.</p></article>
       </div>
-      <div><a class="btn btn-blue" href="#reservas">Reservar um espaço</a></div>
+      <div class="hero-actions" style="margin:0;align-items:center"><a class="btn btn-blue" href="#reservas">Reservar um espaço</a><a class="more" href="#reservas">Não é associado? Também alugamos o auditório e a área de lazer →</a></div>
     </div>
   </section>
 
@@ -1118,34 +1123,51 @@ img[data-protegida]{-webkit-user-drag:none;user-select:none;-webkit-touch-callou
 <div class="view" id="v-reservas">
   <section class="band-blue">
     <div class="wrap stack">
-      <p class="eyebrow">Área do associado</p>
-      <h1>Reserva de espaços</h1>
-      <p class="lead">Associados podem solicitar o auditório, a área de lazer ou a sala do profissional. A secretaria confirma a disponibilidade por e-mail ou telefone.</p>
+      <p class="eyebrow">Espaços da sede</p>
+      <h1>Reserva e locação de espaços</h1>
+      <p class="lead">Associados reservam os espaços sem taxa. Empresas e não associados podem alugar o auditório e a área de lazer. A secretaria confirma a disponibilidade por e-mail ou telefone.</p>
     </div>
   </section>
   <div class="ruler" aria-hidden="true"></div>
   <section>
+    <div class="wrap stack" style="gap:28px">
+      <div class="stack"><p class="eyebrow">Os espaços</p><h2>Rua Santa Edwiges, 118, Jardim Rubi.</h2><p class="lead">Toque nas fotos para ver mais.</p></div>
+      <div class="grid-3">
+        <article class="item"><img class="esp-foto" src="img/sede/auditorio-1.jpg" alt="Auditório da ABEAA visto do fundo, com as cadeiras, o palco com a mesa e o telão" width="860" height="645" loading="lazy" data-protegida><img class="foto-extra" src="img/sede/auditorio-3.jpg" alt="Palco do auditório, com a mesa, o telão e os banners" width="900" height="675" loading="lazy" hidden data-protegida><img class="foto-extra" src="img/sede/auditorio-2.jpg" alt="Auditório visto do palco" width="840" height="630" loading="lazy" hidden data-protegida><img class="foto-extra" src="img/sede/auditorio-4.jpg" alt="Mesa de reuniões ao fundo do auditório" width="840" height="630" loading="lazy" hidden data-protegida><span class="tag">Auditório</span><h3>Até 50 pessoas, com data show</h3><p>Para cursos, treinamentos, palestras e reuniões.</p><p class="form-note">Associados e não associados</p></article>
+        <article class="item"><img class="esp-foto" src="img/sede/lazer-1.jpg" alt="Área de lazer coberta, com balcão e churrasqueira ao fundo" width="840" height="630" loading="lazy" data-protegida><img class="foto-extra" src="img/sede/lazer-2.jpg" alt="Área de lazer coberta, com forno de pizza ao fundo" width="840" height="630" loading="lazy" hidden data-protegida><img class="foto-extra" src="img/sede/lazer-3.jpg" alt="Área de lazer, com acesso ao banheiro" width="860" height="645" loading="lazy" hidden data-protegida><span class="tag">Área de lazer</span><h3>Churrasqueira, forno de pizza e forno a lenha</h3><p>Com banheiro, mesas e cadeiras, para confraternizações.</p><p class="form-note">Associados e não associados</p></article>
+        <article class="item"><img class="esp-foto" src="img/sede/sala-1.jpg" alt="Sala do profissional, com computador, mesa e impressora de grande formato (plotter)" width="1200" height="676" loading="lazy" data-protegida><img class="foto-extra" src="img/sede/sala-2.jpg" alt="Sala do profissional vista da porta" width="1200" height="676" loading="lazy" hidden data-protegida><span class="tag">Sala do profissional</span><h3>Computador, AutoCAD e impressora</h3><p>Apoio ao trabalho técnico.</p><p class="form-note"><strong>Exclusiva para associados</strong></p></article>
+      </div>
+    </div>
+  </section>
+  <section id="pedido-espaco" class="band-surface">
     <div class="wrap split">
       <div class="stack">
-        <p class="eyebrow">Antes de reservar</p>
-        <h2>Como funciona</h2>
+        <p class="eyebrow">Como funciona</p>
+        <h2>Peça pelo formulário</h2>
         <ol class="steps" style="margin-top:12px">
-          <li><div><strong>Envie o pedido</strong><p>Escolha o espaço, a data e o horário.</p></div></li>
-          <li><div><strong>A secretaria confere</strong><p>Disponibilidade e situação do associado.</p></div></li>
-          <li><div><strong>Reserva confirmada</strong><p>Você recebe a confirmação pelo contato informado.</p></div></li>
+          <li><div><strong>Envie o pedido</strong><p>Diga se é associado, escolha o espaço, a data e o horário.</p></div></li>
+          <li><div><strong>A secretaria confere</strong><p>Disponibilidade e, para associados, a situação da associação.</p></div></li>
+          <li><div><strong>Resposta pelo seu contato</strong><p>Associados recebem a confirmação; não associados recebem o orçamento.</p></div></li>
         </ol>
-        <p class="form-note">Peça com pelo menos 15 dias de antecedência. Não há taxa: o espaço deve ser devolvido como foi recebido. O horário é combinado com a secretaria, conforme o pedido.</p>
+        <p class="form-note">Peça com pelo menos 15 dias de antecedência. <strong>Associados:</strong> não há taxa; o espaço deve ser devolvido como foi recebido. <strong>Empresas e não associados:</strong> auditório e área de lazer, com valores e condições sob consulta. <span class="pend">valores, regras e contrato do aluguel: decisão da diretoria</span></p>
+        <p class="form-note">Ainda não é associado? <a href="#associe-se">Veja os benefícios de se associar →</a></p>
       </div>
-      <form data-form="Pedido de reserva" novalidate>
+      <form data-form="Pedido de espaço" id="form-espaco" novalidate>
         <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px">
-        <h3>Solicitar reserva</h3>
-        <label for="rs-nome">Nome do associado<input id="rs-nome" name="Nome" required autocomplete="name"></label>
+        <h3>Pedir um espaço</h3>
+        <fieldset class="escolha" id="rs-associado">
+          <legend>Você é associado da ABEAA?</legend>
+          <label for="rs-assoc-sim"><input id="rs-assoc-sim" type="radio" name="Associado" value="Sim" required>Sim</label>
+          <label for="rs-assoc-nao"><input id="rs-assoc-nao" type="radio" name="Associado" value="Não">Não</label>
+        </fieldset>
+        <label for="rs-nome">Nome<input id="rs-nome" name="Nome" required autocomplete="name"></label>
+        <label for="rs-empresa" hidden>Empresa ou instituição (opcional)<input id="rs-empresa" name="Empresa" autocomplete="organization"></label>
         <label for="rs-espaco">Espaço
           <select id="rs-espaco" name="Espaço" required>
             <option value="">Selecione</option>
             <option>Auditório (até 50 pessoas)</option>
             <option>Área de lazer</option>
-            <option>Sala do profissional</option>
+            <option data-so-associado>Sala do profissional (só associados)</option>
           </select>
         </label>
         <div class="row2">
@@ -1157,8 +1179,10 @@ img[data-protegida]{-webkit-user-drag:none;user-select:none;-webkit-touch-callou
           <label for="rs-tel">Telefone / WhatsApp<input id="rs-tel" name="Telefone" type="tel" required autocomplete="tel"></label>
         </div>
         <label for="rs-email">E-mail<input id="rs-email" name="E-mail" type="email" required autocomplete="email"></label>
-        <label for="rs-obs">Finalidade / observações<textarea id="rs-obs" name="Observações" placeholder="Ex.: palestra para 40 pessoas, precisa de data show"></textarea></label>
-        <label class="check" for="rs-lgpd"><input id="rs-lgpd" type="checkbox" required>Autorizo a ABEAA a usar estes dados para responder ao meu pedido de reserva, conforme a <a href="#privacidade">Política de Privacidade</a>.</label>
+        <label for="rs-obs">Tipo de evento e observações<textarea id="rs-obs" name="Observações" placeholder="Ex.: treinamento para 40 pessoas, precisa de data show"></textarea></label>
+        <p class="form-note" data-aviso="Sim" hidden>Associado: o uso dos espaços não tem taxa.</p>
+        <p class="form-note" data-aviso="Não" hidden>Não associado: auditório e área de lazer, com valores sob consulta. A secretaria envia o orçamento.</p>
+        <label class="check" for="rs-lgpd"><input id="rs-lgpd" type="checkbox" required>Autorizo a ABEAA a usar estes dados para responder ao meu pedido, conforme a <a href="#privacidade">Política de Privacidade</a>.</label>
         <button class="btn btn-blue" type="submit">Enviar pedido</button>
         <div class="sent" hidden></div>
       </form>
@@ -1400,6 +1424,18 @@ img[data-protegida]{-webkit-user-drag:none;user-select:none;-webkit-touch-callou
     </div>
     <p class="form-note">Antes da obra, contrate profissional habilitado, com ART (CREA) ou RRT (CAU). Base: ABNT NBR 9050:2020 (versão corrigida 2021) e Lei nº 13.146/2015, a Lei Brasileira de Inclusão.</p>
   </div></section>
+  <section id="servicos-online" style="border-bottom:1px solid var(--line)">
+    <div class="wrap stack" style="gap:24px">
+      <div class="stack"><p class="eyebrow">Para o profissional</p><h2>Serviços online</h2><p class="lead">Atalhos para os sistemas oficiais dos conselhos profissionais.</p></div>
+      <ul class="leis">
+        <li><a href="https://creanet1.creasp.org.br/" target="_blank" rel="noopener">Emitir ART · CREA-SP</a><small>Anotação de Responsabilidade Técnica, emitida com login e senha do profissional. Deve ser registrada antes do início da obra ou serviço.</small></li>
+        <li><a href="https://www.creasp.org.br/servico/crq-certidao-de-registro-e-quitacao/" target="_blank" rel="noopener">Certidão de registro e quitação · CREA-SP</a><small>Comprova o registro ativo e que o profissional está em dia com o Conselho. Gratuita e imediata.</small></li>
+        <li><a href="https://www.creasp.org.br/servico/consulta-publica-de-registrados/" target="_blank" rel="noopener">Consulta de profissionais registrados · CREA-SP</a><small>Consulta gratuita, sem login. Não substitui a certidão.</small></li>
+        <li><a href="https://causp.gov.br/rrt/" target="_blank" rel="noopener">Emitir RRT · CAU/SP</a><small>Registro de Responsabilidade Técnica de arquitetos e urbanistas.</small></li>
+      </ul>
+    </div>
+  </section>
+
   <section id="legislacao">
     <div class="wrap stack" style="gap:24px">
       <div class="stack"><p class="eyebrow">Consulta</p><h2>Legislação útil</h2><p class="lead">As principais leis das profissões e da construção no município, com link para o texto oficial.</p></div>
@@ -1630,7 +1666,7 @@ img[data-protegida]{-webkit-user-drag:none;user-select:none;-webkit-touch-callou
   <section>
     <div class="wrap stack" style="max-width:760px;margin-inline:auto">
       <h2>Quais dados coletamos</h2>
-      <p>Nome, e-mail, telefone, profissão e as informações que você escreve nos formulários de associação, reserva, contato e Vitrine Profissional.</p>
+      <p>Nome, e-mail, telefone, profissão e as informações que você escreve nos formulários de associação, reserva ou locação de espaços, contato e Vitrine Profissional.</p>
       <h2>Para que usamos</h2>
       <p>Somente para responder ao seu pedido: analisar a associação, confirmar reservas, responder mensagens e publicar oportunidades que você autorizou.</p>
       <h2>Quem tem acesso</h2>
@@ -1722,6 +1758,7 @@ img[data-protegida]{-webkit-user-drag:none;user-select:none;-webkit-touch-callou
   function erro(el){
     var v=(el.value||"").trim(), f=el.form;
     if(el.type==="checkbox") return el.required&&!el.checked?"Marque a autorização para continuar.":"";
+    if(el.type==="radio"){var g=f.querySelectorAll('input[name="'+el.name+'"]'); if(el!==g[0]) return ""; return [].some.call(g,function(r){return r.checked;})?"":"Escolha Sim ou Não.";}
     if(el.name==="_honey") return "";
     if(!v) {
       if(el.id==="as-reg"){var c=document.getElementById("as-cat"); if(c&&/^Titular/.test(c.value)) return "Para o associado titular, informe o registro no CREA, CAU ou CRT.";}
@@ -1743,7 +1780,7 @@ img[data-protegida]{-webkit-user-drag:none;user-select:none;-webkit-touch-callou
     if(el.id==="ct-msg"&&v.length<10) return "Escreva sua mensagem (mínimo de 10 caracteres).";
     return "";
   }
-  function alvo(el){return el.type==="checkbox"?el.closest("label"):el;}
+  function alvo(el){return el.type==="radio"?el.closest("fieldset"):el.type==="checkbox"?el.closest("label"):el;}
   function mostra(el,msg){
     var id=el.id+"-err", box=document.getElementById(id);
     if(msg){ if(!box){box=document.createElement("small");box.className="field-err";box.id=id;box.setAttribute("role","alert");alvo(el).insertAdjacentElement("afterend",box);}
@@ -1764,7 +1801,7 @@ img[data-protegida]{-webkit-user-drag:none;user-select:none;-webkit-touch-callou
     campos(f).forEach(function(el){
       if(el.type==="tel") el.addEventListener("input",function(){mascara(el);});
       el.addEventListener("blur",function(){ if(el.value||el.getAttribute("aria-invalid")) mostra(el,erro(el)); if(el.type==="email") dica(el); });
-      el.addEventListener(el.tagName==="SELECT"||el.type==="checkbox"||el.type==="date"?"change":"input",function(){ if(el.getAttribute("aria-invalid")) mostra(el,erro(el)); });
+      el.addEventListener(el.tagName==="SELECT"||el.type==="checkbox"||el.type==="radio"||el.type==="date"?"change":"input",function(){ if(el.getAttribute("aria-invalid")) mostra(el,erro(el)); });
     });
     var cat=f.querySelector("#as-cat"); if(cat) cat.addEventListener("change",function(){var r=document.getElementById("as-reg"); if(r) mostra(r,r.getAttribute("aria-invalid")?erro(r):""); r&&(r.placeholder=/^Titular/.test(cat.value)?"Número no CREA, CAU ou CRT":"CREA, CAU ou CRT (opcional)");});
     var esp=f.querySelector("#rs-espaco"); if(esp) esp.addEventListener("change",function(){var n=document.getElementById("rs-pessoas"); if(n&&n.value) mostra(n,erro(n));});
@@ -1786,7 +1823,7 @@ img[data-protegida]{-webkit-user-drag:none;user-select:none;-webkit-touch-callou
       }
       var data={_subject:"Site ABEAA \u2014 "+f.dataset.form,_template:"table"};
       f.querySelectorAll("input[name],select[name],textarea[name]").forEach(function(el){
-        if(el.type==="checkbox") return;
+        if(el.type==="checkbox"||(el.type==="radio"&&!el.checked)||el.closest("[hidden]")) return;
         data[el.name]=el.value;
         if(el.type==="email"){ data._replyto=el.value; data.email=el.value; delete data[el.name]; }
       });
@@ -1919,5 +1956,24 @@ img[data-protegida]{-webkit-user-drag:none;user-select:none;-webkit-touch-callou
     document.querySelectorAll("[data-mostrar-ate]").forEach(function(el){el.hidden=agora>=new Date(el.dataset.mostrarAte);});
   }
   atualiza(); setInterval(atualiza,60000);
+})();
+</script>
+<script>
+(function(){
+  var f=document.getElementById("form-espaco"); if(!f) return;
+  var esp=f.querySelector("#rs-espaco"), sala=esp.querySelector("[data-so-associado]"),
+      emp=f.querySelector('label[for="rs-empresa"]'), btn=f.querySelector("button[type=submit]");
+  function aplica(){
+    var r=f.querySelector('input[name="Associado"]:checked'), v=r?r.value:"";
+    f.querySelectorAll("[data-aviso]").forEach(function(p){p.hidden=p.dataset.aviso!==v;});
+    var nao=v==="Não";
+    sala.hidden=nao; sala.disabled=nao; if(nao&&sala.selected) esp.value="";
+    emp.hidden=!nao;
+    btn.textContent=v==="Sim"?"Enviar pedido de reserva":nao?"Pedir orçamento":"Enviar pedido";
+    f.dataset.form=v==="Sim"?"Reserva de associado":nao?"Orçamento de não associado":"Pedido de espaço";
+  }
+  f.querySelectorAll('input[name="Associado"]').forEach(function(r){r.addEventListener("change",aplica);});
+  f.addEventListener("reset",function(){setTimeout(aplica,0);});
+  aplica();
 })();
 </script>
