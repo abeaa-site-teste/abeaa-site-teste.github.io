@@ -36,6 +36,7 @@ MESES = ["01-janeiro", "02-fevereiro", "03-março", "04-abril", "05-maio", "06-j
 PAGINAS = [("/atualizacoes/", "Atualizações (todas as notícias)"),
            ("/espaco-crea-sp/", "Espaço CREA-SP")]
 TESTE = "--teste" in sys.argv
+FORCAR = os.environ.get("PRINTS_FORCAR", "").lower() == "true"  # rodada manual: gera de novo mesmo sem mudança
 URL, TOKEN = os.environ.get("PRINTS_URL", ""), os.environ.get("PRINTS_TOKEN", "")
 
 
@@ -68,7 +69,7 @@ def main():
         nome = f"{hoje} · {titulo}.pdf"
         desta = [a for a in existentes if a["nome"].endswith(f" · {titulo}.pdf")]
         ultima = max(desta, key=lambda a: a["nome"]) if desta else None
-        if TESTE or not ultima or ultima.get("descricao") != marca:
+        if TESTE or FORCAR or not ultima or ultima.get("descricao") != marca:
             fazer.append((caminho, titulo, nome))
         else:
             print(f"Sem mudança desde o último PDF: {titulo}")
@@ -90,18 +91,20 @@ def main():
                 document.querySelectorAll('img[loading="lazy"]').forEach(i => i.loading = 'eager');
                 window.scrollTo(0, 0);
                 const s = document.createElement('style');
-                s.textContent = '.top{position:static!important} .zoom-count,.zoom-wrap::after{display:none!important}';
+                s.textContent = '.top{position:static!important} .appbar,.zoom-count,.zoom-wrap::after{display:none!important}';
                 document.head.appendChild(s);
             }""")
             pag.wait_for_load_state("networkidle")
             extra = f"{ROTULO} · " if ROTULO else ""
-            cab = (f'<div style="font:9px Arial,sans-serif;width:100%;padding:0 10mm;display:flex;justify-content:space-between;color:#333">'
+            cab = (f'<div style="font:14px Arial,sans-serif;width:100%;padding:0 10mm;display:flex;justify-content:space-between;color:#333">'
                    f'<span>{extra}Site da ABEAA · {(EXIBE + caminho) if EXIBE else url}</span><span>Capturado em {carimbo} (horário de Brasília)</span></div>')
-            rod = ('<div style="font:9px Arial,sans-serif;width:100%;padding:0 10mm;text-align:right;color:#333">'
+            rod = ('<div style="font:14px Arial,sans-serif;width:100%;padding:0 10mm;text-align:right;color:#333">'
                    'Folha <span class="pageNumber"></span> de <span class="totalPages"></span></div>')
-            pdf = pag.pdf(format="A4", print_background=True, display_header_footer=True,
+            # folha com a largura do site no computador (1300 px) e proporção de A4: o site sai
+            # igual ao que se vê no computador, e ao imprimir em A4 a folha é reduzida por inteiro
+            pdf = pag.pdf(width="1360px", height="1923px", print_background=True, display_header_footer=True,
                           header_template=cab, footer_template=rod,
-                          margin={"top": "14mm", "bottom": "12mm", "left": "6mm", "right": "6mm"}, scale=0.62)
+                          margin={"top": "60px", "bottom": "50px", "left": "30px", "right": "30px"})
             if TESTE:
                 Path("prints_teste").mkdir(exist_ok=True)
                 (Path("prints_teste") / nome).write_bytes(pdf)

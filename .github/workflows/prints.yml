@@ -28,4 +28,5 @@ jobs:
         env:
           PRINTS_URL: ${{ secrets.PRINTS_URL }}
           PRINTS_TOKEN: ${{ secrets.PRINTS_TOKEN }}
+          PRINTS_FORCAR: ${{ github.event_name == 'workflow_dispatch' }}
         run: python3 prints.py
