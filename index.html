@@ -375,6 +375,9 @@ a.item{color:inherit;text-decoration:none}
 .zoom-wrap::after{content:"";position:absolute;right:8px;bottom:8px;width:30px;height:30px;border-radius:50%;background:rgba(22,59,76,.85) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7'/%3E%3C/svg%3E") center/16px no-repeat;pointer-events:none}
 .lightbox{border:0;padding:0;background:transparent;max-width:100vw;max-height:100vh;width:100vw;height:100vh;margin:0}
 img[data-protegida]{-webkit-user-drag:none;user-select:none;-webkit-touch-callout:none}
+/* Clube de vantagens */
+.clube-grupo{margin:8px 0 0;font-size:1.15rem}
+.clube-logo{display:grid;place-items:center;height:96px;border-radius:8px;background:var(--band);border:1px dashed var(--line);font:700 1.6rem/1 var(--f-display);color:var(--ink);margin-bottom:6px}
 .crea-selo{display:inline-grid;place-items:center;background:#fff;border-radius:10px;padding:18px 26px}
 .crea-selo img{display:block;width:220px;max-width:100%;height:auto}
 #crea-noticias .hl-head h2{margin:0}
@@ -604,13 +607,13 @@ img[data-protegida]{-webkit-user-drag:none;user-select:none;-webkit-touch-callou
         <div class="price"><b>R$ 250</b><span>por ano</span></div>
         <a class="btn btn-yellow" href="#associe-se">Associar-se</a>
         <div class="join-conv">
-          <p>Inclui convênios de desconto em educação:</p>
-          <a class="join-logos" href="#educacao" aria-label="Ver convênios em educação: Mackenzie, UNIP e Escola Chácara">
+          <p>Inclui o Clube de vantagens, com convênios em educação e descontos em empresas da região:</p>
+          <a class="join-logos" href="#educacao" aria-label="Ver o Clube de vantagens: Mackenzie, UNIP, Escola Chácara e empresas da região">
             <span class="jl" style="background:#fff"><img src="img/convenios/mackenzie.png" alt="" width="640" height="185"></span>
             <span class="jl jl-sem-fundo"><img src="img/convenios/unip.png" alt="" width="560" height="173"></span>
             <span class="jl" style="background:#164884"><img src="img/convenios/escola-chacara.png" alt="" width="700" height="190"></span>
           </a>
-          <a href="#educacao" style="color:#fff">Ver convênios em educação →</a>
+          <a href="#educacao" style="color:#fff">Ver o Clube de vantagens →</a>
         </div>
       </div>
     </div>
@@ -1023,15 +1026,23 @@ img[data-protegida]{-webkit-user-drag:none;user-select:none;-webkit-touch-callou
 
   <section id="educacao" class="band-surface"><div class="wrap stack" style="gap:24px">
     <div class="split" style="align-items:end">
-      <div class="stack"><p class="eyebrow">Principal benefício</p><h2>Descontos em educação para o associado.</h2></div>
-      <p class="lead">A ABEAA tem convênios com instituições de ensino. Associado com a contribuição em dia tem desconto. Consulte a secretaria para saber os percentuais e as condições. <span class="pend">percentuais e quem pode usar a confirmar</span></p>
+      <div class="stack"><p class="eyebrow">Clube de vantagens</p><h2>Descontos para o associado em dia.</h2></div>
+      <p class="lead">Convênios com instituições de ensino e parcerias com empresas da região. As condições são definidas por cada parceiro. <span class="pend">forma de comprovação (carteirinha digital) a aprovar</span></p>
     </div>
+    <h3 class="clube-grupo">Educação</h3>
+    <p class="form-note" style="margin-top:-12px">Consulte a secretaria para saber os percentuais e as condições. <span class="pend">percentuais e quem pode usar a confirmar</span></p>
     <div class="esc-logos">
       <div class="esc"><span class="esc-fundo" style="background:#fff"><img src="img/convenios/mackenzie.png" alt="Mackenzie" width="640" height="185" loading="lazy"></span><small>Universidade Presbiteriana Mackenzie</small></div>
       <div class="esc"><span class="esc-fundo" style="background:#163b4c"><img src="img/convenios/unip.png" alt="UNIP" width="560" height="173" loading="lazy"></span><small>Universidade Paulista</small></div>
       <div class="esc"><span class="esc-fundo" style="background:#164884"><img src="img/convenios/escola-chacara.png" alt="Escola Chácara, Sistema de Ensino Anglo" width="700" height="190" loading="lazy"></span><small>Escola Chácara · Santana de Parnaíba</small></div>
     </div>
     <p class="form-note">Marcas das instituições conveniadas, usadas com autorização. <span class="pend">autorizações a arquivar</span></p>
+    <h3 class="clube-grupo" id="clube">Comércio e serviços da região</h3>
+    <div class="grid-3">
+      <article class="item"><div class="clube-logo" aria-hidden="true">HB</div><span class="tag">Plotagem e informática</span><h3>HB Solutions</h3><p>10% de desconto na plotagem.</p><p class="form-note">Santana de Parnaíba · <span class="pend">endereço, contato e logo a confirmar</span></p></article>
+    </div>
+    <p class="form-note">É associado à Mútua? Ela tem benefícios próprios para quem é associado a ela: veja no <a href="#espaco-mutua">Espaço Mútua</a>.</p>
+    <p class="form-note">Parcerias com empresas válidas durante 2027. <span class="pend">ficha de adesão assinada a arquivar</span> Quer ser parceiro? <a href="#contato">Fale com a secretaria</a>.</p>
     <div><a class="btn btn-blue" href="#associe-form">Quero me associar</a></div>
   </div></section>
   <section id="beneficios">
@@ -1042,7 +1053,7 @@ img[data-protegida]{-webkit-user-drag:none;user-select:none;-webkit-touch-callou
         <article class="item"><span class="tag">Área de lazer</span><h3>Para confraternizar</h3><p>Churrasqueira, forno de pizza, forno a lenha, banheiro, mesas e cadeiras.</p></article>
         <article class="item"><span class="tag">Sala do profissional</span><h3>Apoio ao trabalho técnico</h3><p>Computador com AutoCAD e impressora.</p></article>
         <article class="item"><span class="tag">Capacitação</span><h3>Cursos e palestras</h3><p>Presenciais, na sede, ou online. Os cursos e palestras de 2026 foram gratuitos para os participantes.</p></article>
-        <article class="item"><span class="tag">Convênios</span><h3>Descontos em educação</h3><ul class="conv"><li>Mackenzie</li><li>UNIP</li><li>Escola Chácara, em Santana de Parnaíba</li></ul><p class="form-note">Consulte a secretaria para saber os percentuais e as condições.</p></article>
+        <article class="item"><span class="tag">Clube de vantagens</span><h3>Educação e empresas da região</h3><ul class="conv"><li>Mackenzie</li><li>UNIP</li><li>Escola Chácara, em Santana de Parnaíba</li><li>HB Solutions: 10% na plotagem</li></ul><p class="form-note"><a href="#educacao">Ver o Clube de vantagens</a></p></article>
       </div>
     </div>
   </section>
@@ -1346,14 +1357,19 @@ img[data-protegida]{-webkit-user-drag:none;user-select:none;-webkit-touch-callou
         <div class="hl-head"><h3><span class="hl-logo"><img src="img/logo-crea-sp.png" alt="CREA-SP"></span></h3><a class="more" href="#espaco-crea-sp">Espaço CREA-SP →</a><a class="more" href="https://www.creasp.org.br/noticias/" target="_blank" rel="noopener">Todas as notícias do CREA-SP →</a><span class="hl-social" aria-label="Redes sociais do CREA-SP"><a href="https://www.instagram.com/creasaopaulo/" target="_blank" rel="noopener">Instagram</a><a href="https://www.facebook.com/creasaopaulo" target="_blank" rel="noopener">Facebook</a><a href="https://www.linkedin.com/company/creasaopaulo/" target="_blank" rel="noopener">LinkedIn</a><a href="https://www.youtube.com/tvcreasp" target="_blank" rel="noopener">YouTube</a><a href="https://x.com/creasp" target="_blank" rel="noopener">X</a></span></div>
         <ul class="highlights">
           <li><div>
-            <span class="meta">CREA-SP · <time datetime="2026-10-23">23/10/2026</time></span>
-            <h4><a href="https://www.creasp.org.br/noticia/manual-do-crea-sp-alia-resiliencia-e-sustentabilidade-no-planejamento-das-cidades/" target="_blank" rel="noopener">CREA-SP lança manual de boas práticas de planejamento urbano</a></h4>
-            <p>Lançado na Sessão Plenária de 22 de outubro, o Manual de Boas Práticas de Planejamento Urbano orienta prefeituras e profissionais da concepção do projeto à entrega da obra, alinhado aos Objetivos de Desenvolvimento Sustentável. Traz roteiros, checklists, estudos de caso de Jundiaí, Santos e Sorocaba e indica linhas de financiamento do BNDES, do Novo PAC e do Desenvolve SP. O PDF é gratuito no portal do CREA-SP.</p>
+            <span class="meta">CREA-SP · <time datetime="2026-11-04">04/11/2026</time></span>
+            <h4><a href="https://www.creasp.org.br/noticia/inscricoes-abertas-para-o-xvii-encontro-crea-sp-jovem/" target="_blank" rel="noopener">Inscrições abertas para o XVII Encontro Crea-SP Jovem</a></h4>
+            <p>Voltado a estudantes e jovens profissionais das Engenharias, da Agronomia e das Geociências, o encontro será em 12 de dezembro, na Sede Angélica do CREA-SP, em São Paulo, com o tema &quot;Um encontro para viver o presente e o futuro da profissão&quot;. A participação é gratuita e as vagas são limitadas. A programação ainda será divulgada.</p>
+          </div></li>
+          <li><div>
+            <span class="meta">CREA-SP · <time datetime="2026-10-29">29/10/2026</time></span>
+            <h4><a href="https://www.creasp.org.br/noticia/braganca-paulista-recebe-anteprojeto-para-inovar-na-gestao-de-obras-e-servicos-publicos/" target="_blank" rel="noopener">Bragança Paulista recebe anteprojeto da AEA Bragança para modernizar a gestão de obras públicas</a></h4>
+            <p>A AEA Bragança, associação de engenheiros, arquitetos e agrônomos da Região Bragantina, entregou à Prefeitura de Bragança Paulista um anteprojeto para modernizar a gestão de contratos e orçamentos de obras e serviços de engenharia. O trabalho foi feito por meio de um termo de fomento do Confea, com apoio da Mútua e do CREA-SP, e oferece subsídios técnicos para licitações e contratações. A entrega teve a presença da presidente do CREA-SP, Lígia Mackey.</p>
           </div></li>
           <li><div>
             <span class="meta">CREA-SP · <time datetime="2026-10-23">23/10/2026</time></span>
-            <h4><a href="https://www.creasp.org.br/noticia/inteligencia-artificial-e-integracao-academica-pautam-cies/" target="_blank" rel="noopener">Inteligência artificial e formação profissional em pauta no colégio de instituições de ensino do CREA-SP</a></h4>
-            <p>Em 21 de outubro, o CIES-SP reuniu instituições de ensino superior na sede do CREA-SP para discutir a aproximação entre academia, Conselho e mercado. A palestra sobre IA nas instituições de ensino reforçou a necessidade de supervisão humana, e foram apresentadas as iniciativas Registro Profissional sem custo e Carteira na colação de grau. O CREA-SP Capacita oferece um minicurso gratuito de IA aplicada à engenharia.</p>
+            <h4><a href="https://www.creasp.org.br/noticia/manual-do-crea-sp-alia-resiliencia-e-sustentabilidade-no-planejamento-das-cidades/" target="_blank" rel="noopener">CREA-SP lança manual de boas práticas de planejamento urbano</a></h4>
+            <p>Lançado na Sessão Plenária de 22 de outubro, o Manual de Boas Práticas de Planejamento Urbano orienta prefeituras e profissionais da concepção do projeto à entrega da obra, alinhado aos Objetivos de Desenvolvimento Sustentável. Traz roteiros, checklists, estudos de caso de Jundiaí, Santos e Sorocaba e indica linhas de financiamento do BNDES, do Novo PAC e do Desenvolve SP. O PDF é gratuito no portal do CREA-SP.</p>
           </div></li>
         </ul>
       </div>
@@ -1361,25 +1377,30 @@ img[data-protegida]{-webkit-user-drag:none;user-select:none;-webkit-touch-callou
         <div class="hl-head"><h3><span class="hl-logo"><img src="img/logo-confea.png" alt="Confea"></span></h3><a class="more" href="https://www.confea.org.br/noticias" target="_blank" rel="noopener">Todas as notícias do Confea →</a><span class="hl-social" aria-label="Redes sociais do Confea"><a href="https://www.instagram.com/confea_" target="_blank" rel="noopener">Instagram</a><a href="https://www.facebook.com/Confea/" target="_blank" rel="noopener">Facebook</a><a href="https://www.youtube.com/user/Confea10" target="_blank" rel="noopener">YouTube</a><a href="https://twitter.com/confeacrea" target="_blank" rel="noopener">X</a></span></div>
         <ul class="highlights">
           <li><div>
-            <span class="meta">Confea · <time datetime="2026-10-23">23/10/2026</time></span>
-            <h4><a href="https://www.confea.org.br/confea-aprova-nota-tecnica-sobre-carreiras-tipicas-de-estado" target="_blank" rel="noopener">Confea defende engenharia, agronomia e geociências como carreiras típicas de Estado</a></h4>
-            <p>Em 23 de outubro, o Plenário do Confea aprovou nota técnica que defende a inclusão da Engenharia, da Agronomia e das Geociências entre as carreiras típicas de Estado. O estudo analisou editais de concursos de 2005 a 2026 e apontou cargos com atribuições dessas áreas sob nomes genéricos, como analista e gestor. A nota vai orientar a atuação do Confea junto à administração pública, inclusive sobre a formação exigida em concursos.</p>
+            <span class="meta">Confea · <time datetime="2026-11-04">04/11/2026</time></span>
+            <h4><a href="https://www.confea.org.br/geobusca-usa-ia-para-facilitar-acesso-dados-geocientificos" target="_blank" rel="noopener">Serviço Geológico do Brasil lança o GeoBusca, que usa IA para encontrar dados geocientíficos</a></h4>
+            <p>Lançado no 52º Congresso Brasileiro de Geologia, em Fortaleza, o GeoBusca reúne cerca de 5 milhões de dados de pesquisas produzidas pelo Serviço Geológico do Brasil (SGB) em mais de 57 anos. O usuário faz perguntas com as próprias palavras e recebe indicações de estudos, mapas e levantamentos, com as fontes oficiais listadas para conferência. A plataforma está em versão beta, no endereço geobusca.sgb.gov.br.</p>
+          </div></li>
+          <li><div>
+            <span class="meta">Confea · <time datetime="2026-10-26">26/10/2026</time></span>
+            <h4><a href="https://www.confea.org.br/pesquisadora-da-embrapa-integra-lista-das-100-mulheres-poderosas-do-agro" target="_blank" rel="noopener">Engenheira-agrônoma da Embrapa entra na lista das 100 Mulheres Poderosas do Agro</a></h4>
+            <p>A pesquisadora Iêda de Carvalho Mendes, da Embrapa Cerrados, engenheira-agrônoma formada pela UnB, foi incluída pela Forbes Brasil na lista das 100 Mulheres Poderosas do Agro de 2026. Ela liderou a equipe que desenvolveu a BioAS, tecnologia que avalia a saúde do solo por indicadores biológicos, hoje com uma rede de cerca de 30 laboratórios e um banco de mais de 71 mil amostras. Em agosto, recebeu também o Prêmio Norman Borlaug de Sustentabilidade 2026, da Abag.</p>
           </div></li>
           <li><div>
             <span class="meta">Confea · <time datetime="2026-10-21">21/10/2026</time></span>
             <h4><a href="https://www.confea.org.br/confea-adere-ao-programa-destrava-para-apoiar-retomada-de-obras-publicas" target="_blank" rel="noopener">Confea adere ao Programa Destrava para retomar obras públicas paralisadas</a></h4>
             <p>O Plenário do Confea aprovou a adesão ao Programa Destrava, coordenado pelo CNJ com TCU, CNMP, ministérios da Saúde e da Educação, FNDE, OAB e Atricon, para identificar obras públicas paralisadas, sobretudo de saúde e educação, e buscar a sua retomada. Na mesma sessão, ficou aberto de 1º/12/2026 a 31/03/2027 o prazo para entidades de classe indicarem profissionais às honrarias do Mérito do Sistema Confea/Crea.</p>
           </div></li>
-          <li><div>
-            <span class="meta">Confea · <time datetime="2026-10-01">01/10/2026</time></span>
-            <h4><a href="https://www.confea.org.br/da-renovacao-natural-ao-h2o2-profissionais-indicam-cuidados-com-o-ar" target="_blank" rel="noopener">Qualidade do ar em ambientes climatizados: o papel dos profissionais</a></h4>
-            <p>O Confea reúne orientações de profissionais sobre a qualidade do ar interior, da renovação natural do ar às tecnologias de purificação, e destaca o Plano de Manutenção, Operação e Controle (PMOC) dos sistemas de climatização, exigido pela Lei 13.589/2018.</p>
-          </div></li>
         </ul>
       </div>
       <div class="hl-group">
-        <div class="hl-head"><h3><span class="hl-logo"><img src="img/logo-mutua.png" alt="Mútua"></span></h3><a class="more" href="https://www.mutua.com.br/category/noticias-mutua/" target="_blank" rel="noopener">Todas as notícias da Mútua →</a><span class="hl-social" aria-label="Redes sociais do Mútua"><a href="https://www.instagram.com/mutua_sp/" target="_blank" rel="noopener">Instagram</a></span></div>
+        <div class="hl-head"><h3><span class="hl-logo"><img src="img/logo-mutua.png" alt="Mútua"></span></h3><a class="more" href="#espaco-mutua">Espaço Mútua →</a><a class="more" href="https://www.mutua.com.br/category/noticias-mutua/" target="_blank" rel="noopener">Todas as notícias da Mútua →</a><span class="hl-social" aria-label="Redes sociais do Mútua"><a href="https://www.instagram.com/mutua_sp/" target="_blank" rel="noopener">Instagram</a></span></div>
         <ul class="highlights">
+          <li><div>
+            <span class="meta">Mútua · <time datetime="2026-10-30">30/10/2026</time></span>
+            <h4><a href="https://www.mutua.com.br/mutua-institui-comissao-da-nr-1-e-avanca-nas-acoes-de-saude-e-seguranca-no-trabalho/" target="_blank" rel="noopener">Mútua cria comissão para implementar a NR-1, com foco nos riscos psicossociais</a></h4>
+            <p>Depois do diagnóstico feito em maio com funcionários, gestores e diretores, a Mútua instituiu uma Comissão Interna para implementar o plano de ação de atendimento à Norma Regulamentadora nº 1 (NR-1), com foco nos riscos psicossociais. O grupo, que se reuniu pela primeira vez em 27 de outubro, vai acompanhar o plano dentro do Gerenciamento de Riscos Ocupacionais (GRO), monitorar prazos e indicadores e recomendar medidas preventivas. A atuação é técnica e preventiva, com cuidados de privacidade e confidencialidade.</p>
+          </div></li>
           <li><div>
             <span class="meta">Mútua · <time datetime="2026-10-15">15/10/2026</time></span>
             <h4><a href="https://www.mutua.com.br/mutua-anuncia-lancamento-do-wellhub-para-mais-14-estados-e-distrito-federal-na-81a-soea/" target="_blank" rel="noopener">Mútua amplia o Wellhub para mais 14 estados e o Distrito Federal</a></h4>
@@ -1391,24 +1412,24 @@ img[data-protegida]{-webkit-user-drag:none;user-select:none;-webkit-touch-callou
         <div class="hl-head"><h3><span class="hl-pin" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span>Profissão e região</h3><span class="hl-sub">Santana de Parnaíba e Pirapora do Bom Jesus</span> <span class="pend">exemplo para aprovação da diretoria</span></div>
         <ul class="highlights">
           <li><div>
+            <span class="meta">Jornal Digital da Região Oeste · <time datetime="2026-10-29">29/10/2026</time></span>
+            <h4><a href="https://jornaldigitaldaregiaooeste.com.br/santana-de-parnaiba-reforca-investimentos-na-educacao-com-obras-em-mais-de-30-escolas/" target="_blank" rel="noopener">Santana de Parnaíba faz obras em mais de 30 escolas municipais</a></h4>
+            <p>Mais de 30 escolas da rede municipal recebem reparos, reformas e manutenção, com serviços de pintura, coberturas, pisos, cozinhas, banheiros e quadras. O novo Colégio Aldonio passou de 80% de execução. Neste ano, a Prefeitura inaugurou três colégios, nos bairros Suru, Jaguari e Cidade São Pedro.</p>
+          </div></li>
+          <li><div>
+            <span class="meta">Jornal Digital da Região Oeste · <time datetime="2026-10-20">20/10/2026</time></span>
+            <h4><a href="https://jornaldigitaldaregiaooeste.com.br/santana-de-parnaiba-faz-plano-preventivo-para-enfrentar-as-chuvas-de-verao/" target="_blank" rel="noopener">Defesa Civil de Santana de Parnaíba prepara plano para as chuvas de verão</a></h4>
+            <p>Em 14 de outubro, a Defesa Civil reuniu as secretarias municipais no Centro Administrativo Bandeirantes para montar o plano de contingência das chuvas de verão e de adaptação às mudanças climáticas. Entre as ações estão o mapeamento das áreas de risco, a atualização do mapa de riscos da cidade, o monitoramento de árvores e a orientação às escolas. Com a EMAE, está previsto um simulado de inundação na Barragem Edgard de Souza.</p>
+          </div></li>
+          <li><div>
+            <span class="meta">O Anhanguera · <time datetime="2026-10-10">10/10/2026</time></span>
+            <h4><a href="https://www.oanhanguera.com.br/noticias/28286-santana-de-parnaiba-e-cajamar-integram-nova-fase-do-programa-integra-tiete-com-investimento-previsto-de-r-25-bilhoes" target="_blank" rel="noopener">Integra Tietê: nova fase prevê 25,8 km de redes de esgoto e 7 estações elevatórias em Santana de Parnaíba</a></h4>
+            <p>A nova etapa do programa Integra Tietê prevê R$ 25 bilhões até 2029 em saneamento em doze municípios da Região Metropolitana, entre eles Santana de Parnaíba e Cajamar. A Sabesp vai instalar 460 km de tubulações e 112 estações elevatórias de esgoto, além de ampliar unidades de tratamento. Em Santana de Parnaíba, cortada pelo rio Tietê, são 25,8 km de tubulações e 7 estações elevatórias, para interceptar o esgoto de bairros cortados por afluentes. Segundo a Cetesb, a carga de poluição do Tietê na região metropolitana caiu de 218 para 154 toneladas por dia entre 2024 e 2026.</p>
+          </div></li>
+          <li><div>
             <span class="meta">Enel · <time datetime="2026-09-22">22/09/2026</time></span>
             <h4><a href="https://www.enel.com.br/pt-saopaulo/midia/press/d202609-enel-arvore-mais-segura-em-pirapora-do-bom-jesus.html" target="_blank" rel="noopener">Enel troca árvores em conflito com a rede elétrica em Pirapora do Bom Jesus</a></h4>
             <p>Com a Prefeitura, a Enel começou em Pirapora do Bom Jesus o projeto Árvore Mais Segura, que substitui árvores com risco para a população ou para a rede por espécies nativas de até 9 metros, abaixo dos 11 metros dos postes. A meta é trocar 100 árvores até o fim de 2026, com replantio em até 30 dias após a retirada. Neste ano, a distribuidora já fez 11.270 podas na cidade, acima da meta de 8.918.</p>
-          </div></li>
-          <li><div>
-            <span class="meta">Visão Oeste · <time datetime="2026-09-04">04/09/2026</time></span>
-            <h4><a href="https://visaooeste.com.br/santana-de-parnaiba-vai-iniciar-obras-de-esgoto-e-visa-atingir-90-de-saneamento-basico/" target="_blank" rel="noopener">Santana de Parnaíba contrata novos trechos de esgoto para passar de 90% de coleta e tratamento</a></h4>
-            <p>A Prefeitura assinou o contrato para implantar os canteiros de dois novos trechos de esgoto. O trecho 26 vai coletar o esgoto de toda a região de Alphaville e levá-lo à ETE Barueri; o trecho 27 atenderá o Centro e bairros até o Jardim Isaura, como Sítio do Morro, Germano, Parque Santana e Rancho Alegre. A meta é superar 90% de esgoto coletado e tratado. Valores e prazos de conclusão não foram divulgados.</p>
-          </div></li>
-          <li><div>
-            <span class="meta">ABC do ABC · <time datetime="2026-07-30">30/07/2026</time></span>
-            <h4><a href="https://www.abcdoabc.com.br/obras-de-saneamento-avancam-pirapora-bom-jesus/" target="_blank" rel="noopener">Sabesp amplia redes de água em bairros de Pirapora do Bom Jesus</a></h4>
-            <p>As obras somam a adutora Ubaldo Lolli, com 3,4 km de tubulação de 400 mm, quase 14 km de novas redes no bairro Laranjeiras e a interligação da Super Avenida aos bairros vizinhos. Green Hills e Pindaré já foram concluídos, e o Igavetá deve receber mais de 13 km de redes. Cerca de 4,5 mil moradores serão beneficiados.</p>
-          </div></li>
-          <li><div>
-            <span class="meta">Prefeitura de Santana de Parnaíba · <time datetime="2026-06-12">12/06/2026</time></span>
-            <h4><a href="https://prefeitura.santanadeparnaiba.sp.gov.br/Plataforma/noticia/detalhe-noticia/placas-solares-em-santana-de-parnaiba-trarao-economia-de-r-20-milhoes-ao-ano/9lkhZiz5AG-j6u5rbz7h0avYfV1cMQjIw3YGNbUp603b7msnjRSc8dRtEujXKGsWoEWeNA2" target="_blank" rel="noopener">Santana de Parnaíba instala energia solar em escolas e prédios públicos</a></h4>
-            <p>Na primeira fase, a Prefeitura instalou 48 sistemas fotovoltaicos em escolas municipais e outros equipamentos públicos; 23 já tinham recebido os novos medidores da concessionária e estavam gerando energia. O prédio principal do Centro Administrativo Bandeirantes receberá cerca de 1,2 mil placas, somadas às 100 do refeitório. Terminais rodoviários, Poupatempo e outros prédios devem receber sistemas até o fim de 2026. A estimativa divulgada é de economia de R$ 20 milhões por ano.</p>
           </div></li>
         </ul>
       </div>
@@ -1546,14 +1567,19 @@ img[data-protegida]{-webkit-user-drag:none;user-select:none;-webkit-touch-callou
 <!--ESPACO-CREA-->
         <ul class="highlights">
           <li><div>
-            <span class="meta">CREA-SP · <time datetime="2026-10-23">23/10/2026</time></span>
-            <h4><a href="https://www.creasp.org.br/noticia/manual-do-crea-sp-alia-resiliencia-e-sustentabilidade-no-planejamento-das-cidades/" target="_blank" rel="noopener">CREA-SP lança manual de boas práticas de planejamento urbano</a></h4>
-            <p>Lançado na Sessão Plenária de 22 de outubro, o Manual de Boas Práticas de Planejamento Urbano orienta prefeituras e profissionais da concepção do projeto à entrega da obra, alinhado aos Objetivos de Desenvolvimento Sustentável. Traz roteiros, checklists, estudos de caso de Jundiaí, Santos e Sorocaba e indica linhas de financiamento do BNDES, do Novo PAC e do Desenvolve SP. O PDF é gratuito no portal do CREA-SP.</p>
+            <span class="meta">CREA-SP · <time datetime="2026-11-04">04/11/2026</time></span>
+            <h4><a href="https://www.creasp.org.br/noticia/inscricoes-abertas-para-o-xvii-encontro-crea-sp-jovem/" target="_blank" rel="noopener">Inscrições abertas para o XVII Encontro Crea-SP Jovem</a></h4>
+            <p>Voltado a estudantes e jovens profissionais das Engenharias, da Agronomia e das Geociências, o encontro será em 12 de dezembro, na Sede Angélica do CREA-SP, em São Paulo, com o tema &quot;Um encontro para viver o presente e o futuro da profissão&quot;. A participação é gratuita e as vagas são limitadas. A programação ainda será divulgada.</p>
+          </div></li>
+          <li><div>
+            <span class="meta">CREA-SP · <time datetime="2026-10-29">29/10/2026</time></span>
+            <h4><a href="https://www.creasp.org.br/noticia/braganca-paulista-recebe-anteprojeto-para-inovar-na-gestao-de-obras-e-servicos-publicos/" target="_blank" rel="noopener">Bragança Paulista recebe anteprojeto da AEA Bragança para modernizar a gestão de obras públicas</a></h4>
+            <p>A AEA Bragança, associação de engenheiros, arquitetos e agrônomos da Região Bragantina, entregou à Prefeitura de Bragança Paulista um anteprojeto para modernizar a gestão de contratos e orçamentos de obras e serviços de engenharia. O trabalho foi feito por meio de um termo de fomento do Confea, com apoio da Mútua e do CREA-SP, e oferece subsídios técnicos para licitações e contratações. A entrega teve a presença da presidente do CREA-SP, Lígia Mackey.</p>
           </div></li>
           <li><div>
             <span class="meta">CREA-SP · <time datetime="2026-10-23">23/10/2026</time></span>
-            <h4><a href="https://www.creasp.org.br/noticia/inteligencia-artificial-e-integracao-academica-pautam-cies/" target="_blank" rel="noopener">Inteligência artificial e formação profissional em pauta no colégio de instituições de ensino do CREA-SP</a></h4>
-            <p>Em 21 de outubro, o CIES-SP reuniu instituições de ensino superior na sede do CREA-SP para discutir a aproximação entre academia, Conselho e mercado. A palestra sobre IA nas instituições de ensino reforçou a necessidade de supervisão humana, e foram apresentadas as iniciativas Registro Profissional sem custo e Carteira na colação de grau. O CREA-SP Capacita oferece um minicurso gratuito de IA aplicada à engenharia.</p>
+            <h4><a href="https://www.creasp.org.br/noticia/manual-do-crea-sp-alia-resiliencia-e-sustentabilidade-no-planejamento-das-cidades/" target="_blank" rel="noopener">CREA-SP lança manual de boas práticas de planejamento urbano</a></h4>
+            <p>Lançado na Sessão Plenária de 22 de outubro, o Manual de Boas Práticas de Planejamento Urbano orienta prefeituras e profissionais da concepção do projeto à entrega da obra, alinhado aos Objetivos de Desenvolvimento Sustentável. Traz roteiros, checklists, estudos de caso de Jundiaí, Santos e Sorocaba e indica linhas de financiamento do BNDES, do Novo PAC e do Desenvolve SP. O PDF é gratuito no portal do CREA-SP.</p>
           </div></li>
           <li><div>
             <span class="meta">CREA-SP · <time datetime="2026-10-21">21/10/2026</time></span>
@@ -1574,12 +1600,76 @@ img[data-protegida]{-webkit-user-drag:none;user-select:none;-webkit-touch-callou
         <li><a href="https://www.creasp.org.br/servico/denuncia/" target="_blank" rel="noopener">Canal de denúncia</a><small>Exercício ilegal da profissão, atuação sem registro ou obra sem ART.</small></li>
         <li><a href="https://www.creasp.org.br/servico/" target="_blank" rel="noopener">Todos os serviços online do CREA-SP</a><small>Lista completa no site do Conselho.</small></li>
       </ul>
+      <p class="form-note">Cursos e palestras da ABEAA com parceria, apoio ou patrocínio do CREA-SP: veja a <a href="#agenda">Agenda</a> e as <a href="#realizadas">atividades realizadas</a>.</p>
     </div>
   </section>
   <section>
     <div class="wrap grid-2">
       <article class="item big"><span class="tag">Na sede da ABEAA</span><h3>Atendimento presencial do CREA-SP</h3><p>Quartas-feiras, das 9h às 12h e das 13h às 16h, na Rua Santa Edwiges, 118, Jardim Rubi. Para os serviços que não podem ser feitos pela internet, com agendamento. Central do CREA-SP: 0800 017 1811 (gratuita).</p><p><a class="more" href="https://agendamento.creasp.org.br/home" target="_blank" rel="noopener">Agendar atendimento →</a> &nbsp; <a class="more" href="#atendimento-crea">Mais detalhes →</a></p></article>
       <article class="item big"><span class="tag">Fiscalização na região</span><h3>Inspetoria e Comissão Auxiliar de Fiscalização</h3><p>Desde 1999, por convênio com a ABEAA, o CREA-SP mantém uma Inspetoria em Santana de Parnaíba. Em Pirapora do Bom Jesus, o Conselho é representado por Inspetores Especiais.</p><p><a class="more" href="#inspetoria">Conheça os inspetores e a fiscalização →</a></p></article>
+    </div>
+  </section>
+</div>
+
+<!-- ============ ESPAÇO MÚTUA ============ -->
+<div class="view" id="v-espaco-mutua">
+  <section class="band-blue">
+    <div class="wrap split" style="align-items:center">
+      <div class="stack">
+        <p class="eyebrow">Sistema Confea/Crea/Mútua</p>
+        <h1>Espaço Mútua</h1>
+        <p class="lead">A Mútua é a Caixa de Assistência dos Profissionais do Crea. Aqui estão os benefícios que ela oferece aos seus associados e as notícias da Mútua, reunidos para os profissionais da região.</p>
+      </div>
+      <div><span class="crea-selo"><img src="img/logo-mutua.png" alt="Mútua, Caixa de Assistência dos Profissionais do Crea"></span></div>
+    </div>
+  </section>
+  <div class="ruler" aria-hidden="true"></div>
+  <section>
+    <div class="wrap stack" style="gap:20px">
+      <article class="item big"><span class="tag">Importante</span><h2 style="font-size:1.5rem;margin:0">Estes benefícios são da Mútua, não da ABEAA</h2><p>Para usá-los, o profissional registrado no Crea precisa ser <strong>associado à Mútua</strong>. A ABEAA apenas divulga as informações: quem concede, analisa e administra os benefícios é a Mútua.</p><p class="form-note">Como se associar: pelo <a href="https://www.mutua.com.br/" target="_blank" rel="noopener">site da Mútua</a>. <span class="pend">valor e passo a passo a confirmar</span> Quem já é associado acessa tudo no <a href="https://plataforma.mutua.com.br/" target="_blank" rel="noopener">portal do associado</a>.</p></article>
+    </div>
+  </section>
+  <section class="band-surface">
+    <div class="wrap stack" style="gap:24px">
+      <div class="stack"><p class="eyebrow">Para o associado da Mútua</p><h2>Benefícios da Mútua</h2></div>
+      <div class="grid-2">
+        <article class="item"><span class="tag">Benefícios reembolsáveis e sociais</span><h3>16 benefícios no portal do associado</h3><ul class="conv"><li>Ajuda Mútua · Equipa Bem · Equipa BIM · Equipa Link</li><li>Garante Saúde · Férias Mais · Empreender Mulher · Mútua Mais Azul</li><li>Auxílios pecuniário, maternidade, creche e funeral · Pecúlio por morte</li><li>Equipa Bem e Garante Saúde Catástrofes · Catástrofes e Fenômenos</li></ul><p class="form-note">Regras, valores e prazos de cada um no <a href="https://plataforma.mutua.com.br/" target="_blank" rel="noopener">portal do associado</a>.</p></article>
+        <article class="item"><span class="tag">Descontos</span><h3>Clube Mútua de Vantagens</h3><p>Descontos em empresas parceiras, em categorias como educação, farmácias, saúde e bem-estar, eletroeletrônicos, energia alternativa, viagens, veículos e serviços e seguros.</p><p class="form-note"><a href="https://clubemutua.com.br/" target="_blank" rel="noopener">clubemutua.com.br</a> · atendimento de segunda a sexta, das 9h às 18h.</p></article>
+        <article class="item"><span class="tag">Normas técnicas</span><h3>Normas da ABNT com desconto</h3><p>Associados da Mútua têm condições especiais para acessar normas e cursos da ABNT. <span class="pend">condições e percentuais a confirmar</span></p><p class="form-note"><a href="https://www.abntcatalogo.com.br/mutua/" target="_blank" rel="noopener">Catálogo ABNT para associados da Mútua</a></p></article>
+        <article class="item"><span class="tag">Serviços</span><h3>Outros serviços para o associado</h3><ul class="conv"><li>Wellhub (academias e bem-estar)</li><li>ChatGPT Business, com condição especial</li><li>Mútua Celular (telefonia móvel)</li><li>Cartão de visita digital</li></ul></article>
+      </div>
+      <p class="form-note">Dúvidas sobre os benefícios: <a href="mailto:atendimento@mutua.com.br">atendimento@mutua.com.br</a>. <span class="pend">contato da Mútua-SP a confirmar</span></p>
+    </div>
+  </section>
+  <section>
+    <div class="wrap stack" style="gap:24px">
+      <div class="stack"><p class="eyebrow">Na ABEAA</p><h2>Cursos da ABEAA com apoio da Mútua</h2></div>
+      <p class="lead">Cursos gratuitos para os profissionais da região, feitos com o apoio do Sistema Confea/Crea e Mútua.</p>
+      <ul class="leis">
+        <li><a href="#agenda">Patologias e Impermeabilização na Construção Civil</a><small>17 e 18/11/2026 · online · Realização: ABEAA · Parceria: CREA-SP · Apoio: Confea e Mútua</small></li>
+        <li><a href="#realizadas">NR-12 – Segurança do Trabalho em Máquinas e Equipamentos</a><small>22/08/2026 · presencial · Patrocínio: Confea, CREA-SP e Mútua</small></li>
+        <li><a href="#realizadas">Utilização de Drones nas Engenharias</a><small>28/02/2026 · presencial · Patrocínio: Confea, CREA-SP e Mútua</small></li>
+      </ul>
+    </div>
+  </section>
+  <section id="mutua-noticias">
+    <div class="wrap stack" style="gap:24px">
+      <div class="hl-head"><h2>Notícias da Mútua</h2><a class="more" href="https://www.mutua.com.br/category/noticias-mutua/" target="_blank" rel="noopener">Todas as notícias no site da Mútua →</a></div>
+      <p class="form-note">Resumos feitos pela ABEAA, com link para a matéria oficial no site da Mútua.</p>
+<!--ESPACO-MUTUA-->
+        <ul class="highlights">
+          <li><div>
+            <span class="meta">Mútua · <time datetime="2026-10-30">30/10/2026</time></span>
+            <h4><a href="https://www.mutua.com.br/mutua-institui-comissao-da-nr-1-e-avanca-nas-acoes-de-saude-e-seguranca-no-trabalho/" target="_blank" rel="noopener">Mútua cria comissão para implementar a NR-1, com foco nos riscos psicossociais</a></h4>
+            <p>Depois do diagnóstico feito em maio com funcionários, gestores e diretores, a Mútua instituiu uma Comissão Interna para implementar o plano de ação de atendimento à Norma Regulamentadora nº 1 (NR-1), com foco nos riscos psicossociais. O grupo, que se reuniu pela primeira vez em 27 de outubro, vai acompanhar o plano dentro do Gerenciamento de Riscos Ocupacionais (GRO), monitorar prazos e indicadores e recomendar medidas preventivas. A atuação é técnica e preventiva, com cuidados de privacidade e confidencialidade.</p>
+          </div></li>
+          <li><div>
+            <span class="meta">Mútua · <time datetime="2026-10-15">15/10/2026</time></span>
+            <h4><a href="https://www.mutua.com.br/mutua-anuncia-lancamento-do-wellhub-para-mais-14-estados-e-distrito-federal-na-81a-soea/" target="_blank" rel="noopener">Mútua amplia o Wellhub para mais 14 estados e o Distrito Federal</a></h4>
+            <p>Anunciado na 81ª SOEA, o Mútua Wellhub dá acesso a academias, estúdios, nutricionistas, terapias e aulas on-line, com mensalidades a partir de R$ 39,99 e sem taxa de adesão, para associados adimplentes e até três dependentes. O benefício, que já existia em São Paulo, Rio de Janeiro, Minas Gerais e Rio Grande do Sul, chega a mais 14 estados e ao DF. Para assinar, procure a sua Regional e faça a pré-inscrição.</p>
+          </div></li>
+        </ul>
+<!--/ESPACO-MUTUA-->
     </div>
   </section>
 </div>
@@ -1796,14 +1886,14 @@ img[data-protegida]{-webkit-user-drag:none;user-select:none;-webkit-touch-callou
     </div>
     <div class="legal">
       <span>© <span data-ano>2026</span> ABEAA · Fotos da ABEAA: uso somente com autorização.</span>
-      <span><a href="#atualizacoes">Atualizações</a> · <a href="#espaco-crea-sp">Espaço CREA-SP</a> · <a href="#transparencia">Transparência</a> · <a href="#privacidade">Privacidade</a> · <a href="#acessibilidade-site">Acessibilidade</a></span>
+      <span><a href="#atualizacoes">Atualizações</a> · <a href="#espaco-crea-sp">Espaço CREA-SP</a> · <a href="#espaco-mutua">Espaço Mútua</a> · <a href="#transparencia">Transparência</a> · <a href="#privacidade">Privacidade</a> · <a href="#acessibilidade-site">Acessibilidade</a></span>
     </div>
   </div>
 </footer>
 
 <script>
 (function(){
-  var ROUTES=["inicio","a-abeaa","agenda","atualizacoes","espaco-crea-sp","noticias-abeaa","associe-se","reservas","vitrine","transparencia","contato","privacidade"];
+  var ROUTES=["inicio","a-abeaa","agenda","atualizacoes","espaco-crea-sp","espaco-mutua","noticias-abeaa","associe-se","reservas","vitrine","transparencia","contato","privacidade"];
   var nav=document.getElementById("nav"), btn=document.getElementById("menu-btn");
   function show(){
     var id=(location.hash||"#inicio").slice(1), anchor=null;

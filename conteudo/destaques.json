@@ -46,20 +46,6 @@
     "acao": "Ler a notícia"
   },
   {
-    "titulo": "Inteligência artificial e formação profissional em pauta no colégio de instituições de ensino do CREA-SP",
-    "data": "2026-10-23",
-    "fonte": "CREA-SP",
-    "resumo": "Em 21 de outubro, o CIES-SP reuniu instituições de ensino superior na sede do CREA-SP para discutir a aproximação entre academia, Conselho e mercado. A palestra sobre IA nas instituições de ensino reforçou a necessidade de supervisão humana, e foram apresentadas as iniciativas Registro Profissional sem custo e Carteira na colação de grau. O CREA-SP Capacita oferece um minicurso gratuito de IA aplicada à engenharia.",
-    "link": "https://www.creasp.org.br/noticia/inteligencia-artificial-e-integracao-academica-pautam-cies/"
-  },
-  {
-    "titulo": "Confea defende engenharia, agronomia e geociências como carreiras típicas de Estado",
-    "data": "2026-10-23",
-    "fonte": "Confea",
-    "resumo": "Em 23 de outubro, o Plenário do Confea aprovou nota técnica que defende a inclusão da Engenharia, da Agronomia e das Geociências entre as carreiras típicas de Estado. O estudo analisou editais de concursos de 2005 a 2026 e apontou cargos com atribuições dessas áreas sob nomes genéricos, como analista e gestor. A nota vai orientar a atuação do Confea junto à administração pública, inclusive sobre a formação exigida em concursos.",
-    "link": "https://www.confea.org.br/confea-aprova-nota-tecnica-sobre-carreiras-tipicas-de-estado"
-  },
-  {
     "titulo": "Confea adere ao Programa Destrava para retomar obras públicas paralisadas",
     "data": "2026-10-21",
     "fonte": "Confea",
@@ -103,13 +89,6 @@
     "foto_protegida": true
   },
   {
-    "titulo": "Qualidade do ar em ambientes climatizados: o papel dos profissionais",
-    "data": "2026-10-01",
-    "fonte": "Confea",
-    "resumo": "O Confea reúne orientações de profissionais sobre a qualidade do ar interior, da renovação natural do ar às tecnologias de purificação, e destaca o Plano de Manutenção, Operação e Controle (PMOC) dos sistemas de climatização, exigido pela Lei 13.589/2018.",
-    "link": "https://www.confea.org.br/da-renovacao-natural-ao-h2o2-profissionais-indicam-cuidados-com-o-ar"
-  },
-  {
     "titulo": "Piso salarial: PL 5.346/2026 está em consulta pública no Senado",
     "data": "2026-10-06",
     "fonte": "Senado Federal",
@@ -120,16 +99,6 @@
     "fixar": true
   },
   {
-    "titulo": "Santana de Parnaíba instala energia solar em escolas e prédios públicos",
-    "data": "2026-06-12",
-    "fonte": "Outra",
-    "veiculo": "Prefeitura de Santana de Parnaíba",
-    "regiao": true,
-    "exemplo": true,
-    "resumo": "Na primeira fase, a Prefeitura instalou 48 sistemas fotovoltaicos em escolas municipais e outros equipamentos públicos; 23 já tinham recebido os novos medidores da concessionária e estavam gerando energia. O prédio principal do Centro Administrativo Bandeirantes receberá cerca de 1,2 mil placas, somadas às 100 do refeitório. Terminais rodoviários, Poupatempo e outros prédios devem receber sistemas até o fim de 2026. A estimativa divulgada é de economia de R$ 20 milhões por ano.",
-    "link": "https://prefeitura.santanadeparnaiba.sp.gov.br/Plataforma/noticia/detalhe-noticia/placas-solares-em-santana-de-parnaiba-trarao-economia-de-r-20-milhoes-ao-ano/9lkhZiz5AG-j6u5rbz7h0avYfV1cMQjIw3YGNbUp603b7msnjRSc8dRtEujXKGsWoEWeNA2"
-  },
-  {
     "titulo": "Enel troca árvores em conflito com a rede elétrica em Pirapora do Bom Jesus",
     "data": "2026-09-22",
     "fonte": "Outra",
@@ -138,26 +107,6 @@
     "exemplo": true,
     "resumo": "Com a Prefeitura, a Enel começou em Pirapora do Bom Jesus o projeto Árvore Mais Segura, que substitui árvores com risco para a população ou para a rede por espécies nativas de até 9 metros, abaixo dos 11 metros dos postes. A meta é trocar 100 árvores até o fim de 2026, com replantio em até 30 dias após a retirada. Neste ano, a distribuidora já fez 11.270 podas na cidade, acima da meta de 8.918.",
     "link": "https://www.enel.com.br/pt-saopaulo/midia/press/d202609-enel-arvore-mais-segura-em-pirapora-do-bom-jesus.html"
-  },
-  {
-    "titulo": "Santana de Parnaíba contrata novos trechos de esgoto para passar de 90% de coleta e tratamento",
-    "data": "2026-09-04",
-    "fonte": "Outra",
-    "veiculo": "Visão Oeste",
-    "regiao": true,
-    "exemplo": true,
-    "resumo": "A Prefeitura assinou o contrato para implantar os canteiros de dois novos trechos de esgoto. O trecho 26 vai coletar o esgoto de toda a região de Alphaville e levá-lo à ETE Barueri; o trecho 27 atenderá o Centro e bairros até o Jardim Isaura, como Sítio do Morro, Germano, Parque Santana e Rancho Alegre. A meta é superar 90% de esgoto coletado e tratado. Valores e prazos de conclusão não foram divulgados.",
-    "link": "https://visaooeste.com.br/santana-de-parnaiba-vai-iniciar-obras-de-esgoto-e-visa-atingir-90-de-saneamento-basico/"
-  },
-  {
-    "titulo": "Sabesp amplia redes de água em bairros de Pirapora do Bom Jesus",
-    "data": "2026-07-30",
-    "fonte": "Outra",
-    "veiculo": "ABC do ABC",
-    "regiao": true,
-    "exemplo": true,
-    "resumo": "As obras somam a adutora Ubaldo Lolli, com 3,4 km de tubulação de 400 mm, quase 14 km de novas redes no bairro Laranjeiras e a interligação da Super Avenida aos bairros vizinhos. Green Hills e Pindaré já foram concluídos, e o Igavetá deve receber mais de 13 km de redes. Cerca de 4,5 mil moradores serão beneficiados.",
-    "link": "https://www.abcdoabc.com.br/obras-de-saneamento-avancam-pirapora-bom-jesus/"
   },
   {
     "titulo": "ABEAA na 81ª SOEA, em Aracaju",
@@ -178,5 +127,71 @@
         "descricao": "Delegação da UNARO na 81ª SOEA, em Aracaju. À esquerda, o presidente da ABEAA, Eng. Ricardo de Souza Terassovich, e, ao lado dele, o diretor secretário, Marcos Domingues Muro"
       }
     ]
+  },
+  {
+    "titulo": "Bragança Paulista recebe anteprojeto da AEA Bragança para modernizar a gestão de obras públicas",
+    "data": "2026-10-29",
+    "fonte": "CREA-SP",
+    "resumo": "A AEA Bragança, associação de engenheiros, arquitetos e agrônomos da Região Bragantina, entregou à Prefeitura de Bragança Paulista um anteprojeto para modernizar a gestão de contratos e orçamentos de obras e serviços de engenharia. O trabalho foi feito por meio de um termo de fomento do Confea, com apoio da Mútua e do CREA-SP, e oferece subsídios técnicos para licitações e contratações. A entrega teve a presença da presidente do CREA-SP, Lígia Mackey.",
+    "link": "https://www.creasp.org.br/noticia/braganca-paulista-recebe-anteprojeto-para-inovar-na-gestao-de-obras-e-servicos-publicos/"
+  },
+  {
+    "titulo": "Inscrições abertas para o XVII Encontro Crea-SP Jovem",
+    "data": "2026-11-04",
+    "fonte": "CREA-SP",
+    "resumo": "Voltado a estudantes e jovens profissionais das Engenharias, da Agronomia e das Geociências, o encontro será em 12 de dezembro, na Sede Angélica do CREA-SP, em São Paulo, com o tema \"Um encontro para viver o presente e o futuro da profissão\". A participação é gratuita e as vagas são limitadas. A programação ainda será divulgada.",
+    "link": "https://www.creasp.org.br/noticia/inscricoes-abertas-para-o-xvii-encontro-crea-sp-jovem/",
+    "vence_em": "2026-12-12"
+  },
+  {
+    "titulo": "Mútua cria comissão para implementar a NR-1, com foco nos riscos psicossociais",
+    "data": "2026-10-30",
+    "fonte": "Mútua",
+    "resumo": "Depois do diagnóstico feito em maio com funcionários, gestores e diretores, a Mútua instituiu uma Comissão Interna para implementar o plano de ação de atendimento à Norma Regulamentadora nº 1 (NR-1), com foco nos riscos psicossociais. O grupo, que se reuniu pela primeira vez em 27 de outubro, vai acompanhar o plano dentro do Gerenciamento de Riscos Ocupacionais (GRO), monitorar prazos e indicadores e recomendar medidas preventivas. A atuação é técnica e preventiva, com cuidados de privacidade e confidencialidade.",
+    "link": "https://www.mutua.com.br/mutua-institui-comissao-da-nr-1-e-avanca-nas-acoes-de-saude-e-seguranca-no-trabalho/"
+  },
+  {
+    "titulo": "Serviço Geológico do Brasil lança o GeoBusca, que usa IA para encontrar dados geocientíficos",
+    "data": "2026-11-04",
+    "fonte": "Confea",
+    "resumo": "Lançado no 52º Congresso Brasileiro de Geologia, em Fortaleza, o GeoBusca reúne cerca de 5 milhões de dados de pesquisas produzidas pelo Serviço Geológico do Brasil (SGB) em mais de 57 anos. O usuário faz perguntas com as próprias palavras e recebe indicações de estudos, mapas e levantamentos, com as fontes oficiais listadas para conferência. A plataforma está em versão beta, no endereço geobusca.sgb.gov.br.",
+    "link": "https://www.confea.org.br/geobusca-usa-ia-para-facilitar-acesso-dados-geocientificos"
+  },
+  {
+    "titulo": "Engenheira-agrônoma da Embrapa entra na lista das 100 Mulheres Poderosas do Agro",
+    "data": "2026-10-26",
+    "fonte": "Confea",
+    "resumo": "A pesquisadora Iêda de Carvalho Mendes, da Embrapa Cerrados, engenheira-agrônoma formada pela UnB, foi incluída pela Forbes Brasil na lista das 100 Mulheres Poderosas do Agro de 2026. Ela liderou a equipe que desenvolveu a BioAS, tecnologia que avalia a saúde do solo por indicadores biológicos, hoje com uma rede de cerca de 30 laboratórios e um banco de mais de 71 mil amostras. Em agosto, recebeu também o Prêmio Norman Borlaug de Sustentabilidade 2026, da Abag.",
+    "link": "https://www.confea.org.br/pesquisadora-da-embrapa-integra-lista-das-100-mulheres-poderosas-do-agro"
+  },
+  {
+    "titulo": "Defesa Civil de Santana de Parnaíba prepara plano para as chuvas de verão",
+    "data": "2026-10-20",
+    "fonte": "Outra",
+    "veiculo": "Jornal Digital da Região Oeste",
+    "regiao": true,
+    "exemplo": true,
+    "resumo": "Em 14 de outubro, a Defesa Civil reuniu as secretarias municipais no Centro Administrativo Bandeirantes para montar o plano de contingência das chuvas de verão e de adaptação às mudanças climáticas. Entre as ações estão o mapeamento das áreas de risco, a atualização do mapa de riscos da cidade, o monitoramento de árvores e a orientação às escolas. Com a EMAE, está previsto um simulado de inundação na Barragem Edgard de Souza.",
+    "link": "https://jornaldigitaldaregiaooeste.com.br/santana-de-parnaiba-faz-plano-preventivo-para-enfrentar-as-chuvas-de-verao/"
+  },
+  {
+    "titulo": "Santana de Parnaíba faz obras em mais de 30 escolas municipais",
+    "data": "2026-10-29",
+    "fonte": "Outra",
+    "veiculo": "Jornal Digital da Região Oeste",
+    "regiao": true,
+    "exemplo": true,
+    "resumo": "Mais de 30 escolas da rede municipal recebem reparos, reformas e manutenção, com serviços de pintura, coberturas, pisos, cozinhas, banheiros e quadras. O novo Colégio Aldonio passou de 80% de execução. Neste ano, a Prefeitura inaugurou três colégios, nos bairros Suru, Jaguari e Cidade São Pedro.",
+    "link": "https://jornaldigitaldaregiaooeste.com.br/santana-de-parnaiba-reforca-investimentos-na-educacao-com-obras-em-mais-de-30-escolas/"
+  },
+  {
+    "titulo": "Integra Tietê: nova fase prevê 25,8 km de redes de esgoto e 7 estações elevatórias em Santana de Parnaíba",
+    "data": "2026-10-10",
+    "fonte": "Outra",
+    "veiculo": "O Anhanguera",
+    "regiao": true,
+    "exemplo": true,
+    "resumo": "A nova etapa do programa Integra Tietê prevê R$ 25 bilhões até 2029 em saneamento em doze municípios da Região Metropolitana, entre eles Santana de Parnaíba e Cajamar. A Sabesp vai instalar 460 km de tubulações e 112 estações elevatórias de esgoto, além de ampliar unidades de tratamento. Em Santana de Parnaíba, cortada pelo rio Tietê, são 25,8 km de tubulações e 7 estações elevatórias, para interceptar o esgoto de bairros cortados por afluentes. Segundo a Cetesb, a carga de poluição do Tietê na região metropolitana caiu de 218 para 154 toneladas por dia entre 2024 e 2026.",
+    "link": "https://www.oanhanguera.com.br/noticias/28286-santana-de-parnaiba-e-cajamar-integram-nova-fase-do-programa-integra-tiete-com-investimento-previsto-de-r-25-bilhoes"
   }
 ]

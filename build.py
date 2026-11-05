@@ -25,6 +25,8 @@ PAGES = {
                      "Notícias da ABEAA e links para as notícias oficiais do CREA-SP, do Confea e da Mútua."),
     "espaco-crea-sp": ("Espaço CREA-SP · ABEAA Santana de Parnaíba",
                        "Notícias e serviços do CREA-SP, atendimento na sede da ABEAA e a Inspetoria do CREA-SP em Santana de Parnaíba e Pirapora do Bom Jesus."),
+    "espaco-mutua": ("Espaço Mútua · ABEAA Santana de Parnaíba",
+                     "Benefícios da Mútua, a Caixa de Assistência dos Profissionais do Crea, para quem é associado a ela, e as notícias da Mútua."),
     "noticias-abeaa": ("Notícias da ABEAA · todas as notícias por ano",
                        "Todas as notícias da ABEAA, associação de engenheiros, arquitetos e agrônomos de Santana de Parnaíba, organizadas por ano."),
     "associe-se": ("Associe-se à ABEAA · R$ 250 por ano",
@@ -97,6 +99,7 @@ EM_FOCO = []
 ULTIMA_ABEAA = None  # notícia da ABEAA em destaque na página inicial
 DIAS_ABEAA_HOME = 30  # dias que ela fica na página inicial
 ESPACO_CREA = ""  # notícias do CREA-SP para a página Espaço CREA-SP
+ESPACO_MUTUA = ""  # notícias da Mútua para a página Espaço Mútua
 ARQUIVO_ABEAA = ""   # página Notícias da ABEAA (todas, por ano)
 LIMITE_ABEAA = 4      # notícias da ABEAA na página Atualizações
 
@@ -160,6 +163,10 @@ def destaques_html():
     global ESPACO_CREA
     _crea = [i for i in bons if str(i.get("fonte", "")).strip() == "CREA-SP" and i.get("regiao") is not True]
     ESPACO_CREA = ('        <ul class="highlights">\n' + "\n".join(item(i) for i in _crea) + "\n        </ul>") if _crea else ""
+    # Espaço Mútua: todas as notícias da Mútua
+    global ESPACO_MUTUA
+    _mut = [i for i in bons if str(i.get("fonte", "")).strip() == "Mútua" and i.get("regiao") is not True]
+    ESPACO_MUTUA = ('        <ul class="highlights">\n' + "\n".join(item(i) for i in _mut) + "\n        </ul>") if _mut else ""
     global ULTIMA_ABEAA
     ULTIMA_ABEAA = next((i for i in bons if str(i.get("fonte", "")).strip() == "ABEAA"), None)
     fixos = [i for i in bons if i.get("fixar") is True]
@@ -199,6 +206,8 @@ def destaques_html():
                 ver = '<a class="more" href="#noticias-abeaa">Todas as notícias da ABEAA →</a>'
             if nome == "CREA-SP":
                 ver = '<a class="more" href="#espaco-crea-sp">Espaço CREA-SP →</a>' + ver
+            if nome == "Mútua":
+                ver = '<a class="more" href="#espaco-mutua">Espaço Mútua →</a>' + ver
             if fontes == "regiao":
                 ver = '<span class="hl-sub">Santana de Parnaíba e Pirapora do Bom Jesus</span>'
                 if any(i.get("exemplo") is True for i in grupo):
@@ -302,6 +311,16 @@ src = re.sub(_rcrea, lambda m: m.group(1) + "\n" + _crea_html + "\n" + m.group(3
 src = src.replace('src="img/', 'src="/img/')
 _o = _idx.read_text(encoding="utf-8")
 _n = re.sub(_rcrea, lambda m: m.group(1) + "\n" + _crea_html + "\n" + m.group(3), _o, count=1, flags=re.S)
+if _n != _o:
+    _idx.write_text(_n, encoding="utf-8")
+
+# Página Espaço Mútua: preenchida com as notícias da Mútua (também na prévia)
+_rmut = r"(<!--ESPACO-MUTUA-->)(.*?)(<!--/ESPACO-MUTUA-->)"
+_mut_html = ESPACO_MUTUA or '        <p class="lead">As notícias da Mútua aparecem aqui.</p>'
+src = re.sub(_rmut, lambda m: m.group(1) + "\n" + _mut_html + "\n" + m.group(3), src, count=1, flags=re.S)
+src = src.replace('src="img/', 'src="/img/')
+_o = _idx.read_text(encoding="utf-8")
+_n = re.sub(_rmut, lambda m: m.group(1) + "\n" + _mut_html + "\n" + m.group(3), _o, count=1, flags=re.S)
 if _n != _o:
     _idx.write_text(_n, encoding="utf-8")
 
