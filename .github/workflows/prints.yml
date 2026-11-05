@@ -1,5 +1,5 @@
 # Depois de cada publicação do site e no dia 1º de cada mês, gera PDFs das páginas Atualizações
-# (todas as notícias) e Espaço CREA-SP e salva no Google Drive (pasta "Prestação de contas").
+# (todas as notícias), Espaço CREA-SP e Espaço Mútua e salva no Google Drive (pasta "Prestação de contas").
 # Precisa dos segredos PRINTS_URL e PRINTS_TOKEN (ver COMO_LIGAR_PRINTS.md). Sem eles, não faz nada.
 name: Prints para prestação de contas
 on:

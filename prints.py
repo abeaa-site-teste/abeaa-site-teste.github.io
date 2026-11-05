@@ -5,6 +5,7 @@ Roda no GitHub depois de cada publicação do site e no dia 1º de cada mês
 a data e a hora da captura (horário de Brasília) em todas as folhas:
   - Atualizações (todas as notícias)
   - Espaço CREA-SP
+  - Espaço Mútua
 e salva no Google Drive em: Prestação de contas / AAAA / MM-mês / "AAAA-MM-DD · Página.pdf".
 
 Quando gera:
@@ -34,7 +35,8 @@ PASTA_RAIZ = "Prestação de contas"
 MESES = ["01-janeiro", "02-fevereiro", "03-março", "04-abril", "05-maio", "06-junho", "07-julho",
          "08-agosto", "09-setembro", "10-outubro", "11-novembro", "12-dezembro"]
 PAGINAS = [("/atualizacoes/", "Atualizações (todas as notícias)"),
-           ("/espaco-crea-sp/", "Espaço CREA-SP")]
+           ("/espaco-crea-sp/", "Espaço CREA-SP"),
+           ("/espaco-mutua/", "Espaço Mútua")]
 TESTE = "--teste" in sys.argv
 FORCAR = os.environ.get("PRINTS_FORCAR", "").lower() == "true"  # rodada manual: gera de novo mesmo sem mudança
 URL, TOKEN = os.environ.get("PRINTS_URL", ""), os.environ.get("PRINTS_TOKEN", "")
