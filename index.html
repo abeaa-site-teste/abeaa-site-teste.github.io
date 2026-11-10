@@ -359,6 +359,8 @@ a.item{color:inherit;text-decoration:none}
 .steps-5 li::before{content:counter(s);display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--navy,#163b4c);color:#fff;font-weight:700;margin-bottom:10px}
 .steps-5 h3{font-size:1rem;margin:0 0 6px}.steps-5 p{font-size:.9rem;color:var(--muted);margin:0 0 8px}
 @media(max-width:900px){.steps-5{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.steps-5{grid-template-columns:minmax(0,1fr)}.steps-5 li{min-width:0;overflow-wrap:anywhere}}
+.item p,.form-note{overflow-wrap:anywhere}
 @media(max-width:520px){.steps-5{grid-template-columns:1fr}}
 .cal{list-style:none;margin:0;padding:0;border-top:1px solid var(--ink)}
 .cal li{display:grid;grid-template-columns:200px minmax(0,1fr);gap:20px;padding:14px 0;border-bottom:1px solid var(--line)}
@@ -375,6 +377,7 @@ a.item{color:inherit;text-decoration:none}
 .zoom-wrap::after{content:"";position:absolute;right:8px;bottom:8px;width:30px;height:30px;border-radius:50%;background:rgba(22,59,76,.85) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7'/%3E%3C/svg%3E") center/16px no-repeat;pointer-events:none}
 .lightbox{border:0;padding:0;background:transparent;max-width:100vw;max-height:100vh;width:100vw;height:100vh;margin:0}
 img[data-protegida]{-webkit-user-drag:none;user-select:none;-webkit-touch-callout:none}
+.tel-lista{gap:32px}.tel-grupo h3{font-size:1.05rem;margin:0 0 10px}.tel-grupo dd a{color:inherit;text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px}.tel-grupo dd small{display:block;font-weight:400;font-size:.88rem;color:var(--muted);margin-top:2px}@media(min-width:821px){.tel-intro{position:sticky;top:112px}}
 /* Clube de vantagens */
 .clube-grupo{margin:8px 0 0;font-size:1.15rem}
 .clube-logo{display:grid;place-items:center;height:96px;border-radius:8px;background:var(--band);border:1px dashed var(--line);font:700 1.6rem/1 var(--f-display);color:var(--ink);margin-bottom:6px}
@@ -1482,6 +1485,7 @@ img[data-protegida]{-webkit-user-drag:none;user-select:none;-webkit-touch-callou
         <li><a href="https://www.creasp.org.br/servico/consulta-publica-de-registrados/" target="_blank" rel="noopener">Consulta de profissionais registrados · CREA-SP</a><small>Consulta gratuita, sem login. Não substitui a certidão.</small></li>
         <li><a href="https://causp.gov.br/rrt/" target="_blank" rel="noopener">Emitir RRT · CAU/SP</a><small>Registro de Responsabilidade Técnica de arquitetos e urbanistas.</small></li>
       </ul>
+      <p class="form-note">Procurando o telefone da Prefeitura, da Enel ou da Sabesp? Veja <a href="#telefones-uteis">Telefones úteis</a>.</p>
     </div>
   </section>
 
@@ -1816,7 +1820,18 @@ img[data-protegida]{-webkit-user-drag:none;user-select:none;-webkit-touch-callou
       </div>
     </div>
   </section>
-  <section id="perguntas">
+  <section id="telefones-uteis">
+    <div class="wrap split">
+      <div class="stack tel-intro"><p class="eyebrow">Outros contatos</p><h2>Telefones úteis</h2><p class="lead">Estes números não são da ABEAA. São os canais oficiais dos conselhos, das Prefeituras e das concessionárias da região.</p><p class="form-note">Números conferidos nos sites oficiais em novembro de 2026.</p></div>
+      <div class="stack tel-lista">
+        <div class="tel-grupo"><h3>Conselhos profissionais</h3><dl class="contact-list"><div><dt>CREA-SP</dt><dd><a href="tel:08000171811">0800 017 1811</a><small>Central (ligação gratuita)</small></dd></div><div><dt>CAU/SP</dt><dd><a href="tel:+551130145900">(11) 3014-5900</a><small>Telefone e WhatsApp, de segunda a sexta, das 9h às 18h</small></dd></div><div><dt>Mútua</dt><dd><a href="tel:08006168882">0800 616 8882</a><small>WhatsApp (61) 3348-0265</small></dd></div></dl></div>
+        <div class="tel-grupo"><h3>Prefeitura de Santana de Parnaíba</h3><dl class="contact-list"><div><dt>Central</dt><dd><a href="tel:+551146227500">(11) 4622-7500</a><small>Inclui Obras e Meio Ambiente; de segunda a sexta, das 8h às 17h</small></dd></div><div><dt>Ouvidoria</dt><dd><a href="tel:+551141546645">(11) 4154-6645</a></dd></div><div><dt>Defesa Civil</dt><dd><a href="tel:+551141542166">(11) 4154-2166</a><small>Em emergência, ligue 199</small></dd></div><div><dt>Guarda Municipal</dt><dd><a href="tel:+551146228900">(11) 4622-8900</a></dd></div></dl></div>
+        <div class="tel-grupo"><h3>Prefeitura de Pirapora do Bom Jesus</h3><dl class="contact-list"><div><dt>Central</dt><dd><a href="tel:+551141319191">(11) 4131-9191</a></dd></div><div><dt>Obras</dt><dd><a href="tel:+551141319191">(11) 4131-9191</a><small>Ramal 9227 · Secretaria de Obras e Serviços Municipais</small></dd></div><div><dt>Meio Ambiente</dt><dd><a href="tel:+551141313785">(11) 4131-3785</a><small>Secretaria de Desenvolvimento Urbano, Meio Ambiente e Habitação</small></dd></div><div><dt>Ouvidoria</dt><dd><a href="tel:+551147700980">(11) 4770-0980</a></dd></div></dl></div>
+        <div class="tel-grupo"><h3>Energia e saneamento</h3><dl class="contact-list"><div><dt>Enel</dt><dd><a href="tel:08007272120">0800 72 72 120</a><small>Central de atendimento</small></dd></div><div><dt>Enel emergência</dt><dd><a href="tel:08007272196">0800 72 72 196</a><small>Falta de energia, fio caído</small></dd></div><div><dt>Sabesp</dt><dd><a href="tel:08000550195">0800 055 0195</a><small>WhatsApp (11) 3388-8000</small></dd></div></dl></div>
+      </div>
+    </div>
+  </section>
+  <section id="perguntas" style="border-top:1px solid var(--line)">
     <div class="wrap split">
       <div class="stack"><p class="eyebrow">Dúvidas</p><h2>Perguntas frequentes</h2></div>
       <div class="faq">
