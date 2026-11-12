@@ -96,6 +96,8 @@ REDES = {
 }
 
 EM_FOCO = []
+TODAS = []  # todas as notícias válidas, mais novas primeiro
+NOVIDADES_ENTIDADES = ("CREA-SP", "Confea", "Mútua")  # uma novidade de cada na página inicial
 ULTIMA_ABEAA = None  # notícia da ABEAA em destaque na página inicial
 DIAS_ABEAA_HOME = 30  # dias que ela fica na página inicial
 ESPACO_CREA = ""  # notícias do CREA-SP para a página Espaço CREA-SP
@@ -120,6 +122,8 @@ def destaques_html():
     if not bons:
         return None
     bons.sort(key=lambda i: str(i.get("data", "")), reverse=True)
+    global TODAS
+    TODAS = list(bons)
 
     def esc(x):
         return html.escape(str(x or "").strip())
@@ -230,7 +234,35 @@ def _foco_home():
             f'          <h3>{e(i.get("titulo"))}</h3>\n'
             f'          <p>{e(i.get("chamada") or i.get("resumo"))}</p>\n'
             f'          <a class="more" href="{e(i.get("link"))}" target="_blank" rel="noopener">{e(i.get("acao") or "Ler mais")} →</a>\n'
-            f'          <a class="more" href="#atualizacoes" style="margin-left:16px">Todas as atualizações</a>')
+            + _novidades_home(i) +
+            f'          <a class="more" href="#atualizacoes">Todas as atualizações →</a>')
+
+def _novidades_home(foco):
+    """Uma novidade de cada entidade: a marcada com "home_ate" (até a data) ou, sem marcação, a mais recente."""
+    import datetime as _dt
+    hoje = (_dt.datetime.now(_dt.timezone.utc) - _dt.timedelta(hours=3)).date()
+    e = lambda x: html.escape(str(x or "").strip())
+    linhas = []
+    for ent in NOVIDADES_ENTIDADES:
+        cand = [i for i in TODAS if str(i.get("fonte", "")).strip() == ent and i is not foco and i.get("regiao") is not True]
+        marcados = []
+        for i in cand:
+            h = str(i.get("home_ate") or "").strip()[:10]
+            if not h:
+                continue
+            try:
+                if _dt.date.fromisoformat(h) >= hoje:
+                    marcados.append(i)
+            except ValueError:
+                print(f"AVISO: home_ate inválido: {h}")
+        esc = (marcados or cand or [None])[0]
+        if esc:
+            linhas.append(f'            <li><span class="nv-ent">{e(ent)}</span>'
+                          f'<a href="{e(esc.get("link"))}" target="_blank" rel="noopener">{e(esc.get("titulo"))}</a></li>')
+    if not linhas:
+        return ""
+    return ('          <p class="novidades-tit">Novidades das entidades</p>\n          <ul class="novidades">\n'
+            + "\n".join(linhas) + "\n          </ul>\n")
 _foco = _foco_home()
 _rfoco = r"(<!--EMFOCO-->)(.*?)(<!--/EMFOCO-->)"
 src = re.sub(_rfoco, lambda m: m.group(1) + "\n" + _foco + "\n" + m.group(3), src, count=1, flags=re.S)
