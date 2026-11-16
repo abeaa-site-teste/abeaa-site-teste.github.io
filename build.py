@@ -131,7 +131,8 @@ def destaques_html():
     def item(i):
         m = re.match(r"(\d{4})-(\d{2})-(\d{2})", str(i.get("data") or ""))
         quando = f'<time datetime="{m.group(0)}">{m.group(3)}/{m.group(2)}/{m.group(1)}</time>' if m else ""
-        resumo = f"<p>{esc(i.get('resumo'))}</p>" if str(i.get("resumo") or "").strip() else ""
+        # resumo: parágrafos separados por linha em branco viram <p> separados
+        resumo = "".join(f"<p>{esc(p)}</p>" for p in str(i.get("resumo") or "").split("\n\n") if p.strip())
         foto, cls = "", ""
         f = str(i.get("foto") or "").strip().lstrip("/")
         if f.startswith("img/") and (Path(__file__).parent / f).exists():
