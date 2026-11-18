@@ -326,7 +326,36 @@ def _abeaa_home():
             f'        <h2>{e(i.get("titulo"))}</h2>\n'
             f'        <p class="lead">{e(texto)}</p>\n'
             f'        <div><a class="btn btn-blue" href="#noticias-abeaa">Ler a notícia e ver as fotos</a></div>\n'
-            f'      </div>\n    </div>\n  </section>')
+            f'      </div>\n    </div>\n{_abeaa_home_segunda(i, hoje)}  </section>')
+
+# segunda notícia da ABEAA na página inicial: só se for dos últimos 15 dias (sai sozinha depois)
+DIAS_SEGUNDA_HOME = 15
+def _abeaa_home_segunda(primeira, hoje):
+    import datetime as _dt
+    outras = [x for x in TODAS if str(x.get("fonte", "")).strip() == "ABEAA" and x is not primeira]
+    if not outras:
+        return ""
+    i = outras[0]
+    try:
+        dia = _dt.date.fromisoformat(str(i.get("data") or "")[:10])
+    except ValueError:
+        return ""
+    ate = dia + _dt.timedelta(days=DIAS_SEGUNDA_HOME + 1)
+    if hoje >= ate:
+        return ""
+    e = lambda x: html.escape(str(x or "").strip())
+    f = str(i.get("foto") or "").strip().lstrip("/")
+    foto = ""
+    if f.startswith("img/") and (root / f).exists():
+        prot = " data-protegida" if i.get("foto_protegida") is True else ""
+        foto = (f'      <a class="ah2-foto" href="#noticias-abeaa" tabindex="-1" aria-hidden="true">'
+                f'<img src="{e(f)}" alt="" loading="lazy"{prot}></a>\n')
+    return (f'    <div class="wrap ah2{"" if foto else " ah2-sem-foto"}" data-mostrar-ate="{ate.isoformat()}T00:00:00-03:00">\n{foto}'
+            f'      <div style="min-width:0">\n'
+            f'        <p class="eyebrow">Também nesta quinzena · <time datetime="{dia.isoformat()}">{dia:%d/%m/%Y}</time></p>\n'
+            f'        <h3>{e(i.get("titulo"))}</h3>\n'
+            f'        <a class="more" href="#noticias-abeaa">Ler a notícia →</a>\n'
+            f'      </div>\n    </div>\n')
 
 _rah = r"(<!--ABEAA-HOME-->)(.*?)(<!--/ABEAA-HOME-->)"
 _ah = _abeaa_home()
