@@ -1,5 +1,70 @@
 [
   {
+    "titulo": "Dados cadastrais do SIC: Confea esclarece o incidente e orienta os profissionais",
+    "data": "2026-11-23",
+    "fonte": "CREA-SP",
+    "resumo": "O Confea identificou em 6 de novembro um acesso não autorizado a uma base parcial de dados cadastrais de pessoas físicas do SIC, interrompido logo em seguida. Segundo o Confea, a base não tem senhas, fotos, dados biométricos nem dados bancários. A orientação é desconfiar de cobranças e contatos em nome do Sistema e ativar a verificação em duas etapas na conta gov.br.",
+    "link": "https://www.creasp.org.br/noticia/esclarecimentos-do-confea-sobre-dados-cadastrais-no-sic-e-medidas-preventivas/"
+  },
+  {
+    "titulo": "Dia do Engenheiro Eletricista: a abrangência da profissão",
+    "data": "2026-11-23",
+    "fonte": "CREA-SP",
+    "resumo": "No Dia do Engenheiro Eletricista, 23 de novembro, o CREA-SP apresenta as áreas de atuação da modalidade, da geração e distribuição de energia à automação e às telecomunicações. A matéria traz a visão da Câmara Especializada de Engenharia Elétrica sobre responsabilidade técnica e o uso crítico da inteligência artificial.",
+    "link": "https://www.creasp.org.br/noticia/dia-do-engenheiro-eletricista-evidencia-abrangencia-da-profissao/"
+  },
+  {
+    "titulo": "Confea Habita: plataforma liga engenheiros às reformas do programa Reforma Casa Brasil",
+    "data": "2026-11-23",
+    "fonte": "Confea",
+    "resumo": "O Confea lançou o Confea Habita, plataforma em que famílias atendidas pelo programa federal Reforma Casa Brasil podem encontrar profissionais registrados para os projetos de reforma. Segundo o Confea, as reformas do programa vão exigir um responsável técnico, e o cadastro dos profissionais é gratuito em habita.confea.org.br.",
+    "link": "https://www.confea.org.br/confea-lanca-plataforma-para-conectar-engenheiros-oportunidades-de-trabalho-em-programa-de-r-40",
+    "home_ate": "2027-01-22"
+  },
+  {
+    "titulo": "Força-tarefa nacional fiscalizou mais de 2,2 mil empreendimentos em 2026",
+    "data": "2026-11-18",
+    "fonte": "Confea",
+    "resumo": "O Confea e os Creas encerraram a Força-Tarefa Nacional de Fiscalização de 2026 com 2.217 empreendimentos fiscalizados em 77 municípios, incluindo propriedades rurais em Mato Grosso. A fiscalização confere documentos e a ART dos serviços; obras sem responsável técnico podem ser denunciadas às ouvidorias dos Creas ou pelo portal do Confea.",
+    "link": "https://www.confea.org.br/forca-tarefa-fiscaliza-mais-de-22-mil-empreendimentos-em-77-municipios-em-2026"
+  },
+  {
+    "titulo": "CreaOne completa seis meses: ART emitida em cerca de quatro minutos",
+    "data": "2026-11-17",
+    "fonte": "CREA-SP",
+    "resumo": "Seis meses depois da implantação, o CreaOne reúne em um só lugar os serviços que antes ficavam espalhados pelo antigo CreaNet. Segundo o CREA-SP, o tempo médio de emissão de uma ART caiu para cerca de quatro minutos.",
+    "link": "https://www.creasp.org.br/noticia/creaone-unifica-servicos-e-acelera-atendimento/"
+  },
+  {
+    "titulo": "Engenharia de Segurança do Trabalho reúne 25 propostas para fortalecer a fiscalização",
+    "data": "2026-11-17",
+    "fonte": "Confea",
+    "resumo": "A coordenadoria nacional das câmaras de Engenharia de Segurança do Trabalho encerrou o ciclo de 2026 com 25 propostas, como procedimentos padronizados e manuais de fiscalização por tipo de empreendimento. Também foram discutidas propostas sobre a ART, a Lei 7.410/1985 e a atualização da NR-1 sobre riscos psicossociais.",
+    "link": "https://www.confea.org.br/seguranca-do-trabalho-consolida-25-propostas-para-fortalecer-fiscalizacao"
+  },
+  {
+    "titulo": "Confea empossa o presidente reeleito e os conselheiros federais para 2027–2029",
+    "data": "2026-11-17",
+    "fonte": "Confea",
+    "resumo": "O presidente reeleito do Confea, Vinicius Marchese, e os novos conselheiros federais tomaram posse em Brasília, em 17 de novembro. Os mandatos começam em 1º de janeiro de 2027 e vão até 31 de dezembro de 2029.",
+    "link": "https://www.confea.org.br/posse-marca-novo-ciclo-de-mudancas-e-modernizacao-do-sistema-confeacrea"
+  },
+  {
+    "titulo": "Clube de Vantagens do CREA-SP: descontos e programa Anuidade Zero",
+    "data": "2026-11-12",
+    "fonte": "CREA-SP",
+    "resumo": "O Clube de Vantagens do CREA-SP reúne mais de 840 marcas parceiras. Com o programa Anuidade Zero, o cashback das compras pode ser usado para abater a anuidade, a ART ou registros de empresas. Em novembro há ofertas especiais da campanha Black November, até o dia 30.",
+    "link": "https://www.creasp.org.br/noticia/clube-de-vantagens-oferece-beneficios-e-anuidade-zero/"
+  },
+  {
+    "titulo": "Especial Influenciadores 2026: encontro na sede do CREA-SP em 11 de dezembro",
+    "data": "2026-11-11",
+    "fonte": "CREA-SP",
+    "resumo": "O CREA-SP promove em 11 de dezembro, na Sede Nestor Pestana, em São Paulo, o Especial Influenciadores 2026, com profissionais da área tecnológica que produzem conteúdo nas redes. As inscrições são feitas pelo Sympla; a programação ainda será divulgada.",
+    "link": "https://www.creasp.org.br/noticia/do-feed-para-o-crea-sp-conheca-de-perto-influenciadores-da-area-tecnologica/",
+    "vence_em": "2026-12-11"
+  },
+  {
     "titulo": "ABEAA leva o tema “Engenharia está em tudo” ao Colégio Universitário Alphaville",
     "data": "2026-11-17",
     "fonte": "ABEAA",
@@ -97,15 +162,6 @@
     "link": "https://www.confea.org.br/confea-adere-ao-programa-destrava-para-apoiar-retomada-de-obras-publicas"
   },
   {
-    "titulo": "ANEEL abre consulta pública sobre novas regras de conexão para geração solar, baterias e veículos elétricos",
-    "data": "2026-09-09",
-    "fonte": "Outra",
-    "veiculo": "Canal Solar",
-    "resumo": "A Consulta Pública nº 033/2026 da ANEEL revisa o Módulo 3 do PRODIST, que trata da conexão à rede de geração distribuída, armazenamento, veículos elétricos e cargas controláveis. O foco são as instalações de maior porte, cerca de 70 mil, que somam mais de 33 GW e poderiam receber comandos das distribuidoras, inclusive para limitar a potência injetada. A microgeração residencial não é o foco inicial. As contribuições vão até 9 de novembro.",
-    "link": "https://canalsolar.com.br/aneel-controle-distribuidoras-geracao-distribuida/",
-    "vence_em": "2026-11-09"
-  },
-  {
     "titulo": "Mútua amplia o Wellhub para mais 14 estados e o Distrito Federal",
     "data": "2026-10-15",
     "fonte": "Mútua",
@@ -141,16 +197,6 @@
     "chamada": "Projeto propõe piso de R$ 13.736 para jornada de 8 horas a partir de 2027. Participe da consulta pública do Senado.",
     "acao": "Votar na consulta pública",
     "fixar": true
-  },
-  {
-    "titulo": "Enel troca árvores em conflito com a rede elétrica em Pirapora do Bom Jesus",
-    "data": "2026-09-22",
-    "fonte": "Outra",
-    "veiculo": "Enel",
-    "regiao": true,
-    "exemplo": true,
-    "resumo": "Com a Prefeitura, a Enel começou em Pirapora do Bom Jesus o projeto Árvore Mais Segura, que substitui árvores com risco para a população ou para a rede por espécies nativas de até 9 metros, abaixo dos 11 metros dos postes. A meta é trocar 100 árvores até o fim de 2026, com replantio em até 30 dias após a retirada. Neste ano, a distribuidora já fez 11.270 podas na cidade, acima da meta de 8.918.",
-    "link": "https://www.enel.com.br/pt-saopaulo/midia/press/d202609-enel-arvore-mais-segura-em-pirapora-do-bom-jesus.html"
   },
   {
     "titulo": "ABEAA na 81ª SOEA, em Aracaju",
