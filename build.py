@@ -259,7 +259,8 @@ def _novidades_home(foco):
                 print(f"AVISO: home_ate inválido: {h}")
         esc = (marcados or cand or [None])[0]
         if esc:
-            linhas.append(f'            <li><span class="nv-ent">{e(ent)}</span>'
+            _cl = {"CREA-SP": "ent-crea", "Confea": "ent-confea", "Mútua": "ent-mutua"}.get(ent, "")
+            linhas.append(f'            <li class="{_cl}"><span class="nv-ent">{e(ent)}</span>'
                           f'<a href="{e(esc.get("link"))}" target="_blank" rel="noopener">{e(esc.get("titulo"))}</a></li>')
     if not linhas:
         return ""
