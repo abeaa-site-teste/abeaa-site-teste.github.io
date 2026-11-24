@@ -218,7 +218,9 @@ def destaques_html():
                 if any(i.get("exemplo") is True for i in grupo):
                     ver += ' <span class="pend">exemplo para aprovação da diretoria</span>'
             _ent = {"ABEAA": " ent-abeaa", "CREA-SP": " ent-crea", "Confea": " ent-confea", "Mútua": " ent-mutua"}.get(nome, "")
-            blocos.append(f'      <div class="hl-group{_ent}">\n        <div class="hl-head"><h3>{titulo}</h3>{ver}</div>\n        <ul class="highlights">\n'
+            _gid = {"ABEAA": "grupo-abeaa", "CREA-SP": "grupo-crea", "Confea": "grupo-confea", "Mútua": "grupo-mutua", "Profissão e região": "grupo-regiao"}.get(nome, "")
+            _gid = f' id="{_gid}"' if _gid else ""
+            blocos.append(f'      <div class="hl-group{_ent}"{_gid}>\n        <div class="hl-head"><h3>{titulo}</h3>{ver}</div>\n        <ul class="highlights">\n'
                           + "\n".join(item(i) for i in grupo[:(LIMITE_ABEAA if nome == "ABEAA" else 6)]) + "\n        </ul>\n      </div>")
     return "\n".join(blocos)
 
