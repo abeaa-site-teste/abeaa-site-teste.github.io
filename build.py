@@ -154,6 +154,9 @@ def destaques_html():
                 f'            {resumo}\n'
                 f'          </div></li>')
 
+    def _h3(x):  # título da notícia como h3 nas páginas em que o nível de cima é h2
+        return x.replace("<h4>", "<h3>").replace("</h4>", "</h3>")
+
     # Notícias da ABEAA: todas, por ano, para a página /noticias-abeaa/
     global ARQUIVO_ABEAA
     _anos = {}
@@ -161,17 +164,17 @@ def destaques_html():
         if str(i.get("fonte", "")).strip() == "ABEAA":
             _anos.setdefault(str(i.get("data") or "")[:4] or "Sem data", []).append(i)
     ARQUIVO_ABEAA = "\n".join(
-        f'      <div class="hl-group">\n        <div class="hl-head"><h3>{ano}</h3></div>\n        <ul class="highlights">\n'
-        + "\n".join(item(i) for i in lista) + "\n        </ul>\n      </div>"
+        f'      <div class="hl-group">\n        <div class="hl-head"><h2 class="hl-ano">{ano}</h2></div>\n        <ul class="highlights">\n'
+        + "\n".join(_h3(item(i)) for i in lista) + "\n        </ul>\n      </div>"
         for ano, lista in sorted(_anos.items(), reverse=True))
     # Espaço CREA-SP: todas as notícias do CREA-SP
     global ESPACO_CREA
     _crea = [i for i in bons if str(i.get("fonte", "")).strip() == "CREA-SP" and i.get("regiao") is not True]
-    ESPACO_CREA = ('        <ul class="highlights">\n' + "\n".join(item(i) for i in _crea) + "\n        </ul>") if _crea else ""
+    ESPACO_CREA = ('        <ul class="highlights">\n' + "\n".join(_h3(item(i)) for i in _crea) + "\n        </ul>") if _crea else ""
     # Espaço Mútua: todas as notícias da Mútua
     global ESPACO_MUTUA
     _mut = [i for i in bons if str(i.get("fonte", "")).strip() == "Mútua" and i.get("regiao") is not True]
-    ESPACO_MUTUA = ('        <ul class="highlights">\n' + "\n".join(item(i) for i in _mut) + "\n        </ul>") if _mut else ""
+    ESPACO_MUTUA = ('        <ul class="highlights">\n' + "\n".join(_h3(item(i)) for i in _mut) + "\n        </ul>") if _mut else ""
     global ULTIMA_ABEAA
     ULTIMA_ABEAA = next((i for i in bons if str(i.get("fonte", "")).strip() == "ABEAA"), None)
     fixos = [i for i in bons if i.get("fixar") is True]
