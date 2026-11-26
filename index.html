@@ -377,6 +377,12 @@ a.item{color:inherit;text-decoration:none}
 .zoom-wrap::after{content:"";position:absolute;right:8px;bottom:8px;width:30px;height:30px;border-radius:50%;background:rgba(22,59,76,.85) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7'/%3E%3C/svg%3E") center/16px no-repeat;pointer-events:none}
 .lightbox{border:0;padding:0;background:transparent;max-width:100vw;max-height:100vh;width:100vw;height:100vh;margin:0}
 img[data-protegida]{-webkit-user-drag:none;user-select:none;-webkit-touch-callout:none}
+@media(min-width:1000px){.qa-sec .qa-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:999px){.qa-sec .qa-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.cart-box{display:flex;flex-wrap:wrap;gap:16px 28px;align-items:center;justify-content:space-between;background:var(--surface,#fff);border:1px solid var(--line);border-left:6px solid var(--ent-abeaa,#2e8b3e);border-radius:12px;padding:20px 22px}
+.cart-txt{flex:1 1 420px;min-width:0}.cart-txt h3{margin:2px 0 6px}.cart-txt p{margin:0}
+.cart-acao{flex:0 1 300px;display:grid;gap:10px;justify-items:start}
+.cart-aviso{margin:0;font-size:.92rem;background:#fff4c2;color:#5c4700;border:1px dashed #c9a400;border-radius:8px;padding:8px 12px}
 .marcos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 24px;margin:8px 0 4px}
 .marcos div{border-top:3px solid var(--gold);padding-top:10px;min-width:0}
 .marcos dt{font-size:2rem;font-weight:800;line-height:1;color:var(--ink);letter-spacing:-.02em}
@@ -530,6 +536,8 @@ footer .mapa{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px
         <a class="qa qa-confea" href="https://www.abntcatalogo.com.br/confea/" target="_blank" rel="noopener" data-qa="abnt"><span class="qa-tag">Confea e Mútua</span><span class="qa-tit">Normas da ABNT<svg class="qa-ext" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg><span class="sr-only"> (abre em outro site)</span></span><span class="qa-desc">Consulta e descontos para profissionais registrados e associados da Mútua.</span><svg class="qa-seta" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
         <a class="qa qa-abeaa" href="#agenda" data-qa="cursos"><span class="qa-tag">ABEAA</span><span class="qa-tit">Cursos da ABEAA</span><span class="qa-desc">Cursos e palestras, online e na sede, com certificado.</span><svg class="qa-seta" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
         <a class="qa qa-abeaa" href="#reservas" data-qa="reservas"><span class="qa-tag">ABEAA</span><span class="qa-tit">Reservar espaço na ABEAA</span><span class="qa-desc">Auditório e área de lazer para associados, sem taxa.</span><svg class="qa-seta" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
+        <a class="qa qa-abeaa" href="#carteirinha" data-qa="carteirinha"><span class="qa-tag">ABEAA</span><span class="qa-tit">Minha carteirinha</span><span class="qa-desc">Carteirinha digital do associado, por e-mail, com QR Code.</span><svg class="qa-seta" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
+        <a class="qa qa-abeaa" href="#educacao" data-qa="clube"><span class="qa-tag">ABEAA</span><span class="qa-tit">Clube de vantagens</span><span class="qa-desc">Descontos em educação e em empresas da região.</span><svg class="qa-seta" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
       </div>
     </div>
   </section>
@@ -1146,6 +1154,10 @@ footer .mapa{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px
     <div class="split" style="align-items:end">
       <div class="stack"><p class="eyebrow">Clube de vantagens</p><h2>Descontos para o associado em dia.</h2></div>
       <p class="lead">Convênios com instituições de ensino e parcerias com empresas da região. As condições são definidas por cada parceiro. <span class="pend">forma de comprovação (carteirinha digital) a aprovar</span></p>
+    </div>
+    <div class="cart-box" id="carteirinha">
+      <div class="cart-txt"><p class="eyebrow">Carteirinha digital</p><h3>Receba a sua carteirinha por e-mail.</h3><p>Em PDF, com QR Code. Mostre no atendimento dos parceiros: eles conferem pelo QR Code se a carteirinha está válida. Quando você renova a anuidade, a mesma carteirinha volta a valer.</p></div>
+      <div class="cart-acao"><a class="btn btn-yellow" href="#carteirinha" data-carteirinha-url="">Receber minha carteirinha</a><p class="cart-aviso" role="status" hidden></p></div>
     </div>
     <h3 class="clube-grupo">Educação</h3>
     <p class="form-note" style="margin-top:-12px">Consulte a secretaria para saber os percentuais e as condições. <span class="pend">percentuais e quem pode usar a confirmar</span></p>
@@ -2302,6 +2314,7 @@ footer .mapa{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px
 <script>
 (function(){document.querySelectorAll('.subnav a[href^="#grupo-"]').forEach(function(a){if(!document.getElementById(a.getAttribute("href").slice(1)))a.hidden=true;});})();
 </script>
+<script>document.querySelectorAll("[data-carteirinha-url]").forEach(function(b){b.addEventListener("click",function(e){var u=b.getAttribute("data-carteirinha-url");if(u){e.preventDefault();window.open(u,"_blank","noopener");return;}e.preventDefault();var a=b.parentNode.querySelector(".cart-aviso");if(a){a.textContent="Em teste: a carteirinha digital começa com o lançamento do novo site. Dúvidas: secretaria, (11) 4154-3546.";a.hidden=false;}});});</script>
 <dialog class="lightbox" id="lightbox" aria-label="Foto ampliada"><button class="lb-close" type="button" aria-label="Fechar">×</button><button class="lb-nav lb-prev" type="button" aria-label="Foto anterior" hidden>‹</button><button class="lb-nav lb-next" type="button" aria-label="Próxima foto" hidden>›</button><figure><img alt=""><figcaption></figcaption></figure></dialog>
 <script>
 (function(){
